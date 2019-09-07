@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git server 呢？">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-09-07T01:54:08.115Z">
+<meta property="og:updated_time" content="2019-09-07T02:25:38.747Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在两个 git server 之间同步项目的代码">
 <meta name="twitter:description" content="假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git server 呢？">
@@ -261,9 +261,9 @@
 
 
     <span>|</span>
-    <span class="post-count">字数：559</span>
+    <span class="post-count">字数：705</span>
     <span>|</span>
-    <span class="post-count">阅读时长：大约2分钟</span>
+    <span class="post-count">阅读时长：大约3分钟</span>
 
 
         </div>
@@ -272,40 +272,39 @@
 <h1 id="模拟这个场景"><a href="#模拟这个场景" class="headerlink" title="模拟这个场景"></a>模拟这个场景</h1><ul>
 <li>假设在家里能访问 coding.net，但不能访问 gitee.com（模拟办公室的局域网环境）。</li>
 <li>而在办公室，即可访问 coding.net 也可访问 gitee.com。</li>
+<li>正在进行的项目为：remoteT</li>
 </ul>
 <h2 id="在办公室-周五下班前"><a href="#在办公室-周五下班前" class="headerlink" title="在办公室, 周五下班前"></a>在办公室, 周五下班前</h2><ol>
-<li><p>同时在 gitee.com 和 coding.net 上创建同名仓库：remoteT，然后 clone 到本地。</p>
+<li><p>同时在 gitee.com 和 coding.net 上创建同名仓库（项目）：remoteT，然后将 gitee.com 上的仓库 remoteT clone 到本地。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://gitee.com/uncleAndyChen/remoteT.git</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>添加文件 readme.md，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. from gitee</span><br></pre></td></tr></table></figure>
+<li><p>添加文件 readme.md，写一行文本：<code>1. from gitee</code>。</p>
 </li>
 <li><p>推送</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m&apos;from gitee&apos;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>添加 coding.net 上的项目，作为远程仓库来管理。</p>
+<li><p>添加 coding.net 上的仓库 remoteT ，作为远程仓库来管理，添加后将本地代码推送，使用 Git Bash 或者 cmd，在项目根目录下执行如下指令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add coding https://e.coding.net/andychen/remoteT.git</span><br><span class="line">git push coding</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>至此，两个 git server 上的代码完全一样。</p>
+<p>至此，两个 git server 上的仓库 remoteT 代码就完全一样了。</p>
 <h2 id="周末，在家里"><a href="#周末，在家里" class="headerlink" title="周末，在家里"></a>周末，在家里</h2><ol>
-<li><p>获取 coding.net 上的项目</p>
+<li><p>获取 coding.net 上的仓库 remoteT</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://e.coding.net/andychen/remoteT.git</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>修改 readme.md 文件，添加内容如下，添加之后推送。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2. from coding.net</span><br></pre></td></tr></table></figure>
+<li><p>修改 readme.md 文件，追加一行文本 <code>2. from coding.net</code>，修改好之后推送。</p>
 </li>
 </ol>
 <h2 id="到了下周一，回到办公室"><a href="#到了下周一，回到办公室" class="headerlink" title="到了下周一，回到办公室"></a>到了下周一，回到办公室</h2><ol>
-<li><p>获取在 coding.net 上的修改，获取时需要指定分支，正确的应该是：<code>git pull coding master</code>，这里的 coding 只是远程仓库的别名，创建的时候起的名字。</p>
+<li><p>获取在 coding.net 上的仓库 remoteT 的修改，获取时需要指定分支：<code>git pull coding master</code>，这里的 coding 只是远程仓库的别名，创建的时候起的名字（通过命令 <code>git remote add coding https://e.coding.net/andychen/remoteT.git</code> 创建）。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git pull coding master</span><br><span class="line">From https://e.coding.net/andychen/remoteT</span><br><span class="line"> * branch            master     -&gt; FETCH_HEAD</span><br><span class="line">Updating 8c02788..ab9d5a4</span><br><span class="line">Fast-forward</span><br><span class="line"> readme.md | 3 ++-</span><br><span class="line"> 1 file changed, 2 insertions(+), 1 deletion(-)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>把在 coding.net 上的修改再 push 到 gitee，执行 <code>git push</code> 就行，因为 gitee.com 上的项目是默认仓库。</p>
+<li><p>把在 coding.net 上的仓库 remoteT 的修改再 push 到 gitee.com 上的仓库 remoteT，执行 <code>git push</code> 就行，因为 gitee.com 上的仓库 remoteT 是默认仓库。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br><span class="line">Enumerating objects: 5, done.</span><br><span class="line">Counting objects: 100% (5/5), done.</span><br><span class="line">Writing objects: 100% (3/3), 285 bytes | 95.00 KiB/s, done.</span><br><span class="line">Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">remote: Powered By Gitee.com</span><br><span class="line">To https://gitee.com/uncleAndyChen/remoteT.git</span><br><span class="line">   8c02788..ab9d5a4  master -&gt; master</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>至此，周末在家里写的代码就完全同步到 gitee.com 上的项目了。文件 readme.md 的内容变成了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. from gitee</span><br><span class="line">2. from coding.net</span><br></pre></td></tr></table></figure></p>
-<p>获取远程仓库 coding 的代码时，需要指定分支，否则：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git pull coding</span><br><span class="line">remote: Enumerating objects: 5, done.</span><br><span class="line">remote: Counting objects: 100% (5/5), done.</span><br><span class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">Unpacking objects: 100% (3/3), done.</span><br><span class="line">From https://e.coding.net/andychen/remoteT</span><br><span class="line">   8c02788..ab9d5a4  master     -&gt; coding/master</span><br><span class="line">You asked to pull from the remote &apos;coding&apos;, but did not specify</span><br><span class="line">a branch. Because this is not the default configured remote</span><br><span class="line">for your current branch, you must specify a branch on the command line.</span><br></pre></td></tr></table></figure></p>
+<p>至此，周末在家里通过 coding.net 上的仓库 remoteT 写的代码就完全同步到 gitee.com 上的仓库 remoteT 了。文件 readme.md 的内容变成了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. from gitee</span><br><span class="line">2. from coding.net</span><br></pre></td></tr></table></figure></p>
+<p>获取远程仓库 coding（通过命令 <code>git remote add coding https://e.coding.net/andychen/remoteT.git</code> 创建）的代码时，需要指定分支，否则：You asked to pull from the remote ‘coding’, but did not specify a branch. Because this is not the default configured remote for your current branch, you must specify a branch on the command line.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git pull coding</span><br><span class="line">remote: Enumerating objects: 5, done.</span><br><span class="line">remote: Counting objects: 100% (5/5), done.</span><br><span class="line">remote: Total 3 (delta 0), reused 0 (delta 0)</span><br><span class="line">Unpacking objects: 100% (3/3), done.</span><br><span class="line">From https://e.coding.net/andychen/remoteT</span><br><span class="line">   8c02788..ab9d5a4  master     -&gt; coding/master</span><br><span class="line">You asked to pull from the remote &apos;coding&apos;, but did not specify</span><br><span class="line">a branch. Because this is not the default configured remote</span><br><span class="line">for your current branch, you must specify a branch on the command line.</span><br></pre></td></tr></table></figure></p>
 
         </div>
 
@@ -313,7 +312,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-09-07T01:54:08.115Z" itemprop="dateUpdated">2019年9月7日 9:54</time>
+    最后更新时间：<time datetime="2019-09-07T02:25:38.747Z" itemprop="dateUpdated">2019年9月7日 10:25</time>
 </span><br>
 
 
@@ -437,7 +436,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.3k</span>
+                <span class="post-count">本站文章累计字数：271.5k</span>
             
             </p>
         <p></p>
