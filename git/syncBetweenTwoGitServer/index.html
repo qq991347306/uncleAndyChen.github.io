@@ -71,18 +71,18 @@
     
     
     <meta name="keywords" content="git,同步代码">
-    <meta name="description" content="假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git server 呢？">
+    <meta name="description" content="如果是在 gitee.com 和 github.com 上同步代码，假设默认仓库放到 github.com，只需要 git remote add 仓库别名 gitee.com上的仓库地址，然后在代码有提交时，执行 git push 仓库别名 即可达到目的，仓库别名 自己起一个好记的就行，比如 gitee。 现在假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 c">
 <meta name="keywords" content="git,同步代码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在两个 git server 之间同步项目的代码">
 <meta property="og:url" content="https://www.lovesofttech.com/git/syncBetweenTwoGitServer/index.html">
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
-<meta property="og:description" content="假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git server 呢？">
+<meta property="og:description" content="如果是在 gitee.com 和 github.com 上同步代码，假设默认仓库放到 github.com，只需要 git remote add 仓库别名 gitee.com上的仓库地址，然后在代码有提交时，执行 git push 仓库别名 即可达到目的，仓库别名 自己起一个好记的就行，比如 gitee。 现在假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 c">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-09-07T02:25:38.747Z">
+<meta property="og:updated_time" content="2019-09-07T02:39:08.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在两个 git server 之间同步项目的代码">
-<meta name="twitter:description" content="假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git server 呢？">
+<meta name="twitter:description" content="如果是在 gitee.com 和 github.com 上同步代码，假设默认仓库放到 github.com，只需要 git remote add 仓库别名 gitee.com上的仓库地址，然后在代码有提交时，执行 git push 仓库别名 即可达到目的，仓库别名 自己起一个好记的就行，比如 gitee。 现在假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 c">
     
         <link rel="alternative" href="/atom.xml" title="安迪陈技术日志，架构、感悟、系统分析、团队管理" type="application/atom+xml">
     
@@ -261,14 +261,18 @@
 
 
     <span>|</span>
-    <span class="post-count">字数：705</span>
+    <span class="post-count">字数：908</span>
     <span>|</span>
-    <span class="post-count">阅读时长：大约3分钟</span>
+    <span class="post-count">阅读时长：大约4分钟</span>
 
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git server 呢？<br><a id="more"></a></p>
+            <ul>
+<li>如果是在 gitee.com 和 github.com 上同步代码，假设默认仓库放到 github.com，只需要 <code>git remote add 仓库别名 gitee.com上的仓库地址</code>，然后在代码有提交时，执行 <code>git push 仓库别名</code> 即可达到目的，<code>仓库别名</code> 自己起一个好记的就行，比如 <code>gitee</code>。</li>
+<li>现在假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git server 呢？</li>
+</ul>
+<a id="more"></a>
 <h1 id="模拟这个场景"><a href="#模拟这个场景" class="headerlink" title="模拟这个场景"></a>模拟这个场景</h1><ul>
 <li>假设在家里能访问 coding.net，但不能访问 gitee.com（模拟办公室的局域网环境）。</li>
 <li>而在办公室，即可访问 coding.net 也可访问 gitee.com。</li>
@@ -287,7 +291,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add coding https://e.coding.net/andychen/remoteT.git</span><br><span class="line">git push coding</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>至此，两个 git server 上的仓库 remoteT 代码就完全一样了。</p>
+<p>至此，两个 git server 上的仓库 remoteT 的代码就完全一样了。</p>
+<p>远程仓库的配置信息保存到 .git 目录下的 config 文件中了，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url = https://gitee.com/uncleAndyChen/remoteT.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch &quot;master&quot;]</span><br><span class="line">	remote = origin</span><br><span class="line">	merge = refs/heads/master</span><br><span class="line">[remote &quot;coding&quot;]</span><br><span class="line">	url = https://e.coding.net/andychen/remoteT.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/coding/*</span><br></pre></td></tr></table></figure></p>
+<p>如果要修改远程仓库的别名，把 <code>[remote &quot;coding&quot;]</code> 和 <code>fetch = +refs/heads/*:refs/remotes/coding/*</code> 中的 coding 改为想的名字即可。</p>
 <h2 id="周末，在家里"><a href="#周末，在家里" class="headerlink" title="周末，在家里"></a>周末，在家里</h2><ol>
 <li><p>获取 coding.net 上的仓库 remoteT</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://e.coding.net/andychen/remoteT.git</span><br></pre></td></tr></table></figure>
@@ -312,7 +318,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-09-07T02:25:38.747Z" itemprop="dateUpdated">2019年9月7日 10:25</time>
+    最后更新时间：<time datetime="2019-09-07T02:39:08.750Z" itemprop="dateUpdated">2019年9月7日 10:39</time>
 </span><br>
 
 
@@ -350,7 +356,8 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/syncBetweenTwoGitServer/&title=《在两个 git server 之间同步项目的代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git ser..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/syncBetweenTwoGitServer/&title=《在两个 git server 之间同步项目的代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=
+如果是在 gitee.com 和 github.com 上同步代码，假设默认仓库放到 github.com，只需要 git remote add 仓库别..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -436,7 +443,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.5k</span>
+                <span class="post-count">本站文章累计字数：271.7k</span>
             
             </p>
         <p></p>
@@ -462,7 +469,8 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/syncBetweenTwoGitServer/&title=《在两个 git server 之间同步项目的代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=假设在办公室只能用局域网的 git server，到了周末，放不下工作，想在家继续 coding，那么到了下周一，如何将代码同步到办公室的 git ser..." data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/syncBetweenTwoGitServer/&title=《在两个 git server 之间同步项目的代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=
+如果是在 gitee.com 和 github.com 上同步代码，假设默认仓库放到 github.com，只需要 git remote add 仓库别..." data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
