@@ -118,26 +118,35 @@
         e.preventDefault();
     }
 
+    /*
+        编译上传之后是：
+        <script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async=""></script>
 
+        本地是：
+        <script src="/js/search.js" async=""></script>
+     */
     searchIco.addEventListener(even, function () {
         searchWrap.classList.toggle('in');
         keyInput.value = '';
         searchWrap.classList.contains('in') ? keyInput.focus() : keyInput.blur();
-        navMenuTop.classList.replace('navbar-right', 'navbar-right-search');
-        //navMenuTop.classList.toggle('search');
+        //navMenuTop.classList.replace('navbar-right', 'navbar-right-search');
+        navMenuTop.classList.toggle('search');
         //navMenuTop.classList.add('search');
+        //navMenuTop.style="margin-right: 410px;";
     });
 
     back.addEventListener(even, function () {
+        navMenuTop.classList.remove('search');
         searchWrap.classList.remove('in');
         Control.hide();
     });
 
     document.addEventListener(even, function (e) {
-        if (!searchWrap.classList.contains('in')) {
-            navMenuTop.classList.replace('navbar-right-search', 'navbar-right');
+        //if (!searchWrap.classList.contains('in')) {
+            //navMenuTop.classList.replace('navbar-right-search', 'navbar-right');
             //navMenuTop.classList.remove('search');
-        }
+            //navMenuTop.style="margin-right: 110px;";
+        //}
 
         if (e.target.id !== 'key' && even === 'click') {
             Control.hide();
