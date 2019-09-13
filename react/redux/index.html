@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="本文适合有一定经验的人，时不时的看一下对理解 redux、重构旧代码、写新的代码有帮助。 如果是初学者，可能会比较蒙，建议先了解个大概再带着疑问去深入学习。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-23T14:00:13.952Z">
+<meta property="og:updated_time" content="2019-08-23T06:10:49.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React 技术栈学习，redux 知识点">
 <meta name="twitter:description" content="本文适合有一定经验的人，时不时的看一下对理解 redux、重构旧代码、写新的代码有帮助。 如果是初学者，可能会比较蒙，建议先了解个大概再带着疑问去深入学习。">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#如何合理地设计-state"><span class="post-toc-number">1.</span> <span class="post-toc-text">如何合理地设计 state</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计-state-总结"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">设计 state 总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#state-的-key"><span class="post-toc-number">2.</span> <span class="post-toc-text">state 的 key</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#redux-的三大原则"><span class="post-toc-number">3.</span> <span class="post-toc-text">redux 的三大原则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#单一数据源"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">单一数据源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#state-是只读的"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">state 是只读的</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用纯函数来执行修改"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">使用纯函数来执行修改</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Redux-三个基本概念"><span class="post-toc-number">4.</span> <span class="post-toc-text">Redux 三个基本概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#action"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">action</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#reducer"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">reducer</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#store"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">store</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#redux-数据流"><span class="post-toc-number">5.</span> <span class="post-toc-text">redux 数据流</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#React-Redux-组件"><span class="post-toc-number">6.</span> <span class="post-toc-text">React-Redux 组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UI-组件（presentational-component）"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">UI 组件（presentational component）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#容器组件（container-component）"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">容器组件（container component）</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#react-redux"><span class="post-toc-number">7.</span> <span class="post-toc-text">react-redux</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mapStateToProps"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">mapStateToProps</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mapDispatchToProps"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">mapDispatchToProps</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#扩展阅读"><span class="post-toc-number">9.</span> <span class="post-toc-text">扩展阅读</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#个人学习心得项目地址"><span class="post-toc-number">10.</span> <span class="post-toc-text">个人学习心得项目地址</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-react/redux" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -410,7 +411,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-23T14:00:13.952Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+    最后更新时间：<time datetime="2019-08-23T06:10:49.211Z" itemprop="dateUpdated">2019年8月23日 14:10</time>
 </span><br>
 
 
@@ -487,18 +488,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/react/eslintConfig/" id="post-prev" class="post-nav-link">
+      <a href="/react/eslintConfigExample/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">WebStorm + React 项目，配置 ESLint</h4>
+        <h4 class="title">ESLint 配置文件 .eslintrc 示例及说明</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/react/eslintConfigExample/" id="post-next" class="post-nav-link">
+      <a href="/react/JetBrainsIDESupport/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">ESLint 配置文件 .eslintrc 示例及说明</h4>
+        <h4 class="title">像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码</h4>
       </a>
     </div>
   
@@ -543,7 +544,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

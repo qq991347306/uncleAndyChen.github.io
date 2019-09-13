@@ -85,7 +85,7 @@
 <meta property="og:image" content="http://uncleandychen.gitee.io/img/MBGRunFromSourceCodeConfig.jpg">
 <meta property="og:image" content="http://uncleandychen.gitee.io/img/MBGToJar.jpg">
 <meta property="og:image" content="http://uncleandychen.gitee.io/img/MBGToJarStepTwo.jpg">
-<meta property="og:updated_time" content="2019-03-09T14:29:46.290Z">
+<meta property="og:updated_time" content="2019-03-19T10:09:44.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名">
 <meta name="twitter:description" content="如题">
@@ -244,11 +244,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#本文对应的项目"><span class="post-toc-number">1.</span> <span class="post-toc-text">本文对应的项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过本项目，可以学到的知识点"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">通过本项目，可以学到的知识点</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#先了解一下-lower-case-table-names-参数"><span class="post-toc-number">2.</span> <span class="post-toc-text">先了解一下 lower_case_table_names 参数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不适用场景"><span class="post-toc-number">3.</span> <span class="post-toc-text">不适用场景</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#适用场景"><span class="post-toc-number">4.</span> <span class="post-toc-text">适用场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#场景一"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">场景一</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#场景二"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">场景二</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#需求场景"><span class="post-toc-number">5.</span> <span class="post-toc-text">需求场景</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决办法"><span class="post-toc-number">6.</span> <span class="post-toc-text">解决办法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于-MBG-MyBatis-Generator"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于 MBG (MyBatis Generator)</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改源码"><span class="post-toc-number">8.</span> <span class="post-toc-text">修改源码</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#生成对应的类和-mapper-文件"><span class="post-toc-number">9.</span> <span class="post-toc-text">生成对应的类和 mapper 文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对应的测试数据库脚本"><span class="post-toc-number">10.</span> <span class="post-toc-text">对应的测试数据库脚本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#生成表配置信息的-Java-工具类"><span class="post-toc-number">11.</span> <span class="post-toc-text">生成表配置信息的 Java 工具类</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#运行-MBG"><span class="post-toc-number">12.</span> <span class="post-toc-text">运行 MBG</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#直接运行源码"><span class="post-toc-number">12.1.</span> <span class="post-toc-text">直接运行源码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#生成-jar-包，一次生成，随处运行"><span class="post-toc-number">12.2.</span> <span class="post-toc-text">生成 jar 包，一次生成，随处运行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下面是生成-MBG-jar-包的步骤"><span class="post-toc-number">12.3.</span> <span class="post-toc-text">下面是生成 MBG jar 包的步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">12.4.</span> <span class="post-toc-text">注意事项</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-mybatis/MBGTableKeepOriginal" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -440,7 +441,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-09T14:29:46.290Z" itemprop="dateUpdated">2019年3月9日 22:29</time>
+    最后更新时间：<time datetime="2019-03-19T10:09:44.229Z" itemprop="dateUpdated">2019年3月19日 18:09</time>
 </span><br>
 
 
@@ -571,7 +572,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

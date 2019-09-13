@@ -70,16 +70,16 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="java,team,代码规约">
+    <meta name="keywords" content="team,java,代码规约">
     <meta name="description" content="包含 api 开发原则、代码风格、mapper 扩展等。">
-<meta name="keywords" content="java,team,代码规约">
+<meta name="keywords" content="team,java,代码规约">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java 开发，适用于团队的代码规范及某些约定">
 <meta property="og:url" content="https://www.lovesofttech.com/java/codeSpecificationAdditional/index.html">
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="包含 api 开发原则、代码风格、mapper 扩展等。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-09T14:29:46.242Z">
+<meta property="og:updated_time" content="2019-03-19T10:09:44.010Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java 开发，适用于团队的代码规范及某些约定">
 <meta name="twitter:description" content="包含 api 开发原则、代码风格、mapper 扩展等。">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#api-开发总则"><span class="post-toc-number">1.</span> <span class="post-toc-text">api 开发总则</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展阅读：面各对象设计的七大原则："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">扩展阅读：面各对象设计的七大原则：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改代码规范"><span class="post-toc-number">2.</span> <span class="post-toc-text">修改代码规范</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码风格，最基本的原则"><span class="post-toc-number">3.</span> <span class="post-toc-text">代码风格，最基本的原则</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#悟出的命名规则"><span class="post-toc-number">4.</span> <span class="post-toc-text">悟出的命名规则</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#枚举定义注意事项"><span class="post-toc-number">5.</span> <span class="post-toc-text">枚举定义注意事项</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字段与枚举"><span class="post-toc-number">6.</span> <span class="post-toc-text">字段与枚举</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mapper-扩展"><span class="post-toc-number">7.</span> <span class="post-toc-text">mapper 扩展</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MyBatis-sql-脚本"><span class="post-toc-number">8.</span> <span class="post-toc-text">MyBatis sql 脚本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#表结构修改流程"><span class="post-toc-number">9.</span> <span class="post-toc-text">表结构修改流程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#针对某字段的枚举命名规范"><span class="post-toc-number">10.</span> <span class="post-toc-text">针对某字段的枚举命名规范</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#js-代码提交"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">js 代码提交</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#新加配置项"><span class="post-toc-number">11.</span> <span class="post-toc-text">新加配置项</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-java/codeSpecificationAdditional" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -353,7 +354,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-09T14:29:46.242Z" itemprop="dateUpdated">2019年3月9日 22:29</time>
+    最后更新时间：<time datetime="2019-03-19T10:09:44.010Z" itemprop="dateUpdated">2019年3月19日 18:09</time>
 </span><br>
 
 
@@ -428,18 +429,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/database/mySQLWorkbench/" id="post-prev" class="post-nav-link">
+      <a href="/git/githubUpdateProjectLanguage/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">借助 MySQL Workbench 工具生成 MySQL 修改脚本</h4>
+        <h4 class="title">修改 github 项目的程序语言</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/git/githubUpdateProjectLanguage/" id="post-next" class="post-nav-link">
+      <a href="/java/springBootIntegrationUEditor/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">修改 github 项目的程序语言</h4>
+        <h4 class="title">springBoot 集成百度富文本框 UEditor，多模块方式</h4>
       </a>
     </div>
   
@@ -484,7 +485,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

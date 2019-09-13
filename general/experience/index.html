@@ -83,7 +83,7 @@
 <meta property="og:image" content="https://www.lovesofttech.com/img/general/sqlServerManagementStudioFileEncode02.png">
 <meta property="og:image" content="https://www.lovesofttech.com/img/general/sqlServerManagementStudioFileEncode03.png">
 <meta property="og:image" content="https://www.lovesofttech.com/img/general/virtualBoxNetworkConfig.png">
-<meta property="og:updated_time" content="2019-08-23T14:00:13.831Z">
+<meta property="og:updated_time" content="2019-08-23T05:55:34.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="日常经验--好记性不如烂文档">
 <meta name="twitter:description" content="记下来，方便遇到问题时快速查。  可以节省以后自己查询的时间，也方便别人搜索。 如果不记，下次遇到问题还得再折腾一翻，不划算~~ 利人利已~~">
@@ -242,11 +242,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在机械硬盘上使用虚拟机和在固态硬盘上使用虚拟机的差别，有吗？大吗？真的吗？"><span class="post-toc-number">1.</span> <span class="post-toc-text">在机械硬盘上使用虚拟机和在固态硬盘上使用虚拟机的差别，有吗？大吗？真的吗？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现象"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">现象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实践"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实践</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不同网段间通信遇到的问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">不同网段间通信遇到的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">解决</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#经验"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">经验</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#还原-SQL-Server-数据库"><span class="post-toc-number">3.</span> <span class="post-toc-text">还原 SQL Server 数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现象-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">现象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SQL-Server-Management-Studio-保存的-sql-脚本文件编码问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">SQL Server Management Studio 保存的 sql 脚本文件编码问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决-2"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">解决</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注意"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#virtual-box-win7-虚拟机，方向键、home、delete、退格键不好使"><span class="post-toc-number">5.</span> <span class="post-toc-text">virtual box win7 虚拟机，方向键、home、delete、退格键不好使</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决-3"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#VirtualBox-虚拟-win7-网卡提示：未识别的网络"><span class="post-toc-number">6.</span> <span class="post-toc-text">VirtualBox 虚拟 win7 网卡提示：未识别的网络</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现象-2"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">现象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决-4"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">解决</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#尝试"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">尝试</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结论"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">结论</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决-mybatis-generator-使用新版-mysql-驱动-8-0-版本时会生成用户下多个库里的表的问题"><span class="post-toc-number">7.</span> <span class="post-toc-text">解决 mybatis generator 使用新版 mysql 驱动 8.0 版本时会生成用户下多个库里的表的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决办法"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">解决办法</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-general/experience" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -373,7 +374,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-23T14:00:13.831Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+    最后更新时间：<time datetime="2019-08-23T05:55:34.837Z" itemprop="dateUpdated">2019年8月23日 13:55</time>
 </span><br>
 
 
@@ -462,9 +463,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/redis/general/" id="post-next" class="post-nav-link">
+      <a href="/redis/index/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">redis5.0.5 在 CentOS7 上的安装和使用</h4>
+        <h4 class="title">redis 文章目录</h4>
       </a>
     </div>
   
@@ -509,7 +510,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

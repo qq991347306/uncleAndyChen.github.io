@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="如题">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-10T01:13:32.291Z">
+<meta property="og:updated_time" content="2019-03-19T10:09:44.190Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 以源码方式安装 php7">
 <meta name="twitter:description" content="如题">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作，创建-unginx-用户"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作，创建 unginx 用户</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载最新的-php-7"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载最新的 php 7</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装必要的依赖"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装必要的依赖</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置-php7-安装参数，并运行-make-命令"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置 php7 安装参数，并运行 make 命令</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#configure-error-C-prep"><span class="post-toc-number">5.</span> <span class="post-toc-text">configure: error: C++ prep</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#configure-error-C-preprocessor-“-lib-cpp”-fails-sanity-check"><span class="post-toc-number">6.</span> <span class="post-toc-text">configure: error: C++ preprocessor “/lib/cpp” fails sanity check</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#configure-error-Cannot-find-ldap-h"><span class="post-toc-number">7.</span> <span class="post-toc-text">configure: error: Cannot find ldap.h</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#configure-error-Cannot-find-ldap-libraries-in-usr-lib"><span class="post-toc-number">8.</span> <span class="post-toc-text">configure: error: Cannot find ldap libraries in /usr/lib.</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#collect2-error-ld-returned-1-exit-status"><span class="post-toc-number">9.</span> <span class="post-toc-text">collect2: error: ld returned 1 exit status</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#make-test"><span class="post-toc-number">10.</span> <span class="post-toc-text">make test</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#make-install"><span class="post-toc-number">11.</span> <span class="post-toc-text">make install</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#make-amp-amp-make-install"><span class="post-toc-number">12.</span> <span class="post-toc-text">make &amp;&amp; make install</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#添加配置文件"><span class="post-toc-number">13.</span> <span class="post-toc-text">添加配置文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#将-php-fpm-控制脚本加入到-etc-init-d-下，并给予可执行权限。"><span class="post-toc-number">14.</span> <span class="post-toc-text">将 php-fpm 控制脚本加入到 /etc/init.d/ 下，并给予可执行权限。</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改配置文件"><span class="post-toc-number">15.</span> <span class="post-toc-text">修改配置文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动"><span class="post-toc-number">16.</span> <span class="post-toc-text">启动</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-php-版本"><span class="post-toc-number">17.</span> <span class="post-toc-text">查看 php 版本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#PHP-的启动、停止和重启"><span class="post-toc-number">18.</span> <span class="post-toc-text">PHP 的启动、停止和重启</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开机启动"><span class="post-toc-number">19.</span> <span class="post-toc-text">开机启动</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-php-进程"><span class="post-toc-number">20.</span> <span class="post-toc-text">查看 php 进程</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-nginx-启动用户"><span class="post-toc-number">21.</span> <span class="post-toc-text">查看 nginx 启动用户</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改-nginx-启动用户"><span class="post-toc-number">22.</span> <span class="post-toc-text">修改 nginx 启动用户</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置-nginx-支持-PHP"><span class="post-toc-number">23.</span> <span class="post-toc-text">配置 nginx 支持 PHP</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以-unginx-登录，创建-web-目录"><span class="post-toc-number">23.1.</span> <span class="post-toc-text">以 unginx 登录，创建 web 目录</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加站点配置文件"><span class="post-toc-number">23.2.</span> <span class="post-toc-text">添加站点配置文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#遇到的问题"><span class="post-toc-number">24.</span> <span class="post-toc-text">遇到的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#18059-0-12-connect-to-unix-tmp-php-cgi-sock-failed-2-No-such-file-or-directory"><span class="post-toc-number">24.1.</span> <span class="post-toc-text">18059#0: *12 connect() to unix:/tmp/php-cgi.sock failed (2: No such file or directory)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ngnix-DiscuzX-论坛-Upload-Error-413-错误"><span class="post-toc-number">24.2.</span> <span class="post-toc-text">Ngnix DiscuzX 论坛 Upload Error 413 错误</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开启-OPcache"><span class="post-toc-number">25.</span> <span class="post-toc-text">开启 OPcache</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-lnmp/centOS7Php7" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -333,7 +334,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-10T01:13:32.291Z" itemprop="dateUpdated">2019年3月10日 9:13</time>
+    最后更新时间：<time datetime="2019-03-19T10:09:44.190Z" itemprop="dateUpdated">2019年3月19日 18:09</time>
 </span><br>
 
 
@@ -464,7 +465,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

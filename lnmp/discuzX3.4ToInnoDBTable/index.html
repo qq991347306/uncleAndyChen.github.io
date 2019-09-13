@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="如题">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-09T14:42:22.248Z">
+<meta property="og:updated_time" content="2019-03-19T10:09:44.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="discuzX3.4 数据库由阿里云自建 MySQL 转移至 RDS，填坑日志">
 <meta name="twitter:description" content="如题">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#场景"><span class="post-toc-number">1.</span> <span class="post-toc-text">场景</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#更多关于-RDS-的信息"><span class="post-toc-number">2.</span> <span class="post-toc-text">更多关于 RDS 的信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#批量生成修改所有表的存储引擎为-InnoDB-的脚本语句"><span class="post-toc-number">3.</span> <span class="post-toc-text">批量生成修改所有表的存储引擎为 InnoDB 的脚本语句</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#生成结果"><span class="post-toc-number">4.</span> <span class="post-toc-text">生成结果</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#执行过程中，下面注释掉的两张表报错"><span class="post-toc-number">5.</span> <span class="post-toc-text">执行过程中，下面注释掉的两张表报错</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#建表脚本，如果-ENGINE-MyISAM-则正常，改为-InnoDB-则报错"><span class="post-toc-number">6.</span> <span class="post-toc-text">建表脚本，如果 ENGINE=MyISAM 则正常，改为 InnoDB 则报错</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用-MySQL-Workbench-操作，得到解决，大赞-MySQL-Workbench"><span class="post-toc-number">7.</span> <span class="post-toc-text">用 MySQL Workbench 操作，得到解决，大赞 MySQL Workbench</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决方案，重要！"><span class="post-toc-number">8.</span> <span class="post-toc-text">解决方案，重要！</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看数据库存储引擎"><span class="post-toc-number">9.</span> <span class="post-toc-text">查看数据库存储引擎</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看表的存储引擎"><span class="post-toc-number">10.</span> <span class="post-toc-text">查看表的存储引擎</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL-存储引擎参考"><span class="post-toc-number">11.</span> <span class="post-toc-text">MySQL 存储引擎参考</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-lnmp/discuzX3.4ToInnoDBTable" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -303,7 +304,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-09T14:42:22.248Z" itemprop="dateUpdated">2019年3月9日 22:42</time>
+    最后更新时间：<time datetime="2019-03-19T10:09:44.199Z" itemprop="dateUpdated">2019年3月19日 18:09</time>
 </span><br>
 
 
@@ -434,7 +435,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

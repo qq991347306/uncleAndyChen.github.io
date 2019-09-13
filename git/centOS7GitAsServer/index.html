@@ -87,7 +87,7 @@
 <meta property="og:image" content="https://www.lovesofttech.com/img/gitServer/gitServer01.png">
 <meta property="og:image" content="https://www.lovesofttech.com/img/gitServer/gitServer02.png">
 <meta property="og:image" content="https://www.lovesofttech.com/img/gitServer/gitServer03.png">
-<meta property="og:updated_time" content="2019-09-06T14:38:23.366Z">
+<meta property="og:updated_time" content="2019-09-02T08:21:18.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7.5 借助 Gitolite 管理 Git 项目">
 <meta name="twitter:description" content="如题">
@@ -246,11 +246,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git-权限管理工具"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git 权限管理工具</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建管理项目用的组-ggit-和用户-ugit"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建管理项目用的组 ggit 和用户 ugit</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-Gitolite"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装 Gitolite</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#客户端：在管理员电脑-win10-上，生成-SSH-key-备用"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">客户端：在管理员电脑 win10 上，生成 SSH key 备用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#服务器端：用管理员-SSH-public-key-来安装配置-gitolite"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">服务器端：用管理员 SSH public key 来安装配置 gitolite</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目权限管理（配置）"><span class="post-toc-number">4.</span> <span class="post-toc-text">项目权限管理（配置）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#clone-gitolite-admin"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">clone gitolite-admin</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加其他开发小伙伴"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">添加其他开发小伙伴</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过文件-gitolite-conf-配置（管理）项目"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">通过文件 gitolite.conf 配置（管理）项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">5.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用-TortoiseGit-clone-项目的坑"><span class="post-toc-number">6.</span> <span class="post-toc-text">用 TortoiseGit clone 项目的坑</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#切换管理员"><span class="post-toc-number">7.</span> <span class="post-toc-text">切换管理员</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#切换管理员之后记"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">切换管理员之后记</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#管理员-clone-gitolite-admin-的坑"><span class="post-toc-number">8.</span> <span class="post-toc-text">管理员 clone gitolite-admin 的坑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-describe-failed-cannot-deduce-version-number"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">git describe failed; cannot deduce version number</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#要求输入密码"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">要求输入密码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入-ugit-用户密码进行尝试（看过官方文档才知道，这种尝试是多余的）"><span class="post-toc-number">8.2.1.</span> <span class="post-toc-text">输入 ugit 用户密码进行尝试（看过官方文档才知道，这种尝试是多余的）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不算解决方案的解决方案"><span class="post-toc-number">9.</span> <span class="post-toc-text">不算解决方案的解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#我的方案"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">我的方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原因分析"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">原因分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除旧用户，用新用户来配置"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">删除旧用户，用新用户来配置</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-git/centOS7GitAsServer" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -491,7 +492,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-09-06T14:38:23.366Z" itemprop="dateUpdated">2019年9月6日 22:38</time>
+    最后更新时间：<time datetime="2019-09-02T08:21:18.678Z" itemprop="dateUpdated">2019年9月2日 16:21</time>
 </span><br>
 
 
@@ -566,18 +567,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/linux/centOS7JenkinsAutoDeploy/" id="post-prev" class="post-nav-link">
+      <a href="/linux/centOSTomcatAutoDeploy/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CentOS 7.5 jenkins + Maven + Git + Tomcat 一键发布</h4>
+        <h4 class="title">CentOS 项目发布 war 包到 tomcat web 服务器，配合 Jenkins 的自动化 shell 脚本</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/linux/CentOS7Node/" id="post-next" class="post-nav-link">
+      <a href="/linux/centOS7JenkinsInstall/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CentOS 7 安装配置 Node</h4>
+        <h4 class="title">CentOS 7.5 安装配置 jenkins</h4>
       </a>
     </div>
   
@@ -622,7 +623,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

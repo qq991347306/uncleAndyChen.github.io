@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="如题">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-09T14:41:26.074Z">
+<meta property="og:updated_time" content="2019-03-19T10:09:44.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在 CentOS7 上安装 JIRA 手记">
 <meta name="twitter:description" content="如题">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">1.</span> <span class="post-toc-text">参考链接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装参考"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装参考</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#正式安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">正式安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载旧版，如果有的话"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">卸载旧版，如果有的话</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境准备"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">环境准备</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#复制破解文件（如果下载不到，请留言）"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">复制破解文件（如果下载不到，请留言）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动-jira"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">启动 jira</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#访问"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">访问</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用脚本"><span class="post-toc-number">3.</span> <span class="post-toc-text">常用脚本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#为-jira-配置域名"><span class="post-toc-number">4.</span> <span class="post-toc-text">为 jira 配置域名</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#局域网设置域名指向"><span class="post-toc-number">5.</span> <span class="post-toc-text">局域网设置域名指向</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#java-net-UnknownHostException-jira-domain-com"><span class="post-toc-number">6.</span> <span class="post-toc-text">java.net.UnknownHostException: jira.domain.com</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-jira-历史版本"><span class="post-toc-number">7.</span> <span class="post-toc-text">查看 jira 历史版本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载特定版本"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">下载特定版本</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#docker"><span class="post-toc-number">8.</span> <span class="post-toc-text">docker</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#破解版本，备份与恢复"><span class="post-toc-number">9.</span> <span class="post-toc-text">破解版本，备份与恢复</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#备份"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">备份</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#恢复"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">恢复</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改数据库配置"><span class="post-toc-number">9.2.1.</span> <span class="post-toc-text">修改数据库配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动用户，默认是-jira"><span class="post-toc-number">9.2.2.</span> <span class="post-toc-text">启动用户，默认是 jira</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-jira-日志"><span class="post-toc-number">10.</span> <span class="post-toc-text">查看 jira 日志</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-linux/centOSJIRA" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -335,7 +336,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-09T14:41:26.074Z" itemprop="dateUpdated">2019年3月9日 22:41</time>
+    最后更新时间：<time datetime="2019-03-19T10:09:44.138Z" itemprop="dateUpdated">2019年3月19日 18:09</time>
 </span><br>
 
 
@@ -466,7 +467,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

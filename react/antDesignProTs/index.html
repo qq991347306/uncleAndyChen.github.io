@@ -81,7 +81,7 @@
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://www.lovesofttech.com/img/react/antDesignProResponse01.png">
 <meta property="og:image" content="https://www.lovesofttech.com/img/react/antDesignProResponse02.png">
-<meta property="og:updated_time" content="2019-08-30T14:06:59.577Z">
+<meta property="og:updated_time" content="2019-08-30T01:57:47.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ant Design Pro v4 开发备忘，TypeScript 版本">
 <meta name="twitter:description" content="官方项目里的版本为1.0.0，实际上习惯称这个版本为 v4，相对之前的版本，改动比较大。请参考：Ant Design Pro v4 is Here">
@@ -240,11 +240,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Ant-Design-Pro-相关文档"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ant Design Pro 相关文档</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#下载区块"><span class="post-toc-number">2.</span> <span class="post-toc-text">下载区块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最佳实践来了"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">最佳实践来了</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#与后端-api-交互"><span class="post-toc-number">3.</span> <span class="post-toc-text">与后端 api 交互</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一步，设置代理"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">第一步，设置代理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第二步，前端修改"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">第二步，前端修改</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前端请求流程"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">前端请求流程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#以登录为例"><span class="post-toc-number">3.2.1.1.</span> <span class="post-toc-text">以登录为例</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第三步，前后端参数进行匹配"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">第三步，前后端参数进行匹配</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前端对请求参数做统一加工（封装）"><span class="post-toc-number">4.</span> <span class="post-toc-text">前端对请求参数做统一加工（封装）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对请求参数做处理，适配后端-api-对参数的需要"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">对请求参数做处理，适配后端 api 对参数的需要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#增加请求头参数"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">增加请求头参数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对-token-进行判断，把-token-添加到请求头-headers"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">对 token 进行判断，把 token 添加到请求头 headers</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前端对调用-api-返回的结果做统一处理"><span class="post-toc-number">5.</span> <span class="post-toc-text">前端对调用 api 返回的结果做统一处理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#把-request-拦截器的逻辑写到-request-use-中间件，让中间件把请求前和响应后的处理逻辑都做了"><span class="post-toc-number">6.</span> <span class="post-toc-text">把 request 拦截器的逻辑写到 request.use 中间件，让中间件把请求前和响应后的处理逻辑都做了</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#登录验证"><span class="post-toc-number">7.</span> <span class="post-toc-text">登录验证</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-react/antDesignProTs" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -380,7 +381,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-30T14:06:59.577Z" itemprop="dateUpdated">2019年8月30日 22:06</time>
+    最后更新时间：<time datetime="2019-08-30T01:57:47.854Z" itemprop="dateUpdated">2019年8月30日 9:57</time>
 </span><br>
 
 
@@ -511,7 +512,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

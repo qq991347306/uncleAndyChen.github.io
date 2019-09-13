@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="如题">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-27T13:35:40.197Z">
+<meta property="og:updated_time" content="2019-08-27T05:57:21.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 安装 Nginx 并设置开机自启动">
 <meta name="twitter:description" content="如题">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#down-nginx-Stable-version"><span class="post-toc-number">1.</span> <span class="post-toc-text">down nginx Stable version</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装依赖"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装依赖</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装依赖时可能会遇到冲突"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装依赖时可能会遇到冲突</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">解决</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#configure"><span class="post-toc-number">3.</span> <span class="post-toc-text">./configure</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#make"><span class="post-toc-number">4.</span> <span class="post-toc-text">make</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看安装目录"><span class="post-toc-number">5.</span> <span class="post-toc-text">查看安装目录</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改-nginx-配置文件"><span class="post-toc-number">6.</span> <span class="post-toc-text">修改 nginx 配置文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置站点"><span class="post-toc-number">7.</span> <span class="post-toc-text">配置站点</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动"><span class="post-toc-number">8.</span> <span class="post-toc-text">启动</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#检查配置是否正确"><span class="post-toc-number">9.</span> <span class="post-toc-text">检查配置是否正确</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#重启-nginx（重新加载配置文件）"><span class="post-toc-number">10.</span> <span class="post-toc-text">重启 nginx（重新加载配置文件）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#停止-nginx，快速关闭"><span class="post-toc-number">11.</span> <span class="post-toc-text">停止 nginx，快速关闭</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#停止-nginx，优雅的关闭"><span class="post-toc-number">12.</span> <span class="post-toc-text">停止 nginx，优雅的关闭</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#重启日志文件"><span class="post-toc-number">13.</span> <span class="post-toc-text">重启日志文件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开机启动"><span class="post-toc-number">14.</span> <span class="post-toc-text">开机启动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编辑服务文件"><span class="post-toc-number">14.1.</span> <span class="post-toc-text">编辑服务文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置开机启动"><span class="post-toc-number">14.2.</span> <span class="post-toc-text">设置开机启动</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">15.</span> <span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置-nginx-开机启动"><span class="post-toc-number">15.1.</span> <span class="post-toc-text">设置 nginx 开机启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#停止开机自启动"><span class="post-toc-number">15.2.</span> <span class="post-toc-text">停止开机自启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动-nginx-服务"><span class="post-toc-number">15.3.</span> <span class="post-toc-text">启动 nginx 服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看服务当前状态"><span class="post-toc-number">15.4.</span> <span class="post-toc-text">查看服务当前状态</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重新启动服务"><span class="post-toc-number">15.5.</span> <span class="post-toc-text">重新启动服务</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看所有已启动的服务"><span class="post-toc-number">15.6.</span> <span class="post-toc-text">查看所有已启动的服务</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#权限问题"><span class="post-toc-number">16.</span> <span class="post-toc-text">权限问题</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#301-302-重定向"><span class="post-toc-number">17.</span> <span class="post-toc-text">301 302 重定向</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#301"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">301</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#302"><span class="post-toc-number">17.2.</span> <span class="post-toc-text">302</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-nginx-版本"><span class="post-toc-number">18.</span> <span class="post-toc-text">查看 nginx 版本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设置超时时间"><span class="post-toc-number">19.</span> <span class="post-toc-text">设置超时时间</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置使用-IP-地址访问时的默认站点"><span class="post-toc-number">20.</span> <span class="post-toc-text">配置使用 IP 地址访问时的默认站点</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认站点只允许设置一个"><span class="post-toc-number">20.1.</span> <span class="post-toc-text">默认站点只允许设置一个</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-lnmp/centOS7Nginx" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -326,7 +327,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-27T13:35:40.197Z" itemprop="dateUpdated">2019年8月27日 21:35</time>
+    最后更新时间：<time datetime="2019-08-27T05:57:21.927Z" itemprop="dateUpdated">2019年8月27日 13:57</time>
 </span><br>
 
 
@@ -457,7 +458,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

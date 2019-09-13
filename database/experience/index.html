@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="MySQL 高频脚本备忘录，以及日常经验备忘。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-23T14:00:13.790Z">
+<meta property="og:updated_time" content="2019-08-23T02:17:40.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL 常用脚本，日常经验">
 <meta name="twitter:description" content="MySQL 高频脚本备忘录，以及日常经验备忘。">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在终端连接-MySQL"><span class="post-toc-number">1.</span> <span class="post-toc-text">在终端连接 MySQL</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结论"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">结论</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#sql-safe-updates"><span class="post-toc-number">2.</span> <span class="post-toc-text">sql_safe_updates</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#时间函数"><span class="post-toc-number">3.</span> <span class="post-toc-text">时间函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MYSQL-事件"><span class="post-toc-number">4.</span> <span class="post-toc-text">MYSQL 事件</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mysql-修改自增列的起始值"><span class="post-toc-number">5.</span> <span class="post-toc-text">mysql 修改自增列的起始值</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mysql-超时时间设置"><span class="post-toc-number">6.</span> <span class="post-toc-text">mysql 超时时间设置</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于-information-schema-库"><span class="post-toc-number">7.</span> <span class="post-toc-text">关于 information_schema 库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以下是information-schema数据库中的表"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">以下是information_schema数据库中的表</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在-information-schema-库中查看索引信息"><span class="post-toc-number">8.</span> <span class="post-toc-text">在 information_schema 库中查看索引信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在-information-schema-库中查看表信息"><span class="post-toc-number">9.</span> <span class="post-toc-text">在 information_schema 库中查看表信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查询表中数据超过-1000-行的表"><span class="post-toc-number">10.</span> <span class="post-toc-text">查询表中数据超过 1000 行的表</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查询所有没有主键的表"><span class="post-toc-number">11.</span> <span class="post-toc-text">查询所有没有主键的表</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查询-5-个最大表"><span class="post-toc-number">12.</span> <span class="post-toc-text">查询 5 个最大表</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看连接情况"><span class="post-toc-number">13.</span> <span class="post-toc-text">查看连接情况</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-MySQL-版本"><span class="post-toc-number">14.</span> <span class="post-toc-text">查看 MySQL 版本</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-mysql-现在已提供什么存储引擎"><span class="post-toc-number">15.</span> <span class="post-toc-text">查看 mysql 现在已提供什么存储引擎</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-mysql-当前默认的存储引擎"><span class="post-toc-number">16.</span> <span class="post-toc-text">查看 mysql 当前默认的存储引擎</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提升插入速度"><span class="post-toc-number">17.</span> <span class="post-toc-text">提升插入速度</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MY-SQL-insert-速度过慢的解决方法"><span class="post-toc-number">17.1.</span> <span class="post-toc-text">MY SQL insert 速度过慢的解决方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#decimal-精度"><span class="post-toc-number">18.</span> <span class="post-toc-text">decimal 精度</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#多表关联-update"><span class="post-toc-number">19.</span> <span class="post-toc-text">多表关联 update</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#密码强度"><span class="post-toc-number">20.</span> <span class="post-toc-text">密码强度</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看错误日志文件路径"><span class="post-toc-number">21.</span> <span class="post-toc-text">查看错误日志文件路径</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看表结构"><span class="post-toc-number">22.</span> <span class="post-toc-text">查看表结构</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mysqldump-导出数据"><span class="post-toc-number">23.</span> <span class="post-toc-text">mysqldump 导出数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#导入数据"><span class="post-toc-number">24.</span> <span class="post-toc-text">导入数据</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#授权"><span class="post-toc-number">25.</span> <span class="post-toc-text">授权</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#远程连接权限设置"><span class="post-toc-number">25.1.</span> <span class="post-toc-text">远程连接权限设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看-MYSQL-数据库用户远程连接权限"><span class="post-toc-number">25.2.</span> <span class="post-toc-text">查看 MYSQL 数据库用户远程连接权限</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2019-06-10-补充"><span class="post-toc-number">25.2.1.</span> <span class="post-toc-text">2019-06-10 补充</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#直接修改授权-IP"><span class="post-toc-number">25.2.2.</span> <span class="post-toc-text">直接修改授权 IP</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除授权"><span class="post-toc-number">25.3.</span> <span class="post-toc-text">删除授权</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL-获取当前年"><span class="post-toc-number">26.</span> <span class="post-toc-text">MySQL 获取当前年</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL-int-后面的数字与前导零填充"><span class="post-toc-number">27.</span> <span class="post-toc-text">MySQL int 后面的数字与前导零填充</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-database/experience" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -400,7 +401,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-23T14:00:13.790Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+    最后更新时间：<time datetime="2019-08-23T02:17:40.752Z" itemprop="dateUpdated">2019年8月23日 10:17</time>
 </span><br>
 
 
@@ -475,9 +476,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/linux/centOSJava/" id="post-prev" class="post-nav-link">
+      <a href="/linux/centOSVersion/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">在 CentOS 上安装配置 Java 运行环境</h4>
+        <h4 class="title">如何查看已安装的 CentOS 版本信息</h4>
       </a>
     </div>
   
@@ -531,7 +532,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

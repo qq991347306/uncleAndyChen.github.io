@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="作为学习的例子，只有三个页面，但是麻雀虽小，五脏俱全。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-23T14:00:13.946Z">
+<meta property="og:updated_time" content="2019-08-23T06:09:02.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《React进阶之路》第九章示例 bbs-redux-reselect 解读">
 <meta name="twitter:description" content="作为学习的例子，只有三个页面，但是麻雀虽小，五脏俱全。">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#能学到些啥？"><span class="post-toc-number">1.</span> <span class="post-toc-text">能学到些啥？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对应源码项目地址"><span class="post-toc-number">2.</span> <span class="post-toc-text">对应源码项目地址</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三个核心页面"><span class="post-toc-number">3.</span> <span class="post-toc-text">三个核心页面</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试账号"><span class="post-toc-number">4.</span> <span class="post-toc-text">测试账号</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#state-设计"><span class="post-toc-number">5.</span> <span class="post-toc-text">state 设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#state-解读"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">state 解读</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#模块设计"><span class="post-toc-number">6.</span> <span class="post-toc-text">模块设计</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运行时数据"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">运行时数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#首页，即帖子列表页面"><span class="post-toc-number">6.1.1.</span> <span class="post-toc-text">首页，即帖子列表页面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#帖子详情页面"><span class="post-toc-number">6.1.2.</span> <span class="post-toc-text">帖子详情页面</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#对应源码结构（模块设计）"><span class="post-toc-number">7.</span> <span class="post-toc-text">对应源码结构（模块设计）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#redux-模块"><span class="post-toc-number">8.</span> <span class="post-toc-text">redux 模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全局-selector-函数"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">全局 selector 函数</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#《React进阶之路》第九章示例原书代码"><span class="post-toc-number">9.</span> <span class="post-toc-text">《React进阶之路》第九章示例原书代码</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-react/reactAdvancedStageBBSUnscramble" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -347,7 +348,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-23T14:00:13.946Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+    最后更新时间：<time datetime="2019-08-23T06:09:02.598Z" itemprop="dateUpdated">2019年8月23日 14:09</time>
 </span><br>
 
 
@@ -422,9 +423,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/mybatis/index/" id="post-prev" class="post-nav-link">
+      <a href="/mybatis/MBGExtend/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">MyBatis，文章目录</h4>
+        <h4 class="title">MyBatis Generator（MBG），写扩展类，以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</h4>
       </a>
     </div>
   
@@ -478,7 +479,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

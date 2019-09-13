@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="偏重搭建开发环境，github 上有项目源代码，用关键词xunwu很容易搜索到。ElasticSearch 版本 5.6.1。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-23T14:00:13.879Z">
+<meta property="og:updated_time" content="2019-08-23T03:09:25.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录">
 <meta name="twitter:description" content="偏重搭建开发环境，github 上有项目源代码，用关键词xunwu很容易搜索到。ElasticSearch 版本 5.6.1。">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动-ElasticSearch"><span class="post-toc-number">1.</span> <span class="post-toc-text">启动 ElasticSearch</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动-kibana"><span class="post-toc-number">2.</span> <span class="post-toc-text">启动 kibana</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#通过-kibana-向-es-发送-json-请求"><span class="post-toc-number">3.</span> <span class="post-toc-text">通过 kibana 向 es 发送 json 请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以上脚本如果在-ElasticSearch-6-X-执行，会报错"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">以上脚本如果在 ElasticSearch 6.X 执行，会报错</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原因"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">原因</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#start-server"><span class="post-toc-number">4.</span> <span class="post-toc-text">start server</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动-zookeeper"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">启动 zookeeper</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#也可以用-kafka-自带的启动脚本启动-zookeeper-启动"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">也可以用 kafka 自带的启动脚本启动 zookeeper 启动</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动-kafka"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">启动 kafka</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动第二个-broker"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">启动第二个 broker</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#停止"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">停止</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看-kafka-的-topic"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">查看 kafka 的 topic</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建-topic"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">创建 topic</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#kafka-查看-Topic-的分区和副本情况"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">kafka 查看 Topic 的分区和副本情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除-topic"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">删除 topic</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试发消息"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">测试发消息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试消费消息"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">测试消费消息</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#redis"><span class="post-toc-number">5.</span> <span class="post-toc-text">redis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载-amp-编译安装"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">下载 &amp; 编译安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动-redis"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">启动 redis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开启远程连接"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">开启远程连接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#停止-1"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">停止</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看进程"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">查看进程</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#更新房源报错"><span class="post-toc-number">6.</span> <span class="post-toc-text">更新房源报错</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#house-build-已经被删除的情况"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">house_build 已经被删除的情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#modelmapper"><span class="post-toc-number">7.</span> <span class="post-toc-text">modelmapper</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#搜索实践"><span class="post-toc-number">8.</span> <span class="post-toc-text">搜索实践</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#分词"><span class="post-toc-number">9.</span> <span class="post-toc-text">分词</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#simple-分词器"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">simple 分词器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#whitespace-分词器"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">whitespace 分词器</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-java/elasticSearchProject" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -372,7 +373,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-23T14:00:13.879Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+    最后更新时间：<time datetime="2019-08-23T03:09:25.810Z" itemprop="dateUpdated">2019年8月23日 11:09</time>
 </span><br>
 
 
@@ -503,7 +504,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

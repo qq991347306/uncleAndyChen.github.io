@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="如题">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-09T14:42:59.533Z">
+<meta property="og:updated_time" content="2019-03-19T10:09:44.205Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx 反向代理、负载均衡">
 <meta name="twitter:description" content="如题">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#反向代理"><span class="post-toc-number">1.</span> <span class="post-toc-text">反向代理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#负载均衡"><span class="post-toc-number">2.</span> <span class="post-toc-text">负载均衡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#轮循（默认）"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">轮循（默认）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#IP-Hash"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">IP Hash</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#weight：默认为1，将请求平均分配给每台server。"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">weight：默认为1，将请求平均分配给每台server。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#max-fails"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">max_fails</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fail-timeout"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">fail_timeout</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#backup"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">backup</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#down"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">down</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#max-conns"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">max_conns</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#resolve"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">resolve</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开发环境可正常使用的配置示例"><span class="post-toc-number">3.</span> <span class="post-toc-text">开发环境可正常使用的配置示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#负载均衡配置"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">负载均衡配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#web-页面访问"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">web 页面访问</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#“嵌入”其它站点"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">“嵌入”其它站点</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-lnmp/nginxLoadBalancingAndProxy" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -307,7 +308,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-09T14:42:59.533Z" itemprop="dateUpdated">2019年3月9日 22:42</time>
+    最后更新时间：<time datetime="2019-03-19T10:09:44.205Z" itemprop="dateUpdated">2019年3月19日 18:09</time>
 </span><br>
 
 
@@ -382,18 +383,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/linux/centOSChkconfig/" id="post-prev" class="post-nav-link">
+      <a href="/linux/centOS7TomcatUserConfig/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CentOS下开机启动查看管理命令:chkconfig 用法</h4>
+        <h4 class="title">在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/linux/secureCRTLineWrap/" id="post-next" class="post-nav-link">
+      <a href="/database/logSlowQueries/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">secureCRT 显示不换行且完全显示</h4>
+        <h4 class="title">MySQL 慢查询</h4>
       </a>
     </div>
   
@@ -438,7 +439,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

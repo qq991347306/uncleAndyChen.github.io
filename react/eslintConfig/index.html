@@ -85,7 +85,7 @@
 <meta property="og:image" content="https://www.lovesofttech.com/img/react/reactProjectConfigESLint.png">
 <meta property="og:image" content="https://www.lovesofttech.com/img/react/reactProjectConfigESLint02.png">
 <meta property="og:image" content="https://www.lovesofttech.com/img/react/reactProjectConfigESLint03.png">
-<meta property="og:updated_time" content="2019-03-09T04:04:14.262Z">
+<meta property="og:updated_time" content="2019-03-19T10:09:44.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebStorm + React 项目，配置 ESLint">
 <meta name="twitter:description" content="如题">
@@ -244,11 +244,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ESLint-简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">ESLint 简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ESLint-哲学"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">ESLint 哲学</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#先看一下代码优化效果"><span class="post-toc-number">2.</span> <span class="post-toc-text">先看一下代码优化效果</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用-ESLint-带来的好处"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用 ESLint 带来的好处</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#统一代码风格，减少review成本和低级错误的出现"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">统一代码风格，减少review成本和低级错误的出现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#支持ES6"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">支持ES6</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#丰富的插件"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">丰富的插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置并在项目中使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置并在项目中使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用命令生成配置文件-eslintrc-yml"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">使用命令生成配置文件 .eslintrc.yml</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实践"><span class="post-toc-number">5.</span> <span class="post-toc-text">实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WebStorm-提示-Error-No-ESLint-configuration-found"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">WebStorm 提示 Error: No ESLint configuration found.</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ESLint-是否全局安装，决定-WebStorm-如何配置"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">ESLint 是否全局安装，决定 WebStorm 如何配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#eslint-plugin-react-依赖"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">eslint-plugin-react 依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#switch-缩进配置"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">switch 缩进配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#让webpack在打包文件之前，对除第三方外的js文件用eslint进行检查。"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">让webpack在打包文件之前，对除第三方外的js文件用eslint进行检查。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加插件"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">添加插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#rules-配置说明"><span class="post-toc-number">6.</span> <span class="post-toc-text">rules 配置说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置第三方规则-airbnb"><span class="post-toc-number">7.</span> <span class="post-toc-text">配置第三方规则 airbnb</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实际操作"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">实际操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装依赖"><span class="post-toc-number">7.1.1.</span> <span class="post-toc-text">安装依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改官方扩展为-airbnb"><span class="post-toc-number">7.1.2.</span> <span class="post-toc-text">修改官方扩展为 airbnb</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展阅读"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">扩展阅读</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-react/eslintConfig" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -415,7 +416,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-09T04:04:14.262Z" itemprop="dateUpdated">2019年3月9日 12:04</time>
+    最后更新时间：<time datetime="2019-03-19T10:09:44.252Z" itemprop="dateUpdated">2019年3月19日 18:09</time>
 </span><br>
 
 
@@ -490,18 +491,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/react/js/" id="post-prev" class="post-nav-link">
+      <a href="/react/prepare/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">React 技术栈学习，js 知识点</h4>
+        <h4 class="title">react 技术栈学习，相关知识储备</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/react/redux/" id="post-next" class="post-nav-link">
+      <a href="/react/debug/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">React 技术栈学习，redux 知识点</h4>
+        <h4 class="title">React 项目调试技巧</h4>
       </a>
     </div>
   
@@ -546,7 +547,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

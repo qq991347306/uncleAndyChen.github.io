@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="如题">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-03-09T14:31:15.782Z">
+<meta property="og:updated_time" content="2019-03-19T10:09:44.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat 占用内存以及 jvm 参数设置">
 <meta name="twitter:description" content="如题">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#linux-ps-命令的结果中-VSZ，RSS，STAT-的含义和大小"><span class="post-toc-number">1.</span> <span class="post-toc-text">linux ps 命令的结果中 VSZ，RSS，STAT 的含义和大小</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-utomcat-运行的-java-程序"><span class="post-toc-number">2.</span> <span class="post-toc-text">查看 utomcat 运行的 java 程序</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看-utomcat-运行的-java-程序，同时程序目录带-pre"><span class="post-toc-number">3.</span> <span class="post-toc-text">查看 utomcat 运行的 java 程序，同时程序目录带 pre</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看更多参数"><span class="post-toc-number">4.</span> <span class="post-toc-text">查看更多参数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#只看需要了解的参数，可调整参数列表"><span class="post-toc-number">5.</span> <span class="post-toc-text">只看需要了解的参数，可调整参数列表</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#内存的整体使用情况"><span class="post-toc-number">6.</span> <span class="post-toc-text">内存的整体使用情况</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#top-命令查看内存使用情况"><span class="post-toc-number">7.</span> <span class="post-toc-text">top 命令查看内存使用情况</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基于-tomcat-的调优"><span class="post-toc-number">8.</span> <span class="post-toc-text">基于 tomcat 的调优</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#性能的提升，主要从以下几个方面入手"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">性能的提升，主要从以下几个方面入手</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#tomcat-连接数，线程数，缓存，修改server-xml"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">tomcat 连接数，线程数，缓存，修改server.xml</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#OS-specific-support-var-must-be-set-to-either-true-or-false"><span class="post-toc-number">9.</span> <span class="post-toc-text">OS specific support.  $var must be set to either true or false.</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#相关内容参考"><span class="post-toc-number">10.</span> <span class="post-toc-text">相关内容参考</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-java/javaMemory" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -384,7 +385,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-03-09T14:31:15.782Z" itemprop="dateUpdated">2019年3月9日 22:31</time>
+    最后更新时间：<time datetime="2019-03-19T10:09:44.023Z" itemprop="dateUpdated">2019年3月19日 18:09</time>
 </span><br>
 
 
@@ -459,18 +460,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/linux/centOSTomcatConfig/" id="post-prev" class="post-nav-link">
+      <a href="/general/JIRAExperience/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Tomcat 配置调优</h4>
+        <h4 class="title">JIRA 精选插件</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/git/gitMergeToRemote/" id="post-next" class="post-nav-link">
+      <a href="/linux/centOSTomcatConfig/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">本地仓库代码，定时同步更新至远程仓库</h4>
+        <h4 class="title">Tomcat 配置调优</h4>
       </a>
     </div>
   
@@ -515,7 +516,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>

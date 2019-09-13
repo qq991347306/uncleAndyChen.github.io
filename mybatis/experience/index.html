@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="只是遇到了才记录一下，主要是备忘。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-23T14:00:13.924Z">
+<meta property="og:updated_time" content="2019-08-23T06:31:36.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis 普通知识点记录">
 <meta name="twitter:description" content="只是遇到了才记录一下，主要是备忘。">
@@ -237,11 +237,12 @@
     
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#与-的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">$ 与 # 的区别</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Table-Configuration-apiCallLog-matched-more-than-one-table"><span class="post-toc-number">2.</span> <span class="post-toc-text">Table Configuration apiCallLog matched more than one table</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MyBatis-查询某一整形字段，如果没有记录，返回什么？"><span class="post-toc-number">3.</span> <span class="post-toc-text">MyBatis 查询某一整形字段，如果没有记录，返回什么？</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mapper-xml-配置的包名如果不对，会提示相关的类找不到"><span class="post-toc-number">4.</span> <span class="post-toc-text">mapper.xml 配置的包名如果不对，会提示相关的类找不到</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#将-xml-文件放到源码（src）下"><span class="post-toc-number">5.</span> <span class="post-toc-text">将 xml 文件放到源码（src）下</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">解决</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#还有以下可能的情况导致-not-found-的异常"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">还有以下可能的情况导致 not found 的异常</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#后台任务，在查询相关任务表时，需要查询满足条件的限定行数而不是满足条件的全部记录"><span class="post-toc-number">6.</span> <span class="post-toc-text">后台任务，在查询相关任务表时，需要查询满足条件的限定行数而不是满足条件的全部记录</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MyBatis-xml-文件里的条件判断"><span class="post-toc-number">7.</span> <span class="post-toc-text">MyBatis xml 文件里的条件判断</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MyBatis-if-test-验证的时候发生-There-is-no-getter-for-property-named-39-parentID-39-in-39-class-java-lang-Integer-39"><span class="post-toc-number">8.</span> <span class="post-toc-text">MyBatis if test=验证的时候发生 There is no getter for property named &#39;parentID&#39; in &#39;class java.lang.Integer&#39;</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mybatis-插件开发"><span class="post-toc-number">9.</span> <span class="post-toc-text">mybatis 插件开发</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mybatis-日志级别"><span class="post-toc-number">10.</span> <span class="post-toc-text">mybatis 日志级别</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决mybatis动态传入order-by-参数的时候不生效的问题"><span class="post-toc-number">11.</span> <span class="post-toc-text">解决mybatis动态传入order by 参数的时候不生效的问题</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#PageHelper"><span class="post-toc-number">12.</span> <span class="post-toc-text">PageHelper</span></a></li></ol>
         </nav>
     </aside>
     
+
 <article id="post-mybatis/experience" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -312,7 +313,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-23T14:00:13.924Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+    最后更新时间：<time datetime="2019-08-23T06:31:36.490Z" itemprop="dateUpdated">2019年8月23日 14:31</time>
 </span><br>
 
 
@@ -387,18 +388,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/mybatis/MBGConfig/" id="post-prev" class="post-nav-link">
+      <a href="/general/centOS7HexoBlog/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">MBG 生成的 mapper 支持写入记录后返回主键值的配置</h4>
+        <h4 class="title">CentOS 7.5 通过源码自动发布 hexo 博客</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/general/centOSSvnProjectManage/" id="post-next" class="post-nav-link">
+      <a href="/mybatis/MBGConfig/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">svn 在 CentOS6 安装以及项目管理</h4>
+        <h4 class="title">MBG 生成的 mapper 支持写入记录后返回主键值的配置</h4>
       </a>
     </div>
   
@@ -443,7 +444,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.7k</span>
+                <span class="post-count">本站文章累计字数：271.8k</span>
             
             </p>
         <p></p>
