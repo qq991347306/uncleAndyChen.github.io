@@ -87,6 +87,7 @@
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script>window.lazyScripts=[]</script>
 </head>
@@ -122,7 +123,7 @@
             <li class="waves-block waves-effect">
               <a href="/classifyIndex">
                 <i class="icon icon-th-list"></i>
-                分类列表
+                文章分类
               </a>
             </li>
         
@@ -143,7 +144,7 @@
             <li class="waves-block waves-effect">
               <a href="https://gitee.com/uncleAndyChen" target="_blank">
                 <i class="icon icon-git"></i>
-                码云　个人主页
+                gitee 个人主页
               </a>
             </li>
         
@@ -190,10 +191,92 @@
     <main id="main">
         <header class="top-header" id="header">
     <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+
+        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+            <ul class="nav navbar-nav navbar-right" id="navMenuTop">
+                <li>
+                    <a href="/">主页</a>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/classifyIndex" title="本博客的文章分类列表">文章分类</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/home" title="本博客的所有文章列表">文章列表</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/java/index" title="Java 开发，文章目录">Java</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/mybatis/index" title="MyBatis，文章目录">MyBatis</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/database/index" title="日常开发中有关 MySQL 的一些经验总结">MySQL</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/react/index" title="React 技术栈（全家桶）学习心得分享，文章目录">React</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/linux/index" title="CentOS/linux，文章目录">CentOS/linux</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/lnmp/index" title="Linux + Nginx + MySQL + PHP 文章目录">LNMP</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/git/index" title="git 文章目录">git</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/windows/index" title="windows 环境下的日常工作，文章目录">windows</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://github.com/uncleAndyChen" target="_blank" title="欢迎访问我的 github">github</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/aboutMe">关于我</a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+
         <div class="flex-col header-title ellipsis">归档</div>
         
-        <div class="search-wrap" id="search-wrap">
+        <div class="search-wrap" id="search-wrap" style="z-index: 2;">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
@@ -204,9 +287,9 @@
         </div>
         
         
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare" style="z-index: 3;">
+                <i class="icon icon-lg icon-share-alt"></i>
+            </a>
         
     </div>
 </header>
@@ -230,40 +313,6 @@
             
             <h3 class="archive-separator">March, 2018</h3>
             <div class="waterfall">
-    
-
-        <div class="waterfall-item">
-  <article class="article-card archive-article">
-    <div class="post-meta">
-      <time class="post-time" title="2018年03月03日 0:00" datetime="2018-03-02T16:00:00.000Z" itemprop="datePublished">Mar 3</time>
-
-      
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
-
-
-
-    </div>
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/java/javaReplace/">java 字符串的替换 replace、replaceAll、replaceFirst 的区别</a>
-    </h3>
-  
-
-
-
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </div>
-    
-  </article>
-</div>
-
     
 
         <div class="waterfall-item">
@@ -371,6 +420,40 @@
         <div class="waterfall-item">
   <article class="article-card archive-article">
     <div class="post-meta">
+      <time class="post-time" title="2018年03月03日 0:00" datetime="2018-03-02T16:00:00.000Z" itemprop="datePublished">Mar 3</time>
+
+      
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/java/">java</a></li></ul>
+
+
+
+    </div>
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/java/javaReplace/">java 字符串的替换 replace、replaceAll、replaceFirst 的区别</a>
+    </h3>
+  
+
+
+
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </div>
+    
+  </article>
+</div>
+
+    
+
+        <div class="waterfall-item">
+  <article class="article-card archive-article">
+    <div class="post-meta">
       <time class="post-time" title="2018年03月02日 0:00" datetime="2018-03-01T16:00:00.000Z" itemprop="datePublished">Mar 2</time>
 
       
@@ -466,7 +549,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.8k</span>
+                <span class="post-count">本站文章累计字数：272.1k</span>
             
             </p>
         <p></p>

@@ -87,6 +87,7 @@
     
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script>window.lazyScripts=[]</script>
 </head>
@@ -122,7 +123,7 @@
             <li class="waves-block waves-effect">
               <a href="/classifyIndex">
                 <i class="icon icon-th-list"></i>
-                分类列表
+                文章分类
               </a>
             </li>
         
@@ -143,7 +144,7 @@
             <li class="waves-block waves-effect">
               <a href="https://gitee.com/uncleAndyChen" target="_blank">
                 <i class="icon icon-git"></i>
-                码云　个人主页
+                gitee 个人主页
               </a>
             </li>
         
@@ -190,10 +191,92 @@
     <main id="main">
         <header class="top-header" id="header">
     <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+
+        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+            <ul class="nav navbar-nav navbar-right" id="navMenuTop">
+                <li>
+                    <a href="/">主页</a>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/classifyIndex" title="本博客的文章分类列表">文章分类</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/home" title="本博客的所有文章列表">文章列表</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/java/index" title="Java 开发，文章目录">Java</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/mybatis/index" title="MyBatis，文章目录">MyBatis</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/database/index" title="日常开发中有关 MySQL 的一些经验总结">MySQL</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/react/index" title="React 技术栈（全家桶）学习心得分享，文章目录">React</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/linux/index" title="CentOS/linux，文章目录">CentOS/linux</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/lnmp/index" title="Linux + Nginx + MySQL + PHP 文章目录">LNMP</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/git/index" title="git 文章目录">git</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/windows/index" title="windows 环境下的日常工作，文章目录">windows</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://github.com/uncleAndyChen" target="_blank" title="欢迎访问我的 github">github</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/aboutMe">关于我</a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+
         <div class="flex-col header-title ellipsis">标签: linux 内存占用</div>
         
-        <div class="search-wrap" id="search-wrap">
+        <div class="search-wrap" id="search-wrap" style="z-index: 2;">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
@@ -204,9 +287,9 @@
         </div>
         
         
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare" style="z-index: 3;">
+                <i class="icon icon-lg icon-share-alt"></i>
+            </a>
         
     </div>
 </header>
@@ -258,39 +341,39 @@
 
          
 
-            <a href="/tags/frontend/" style="-webkit-order:12;order:12" class="tags-list-item waves-effect waves-button waves-light">frontend</a>
+            <a href="/tags/RN/" style="-webkit-order:12;order:12" class="tags-list-item waves-effect waves-button waves-light">RN</a>
 
          
 
-            <a href="/tags/RN/" style="-webkit-order:13;order:13" class="tags-list-item waves-effect waves-button waves-light">RN</a>
+            <a href="/tags/Node/" style="-webkit-order:13;order:13" class="tags-list-item waves-effect waves-button waves-light">Node</a>
 
          
 
-            <a href="/tags/Node/" style="-webkit-order:14;order:14" class="tags-list-item waves-effect waves-button waves-light">Node</a>
+            <a href="/tags/frontend/" style="-webkit-order:14;order:14" class="tags-list-item waves-effect waves-button waves-light">frontend</a>
 
          
 
-            <a href="/tags/js/" style="-webkit-order:15;order:15" class="tags-list-item waves-effect waves-button waves-light">js</a>
+            <a href="/tags/ES6/" style="-webkit-order:15;order:15" class="tags-list-item waves-effect waves-button waves-light">ES6</a>
 
          
 
-            <a href="/tags/hexo/" style="-webkit-order:16;order:16" class="tags-list-item waves-effect waves-button waves-light">hexo</a>
+            <a href="/tags/js/" style="-webkit-order:16;order:16" class="tags-list-item waves-effect waves-button waves-light">js</a>
 
          
 
-            <a href="/tags/svn/" style="-webkit-order:17;order:17" class="tags-list-item waves-effect waves-button waves-light">svn</a>
+            <a href="/tags/hexo/" style="-webkit-order:17;order:17" class="tags-list-item waves-effect waves-button waves-light">hexo</a>
 
          
 
-            <a href="/tags/ES6/" style="-webkit-order:18;order:18" class="tags-list-item waves-effect waves-button waves-light">ES6</a>
+            <a href="/tags/svn/" style="-webkit-order:18;order:18" class="tags-list-item waves-effect waves-button waves-light">svn</a>
 
          
 
-            <a href="/tags/Byte/" style="-webkit-order:19;order:19" class="tags-list-item waves-effect waves-button waves-light">Byte</a>
+            <a href="/tags/github/" style="-webkit-order:19;order:19" class="tags-list-item waves-effect waves-button waves-light">github</a>
 
          
 
-            <a href="/tags/github/" style="-webkit-order:20;order:20" class="tags-list-item waves-effect waves-button waves-light">github</a>
+            <a href="/tags/Byte/" style="-webkit-order:20;order:20" class="tags-list-item waves-effect waves-button waves-light">Byte</a>
 
          
 
@@ -298,15 +381,15 @@
 
          
 
-            <a href="/tags/正则表达式/" style="-webkit-order:22;order:22" class="tags-list-item waves-effect waves-button waves-light">正则表达式</a>
+            <a href="/tags/MarkDown/" style="-webkit-order:22;order:22" class="tags-list-item waves-effect waves-button waves-light">MarkDown</a>
 
          
 
-            <a href="/tags/MarkDown/" style="-webkit-order:23;order:23" class="tags-list-item waves-effect waves-button waves-light">MarkDown</a>
+            <a href="/tags/PowerDesigner/" style="-webkit-order:23;order:23" class="tags-list-item waves-effect waves-button waves-light">PowerDesigner</a>
 
          
 
-            <a href="/tags/PowerDesigner/" style="-webkit-order:24;order:24" class="tags-list-item waves-effect waves-button waves-light">PowerDesigner</a>
+            <a href="/tags/正则表达式/" style="-webkit-order:24;order:24" class="tags-list-item waves-effect waves-button waves-light">正则表达式</a>
 
          
 
@@ -326,15 +409,15 @@
 
          
 
-            <a href="/tags/github-pages/" style="-webkit-order:29;order:29" class="tags-list-item waves-effect waves-button waves-light">github pages</a>
+            <a href="/tags/team/" style="-webkit-order:29;order:29" class="tags-list-item waves-effect waves-button waves-light">team</a>
 
          
 
-            <a href="/tags/绑定域名/" style="-webkit-order:30;order:30" class="tags-list-item waves-effect waves-button waves-light">绑定域名</a>
+            <a href="/tags/github-pages/" style="-webkit-order:30;order:30" class="tags-list-item waves-effect waves-button waves-light">github pages</a>
 
          
 
-            <a href="/tags/team/" style="-webkit-order:31;order:31" class="tags-list-item waves-effect waves-button waves-light">team</a>
+            <a href="/tags/绑定域名/" style="-webkit-order:31;order:31" class="tags-list-item waves-effect waves-button waves-light">绑定域名</a>
 
          
 
@@ -342,127 +425,127 @@
 
          
 
-            <a href="/tags/java/" style="-webkit-order:33;order:33" class="tags-list-item waves-effect waves-button waves-light">java</a>
+            <a href="/tags/求职/" style="-webkit-order:33;order:33" class="tags-list-item waves-effect waves-button waves-light">求职</a>
 
          
 
-            <a href="/tags/代码规约/" style="-webkit-order:34;order:34" class="tags-list-item waves-effect waves-button waves-light">代码规约</a>
+            <a href="/tags/招聘/" style="-webkit-order:34;order:34" class="tags-list-item waves-effect waves-button waves-light">招聘</a>
 
          
 
-            <a href="/tags/JavaMail/" style="-webkit-order:35;order:35" class="tags-list-item waves-effect waves-button waves-light">JavaMail</a>
+            <a href="/tags/job/" style="-webkit-order:35;order:35" class="tags-list-item waves-effect waves-button waves-light">job</a>
 
          
 
-            <a href="/tags/spring/" style="-webkit-order:36;order:36" class="tags-list-item waves-effect waves-button waves-light">spring</a>
+            <a href="/tags/提问/" style="-webkit-order:36;order:36" class="tags-list-item waves-effect waves-button waves-light">提问</a>
 
          
 
-            <a href="/tags/lombok/" style="-webkit-order:37;order:37" class="tags-list-item waves-effect waves-button waves-light">lombok</a>
+            <a href="/tags/java/" style="-webkit-order:37;order:37" class="tags-list-item waves-effect waves-button waves-light">java</a>
 
          
 
-            <a href="/tags/404/" style="-webkit-order:38;order:38" class="tags-list-item waves-effect waves-button waves-light">404</a>
+            <a href="/tags/经验/" style="-webkit-order:38;order:38" class="tags-list-item waves-effect waves-button waves-light">经验</a>
 
          
 
-            <a href="/tags/502/" style="-webkit-order:39;order:39" class="tags-list-item waves-effect waves-button waves-light">502</a>
+            <a href="/tags/代码规约/" style="-webkit-order:39;order:39" class="tags-list-item waves-effect waves-button waves-light">代码规约</a>
 
          
 
-            <a href="/tags/tomcat/" style="-webkit-order:40;order:40" class="tags-list-item waves-effect waves-button waves-light">tomcat</a>
+            <a href="/tags/七个习惯/" style="-webkit-order:40;order:40" class="tags-list-item waves-effect waves-button waves-light">七个习惯</a>
 
          
 
-            <a href="/tags/scp/" style="-webkit-order:41;order:41" class="tags-list-item waves-effect waves-button waves-light">scp</a>
+            <a href="/tags/JavaMail/" style="-webkit-order:41;order:41" class="tags-list-item waves-effect waves-button waves-light">JavaMail</a>
 
          
 
-            <a href="/tags/ssh/" style="-webkit-order:42;order:42" class="tags-list-item waves-effect waves-button waves-light">ssh</a>
+            <a href="/tags/spring/" style="-webkit-order:42;order:42" class="tags-list-item waves-effect waves-button waves-light">spring</a>
 
          
 
-            <a href="/tags/port/" style="-webkit-order:43;order:43" class="tags-list-item waves-effect waves-button waves-light">port</a>
+            <a href="/tags/lombok/" style="-webkit-order:43;order:43" class="tags-list-item waves-effect waves-button waves-light">lombok</a>
 
          
 
-            <a href="/tags/schemas/" style="-webkit-order:44;order:44" class="tags-list-item waves-effect waves-button waves-light">schemas</a>
+            <a href="/tags/404/" style="-webkit-order:44;order:44" class="tags-list-item waves-effect waves-button waves-light">404</a>
 
          
 
-            <a href="/tags/ElasticSearch/" style="-webkit-order:45;order:45" class="tags-list-item waves-effect waves-button waves-light">ElasticSearch</a>
+            <a href="/tags/502/" style="-webkit-order:45;order:45" class="tags-list-item waves-effect waves-button waves-light">502</a>
 
          
 
-            <a href="/tags/docker/" style="-webkit-order:46;order:46" class="tags-list-item waves-effect waves-button waves-light">docker</a>
+            <a href="/tags/tomcat/" style="-webkit-order:46;order:46" class="tags-list-item waves-effect waves-button waves-light">tomcat</a>
 
          
 
-            <a href="/tags/Maven/" style="-webkit-order:47;order:47" class="tags-list-item waves-effect waves-button waves-light">Maven</a>
+            <a href="/tags/port/" style="-webkit-order:47;order:47" class="tags-list-item waves-effect waves-button waves-light">port</a>
 
          
 
-            <a href="/tags/jenkins/" style="-webkit-order:48;order:48" class="tags-list-item waves-effect waves-button waves-light">jenkins</a>
+            <a href="/tags/schemas/" style="-webkit-order:48;order:48" class="tags-list-item waves-effect waves-button waves-light">schemas</a>
 
          
 
-            <a href="/tags/smb/" style="-webkit-order:49;order:49" class="tags-list-item waves-effect waves-button waves-light">smb</a>
+            <a href="/tags/scp/" style="-webkit-order:49;order:49" class="tags-list-item waves-effect waves-button waves-light">scp</a>
 
          
 
-            <a href="/tags/font/" style="-webkit-order:50;order:50" class="tags-list-item waves-effect waves-button waves-light">font</a>
+            <a href="/tags/ssh/" style="-webkit-order:50;order:50" class="tags-list-item waves-effect waves-button waves-light">ssh</a>
 
          
 
-            <a href="/tags/vsftpd/" style="-webkit-order:51;order:51" class="tags-list-item waves-effect waves-button waves-light">vsftpd</a>
+            <a href="/tags/ElasticSearch/" style="-webkit-order:51;order:51" class="tags-list-item waves-effect waves-button waves-light">ElasticSearch</a>
 
          
 
-            <a href="/tags/curl/" style="-webkit-order:52;order:52" class="tags-list-item waves-effect waves-button waves-light">curl</a>
+            <a href="/tags/font/" style="-webkit-order:52;order:52" class="tags-list-item waves-effect waves-button waves-light">font</a>
 
          
 
-            <a href="/tags/rpm/" style="-webkit-order:53;order:53" class="tags-list-item waves-effect waves-button waves-light">rpm</a>
+            <a href="/tags/docker/" style="-webkit-order:53;order:53" class="tags-list-item waves-effect waves-button waves-light">docker</a>
 
          
 
-            <a href="/tags/linux/" style="-webkit-order:54;order:54" class="tags-list-item waves-effect waves-button waves-light">linux</a>
+            <a href="/tags/Maven/" style="-webkit-order:54;order:54" class="tags-list-item waves-effect waves-button waves-light">Maven</a>
 
          
 
-            <a href="/tags/zip/" style="-webkit-order:55;order:55" class="tags-list-item waves-effect waves-button waves-light">zip</a>
+            <a href="/tags/jenkins/" style="-webkit-order:55;order:55" class="tags-list-item waves-effect waves-button waves-light">jenkins</a>
 
          
 
-            <a href="/tags/SecureCRT/" style="-webkit-order:56;order:56" class="tags-list-item waves-effect waves-button waves-light">SecureCRT</a>
+            <a href="/tags/smb/" style="-webkit-order:56;order:56" class="tags-list-item waves-effect waves-button waves-light">smb</a>
 
          
 
-            <a href="/tags/shell/" style="-webkit-order:57;order:57" class="tags-list-item waves-effect waves-button waves-light">shell</a>
+            <a href="/tags/vsftpd/" style="-webkit-order:57;order:57" class="tags-list-item waves-effect waves-button waves-light">vsftpd</a>
 
          
 
-            <a href="/tags/job/" style="-webkit-order:58;order:58" class="tags-list-item waves-effect waves-button waves-light">job</a>
+            <a href="/tags/curl/" style="-webkit-order:58;order:58" class="tags-list-item waves-effect waves-button waves-light">curl</a>
 
          
 
-            <a href="/tags/求职/" style="-webkit-order:59;order:59" class="tags-list-item waves-effect waves-button waves-light">求职</a>
+            <a href="/tags/rpm/" style="-webkit-order:59;order:59" class="tags-list-item waves-effect waves-button waves-light">rpm</a>
 
          
 
-            <a href="/tags/招聘/" style="-webkit-order:60;order:60" class="tags-list-item waves-effect waves-button waves-light">招聘</a>
+            <a href="/tags/zip/" style="-webkit-order:60;order:60" class="tags-list-item waves-effect waves-button waves-light">zip</a>
 
          
 
-            <a href="/tags/提问/" style="-webkit-order:61;order:61" class="tags-list-item waves-effect waves-button waves-light">提问</a>
+            <a href="/tags/linux/" style="-webkit-order:61;order:61" class="tags-list-item waves-effect waves-button waves-light">linux</a>
 
          
 
-            <a href="/tags/经验/" style="-webkit-order:62;order:62" class="tags-list-item waves-effect waves-button waves-light">经验</a>
+            <a href="/tags/SecureCRT/" style="-webkit-order:62;order:62" class="tags-list-item waves-effect waves-button waves-light">SecureCRT</a>
 
          
 
-            <a href="/tags/七个习惯/" style="-webkit-order:63;order:63" class="tags-list-item waves-effect waves-button waves-light">七个习惯</a>
+            <a href="/tags/shell/" style="-webkit-order:63;order:63" class="tags-list-item waves-effect waves-button waves-light">shell</a>
 
          
 
@@ -494,31 +577,31 @@
 
          
 
-            <a href="/tags/MyBatis/" style="-webkit-order:71;order:71" class="tags-list-item waves-effect waves-button waves-light">MyBatis</a>
+            <a href="/tags/react/" style="-webkit-order:71;order:71" class="tags-list-item waves-effect waves-button waves-light">react</a>
 
          
 
-            <a href="/tags/react/" style="-webkit-order:72;order:72" class="tags-list-item waves-effect waves-button waves-light">react</a>
+            <a href="/tags/Ant-Design-Pro/" style="-webkit-order:72;order:72" class="tags-list-item waves-effect waves-button waves-light">Ant Design Pro</a>
 
          
 
-            <a href="/tags/Ant-Design-Pro/" style="-webkit-order:73;order:73" class="tags-list-item waves-effect waves-button waves-light">Ant Design Pro</a>
+            <a href="/tags/excel-文件流下载/" style="-webkit-order:73;order:73" class="tags-list-item waves-effect waves-button waves-light">excel 文件流下载</a>
 
          
 
-            <a href="/tags/excel-文件流下载/" style="-webkit-order:74;order:74" class="tags-list-item waves-effect waves-button waves-light">excel 文件流下载</a>
+            <a href="/tags/WebStorm/" style="-webkit-order:74;order:74" class="tags-list-item waves-effect waves-button waves-light">WebStorm</a>
 
          
 
-            <a href="/tags/WebStorm/" style="-webkit-order:75;order:75" class="tags-list-item waves-effect waves-button waves-light">WebStorm</a>
+            <a href="/tags/redux/" style="-webkit-order:75;order:75" class="tags-list-item waves-effect waves-button waves-light">redux</a>
 
          
 
-            <a href="/tags/redux/" style="-webkit-order:76;order:76" class="tags-list-item waves-effect waves-button waves-light">redux</a>
+            <a href="/tags/python/" style="-webkit-order:76;order:76" class="tags-list-item waves-effect waves-button waves-light">python</a>
 
          
 
-            <a href="/tags/python/" style="-webkit-order:77;order:77" class="tags-list-item waves-effect waves-button waves-light">python</a>
+            <a href="/tags/MyBatis/" style="-webkit-order:77;order:77" class="tags-list-item waves-effect waves-button waves-light">MyBatis</a>
 
          
 
@@ -534,11 +617,11 @@
 
          
 
-            <a href="/tags/JMeter/" style="-webkit-order:81;order:81" class="tags-list-item waves-effect waves-button waves-light">JMeter</a>
+            <a href="/tags/selenium/" style="-webkit-order:81;order:81" class="tags-list-item waves-effect waves-button waves-light">selenium</a>
 
          
 
-            <a href="/tags/selenium/" style="-webkit-order:82;order:82" class="tags-list-item waves-effect waves-button waves-light">selenium</a>
+            <a href="/tags/JMeter/" style="-webkit-order:82;order:82" class="tags-list-item waves-effect waves-button waves-light">JMeter</a>
 
          
 
@@ -558,23 +641,23 @@
 
          
 
-            <a href="/tags/Windows/" style="-webkit-order:87;order:87" class="tags-list-item waves-effect waves-button waves-light">Windows</a>
+            <a href="/tags/用户凭据/" style="-webkit-order:87;order:87" class="tags-list-item waves-effect waves-button waves-light">用户凭据</a>
 
          
 
-            <a href="/tags/服务/" style="-webkit-order:88;order:88" class="tags-list-item waves-effect waves-button waves-light">服务</a>
+            <a href="/tags/Windows/" style="-webkit-order:88;order:88" class="tags-list-item waves-effect waves-button waves-light">Windows</a>
 
          
 
-            <a href="/tags/memcached/" style="-webkit-order:89;order:89" class="tags-list-item waves-effect waves-button waves-light">memcached</a>
+            <a href="/tags/服务/" style="-webkit-order:89;order:89" class="tags-list-item waves-effect waves-button waves-light">服务</a>
 
          
 
-            <a href="/tags/用户凭据/" style="-webkit-order:90;order:90" class="tags-list-item waves-effect waves-button waves-light">用户凭据</a>
+            <a href="/tags/EF6/" style="-webkit-order:90;order:90" class="tags-list-item waves-effect waves-button waves-light">EF6</a>
 
          
 
-            <a href="/tags/EF6/" style="-webkit-order:91;order:91" class="tags-list-item waves-effect waves-button waves-light">EF6</a>
+            <a href="/tags/memcached/" style="-webkit-order:91;order:91" class="tags-list-item waves-effect waves-button waves-light">memcached</a>
 
          
 
@@ -725,7 +808,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：271.8k</span>
+                <span class="post-count">本站文章累计字数：272.1k</span>
             
             </p>
         <p></p>

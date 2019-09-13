@@ -394,28 +394,6 @@
   </entry>
   
   <entry>
-    <title>redis 文章目录</title>
-    <link href="https://www.lovesofttech.com/redis/index/"/>
-    <id>https://www.lovesofttech.com/redis/index/</id>
-    <published>2019-05-29T16:00:00.000Z</published>
-    <updated>2019-06-12T14:36:36.868Z</updated>
-    
-    <content type="html"><![CDATA[<p>有关 redis 的使用经验。<br><a id="more"></a></p><ul><li><a href="/redis/general">redis5.0.5 在 CentOS7 上的安装和使用</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;有关 redis 的使用经验。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="redis" scheme="https://www.lovesofttech.com/categories/redis/"/>
-    
-    
-      <category term="redis" scheme="https://www.lovesofttech.com/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
     <title>redis5.0.5 在 CentOS7 上的安装和使用</title>
     <link href="https://www.lovesofttech.com/redis/general/"/>
     <id>https://www.lovesofttech.com/redis/general/</id>
@@ -427,6 +405,28 @@
     <summary type="html">
     
       &lt;p&gt;介绍安装以及简单的配置。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="redis" scheme="https://www.lovesofttech.com/categories/redis/"/>
+    
+    
+      <category term="redis" scheme="https://www.lovesofttech.com/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis 文章目录</title>
+    <link href="https://www.lovesofttech.com/redis/index/"/>
+    <id>https://www.lovesofttech.com/redis/index/</id>
+    <published>2019-05-29T16:00:00.000Z</published>
+    <updated>2019-06-12T14:36:36.868Z</updated>
+    
+    <content type="html"><![CDATA[<p>有关 redis 的使用经验。<br><a id="more"></a></p><ul><li><a href="/redis/general">redis5.0.5 在 CentOS7 上的安装和使用</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有关 redis 的使用经验。&lt;br&gt;
     
     </summary>
     

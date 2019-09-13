@@ -4,6 +4,7 @@
         even = G.BLOG.even,
         $ = G.BLOG.$,
         searchIco = $('#search'),
+        navMenuTop = $('#navMenuTop'),
         searchWrap = $('#search-wrap'),
         keyInput = $('#key'),
         back = $('#back'),
@@ -122,11 +123,13 @@
         searchWrap.classList.toggle('in');
         keyInput.value = '';
         searchWrap.classList.contains('in') ? keyInput.focus() : keyInput.blur();
+        navMenuTop.classList.toggle('navbar-right-search');
     });
 
     back.addEventListener(even, function () {
         searchWrap.classList.remove('in');
         Control.hide();
+        navMenuTop.classList.remove('navbar-right-search');
     });
 
     document.addEventListener(even, function (e) {
