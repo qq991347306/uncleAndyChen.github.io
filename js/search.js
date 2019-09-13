@@ -123,13 +123,13 @@
         searchWrap.classList.toggle('in');
         keyInput.value = '';
         searchWrap.classList.contains('in') ? keyInput.focus() : keyInput.blur();
-        navMenuTop.classList.toggle('navbar-right-search');
+        navMenuTop.classList.toggle('search');
     });
 
     back.addEventListener(even, function () {
         searchWrap.classList.remove('in');
         Control.hide();
-        navMenuTop.classList.remove('navbar-right-search');
+        navMenuTop.classList.remove('search');
     });
 
     document.addEventListener(even, function (e) {
