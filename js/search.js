@@ -123,16 +123,22 @@
         searchWrap.classList.toggle('in');
         keyInput.value = '';
         searchWrap.classList.contains('in') ? keyInput.focus() : keyInput.blur();
-        navMenuTop.classList.toggle('search');
+        //navMenuTop.classList.replace('navbar-right', 'navbar-right-search');
+        //navMenuTop.classList.toggle('search');
+        navMenuTop.classList.add('search');
     });
 
     back.addEventListener(even, function () {
         searchWrap.classList.remove('in');
         Control.hide();
-        navMenuTop.classList.remove('search');
     });
 
     document.addEventListener(even, function (e) {
+        if (!searchWrap.classList.contains('in')) {
+            //navMenuTop.classList.replace('navbar-right-search', 'navbar-right');
+            navMenuTop.classList.remove('search');
+        }
+
         if (e.target.id !== 'key' && even === 'click') {
             Control.hide();
         }

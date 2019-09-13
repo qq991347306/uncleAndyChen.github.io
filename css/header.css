@@ -33,6 +33,11 @@
     margin-right: 110px;
 }
 
+.navbar-right-search {
+    float: right !important;
+    margin-right: 410px;
+}
+
 .search {
     margin-right: 410px;
 }
