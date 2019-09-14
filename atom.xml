@@ -320,32 +320,6 @@
   </entry>
   
   <entry>
-    <title>linux 工作中的一些小经验</title>
-    <link href="https://www.lovesofttech.com/linux/experience/"/>
-    <id>https://www.lovesofttech.com/linux/experience/</id>
-    <published>2019-06-22T16:00:00.000Z</published>
-    <updated>2019-08-22T13:36:38.653Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用 linux 的小经验，零散的知识点。<br><a id="more"></a></p><h1 id="CentOS设置系统时间与网络时间同步"><a href="#CentOS设置系统时间与网络时间同步" class="headerlink" title="CentOS设置系统时间与网络时间同步"></a>CentOS设置系统时间与网络时间同步</h1><ul><li>安装 <code>ntpdate</code> 工具: <code>yum -y install ntp ntpdate</code></li><li>设置系统时间与网络时间同步: <code>ntpdate cn.pool.ntp.org</code></li><li>将系统时间写入硬件时间: <code>hwclock --systohc</code></li><li>强制系统时间写入CMOS中防止重启失效：<code>hwclock -w</code> 或 <code>clock -w</code></li></ul><h1 id="linux-find命令：忽略一个目录或者多个目录"><a href="#linux-find命令：忽略一个目录或者多个目录" class="headerlink" title="linux find命令：忽略一个目录或者多个目录"></a>linux find命令：忽略一个目录或者多个目录</h1><h1 id="忽略一个目录"><a href="#忽略一个目录" class="headerlink" title="忽略一个目录"></a>忽略一个目录</h1><p>根目录下开始查找，忽略目录 <code>/media</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic /]# find / -path &quot;/media&quot; -prune -o -name my-venv -print</span><br><span class="line">/home/utomcat/python-apps/my-venv</span><br></pre></td></tr></table></figure></p><h2 id="忽略多个目录"><a href="#忽略多个目录" class="headerlink" title="忽略多个目录"></a>忽略多个目录</h2><p>根目录下开始查找，忽略目录 <code>/media</code> 和 <code>/home/utomcat</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># \( 和 \) 前后都有空格</span><br><span class="line">find / \( -path &quot;/media&quot; -o -path &quot;/home/utomcat&quot; \) -prune -o -name my-venv -print</span><br><span class="line"></span><br><span class="line"># -type f 表示只找文件</span><br><span class="line">[root@AndyCentOS7Basic /]# find / -path &quot;/media&quot; -prune -o -type f -name apache-tomcat-8.5.30.tar.gz -print</span><br><span class="line">/home/utomcat/soft/apache-tomcat-8.5.30.tar.gz</span><br><span class="line"></span><br><span class="line"># 没有 -print 则会忽略的目录也显示出来</span><br><span class="line">[root@AndyCentOS7Basic /]# find / -path &quot;/media&quot; -prune -o -type f -name apache-tomcat-8.5.30.tar.gz</span><br><span class="line">/home/utomcat/soft/apache-tomcat-8.5.30.tar.gz</span><br><span class="line">/media</span><br></pre></td></tr></table></figure></p><h1 id="将文件移动到一个不存在的目录，文件消失"><a href="#将文件移动到一个不存在的目录，文件消失" class="headerlink" title="将文件移动到一个不存在的目录，文件消失"></a>将文件移动到一个不存在的目录，文件消失</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv mysql-8.0.16-2.el7.x86_64.rpm-bundle.tar /mysql</span><br></pre></td></tr></table></figure><p><code>/mysql</code> 这个目录不存在，于是这个文件就这样消失了</p><p>用 find 命令查找也查不到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost soft]# find / -name mysql-8.0.16-2.el7.x86_64.rpm-bundle.tar  </span><br><span class="line">[root@localhost soft]#</span><br></pre></td></tr></table></figure></p><h1 id="bash-unzip-command-not-found"><a href="#bash-unzip-command-not-found" class="headerlink" title="-bash: unzip: command not found"></a><code>-bash: unzip: command not found</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y unzip zip</span><br></pre></td></tr></table></figure><h1 id="tomcat-内存占用"><a href="#tomcat-内存占用" class="headerlink" title="tomcat 内存占用"></a>tomcat 内存占用</h1><p>运行一段时间的 tomcat，内存使用上升之后不会自动降下来，重启 tomcat 即可让内存降低到初始启动状态。</p><p>不过这只是临时解决问题，根本还是需要优化或者升级硬件。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用 linux 的小经验，零散的知识点。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="linux" scheme="https://www.lovesofttech.com/categories/linux/"/>
-    
-      <category term="experience" scheme="https://www.lovesofttech.com/categories/linux/experience/"/>
-    
-    
-      <category term="experience" scheme="https://www.lovesofttech.com/tags/experience/"/>
-    
-      <category term="linux" scheme="https://www.lovesofttech.com/tags/linux/"/>
-    
-  </entry>
-  
-  <entry>
     <title>java 开发中的一些小经验</title>
     <link href="https://www.lovesofttech.com/java/experience/"/>
     <id>https://www.lovesofttech.com/java/experience/</id>
@@ -368,6 +342,32 @@
       <category term="experience" scheme="https://www.lovesofttech.com/tags/experience/"/>
     
       <category term="java" scheme="https://www.lovesofttech.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux 工作中的一些小经验</title>
+    <link href="https://www.lovesofttech.com/linux/experience/"/>
+    <id>https://www.lovesofttech.com/linux/experience/</id>
+    <published>2019-06-22T16:00:00.000Z</published>
+    <updated>2019-08-22T13:36:38.653Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用 linux 的小经验，零散的知识点。<br><a id="more"></a></p><h1 id="CentOS设置系统时间与网络时间同步"><a href="#CentOS设置系统时间与网络时间同步" class="headerlink" title="CentOS设置系统时间与网络时间同步"></a>CentOS设置系统时间与网络时间同步</h1><ul><li>安装 <code>ntpdate</code> 工具: <code>yum -y install ntp ntpdate</code></li><li>设置系统时间与网络时间同步: <code>ntpdate cn.pool.ntp.org</code></li><li>将系统时间写入硬件时间: <code>hwclock --systohc</code></li><li>强制系统时间写入CMOS中防止重启失效：<code>hwclock -w</code> 或 <code>clock -w</code></li></ul><h1 id="linux-find命令：忽略一个目录或者多个目录"><a href="#linux-find命令：忽略一个目录或者多个目录" class="headerlink" title="linux find命令：忽略一个目录或者多个目录"></a>linux find命令：忽略一个目录或者多个目录</h1><h1 id="忽略一个目录"><a href="#忽略一个目录" class="headerlink" title="忽略一个目录"></a>忽略一个目录</h1><p>根目录下开始查找，忽略目录 <code>/media</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic /]# find / -path &quot;/media&quot; -prune -o -name my-venv -print</span><br><span class="line">/home/utomcat/python-apps/my-venv</span><br></pre></td></tr></table></figure></p><h2 id="忽略多个目录"><a href="#忽略多个目录" class="headerlink" title="忽略多个目录"></a>忽略多个目录</h2><p>根目录下开始查找，忽略目录 <code>/media</code> 和 <code>/home/utomcat</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># \( 和 \) 前后都有空格</span><br><span class="line">find / \( -path &quot;/media&quot; -o -path &quot;/home/utomcat&quot; \) -prune -o -name my-venv -print</span><br><span class="line"></span><br><span class="line"># -type f 表示只找文件</span><br><span class="line">[root@AndyCentOS7Basic /]# find / -path &quot;/media&quot; -prune -o -type f -name apache-tomcat-8.5.30.tar.gz -print</span><br><span class="line">/home/utomcat/soft/apache-tomcat-8.5.30.tar.gz</span><br><span class="line"></span><br><span class="line"># 没有 -print 则会忽略的目录也显示出来</span><br><span class="line">[root@AndyCentOS7Basic /]# find / -path &quot;/media&quot; -prune -o -type f -name apache-tomcat-8.5.30.tar.gz</span><br><span class="line">/home/utomcat/soft/apache-tomcat-8.5.30.tar.gz</span><br><span class="line">/media</span><br></pre></td></tr></table></figure></p><h1 id="将文件移动到一个不存在的目录，文件消失"><a href="#将文件移动到一个不存在的目录，文件消失" class="headerlink" title="将文件移动到一个不存在的目录，文件消失"></a>将文件移动到一个不存在的目录，文件消失</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv mysql-8.0.16-2.el7.x86_64.rpm-bundle.tar /mysql</span><br></pre></td></tr></table></figure><p><code>/mysql</code> 这个目录不存在，于是这个文件就这样消失了</p><p>用 find 命令查找也查不到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost soft]# find / -name mysql-8.0.16-2.el7.x86_64.rpm-bundle.tar  </span><br><span class="line">[root@localhost soft]#</span><br></pre></td></tr></table></figure></p><h1 id="bash-unzip-command-not-found"><a href="#bash-unzip-command-not-found" class="headerlink" title="-bash: unzip: command not found"></a><code>-bash: unzip: command not found</code></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y unzip zip</span><br></pre></td></tr></table></figure><h1 id="tomcat-内存占用"><a href="#tomcat-内存占用" class="headerlink" title="tomcat 内存占用"></a>tomcat 内存占用</h1><p>运行一段时间的 tomcat，内存使用上升之后不会自动降下来，重启 tomcat 即可让内存降低到初始启动状态。</p><p>不过这只是临时解决问题，根本还是需要优化或者升级硬件。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用 linux 的小经验，零散的知识点。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="https://www.lovesofttech.com/categories/linux/"/>
+    
+      <category term="experience" scheme="https://www.lovesofttech.com/categories/linux/experience/"/>
+    
+    
+      <category term="experience" scheme="https://www.lovesofttech.com/tags/experience/"/>
+    
+      <category term="linux" scheme="https://www.lovesofttech.com/tags/linux/"/>
     
   </entry>
   

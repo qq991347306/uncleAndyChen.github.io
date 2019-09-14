@@ -590,18 +590,34 @@
     <div id="gitalk-container"></div>
     <link rel="stylesheet" href="/css/gitalk.css">
     <script src="/js/gitalk.min.js"></script>
+    <script src="/js/md5.min.js"></script>
     <script>
-        var id = location.pathname
-        if (location.pathname.length > 50) {
-          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        /**
+         * 字符串替换
+         * @param  {string} str    要被替换的字符串
+         * @param  {string} substr 要替换的字符串
+         * @param  {string} newstr 用于替换的字符串
+         * @return {string}        替换后的新字符串
+         */
+        function replace(str, substr, newstr) {
+            substr = substr.replace(/[.\\[\]{}()|^$?*+]/g, "\\$&"); // 转义字符串中的元字符
+            var re = new RegExp(substr, "g"); // 生成正则
+            return str.replace(re, newstr);
         }
+
+        var pathname = replace(location.pathname, "index.html", "");
+        //pathname = replace(pathname, "/", "-");
+        //pathname = pathname.substring(1, pathname.length - 1);
+        //alert(pathname);
+        //alert(md5(pathname));
+
         const gitalk = new Gitalk({
           clientID: '834d6e5933da34dc78f3',
           clientSecret: '5108932d0e8753537dd75ce038bd64f4780ad6dc',
           repo: 'blog-comment',
           owner: 'uncleAndyChen',
           admin: ['uncleAndyChen'],
-          // id: location.href,      // Ensure uniqueness and length less than 50
+          id: md5(pathname),      // Ensure uniqueness and length less than 50
           title: document.title.split('|')[0],
           distractionFreeMode: false  // Facebook-like distraction free mode
         })
