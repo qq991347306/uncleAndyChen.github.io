@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<!--<script async src="//hm.baidu.com/hm.js?aa00e68c93e65cfd9c15a0fcb787287c"></script>-->
+<!-- 统计-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var host = window.location.host;
+        var hm = document.createElement("script");
+
+        if (host.indexOf('gitee.io') > 0) { // https://uncleandychen.gitee.io/
+            hm.src = "https://hm.baidu.com/hm.js?0cf4709148b070b8082191d2e456a1a3";
+        } else if (host.indexOf('lovesofttech.com') > 0) { // https://www.lovesofttech.com/
+            hm.src = "https://hm.baidu.com/hm.js?aa00e68c93e65cfd9c15a0fcb787287c";
+        } else {
+            hm.src = '';
+        }
+
+        if (hm.src !== '') {
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        }
+    })();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+<!-- Baidu Push -->
+<!-- 主动推送百度爬虫-->
+<script>
+    (function(){
+        if (window.location.host.indexOf('lovesofttech.com') < 0) {
+            return;
+        }
+
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/">
+    
+    
+    <title>i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录 | 安迪陈技术日志，架构、感悟、系统分析、团队管理 | 自强不息，厚德载物</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="experience">
+    <meta name="description" content="如题">
+<meta name="keywords" content="experience">
+<meta property="og:type" content="article">
+<meta property="og:title" content="i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录">
+<meta property="og:url" content="https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/index.html">
+<meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
+<meta property="og:description" content="如题">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-08-23T14:00:13.837Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录">
+<meta name="twitter:description" content="如题">
+    
+        <link rel="alternative" href="/atom.xml" title="安迪陈技术日志，架构、感悟、系统分析、团队管理" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <!--<i class="icon icon-lg icon-close"></i>-->
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off" title="隐藏左侧导航">﹤<i class="icon icon-lg icon-navicon"></i></a>
+    <div class="brand-wrap" style="background-image:url(/img/bannerBackgroundLeft.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/myLogo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">安迪陈</h5>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/classifyIndex">
+                <i class="icon icon-th-list"></i>
+                文章分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/home">
+                <i class="icon fas fa-book-reader"></i>
+                文章列表
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-github"></i>
+                github 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-git"></i>
+                gitee 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+                <i class="icon fas fa-book-open"></i>
+                CSDN 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/react/index">
+                <i class="icon fab fa-react"></i>
+                react 技术栈
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/aboutMe">
+                <i class="icon fas fa-running"></i>
+                关于博主
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+
+        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+            <ul class="nav navbar-nav navbar-right" id="navMenuTop">
+                <li>
+                    <a href="/">主页</a>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/classifyIndex" title="本博客的文章分类列表">文章分类</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/home" title="本博客的所有文章列表">文章列表</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/java/index" title="Java 开发，文章目录">Java</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/mybatis/index" title="MyBatis，文章目录">MyBatis</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/database/index" title="日常开发中有关 MySQL 的一些经验总结">MySQL</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/react/index" title="React 技术栈（全家桶）学习心得分享，文章目录">React</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/linux/index" title="CentOS/linux，文章目录">CentOS/linux</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/lnmp/index" title="Linux + Nginx + MySQL + PHP 文章目录">LNMP</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/git/index" title="git 文章目录">git</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/windows/index" title="windows 环境下的日常工作，文章目录">windows</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://github.com/uncleAndyChen" target="_blank" title="欢迎访问我的 github">github</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+
+        <div class="flex-col header-title ellipsis">i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录</div>
+        
+        <div class="search-wrap" id="search-wrap" style="z-index: 2;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare" style="z-index: 3;">
+                <i class="icon icon-lg icon-share-alt"></i>
+            </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h2 class="title">i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录</h2>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-22T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2019-02-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/experience/">experience</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#现象"><span class="post-toc-number">1.</span> <span class="post-toc-text">现象</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#解决"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后记"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">后记</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<article id="post-general/i57200uHD620DriverOnWin7" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019年02月23日 0:00" datetime="2019-02-22T16:00:00.000Z" itemprop="datePublished">2019-02-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/experience/">experience</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" style="display:none">
+    阅读量：<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <span>|</span>
+    <span class="post-count">字数：508</span>
+    <span>|</span>
+    <span class="post-count">阅读时长：大约1分钟</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>如题<br><a id="more"></a></p>
+<h1 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h1><p>笔记本型号：宏碁TravelMate P259-G2-MG<br>新安装 win7 64 位旗舰版，从官方下载针对 win7 64 位的显卡驱动，竟然安装不上，提示：<code>此计算机不符合安装该软件的最低要求。</code></p>
+<p>好嘛，我不用集成显卡，用独立的 nvidia 显卡好不好~~，可是在安装驱动时提示：<code>你必须先安装 @Intel 驱动程序</code>，看来是跳不过了。</p>
+<h1 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h1><p>感谢网友的<a href="http://www.cnblogs.com/easyc/p/7133376.html" target="_blank" rel="noopener">文章</a>，让我得以成功安装，这里记录一下我的操作。</p>
+<ul>
+<li><a href="https://downloadcenter.intel.com/product/97503/Graphics-for-7th-Generation-Intel-Processors" target="_blank" rel="noopener">先去官网下载最新驱动（下载以前的也行，反正现在官网的驱动其实已经不支持 win7 了）</a></li>
+<li><a href="https://downloadcenter.intel.com/product/96551" target="_blank" rel="noopener">最终找到 HD 620 的下载页面</a></li>
+<li>对于<code>宏碁TravelMate P259-G2-MG笔记本</code>，还可以去这里下载：<a href="https://zh-cn.notebook-driver.com/acer-driver-id-35815/" target="_blank" rel="noopener">宏碁TravelMate P259-G2-MG笔记本电脑的Windows 7 64bit驱动程序，软件，手册</a></li>
+</ul>
+<p>下载 zip 包，不要下载 exe 安装文件，因为需要修改里面的配置文件之后才能正常安装。</p>
+<ul>
+<li>去设备管理器里，找到未安装驱动的标准VGA显示适配器，属性，详细信息，属性–&gt;硬件id，记录下 <code>DEV_59X6&amp;SUBSYS_XXXXX</code> 我电脑上是 <code>PCI\VEN_8086&amp;DEV_5916&amp;SUBSYS_11341025</code></li>
+<li>打开Graphics文件夹下的文件<code>igdlh64.inf</code>，找到找刚才记下的DEV后面的数字，我这里是 5916，找到其中一行 <code>%iKBLULTGT2%        = iKBLD_w10, PCI\VEN_8086&amp;DEV_5916</code></li>
+<li>复制这一行，再往上找到带有 <code>iSKLD_w7</code> 的区域 <code>Windows 7 Install - DT Only</code> 部分，将刚才复制那一行加到这个区域的最后面，然后把 <code>iKBLD_w10</code> 改为 <code>iKBLD_w7</code>，最终是：<code>%iKBLULTGT2%        = iKBLD_w7 PCI\VEN_8086&amp;DEV_5916</code></li>
+<li>运行安装目录下的 <code>setup.exe</code>，顺利的话，就可以正常安装了。</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>虽然没有正常安装核显（集成显卡）也能设置显示器支持的最大分辨率，但是却不能连接投影仪，现象是：设置分辨率的页面，没有连接投影仪选项（按windows+P建），驱动安装好之后，就正常了。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-08-23T14:00:13.837Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+</span><br>
+
+
+        转载请注明出处：<a href="/general/i57200uHD620DriverOnWin7/" target="_blank" rel="external">https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/</a>
+    </div>
+    <footer>
+        <a href="https://www.lovesofttech.com">
+            <img src="/img/myLogo.jpg" alt="安迪陈">
+            安迪陈
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/experience/">experience</a></li></ul>
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/&title=《i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/&title=《i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/&via=https://www.lovesofttech.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/mac/macOSKabyLakeCpuHD630Driver/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">i系列7代cpu，核显（集成显卡） Intel HD 630，MacOS 修改驱动指南</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/frontend/jsNote/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JS 笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="/js/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '834d6e5933da34dc78f3',
+          clientSecret: '5108932d0e8753537dd75ce038bd64f4780ad6dc',
+          repo: 'https://github.com/uncleAndyChen/blog-comment',
+          owner: 'andy@lovesofttech.com',
+          admin: ['andy@lovesofttech.com'],
+          // id: location.href,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: true  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="bottom">
+        <p>
+            <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2019</span>
+            <span>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+            <span>
+                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+            </span>
+            
+            </p><p>
+                <span>
+                    本站访问统计开始时间：2019年3月6日
+                </span>
+                <span id="busuanzi_container_site_uv" style="display:none">
+                    总访客数：<span id="busuanzi_value_site_uv"></span>
+                </span>
+                <span id="busuanzi_container_site_pv" style="display:none">
+                    总访问量：<span id="busuanzi_value_site_pv"></span>
+                </span>
+            
+            
+                <span>|</span>
+                <span class="post-count">本站文章累计字数：272.6k</span>
+            
+            </p>
+        <p></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/&title=《i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/&title=《i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《i5 7200u，核显（集成显卡） Intel HD 620，win7 64 位系统安装折腾记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/&via=https://www.lovesofttech.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/general/i57200uHD620DriverOnWin7/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aS26EQAxFUfa/aSJlFCkC7rOro+C6jFALCg4Dd/lzHPg4v4+r85+/8N+v1vl917JDhgwZr2Wctwdn3L9KSkrXlyFDxg4MHmT5vTyAEtLDc2XIkCEDP4CswEOzDBkyZNQCLkk+70Mtv0uGDBky0iSWwEjKmob1xbm4DBkyXsjoNwY+d/6n/Q0ZMmT8S8ZZOu7DaD/Uxu8jQ4aM0QyScPYDMd/2pR/oIF9LhgwZL2fwolinSdkZDkMry5AhYwNG//Hp+EUtoBcvkiFDxssZpKzPB7Z4iT8d5iBpsAwZMnZg8ICYht1a83JBJ1aGDBkjGOkAVmd7l7YZguEPGTJkbMPgaW0amjmMNBsuO7EyZMjYgJG2GNPXIltD/sketoYyZMgYx1i1deNr9sc74uk2GTJkvJzBk1iydau1SHkKjf43ZMiQMY5xH1h5oY2sU3tKsDWUIUPGOEZnkKs/hMG3lejDyZAhYzQjLX6l5bDaNaQ9EO83ZciQ8VoGL/qnTc3aXWngliFDxj6MTvErLevXrn+4V4YMGdsw+qRaQsvblg/pqwwZMoYy0uDIk89OOY/HVRkyZMxm1Ea40uSzlr4GH0iGDBmjGauSyf42sbaaDBky9mHwIJvWuEj7c8EeVoYMGdsw0sCXjp+m461x0itDhgwZS6lpQwKFYBkyZMgA4bUWcD+SZ8uQIWMoI20G8KHV2ohq2nKQIUPGbEYtKHdGLkiRrlbakyFDxjjGF+59LLrynyHmAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '安迪陈技术日志';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

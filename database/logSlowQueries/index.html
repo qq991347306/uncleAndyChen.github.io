@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<!--<script async src="//hm.baidu.com/hm.js?aa00e68c93e65cfd9c15a0fcb787287c"></script>-->
+<!-- 统计-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var host = window.location.host;
+        var hm = document.createElement("script");
+
+        if (host.indexOf('gitee.io') > 0) { // https://uncleandychen.gitee.io/
+            hm.src = "https://hm.baidu.com/hm.js?0cf4709148b070b8082191d2e456a1a3";
+        } else if (host.indexOf('lovesofttech.com') > 0) { // https://www.lovesofttech.com/
+            hm.src = "https://hm.baidu.com/hm.js?aa00e68c93e65cfd9c15a0fcb787287c";
+        } else {
+            hm.src = '';
+        }
+
+        if (hm.src !== '') {
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        }
+    })();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+<!-- Baidu Push -->
+<!-- 主动推送百度爬虫-->
+<script>
+    (function(){
+        if (window.location.host.indexOf('lovesofttech.com') < 0) {
+            return;
+        }
+
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="https://www.lovesofttech.com/database/logSlowQueries/">
+    
+    
+    <title>MySQL 慢查询 | 安迪陈技术日志，架构、感悟、系统分析、团队管理 | 自强不息，厚德载物</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="MySQL,CentOS">
+    <meta name="description" content="介绍如何开启慢查询，以及相关分析工具。">
+<meta name="keywords" content="MySQL,CentOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL 慢查询">
+<meta property="og:url" content="https://www.lovesofttech.com/database/logSlowQueries/index.html">
+<meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
+<meta property="og:description" content="介绍如何开启慢查询，以及相关分析工具。">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-03-09T00:55:33.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL 慢查询">
+<meta name="twitter:description" content="介绍如何开启慢查询，以及相关分析工具。">
+    
+        <link rel="alternative" href="/atom.xml" title="安迪陈技术日志，架构、感悟、系统分析、团队管理" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <!--<i class="icon icon-lg icon-close"></i>-->
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off" title="隐藏左侧导航">﹤<i class="icon icon-lg icon-navicon"></i></a>
+    <div class="brand-wrap" style="background-image:url(/img/bannerBackgroundLeft.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/myLogo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">安迪陈</h5>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/classifyIndex">
+                <i class="icon icon-th-list"></i>
+                文章分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/home">
+                <i class="icon fas fa-book-reader"></i>
+                文章列表
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-github"></i>
+                github 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-git"></i>
+                gitee 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+                <i class="icon fas fa-book-open"></i>
+                CSDN 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/react/index">
+                <i class="icon fab fa-react"></i>
+                react 技术栈
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/aboutMe">
+                <i class="icon fas fa-running"></i>
+                关于博主
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+
+        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+            <ul class="nav navbar-nav navbar-right" id="navMenuTop">
+                <li>
+                    <a href="/">主页</a>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/classifyIndex" title="本博客的文章分类列表">文章分类</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/home" title="本博客的所有文章列表">文章列表</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/java/index" title="Java 开发，文章目录">Java</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/mybatis/index" title="MyBatis，文章目录">MyBatis</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/database/index" title="日常开发中有关 MySQL 的一些经验总结">MySQL</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/react/index" title="React 技术栈（全家桶）学习心得分享，文章目录">React</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/linux/index" title="CentOS/linux，文章目录">CentOS/linux</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/lnmp/index" title="Linux + Nginx + MySQL + PHP 文章目录">LNMP</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/git/index" title="git 文章目录">git</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/windows/index" title="windows 环境下的日常工作，文章目录">windows</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://github.com/uncleAndyChen" target="_blank" title="欢迎访问我的 github">github</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+
+        <div class="flex-col header-title ellipsis">MySQL 慢查询</div>
+        
+        <div class="search-wrap" id="search-wrap" style="z-index: 2;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare" style="z-index: 3;">
+                <i class="icon icon-lg icon-share-alt"></i>
+            </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h2 class="title">MySQL 慢查询</h2>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-07-13T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2017-07-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/MySQL/">MySQL</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/MySQL/CentOS/">CentOS</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查看MySQL慢查询是否开启"><span class="post-toc-number">1.</span> <span class="post-toc-text">查看MySQL慢查询是否开启</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL-官方慢查询工具-mysqldumpslow"><span class="post-toc-number">2.</span> <span class="post-toc-text">MySQL 官方慢查询工具 mysqldumpslow</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MySQL慢日志分析工具-mysqlsla"><span class="post-toc-number">3.</span> <span class="post-toc-text">MySQL慢日志分析工具 mysqlsla</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<article id="post-database/logSlowQueries" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">MySQL 慢查询</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年07月14日 0:00" datetime="2017-07-13T16:00:00.000Z" itemprop="datePublished">2017-07-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/MySQL/">MySQL</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/MySQL/CentOS/">CentOS</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" style="display:none">
+    阅读量：<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <span>|</span>
+    <span class="post-count">字数：145</span>
+    <span>|</span>
+    <span class="post-count">阅读时长：大约1分钟</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>介绍如何开启慢查询，以及相关分析工具。<br><a id="more"></a></p>
+<h1 id="查看MySQL慢查询是否开启"><a href="#查看MySQL慢查询是否开启" class="headerlink" title="查看MySQL慢查询是否开启"></a>查看MySQL慢查询是否开启</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;%slow%&apos;;</span><br><span class="line">+---------------------+---------------------------------+</span><br><span class="line">| Variable_name       | Value                           |</span><br><span class="line">+---------------------+---------------------------------+</span><br><span class="line">| log_slow_queries    | ON                              |</span><br><span class="line">| slow_launch_time    | 2                               |</span><br><span class="line">| slow_query_log      | ON                              |</span><br><span class="line">| slow_query_log_file | /var/run/mysqld/mysqld-slow.log |</span><br><span class="line">+---------------------+---------------------------------+</span><br><span class="line"></span><br><span class="line">set global slow_query_log=ON;   #开启MySQL慢查询功能</span><br><span class="line">show variables like &quot;long_query_time&quot;;  #查看MySQL慢查询时间设置，默认10秒</span><br><span class="line">set global long_query_time=5;  #修改为记录5秒内的查询</span><br></pre></td></tr></table></figure>
+<h1 id="MySQL-官方慢查询工具-mysqldumpslow"><a href="#MySQL-官方慢查询工具-mysqldumpslow" class="headerlink" title="MySQL 官方慢查询工具 mysqldumpslow"></a>MySQL 官方慢查询工具 mysqldumpslow</h1><p><a href="https://dev.mysql.com/doc/refman/8.0/en/mysqldumpslow.html" target="_blank" rel="noopener">8.x 版本，官方文档</a></p>
+<h1 id="MySQL慢日志分析工具-mysqlsla"><a href="#MySQL慢日志分析工具-mysqlsla" class="headerlink" title="MySQL慢日志分析工具 mysqlsla"></a>MySQL慢日志分析工具 mysqlsla</h1><p>是一个开源项目，<a href="https://github.com/kpumuk/mysqlsla-bdb" target="_blank" rel="noopener">git地址</a> <a href="https://github.com/daniel-nichter/hackmysql.com/tree/master/mysqlsla" target="_blank" rel="noopener">hackmysql.com</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqlsla -lt slow -sf &quot;+select&quot; -top 5 -sort t_sum /root/mysqld-slow.log</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-03-09T00:55:33.174Z" itemprop="dateUpdated">2019年3月9日 8:55</time>
+</span><br>
+
+
+        转载请注明出处：<a href="/database/logSlowQueries/" target="_blank" rel="external">https://www.lovesofttech.com/database/logSlowQueries/</a>
+    </div>
+    <footer>
+        <a href="https://www.lovesofttech.com">
+            <img src="/img/myLogo.jpg" alt="安迪陈">
+            安迪陈
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/logSlowQueries/&title=《MySQL 慢查询》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/logSlowQueries/&title=《MySQL 慢查询》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=介绍如何开启慢查询，以及相关分析工具。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/logSlowQueries/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL 慢查询》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/logSlowQueries/&via=https://www.lovesofttech.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/logSlowQueries/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/linux/centOSChkconfig/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">CentOS下开机启动查看管理命令:chkconfig 用法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/lnmp/nginxLoadBalancingAndProxy/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Nginx 反向代理、负载均衡</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="/js/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '834d6e5933da34dc78f3',
+          clientSecret: '5108932d0e8753537dd75ce038bd64f4780ad6dc',
+          repo: 'https://github.com/uncleAndyChen/blog-comment',
+          owner: 'andy@lovesofttech.com',
+          admin: ['andy@lovesofttech.com'],
+          // id: location.href,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: true  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="bottom">
+        <p>
+            <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2019</span>
+            <span>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+            <span>
+                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+            </span>
+            
+            </p><p>
+                <span>
+                    本站访问统计开始时间：2019年3月6日
+                </span>
+                <span id="busuanzi_container_site_uv" style="display:none">
+                    总访客数：<span id="busuanzi_value_site_uv"></span>
+                </span>
+                <span id="busuanzi_container_site_pv" style="display:none">
+                    总访问量：<span id="busuanzi_value_site_pv"></span>
+                </span>
+            
+            
+                <span>|</span>
+                <span class="post-count">本站文章累计字数：272.6k</span>
+            
+            </p>
+        <p></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/logSlowQueries/&title=《MySQL 慢查询》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/logSlowQueries/&title=《MySQL 慢查询》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=介绍如何开启慢查询，以及相关分析工具。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/logSlowQueries/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL 慢查询》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/logSlowQueries/&via=https://www.lovesofttech.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/logSlowQueries/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aQY7jQAgF0Nz/0p7N7EZ2PuCMZPxqFbWcSj0vaAr4fOJ1nKzrZ/Kd/93h84uFgYHxWMZxuc5+IPlL/iKuPycvEQMD4w2MJBRefys/SoLMz4aBgYGRkCaB+2wHDAwMjLsYeTC9Pi4GBgZGwqheMpPUsLfnz+/iGBgYD2T0yvf/5/NP+hsYGBiPYhzFlaRxeQthfp6/+2BgYKxm5AGumpzNMfl5MDAw3sDoBb78+trL8fJ2KQYGxnsYkwDaC9l5U7OAwcDAWMpIEri8SZC8jnsTUAwMjN2MpLmYBMFJe7IKjqqGGBgYixi9Ally6EJR7NYEFAMDYx+j+oX5eFZ1wCJKQzEwMFYz8lSsmrTl7LzlELUwMTAw1jF6KV0PPL/ERgNhGBgYSxnVQFkthE1aBYXmJQYGxgsYUf4Yp4N52M1/8XRnDAyM1YxJw3LSYJgE39M9MTAwljKac2TjtLIapr+0FjAwMFYzelfQ5Ii9Il2eOH4ZvMDAwFjHOC7XXU/O259fXg0GBsYLGL3WYzXtqw6TYWBgYFSL+5MnmxlrfonFwMBYyjiKq5m0FVd5aAMDA2M1Y7L1vLVZ/c+QNw8wMDD2MfIgmw9nVC+rvR0wMDDexqiONfSutXddYgvTbRgYGC9mVFsIvVJaYTcMDAyM8f04H9TIeaOAi4GB8UDGXQW1pMSWHz1vgmJgYOxmVJO2SZjuFeNua2piYGA8j/EHmg0Ny1ryK00AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '安迪陈技术日志';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

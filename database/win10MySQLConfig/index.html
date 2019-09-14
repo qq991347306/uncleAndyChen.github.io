@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<!--<script async src="//hm.baidu.com/hm.js?aa00e68c93e65cfd9c15a0fcb787287c"></script>-->
+<!-- 统计-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var host = window.location.host;
+        var hm = document.createElement("script");
+
+        if (host.indexOf('gitee.io') > 0) { // https://uncleandychen.gitee.io/
+            hm.src = "https://hm.baidu.com/hm.js?0cf4709148b070b8082191d2e456a1a3";
+        } else if (host.indexOf('lovesofttech.com') > 0) { // https://www.lovesofttech.com/
+            hm.src = "https://hm.baidu.com/hm.js?aa00e68c93e65cfd9c15a0fcb787287c";
+        } else {
+            hm.src = '';
+        }
+
+        if (hm.src !== '') {
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        }
+    })();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+<!-- Baidu Push -->
+<!-- 主动推送百度爬虫-->
+<script>
+    (function(){
+        if (window.location.host.indexOf('lovesofttech.com') < 0) {
+            return;
+        }
+
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="https://www.lovesofttech.com/database/win10MySQLConfig/">
+    
+    
+    <title>win10 MySQL 8.0.11 绿色免安装配置 | 安迪陈技术日志，架构、感悟、系统分析、团队管理 | 自强不息，厚德载物</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="MySQL,windows">
+    <meta name="description" content="介绍如何将官网下载的 MySQL zip 包配置成系统服务，以及 MySQL 的基本配置和初始化。">
+<meta name="keywords" content="MySQL,windows">
+<meta property="og:type" content="article">
+<meta property="og:title" content="win10 MySQL 8.0.11 绿色免安装配置">
+<meta property="og:url" content="https://www.lovesofttech.com/database/win10MySQLConfig/index.html">
+<meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
+<meta property="og:description" content="介绍如何将官网下载的 MySQL zip 包配置成系统服务，以及 MySQL 的基本配置和初始化。">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://www.lovesofttech.com/img/java/javaDev06.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/java/javaDev07.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/java/javaDev09.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/java/javaDev10.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/java/javaDev08.png">
+<meta property="og:updated_time" content="2019-07-10T12:40:18.722Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="win10 MySQL 8.0.11 绿色免安装配置">
+<meta name="twitter:description" content="介绍如何将官网下载的 MySQL zip 包配置成系统服务，以及 MySQL 的基本配置和初始化。">
+<meta name="twitter:image" content="https://www.lovesofttech.com/img/java/javaDev06.png">
+    
+        <link rel="alternative" href="/atom.xml" title="安迪陈技术日志，架构、感悟、系统分析、团队管理" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <!--<i class="icon icon-lg icon-close"></i>-->
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off" title="隐藏左侧导航">﹤<i class="icon icon-lg icon-navicon"></i></a>
+    <div class="brand-wrap" style="background-image:url(/img/bannerBackgroundLeft.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/myLogo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">安迪陈</h5>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/classifyIndex">
+                <i class="icon icon-th-list"></i>
+                文章分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/home">
+                <i class="icon fas fa-book-reader"></i>
+                文章列表
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-github"></i>
+                github 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-git"></i>
+                gitee 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+                <i class="icon fas fa-book-open"></i>
+                CSDN 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/react/index">
+                <i class="icon fab fa-react"></i>
+                react 技术栈
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/aboutMe">
+                <i class="icon fas fa-running"></i>
+                关于博主
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+
+        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+            <ul class="nav navbar-nav navbar-right" id="navMenuTop">
+                <li>
+                    <a href="/">主页</a>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/classifyIndex" title="本博客的文章分类列表">文章分类</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/home" title="本博客的所有文章列表">文章列表</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/java/index" title="Java 开发，文章目录">Java</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/mybatis/index" title="MyBatis，文章目录">MyBatis</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/database/index" title="日常开发中有关 MySQL 的一些经验总结">MySQL</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/react/index" title="React 技术栈（全家桶）学习心得分享，文章目录">React</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/linux/index" title="CentOS/linux，文章目录">CentOS/linux</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/lnmp/index" title="Linux + Nginx + MySQL + PHP 文章目录">LNMP</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/git/index" title="git 文章目录">git</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/windows/index" title="windows 环境下的日常工作，文章目录">windows</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://github.com/uncleAndyChen" target="_blank" title="欢迎访问我的 github">github</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+
+        <div class="flex-col header-title ellipsis">win10 MySQL 8.0.11 绿色免安装配置</div>
+        
+        <div class="search-wrap" id="search-wrap" style="z-index: 2;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare" style="z-index: 3;">
+                <i class="icon icon-lg icon-share-alt"></i>
+            </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h2 class="title">win10 MySQL 8.0.11 绿色免安装配置</h2>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-05-09T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-05-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/windows/">windows</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/windows/MySQL/">MySQL</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#免安装版下载"><span class="post-toc-number">1.</span> <span class="post-toc-text">免安装版下载</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">配置文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#lower-case-table-names-参数说明"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">lower_case_table_names 参数说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将默认的lower-case-tables-name为0设置成1"><span class="post-toc-number">2.1.1.1.</span> <span class="post-toc-text">将默认的lower_case_tables_name为0设置成1</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装成系统服务"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装成系统服务</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#初始化数据库"><span class="post-toc-number">3.</span> <span class="post-toc-text">初始化数据库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在-win10-上安装-5-7-23-报错"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">在 win10 上安装 5.7.23 报错</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动"><span class="post-toc-number">4.</span> <span class="post-toc-text">启动</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#添加环境变量"><span class="post-toc-number">5.</span> <span class="post-toc-text">添加环境变量</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改默认密码"><span class="post-toc-number">6.</span> <span class="post-toc-text">修改默认密码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改默认密码-1"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">修改默认密码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建数据库并导入数据"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">创建数据库并导入数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检查导入的表"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">检查导入的表</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#绿色版卸载"><span class="post-toc-number">7.</span> <span class="post-toc-text">绿色版卸载</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#遇到的坑"><span class="post-toc-number">8.</span> <span class="post-toc-text">遇到的坑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动时报错"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">启动时报错</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#再次-mysqld-–install-时失败"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">再次 mysqld –install 时失败</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#druid-连接报错"><span class="post-toc-number">8.3.</span> <span class="post-toc-text">druid 连接报错</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#连接-MySQL-报错"><span class="post-toc-number">8.4.</span> <span class="post-toc-text">连接 MySQL 报错</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#workbench"><span class="post-toc-number">9.</span> <span class="post-toc-text">workbench</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<article id="post-database/win10MySQLConfig" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">win10 MySQL 8.0.11 绿色免安装配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年05月10日 0:00" datetime="2018-05-09T16:00:00.000Z" itemprop="datePublished">2018-05-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/windows/">windows</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/windows/MySQL/">MySQL</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" style="display:none">
+    阅读量：<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <span>|</span>
+    <span class="post-count">字数：2.1k</span>
+    <span>|</span>
+    <span class="post-count">阅读时长：大约10分钟</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>介绍如何将官网下载的 MySQL zip 包配置成系统服务，以及 MySQL 的基本配置和初始化。<br><a id="more"></a></p>
+<h1 id="免安装版下载"><a href="#免安装版下载" class="headerlink" title="免安装版下载"></a>免安装版下载</h1><p><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">点击进入 MySQL 官网下载页面</a>，选：Windows (x86, 64-bit), ZIP Archive<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/java/javaDev06.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/java/javaDev07.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>解压至：C:\dev\mysql-8.0.11-winx64，并在此目录添加一个空目录：data</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>在解压目录添加 my.ini，内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">basedir = C:\dev\mysql-8.0.11-winx64</span><br><span class="line">datadir = C:\dev\mysql-8.0.11-winx64\data</span><br><span class="line">port = 3306</span><br><span class="line">lower_case_table_names = 2</span><br><span class="line">default_authentication_plugin=mysql_native_password</span><br><span class="line">character-set-server = utf8mb4</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line">default-character-set = utf8mb4</span><br><span class="line"></span><br><span class="line">[client]</span><br><span class="line">default-character-set = utf8mb4</span><br></pre></td></tr></table></figure></p>
+<h3 id="lower-case-table-names-参数说明"><a href="#lower-case-table-names-参数说明" class="headerlink" title="lower_case_table_names 参数说明"></a>lower_case_table_names 参数说明</h3><p>官方文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html" target="_blank" rel="noopener">Identifier Case Sensitivity</a></p>
+<ol>
+<li>lower_case_table_names是mysql一个大小写敏感设置的属性，此参数不可以动态修改，必须重启数据库。</li>
+<li>unix,linux下lower_case_table_names默认值为 0 .Windows下默认值是 1 .Mac OS X下默认值是 2。</li>
+</ol>
+<p>参数说明</p>
+<ul>
+<li><p>lower_case_table_names=0 表名存储为给定的大小写。比较时：区分大小写。大小写敏感（Unix，Linux默认）。</p>
+<blockquote>
+<p>　创建的库表将原样保存在磁盘上。如create database TeSt;将会创建一个TeSt的目录，create table AbCCC …将会原样生成AbCCC.frm。SQL语句也会原样解析。</p>
+</blockquote>
+</li>
+<li><p>lower_case_table_names=1 表名存储为小写。比较时：不区分大小写。大小写不敏感（Windows默认）。</p>
+<blockquote>
+<p>创建的库表时，MySQL将所有的库表名转换成小写存储在磁盘上。SQL语句同样会将库表名转换成小写。如需要查询以前创建的Test_table（生成Test_table.frm文件），即便执行select <em> from Test_table，也会被转换成select </em> from test_table，致使报错表不存在。</p>
+</blockquote>
+</li>
+<li><p>lower_case_table_names=2 表名存储为给定的大小写。比较时：小写。</p>
+<blockquote>
+<p>创建的库表将原样保存在磁盘上。但SQL语句将库表名转换成小写。</p>
+</blockquote>
+</li>
+</ul>
+<p>修改lower_case_table_names导致的常见不良隐患：如果在lower_case_table_names=0时，创建了含有大写字母的库表，改为lower_case_table_names=1后，则会无法被查到。</p>
+<h4 id="将默认的lower-case-tables-name为0设置成1"><a href="#将默认的lower-case-tables-name为0设置成1" class="headerlink" title="将默认的lower_case_tables_name为0设置成1"></a>将默认的lower_case_tables_name为0设置成1</h4><p>需先将已经存在的库名和表名都转换为小写。</p>
+<ul>
+<li>针对仅表名存在大写字母的情况：<ul>
+<li>lower_case_tables_name=0时，执行rename table成小写。</li>
+<li>设置lower_case_tables_name=1，重启生效。</li>
+</ul>
+</li>
+<li>针对库名存在大写字母的情况：<ul>
+<li>lower_case_tables_name=0时，使用mysqldump导出，并删除老的数据库。</li>
+<li>设置lower_case_tables_name=1，重启生效。</li>
+<li>导入数据至实例，此时包含大写字母的库名已转换为小写。</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装成系统服务"><a href="#安装成系统服务" class="headerlink" title="安装成系统服务"></a>安装成系统服务</h2><p>以管理员身份运行 cmd，进入：C:\dev\mysql-8.0.11-winx64\bin 运行：mysqld –install MySQL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\dev\mysql-8.0.11-winx64\bin&gt;mysqld --install MySQL</span><br><span class="line">Service successfully installed.</span><br></pre></td></tr></table></figure></p>
+<h1 id="初始化数据库"><a href="#初始化数据库" class="headerlink" title="初始化数据库"></a>初始化数据库</h1><p>在MySQL安装目录的 bin 目录下执行初始化命令：mysqld –initialize –console<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\dev\mysql-8.0.11-winx64\bin&gt;mysqld --initialize --console</span><br><span class="line">2018-05-10T09:06:15.354597Z 0 [System] [MY-013169] [Server] C:\dev\mysql-8.0.11-winx64\bin\mysqld.exe (mysqld 8.0.11) initializing of server in progress as process 11688</span><br><span class="line">2018-05-10T09:06:19.145900Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: k,h&gt;nFBok8Hw</span><br><span class="line">2018-05-10T09:06:20.432456Z 0 [System] [MY-013170] [Server] C:\dev\mysql-8.0.11-winx64\bin\mysqld.exe (mysqld 8.0.11) initializing of server has completed</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>注意看提示：A temporary password is generated for root@localhost: k,h&gt;nFBok8Hw</li>
+<li>我们先记住初始密码，一会儿会用上（每次初始化的密码都不一样，你要看自己的提示）：k,h&gt;nFBok8Hw</li>
+<li>删掉 data 目录下的所有目录和文件，再执行一遍初始化命令，又会重新生成，相当于重新初始化。</li>
+</ol>
+<h2 id="在-win10-上安装-5-7-23-报错"><a href="#在-win10-上安装-5-7-23-报错" class="headerlink" title="在 win10 上安装 5.7.23 报错"></a>在 win10 上安装 5.7.23 报错</h2><p>my.ini的参数lower_case_tables_name=0的情况下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\dev\mysql-5.7.23-winx64\mysql-5.7.23-winx64\bin&gt;mysqld --initialize --console</span><br><span class="line">2018-12-09T13:04:02.545614Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).</span><br><span class="line">2018-12-09T13:04:03.309670Z 0 [ERROR] The server option &apos;lower_case_table_names&apos; is configured to use case sensitive table names but the data directory is on a case-insensitive file system which is an unsupported combination. Please consider either using a case sensitive file system for your data directory or switching to a case-insensitive table name mode.</span><br><span class="line">2018-12-09T13:04:03.314831Z 0 [ERROR] Aborting</span><br></pre></td></tr></table></figure></p>
+<p>大小写敏感要操作系统支持，Windows本身大小写不敏感，因此不能设置成大小写敏感。</p>
+<p>该问题，可以参考官方文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html" target="_blank" rel="noopener">Identifier Case Sensitivity</a></p>
+<p>官方文档如下：</p>
+<ul>
+<li>Use lower_case_table_names=1 on all systems. The main disadvantage with this is that when you use SHOW TABLES or SHOW DATABASES, you do not see the names in their original lettercase.</li>
+<li>Use lower_case_table_names=0 on Unix and lower_case_table_names=2 on Windows. This preserves the lettercase of database and table names. The disadvantage of this is that you must ensure that your statements always refer to your database and table names with the correct lettercase on Windows. If you transfer your statements to Unix, where lettercase is significant, they do not work if the lettercase is incorrect.</li>
+</ul>
+<p>my.ini的参数lower_case_tables_name改为 2，则正常<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">C:\dev\mysql-5.7.23-winx64\mysql-5.7.23-winx64\bin&gt;mysqld --initialize --console</span><br><span class="line">2018-12-09T14:25:32.965759Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).</span><br><span class="line">2018-12-09T14:25:34.370212Z 0 [Warning] InnoDB: New log files created, LSN=45790</span><br><span class="line">2018-12-09T14:25:34.700644Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.</span><br><span class="line">2018-12-09T14:25:34.842230Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 4a949feb-fbbe-11e8-beee-002535150600.</span><br><span class="line">2018-12-09T14:25:34.857245Z 0 [Warning] Gtid table is not ready to be used. Table &apos;mysql.gtid_executed&apos; cannot be opened.</span><br><span class="line">2018-12-09T14:25:34.912538Z 1 [Note] A temporary password is generated for root@localhost: kDLL5K&lt;iGsmo</span><br></pre></td></tr></table></figure></p>
+<p>和 MySQL Workbench 连接的时候，提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Window Title]</span><br><span class="line">MySQL Workbench</span><br><span class="line"></span><br><span class="line">[Main Instruction]</span><br><span class="line">Server Configuration Problems</span><br><span class="line"></span><br><span class="line">[Content]</span><br><span class="line">A server configuration problem was detected.</span><br><span class="line">The server is in a system that does not properly support the selected lower_case_table_names option value. Some problems may occur.</span><br><span class="line">Please consult the MySQL server documentation.</span><br><span class="line"></span><br><span class="line">[ ] Don&apos;t show this message again  [OK]</span><br></pre></td></tr></table></figure></p>
+<p>可不用管。</p>
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>cmd 执行：net start MySQL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\dev\mysql-8.0.11-winx64\bin&gt;net start MySQL</span><br><span class="line">The MySQL service is starting.</span><br><span class="line">The MySQL service was started successfully.</span><br></pre></td></tr></table></figure></p>
+<h1 id="添加环境变量"><a href="#添加环境变量" class="headerlink" title="添加环境变量"></a>添加环境变量</h1><ol>
+<li>新增mysql环境变量：MYSQL_HOME = C:\dev\mysql-8.0.11-winx64</li>
+<li>修改Path环境变量，Path变量下,末尾新增 ;%MYSQL_HOME%\bin;<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/java/javaDev09.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/java/javaDev10.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+</li>
+</ol>
+<h1 id="修改默认密码"><a href="#修改默认密码" class="headerlink" title="修改默认密码"></a>修改默认密码</h1><p>初始化之后，必须修改默认密码，否则使用不了，如下，试着创建新数据库。</p>
+<p>先用默认密码登录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\AndyChen&gt;mysql -uroot -p</span><br><span class="line">Enter password: ************</span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 11</span><br><span class="line">Server version: 8.0.11</span><br><span class="line"></span><br><span class="line">Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type &apos;help;&apos; or &apos;\h&apos; for help. Type &apos;\c&apos; to clear the current input statement.</span><br><span class="line"></span><br><span class="line"># 试着创建数据库</span><br><span class="line">mysql&gt; create schema if not exists apg default character set utf8mb4;</span><br><span class="line">ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.</span><br><span class="line">mysql&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="修改默认密码-1"><a href="#修改默认密码-1" class="headerlink" title="修改默认密码"></a>修改默认密码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;RoOtPaSs&apos;;</span><br><span class="line">Query OK, 0 rows affected (0.02 sec)</span><br></pre></td></tr></table></figure>
+<h2 id="创建数据库并导入数据"><a href="#创建数据库并导入数据" class="headerlink" title="创建数据库并导入数据"></a>创建数据库并导入数据</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create schema if not exists apg default character set utf8mb4;</span><br><span class="line">Query OK, 1 row affected (0.04 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; use apg;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; set names utf8mb4;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; source C:\workspace\apg20180509.sql</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="检查导入的表"><a href="#检查导入的表" class="headerlink" title="检查导入的表"></a>检查导入的表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br><span class="line">+--------------------------+</span><br><span class="line">| Tables_in_apg            |</span><br><span class="line">+--------------------------+</span><br><span class="line">...</span><br><span class="line">+--------------------------+</span><br><span class="line">38 rows in set (0.01 sec)</span><br></pre></td></tr></table></figure>
+<h1 id="绿色版卸载"><a href="#绿色版卸载" class="headerlink" title="绿色版卸载"></a>绿色版卸载</h1><p>以管理员身份执行：mysqld –remove<br>重启，删除 mysql 根目录下 my.ini 配置的 data 目录，删除 mysql server 相关文件。</p>
+<h1 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h1><h2 id="启动时报错"><a href="#启动时报错" class="headerlink" title="启动时报错"></a>启动时报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\dev\mysql-8.0.11-winx64\bin&gt;net start mysql</span><br><span class="line">发生系统错误 193。</span><br><span class="line"></span><br><span class="line">*** 不是有效的 Win32 应用程序。</span><br></pre></td></tr></table></figure>
+<p>解决办法：进入 Mysql 根目录下的 bin 目录，找到 mysqld 这个大小为 0 kb 的“二逼”文件，删除，然后就可以各种开心的玩耍了。<br>并非每台电脑都如此。</p>
+<h2 id="再次-mysqld-–install-时失败"><a href="#再次-mysqld-–install-时失败" class="headerlink" title="再次 mysqld –install 时失败"></a>再次 mysqld –install 时失败</h2><p>因为执行了 mysqld –remove 之后，系统服务显示“禁用“，再次 install 及 remove 均会提示失败，重启一下就可以重新 install 了。</p>
+<h2 id="druid-连接报错"><a href="#druid-连接报错" class="headerlink" title="druid 连接报错"></a>druid 连接报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.</span><br><span class="line">java.sql.SQLException: Unknown system variable &apos;query_cache_size&apos;</span><br></pre></td></tr></table></figure>
+<p>原因是数据库驱动版本和数据库版本不匹配。<br>解决：根据自己的数据库版本去<a href="https://mvnrepository.com/artifact/mysql/mysql-connector-java" target="_blank" rel="noopener">这个地址</a>选择合适的驱动版本<br>比如我的数据库版本是 8.0.11，那么对应的驱动为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;8.0.11&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="连接-MySQL-报错"><a href="#连接-MySQL-报错" class="headerlink" title="连接 MySQL 报错"></a>连接 MySQL 报错</h2><p>出现在中文操作系统 win10 上，英文操作系统 win10 正常<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The server time zone value &apos;ÖÐ¹ú±ê×¼Ê±¼ä&apos; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.</span><br></pre></td></tr></table></figure></p>
+<p>解决：数据库连接参数添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;serverTimezone=Hongkong</span><br></pre></td></tr></table></figure></p>
+<p>完整连接参数如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdbc.url=jdbc:mysql://127.0.0.1:3306/apg?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;failOverReadOnly=false&amp;socketTimeout=20000&amp;serverTimezone=Hongkong</span><br></pre></td></tr></table></figure></p>
+<h1 id="workbench"><a href="#workbench" class="headerlink" title="workbench"></a>workbench</h1><p>官方、免费、强大的 mySQL 客户端，推荐使用<br><a href="https://dev.mysql.com/downloads/workbench/" target="_blank" rel="noopener">workbench 下载</a><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/java/javaDev08.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-07-10T12:40:18.722Z" itemprop="dateUpdated">2019年7月10日 20:40</time>
+</span><br>
+
+
+        转载请注明出处：<a href="/database/win10MySQLConfig/" target="_blank" rel="external">https://www.lovesofttech.com/database/win10MySQLConfig/</a>
+    </div>
+    <footer>
+        <a href="https://www.lovesofttech.com">
+            <img src="/img/myLogo.jpg" alt="安迪陈">
+            安迪陈
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/win10MySQLConfig/&title=《win10 MySQL 8.0.11 绿色免安装配置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/win10MySQLConfig/&title=《win10 MySQL 8.0.11 绿色免安装配置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=介绍如何将官网下载的 MySQL zip 包配置成系统服务，以及 MySQL 的基本配置和初始化。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/win10MySQLConfig/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《win10 MySQL 8.0.11 绿色免安装配置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/win10MySQLConfig/&via=https://www.lovesofttech.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/win10MySQLConfig/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/windows/winRemoteDesktop/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">windows 远程桌面的坑</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/java/javaDevConfig/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">windows java 开发环境配置，以及一些常用网址收藏</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="/js/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '834d6e5933da34dc78f3',
+          clientSecret: '5108932d0e8753537dd75ce038bd64f4780ad6dc',
+          repo: 'https://github.com/uncleAndyChen/blog-comment',
+          owner: 'andy@lovesofttech.com',
+          admin: ['andy@lovesofttech.com'],
+          // id: location.href,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: true  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="bottom">
+        <p>
+            <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2019</span>
+            <span>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+            <span>
+                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+            </span>
+            
+            </p><p>
+                <span>
+                    本站访问统计开始时间：2019年3月6日
+                </span>
+                <span id="busuanzi_container_site_uv" style="display:none">
+                    总访客数：<span id="busuanzi_value_site_uv"></span>
+                </span>
+                <span id="busuanzi_container_site_pv" style="display:none">
+                    总访问量：<span id="busuanzi_value_site_pv"></span>
+                </span>
+            
+            
+                <span>|</span>
+                <span class="post-count">本站文章累计字数：272.6k</span>
+            
+            </p>
+        <p></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/win10MySQLConfig/&title=《win10 MySQL 8.0.11 绿色免安装配置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/win10MySQLConfig/&title=《win10 MySQL 8.0.11 绿色免安装配置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=介绍如何将官网下载的 MySQL zip 包配置成系统服务，以及 MySQL 的基本配置和初始化。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/win10MySQLConfig/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《win10 MySQL 8.0.11 绿色免安装配置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/win10MySQLConfig/&via=https://www.lovesofttech.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/win10MySQLConfig/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMklEQVR42u3awY6DMAxF0f7/TzPSrCp1gPtsOlKcmxWqUOCwcG3Hrxdex+/6/OV98X3e7/+85rvFS4YMGcsyjst1/fizR569KPkQZ0+5+XAyZMjYgEFehYfd6/v5L+TdZMiQISO9TpM/cr8MGTJk9Bnpa5FkUYYMGTJqRWzamOMtOZJiPlaLy5AhY0FG7eX+5/qL5xsyZMhYhHGEiwdWHhZJC+9mfxkyZIxm8DYZLzi//c8QZLgyZMgYyqi1+0noJGVtWgCfBlwZMmQMYtQa+mn7/lnGH9cyZMjYgJGG0VpjjgdlUtDKkCFjT0YKCMYgHt0hqMJlyJAxgsE3JcMQteGJNDFFTTcZMmQMYqShNk0l02PIWuIoQ4aM2Qw+7lArWTvDZ/xDyJAhYzYjLRdJeH3qSIDvKUOGjNmMdCNecF5/GkKKZ0ZkyJAxmsFLx7SVH3T7GmFdhgwZsxm1ln3aaCOFa6dtJ0OGjN0YvK3GUzcSpltHBTJkyBjN4KGQMzisfyfCyJAhY3EGP6qsJXz9wjg435AhQ8YGjHTEgRwPkNSzNmQW1MEyZMhYnMGzRQ5IxzWCXJVgZMiQMY7RCax85CtNLuOALkOGjNEMvvpDYLy4TZNFGTJk7MCoBdlnBy9qYx8yZMjYjVELsvw6DaxxP02GDBkycElJxiP6Yf1mxk2GDBkyQmoalNP0UYYMGfsweCgkwTRNNMlw2M07yJAhYzSjUzoWW2O4YfcYQIYMGasyfgBkVY5055BTAwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '安迪陈技术日志';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

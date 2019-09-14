@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<!--<script async src="//hm.baidu.com/hm.js?aa00e68c93e65cfd9c15a0fcb787287c"></script>-->
+<!-- 统计-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var host = window.location.host;
+        var hm = document.createElement("script");
+
+        if (host.indexOf('gitee.io') > 0) { // https://uncleandychen.gitee.io/
+            hm.src = "https://hm.baidu.com/hm.js?0cf4709148b070b8082191d2e456a1a3";
+        } else if (host.indexOf('lovesofttech.com') > 0) { // https://www.lovesofttech.com/
+            hm.src = "https://hm.baidu.com/hm.js?aa00e68c93e65cfd9c15a0fcb787287c";
+        } else {
+            hm.src = '';
+        }
+
+        if (hm.src !== '') {
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        }
+    })();
+</script>
+<!-- End Baidu Tongji -->
+
+
+
+<!-- Baidu Push -->
+<!-- 主动推送百度爬虫-->
+<script>
+    (function(){
+        if (window.location.host.indexOf('lovesofttech.com') < 0) {
+            return;
+        }
+
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<!-- End Baidu Push -->
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="https://www.lovesofttech.com/react/JetBrainsIDESupport/">
+    
+    
+    <title>像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码 | 安迪陈技术日志，架构、感悟、系统分析、团队管理 | 自强不息，厚德载物</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="WebStorm,react">
+    <meta name="description" content="开发工具：WebStorm + Google Chrome + JetBrains IDE Support 插件">
+<meta name="keywords" content="WebStorm,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码">
+<meta property="og:url" content="https://www.lovesofttech.com/react/JetBrainsIDESupport/index.html">
+<meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
+<meta property="og:description" content="开发工具：WebStorm + Google Chrome + JetBrains IDE Support 插件">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact15.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact04.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact05.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact03.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact06.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact01.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact02.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact09.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact08.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact10.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact11.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact12.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact13.png">
+<meta property="og:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact14.png">
+<meta property="og:updated_time" content="2019-08-23T14:00:13.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码">
+<meta name="twitter:description" content="开发工具：WebStorm + Google Chrome + JetBrains IDE Support 插件">
+<meta name="twitter:image" content="https://www.lovesofttech.com/img/react/WebStormDebugReact15.png">
+    
+        <link rel="alternative" href="/atom.xml" title="安迪陈技术日志，架构、感悟、系统分析、团队管理" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide">
+  <div class="inner flex-row-vertical">
+    <!--<i class="icon icon-lg icon-close"></i>-->
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off" title="隐藏左侧导航">﹤<i class="icon icon-lg icon-navicon"></i></a>
+    <div class="brand-wrap" style="background-image:url(/img/bannerBackgroundLeft.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/myLogo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">安迪陈</h5>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/">
+                <i class="icon icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/classifyIndex">
+                <i class="icon icon-th-list"></i>
+                文章分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/home">
+                <i class="icon fas fa-book-reader"></i>
+                文章列表
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-github"></i>
+                github 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-git"></i>
+                gitee 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+                <i class="icon fas fa-book-open"></i>
+                CSDN 个人主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/react/index">
+                <i class="icon fab fa-react"></i>
+                react 技术栈
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives">
+                <i class="icon icon-archives"></i>
+                归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags">
+                <i class="icon icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/aboutMe">
+                <i class="icon fas fa-running"></i>
+                关于博主
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+
+        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+            <ul class="nav navbar-nav navbar-right" id="navMenuTop">
+                <li>
+                    <a href="/">主页</a>
+                </li>
+                
+                    
+                        <li>
+                            <a href="/classifyIndex" title="本博客的文章分类列表">文章分类</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/home" title="本博客的所有文章列表">文章列表</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/java/index" title="Java 开发，文章目录">Java</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/mybatis/index" title="MyBatis，文章目录">MyBatis</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/database/index" title="日常开发中有关 MySQL 的一些经验总结">MySQL</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/react/index" title="React 技术栈（全家桶）学习心得分享，文章目录">React</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/linux/index" title="CentOS/linux，文章目录">CentOS/linux</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/lnmp/index" title="Linux + Nginx + MySQL + PHP 文章目录">LNMP</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/git/index" title="git 文章目录">git</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/windows/index" title="windows 环境下的日常工作，文章目录">windows</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="https://github.com/uncleAndyChen" target="_blank" title="欢迎访问我的 github">github</a>
+                        </li>
+                    
+                
+                    
+                        <li>
+                            <a href="/about">关于</a>
+                        </li>
+                    
+                
+            </ul>
+        </div>
+
+        <div class="flex-col header-title ellipsis">像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码</div>
+        
+        <div class="search-wrap" id="search-wrap" style="z-index: 2;">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare" style="z-index: 3;">
+                <i class="icon icon-lg icon-share-alt"></i>
+            </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h2 class="title">像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码</h2>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-11-24T16:00:00.000Z" itemprop="datePublished" class="page-time">
+  2018-11-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/WebStorm/">WebStorm</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/WebStorm/react/">react</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#效果"><span class="post-toc-number">1.</span> <span class="post-toc-text">效果</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">2.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#调试"><span class="post-toc-number">3.</span> <span class="post-toc-text">调试</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#chrome-安装插件遇到的问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">chrome 安装插件遇到的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#现象"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">现象</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">解决</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<article id="post-react/JetBrainsIDESupport" class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年11月25日 0:00" datetime="2018-11-24T16:00:00.000Z" itemprop="datePublished">2018-11-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/WebStorm/">WebStorm</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/WebStorm/react/">react</a></li></ul></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" style="display:none">
+    阅读量：<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <span>|</span>
+    <span class="post-count">字数：473</span>
+    <span>|</span>
+    <span class="post-count">阅读时长：大约1分钟</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>开发工具：WebStorm + Google Chrome + JetBrains IDE Support 插件<br><a id="more"></a></p>
+<h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>先来一张截图，看一下效果。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/react/WebStormDebugReact15.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><blockquote>
+<p>WebStorm 的 Javascript Debug 只能选择 Google chrome（至少在我的电脑上是这样），所以，JetBrains IDE Support 插件需要安装到 Google chrome 上。</p>
+</blockquote>
+<ol>
+<li><a href="http://chromecj.com/category/chrome/" target="_blank" rel="noopener">chrome 最新版下载</a></li>
+<li>安装插件，在应用中心，搜索：JetBrains IDE Support，不过，由于众所周知的原因，如果你不能访问谷歌应用中心的话，可以下载离线版进行安装。<ul>
+<li><a href="https://www.crx4chrome.com/crx/768/" target="_blank" rel="noopener">离线安装包下载链接</a></li>
+<li>下载之后，先开启 chrome 的开发者模式（详情请见<a href="#chromePluginInstall">chrome 安装插件遇到的问题</a>），重启 chrome，再将文件直接拖至 chrome 的扩展页面，按照提示安装即可。<ul>
+<li>安装插件之后一定要重启浏览器，否则插件不会生效。<br><img src="/img/react/WebStormDebugReact04.png" alt=""><br><img src="/img/react/WebStormDebugReact05.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>WebStorm 和 JetBrains IDE Support 端口设置成一样。<br> <img src="/img/react/WebStormDebugReact03.png" alt=""><br> 点击 JetBrains IDE Support 插件的 logo 右键，出来如下窗口，点击【Options】设置端口<br> <img src="/img/react/WebStormDebugReact06.png" alt=""></li>
+<li>添加 JavaScript Debug 启动项。<br> <img src="/img/react/WebStormDebugReact01.png" alt="添加 JavaScript Debug 启动项"><br> 只能选择 chrome 浏览器<br> <img src="/img/react/WebStormDebugReact02.png" alt="只能选择 chrome 浏览器"></li>
+</ol>
+<h1 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h1><ol>
+<li><p>在 WebStorm 的【Terminal】窗口运行 <code>npm start</code>。  </p>
+<blockquote>
+<p>也可以按照如下配置，就象用 IDEA 开发 Java 程序一样配置启动项，然后直接点击小虫子左边的三角启动项目。 </p>
+</blockquote>
+<p> <img src="/img/react/WebStormDebugReact09.png" alt=""><br> <img src="/img/react/WebStormDebugReact08.png" alt=""></p>
+</li>
+<li>选择刚才添加的【JavaScript Debug】启动项【jsDebug】，点击 Debug 按钮（小虫子），会打开 chrome 窗口，这时候的操作便会触发调试，尽情享受编程的乐趣吧~~~<br> <img src="/img/react/WebStormDebugReact10.png" alt=""><br> <img src="/img/react/WebStormDebugReact11.png" alt=""></li>
+</ol>
+<h1 id="chrome-安装插件遇到的问题"><a href="#chrome-安装插件遇到的问题" class="headerlink" title="chrome 安装插件遇到的问题"></a><a name="chromePluginInstall">chrome 安装插件遇到的问题</a></h1><h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>提示：无法从该网站添加应用、扩展程序和用户脚本<br>拖上去的插件，变成下载了，汗~~<br><img src="/img/react/WebStormDebugReact12.png" alt=""></p>
+<p>开启开发者模式，重新将插件拖上去，问题依旧。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>开启开发者模式之后，重启浏览器，重新安装，就一切正常了。看来开启开发都模式之后，需要重启浏览器才会生效。<br><img src="/img/react/WebStormDebugReact13.png" alt=""><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/react/WebStormDebugReact14.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-08-23T14:00:13.930Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+</span><br>
+
+
+        转载请注明出处：<a href="/react/JetBrainsIDESupport/" target="_blank" rel="external">https://www.lovesofttech.com/react/JetBrainsIDESupport/</a>
+    </div>
+    <footer>
+        <a href="https://www.lovesofttech.com">
+            <img src="/img/myLogo.jpg" alt="安迪陈">
+            安迪陈
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WebStorm/">WebStorm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/JetBrainsIDESupport/&title=《像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/JetBrainsIDESupport/&title=《像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=开发工具：WebStorm + Google Chrome + JetBrains IDE Support 插件" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/JetBrainsIDESupport/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/JetBrainsIDESupport/&via=https://www.lovesofttech.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/JetBrainsIDESupport/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/react/examplesTodomvcWarningsFixed/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">redux 官方示例 todomvc 两个警告修复</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/react/reactPropTypes/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="/js/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '834d6e5933da34dc78f3',
+          clientSecret: '5108932d0e8753537dd75ce038bd64f4780ad6dc',
+          repo: 'https://github.com/uncleAndyChen/blog-comment',
+          owner: 'andy@lovesofttech.com',
+          admin: ['andy@lovesofttech.com'],
+          // id: location.href,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: true  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div class="bottom">
+        <p>
+            <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2019</span>
+            <span>
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+            <span>
+                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+            </span>
+            
+            </p><p>
+                <span>
+                    本站访问统计开始时间：2019年3月6日
+                </span>
+                <span id="busuanzi_container_site_uv" style="display:none">
+                    总访客数：<span id="busuanzi_value_site_uv"></span>
+                </span>
+                <span id="busuanzi_container_site_pv" style="display:none">
+                    总访问量：<span id="busuanzi_value_site_pv"></span>
+                </span>
+            
+            
+                <span>|</span>
+                <span class="post-count">本站文章累计字数：272.6k</span>
+            
+            </p>
+        <p></p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/JetBrainsIDESupport/&title=《像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/JetBrainsIDESupport/&title=《像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=开发工具：WebStorm + Google Chrome + JetBrains IDE Support 插件" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/JetBrainsIDESupport/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/JetBrainsIDESupport/&via=https://www.lovesofttech.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/JetBrainsIDESupport/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOklEQVR42u3aS46DMBBF0ex/02TarQRzXxVEsn0ZITrCPgyq6+PXC1/Hx/X3Ob8/e+fZk5svGTJkTMs4htd4yTGytvXxm09XkSFDxgaMsyXJfS0QpwH9Ys8yZMiQ8fGbcejspH0yZMiQ8UTATYvVNCWVIUOGjPR1PLB23vlgLS5DhowJGbzr/vv7R+YbMmTImIpxhFdnzMk3F+9KhgwZSzN4gCNJG/l9GsT5fmTIkLEqgx994CG4U3COP0rxG8uQIWNyRifY8bSPwNIDHF+eyJAhY1EGb9/XkrzaX+PWmwwZMpZmjNOv2rGw2sGLdGxwMY+VIUPGQgx+DKKWwPHEkX+seCIhQ4aMyRm8pcWPbXXGnDe04WTIkLElI+jbNYpkEnBRKJchQ8aiDN6sT9O1TiuNk2TIkLEDo1YV9tPE2tD0toGBDBkyJmHUlLVBIz/wykvWf4MBGTJkLMrgyRxfJqibwwFnEKxlyJCxEKM2vCRP0gEAH15eHLaQIUPGcow0aeuPCmpJZzDZkCFDxgaMWtMtDbj8YwUfUYYMGdswePHZCdA8TAdlrQwZMrZh8IMOaULZPzCBBpkyZMhYjnGEFwnWxWNb+B8ASgplyJCxEKPTCKuVu2maeHNrT4YMGdMySNBMk7xO2OWBW4YMGbsxeNM/XTINrDygy5AhQ0Yn4NYy0OIxCxkyZMgYLlBrzNUK44u1ZMiQsQGDFLGkcCVb7w8YZMiQsRujUzqSZI5/CJImtgaZMmTImI/xBtHD5PMEIjK8AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.5.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.5.2" async></script>
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '安迪陈技术日志';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎回来';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
