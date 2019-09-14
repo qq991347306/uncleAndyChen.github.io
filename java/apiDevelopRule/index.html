@@ -592,22 +592,7 @@
     <script src="/js/gitalk.min.js"></script>
     <script src="/js/md5.min.js"></script>
     <script>
-        /**
-         * 字符串替换
-         * @param  {string} str    要被替换的字符串
-         * @param  {string} substr 要替换的字符串
-         * @param  {string} newstr 用于替换的字符串
-         * @return {string}        替换后的新字符串
-         */
-        function replace(str, substr, newstr) {
-            substr = substr.replace(/[.\\[\]{}()|^$?*+]/g, "\\$&"); // 转义字符串中的元字符
-            var re = new RegExp(substr, "g"); // 生成正则
-            return str.replace(re, newstr);
-        }
-
-        var pathname = replace(location.pathname, "index.html", "");
-        //pathname = replace(pathname, "/", "-");
-        //pathname = pathname.substring(1, pathname.length - 1);
+        var pathname = location.pathname.replace("index.html", "");
         //alert(pathname);
         //alert(md5(pathname));
 

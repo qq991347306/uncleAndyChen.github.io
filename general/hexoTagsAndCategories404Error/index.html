@@ -70,9 +70,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="experience,hexo">
+    <meta name="keywords" content="hexo,experience">
     <meta name="description" content="在 windows 下一切正常，发布到 github 不正常。">
-<meta name="keywords" content="experience,hexo">
+<meta name="keywords" content="hexo,experience">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 标签、分类，大小写问题导致404错误，原因分析和解决">
 <meta property="og:url" content="https://www.lovesofttech.com/general/hexoTagsAndCategories404Error/index.html">
@@ -503,22 +503,7 @@
     <script src="/js/gitalk.min.js"></script>
     <script src="/js/md5.min.js"></script>
     <script>
-        /**
-         * 字符串替换
-         * @param  {string} str    要被替换的字符串
-         * @param  {string} substr 要替换的字符串
-         * @param  {string} newstr 用于替换的字符串
-         * @return {string}        替换后的新字符串
-         */
-        function replace(str, substr, newstr) {
-            substr = substr.replace(/[.\\[\]{}()|^$?*+]/g, "\\$&"); // 转义字符串中的元字符
-            var re = new RegExp(substr, "g"); // 生成正则
-            return str.replace(re, newstr);
-        }
-
-        var pathname = replace(location.pathname, "index.html", "");
-        //pathname = replace(pathname, "/", "-");
-        //pathname = pathname.substring(1, pathname.length - 1);
+        var pathname = location.pathname.replace("index.html", "");
         //alert(pathname);
         //alert(md5(pathname));
 

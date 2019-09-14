@@ -453,9 +453,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/java/springPetclinic/" id="post-prev" class="post-nav-link">
+      <a href="/general/svnOperation/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">spring 官方例子-&gt;宠物医院，数据库改成 MySQL，数据库连接池改成 druid</h4>
+        <h4 class="title">svn递归添加目录、子目录和文件</h4>
       </a>
     </div>
   
@@ -479,22 +479,7 @@
     <script src="/js/gitalk.min.js"></script>
     <script src="/js/md5.min.js"></script>
     <script>
-        /**
-         * 字符串替换
-         * @param  {string} str    要被替换的字符串
-         * @param  {string} substr 要替换的字符串
-         * @param  {string} newstr 用于替换的字符串
-         * @return {string}        替换后的新字符串
-         */
-        function replace(str, substr, newstr) {
-            substr = substr.replace(/[.\\[\]{}()|^$?*+]/g, "\\$&"); // 转义字符串中的元字符
-            var re = new RegExp(substr, "g"); // 生成正则
-            return str.replace(re, newstr);
-        }
-
-        var pathname = replace(location.pathname, "index.html", "");
-        //pathname = replace(pathname, "/", "-");
-        //pathname = pathname.substring(1, pathname.length - 1);
+        var pathname = location.pathname.replace("index.html", "");
         //alert(pathname);
         //alert(md5(pathname));
 

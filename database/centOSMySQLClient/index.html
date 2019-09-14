@@ -70,9 +70,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="CentOS,MySQL">
+    <meta name="keywords" content="MySQL,CentOS">
     <meta name="description" content="在一台新的 centOS 6.5 服务器上，想要运行 MySQL 客户端，却被告之无法识别。本文介绍如何只安装 MySQL 客户端。">
-<meta name="keywords" content="CentOS,MySQL">
+<meta name="keywords" content="MySQL,CentOS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在 centOS 6.5 上安装 MySQL 客户端">
 <meta property="og:url" content="https://www.lovesofttech.com/database/centOSMySQLClient/index.html">
@@ -471,22 +471,7 @@
     <script src="/js/gitalk.min.js"></script>
     <script src="/js/md5.min.js"></script>
     <script>
-        /**
-         * 字符串替换
-         * @param  {string} str    要被替换的字符串
-         * @param  {string} substr 要替换的字符串
-         * @param  {string} newstr 用于替换的字符串
-         * @return {string}        替换后的新字符串
-         */
-        function replace(str, substr, newstr) {
-            substr = substr.replace(/[.\\[\]{}()|^$?*+]/g, "\\$&"); // 转义字符串中的元字符
-            var re = new RegExp(substr, "g"); // 生成正则
-            return str.replace(re, newstr);
-        }
-
-        var pathname = replace(location.pathname, "index.html", "");
-        //pathname = replace(pathname, "/", "-");
-        //pathname = pathname.substring(1, pathname.length - 1);
+        var pathname = location.pathname.replace("index.html", "");
         //alert(pathname);
         //alert(md5(pathname));
 
