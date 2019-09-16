@@ -143,30 +143,79 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
-                <i class="icon icon-github"></i>
-                github 个人主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
-                <i class="icon icon-git"></i>
-                gitee 个人主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
-                <i class="icon fas fa-book-open"></i>
-                CSDN 个人主页
+              <a href="/java/index">
+                <i class="icon fab fa-java"></i>
+                Java
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/react/index">
                 <i class="icon fab fa-react"></i>
-                react 技术栈
+                React
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/database/mySQLAndMyBatisIndex">
+                <i class="icon fas fa-database"></i>
+                MySQL/MyBatis
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/linux/index">
+                <i class="icon fab fa-linux"></i>
+                CentOS/linux
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/lnmp/index">
+                <i class="icon fab fa-php"></i>
+                LNMP
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/git/index" target="_blank">
+                <i class="icon icon-git"></i>
+                git
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/windows/index" target="_blank">
+                <i class="icon fab fa-windows"></i>
+                windows
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/dailyLives/jobAndLivesIndex" target="_blank">
+                <i class="icon fas fa-grin-hearts"></i>
+                工作 &amp; 生活
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-github"></i>
+                github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+                <i class="icon fas fa-code-branch"></i>
+                gitee
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+                <i class="icon fas fa-book-open"></i>
+                CSDN
               </a>
             </li>
         
@@ -186,7 +235,7 @@
         
             <li class="waves-block waves-effect">
               <a href="/aboutMe">
-                <i class="icon fas fa-running"></i>
+                <i class="icon fas fa-address-card"></i>
                 关于博主
               </a>
             </li>
@@ -200,8 +249,8 @@
         <header class="top-header" id="header">
     <div class="flex-row">
 
-        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+        <div class="navbar navbar-custom navbar-fixed-top">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" style="margin-left:10px;" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
             <ul class="nav navbar-nav navbar-right" id="navMenuTop">
                 <li>
                     <a href="/">主页</a>
@@ -275,10 +324,10 @@
 </header>
 
 
-<div class="container body-wrap">
+<div class="container body-wrap" id="index-container">
     
     <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
+        <nav class="post-toc-wrap" id="post-toc" style="z-index: 3;">
             <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ESLint-简介"><span class="post-toc-number">1.</span> <span class="post-toc-text">ESLint 简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ESLint-哲学"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">ESLint 哲学</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#先看一下代码优化效果"><span class="post-toc-number">2.</span> <span class="post-toc-text">先看一下代码优化效果</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#使用-ESLint-带来的好处"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用 ESLint 带来的好处</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#统一代码风格，减少review成本和低级错误的出现"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">统一代码风格，减少review成本和低级错误的出现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#支持ES6"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">支持ES6</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#丰富的插件"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">丰富的插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置并在项目中使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">配置并在项目中使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用命令生成配置文件-eslintrc-yml"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">使用命令生成配置文件 .eslintrc.yml</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实践"><span class="post-toc-number">5.</span> <span class="post-toc-text">实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WebStorm-提示-Error-No-ESLint-configuration-found"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">WebStorm 提示 Error: No ESLint configuration found.</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ESLint-是否全局安装，决定-WebStorm-如何配置"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">ESLint 是否全局安装，决定 WebStorm 如何配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#eslint-plugin-react-依赖"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">eslint-plugin-react 依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#switch-缩进配置"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">switch 缩进配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#让webpack在打包文件之前，对除第三方外的js文件用eslint进行检查。"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">让webpack在打包文件之前，对除第三方外的js文件用eslint进行检查。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加插件"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">添加插件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#rules-配置说明"><span class="post-toc-number">6.</span> <span class="post-toc-text">rules 配置说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置第三方规则-airbnb"><span class="post-toc-number">7.</span> <span class="post-toc-text">配置第三方规则 airbnb</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实际操作"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">实际操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装依赖"><span class="post-toc-number">7.1.1.</span> <span class="post-toc-text">安装依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#修改官方扩展为-airbnb"><span class="post-toc-number">7.1.2.</span> <span class="post-toc-text">修改官方扩展为 airbnb</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扩展阅读"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">扩展阅读</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考</span></a></li></ol>
         </nav>
@@ -526,18 +575,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/react/js/" id="post-prev" class="post-nav-link">
+      <a href="/react/redux/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">React 技术栈学习，js 知识点</h4>
+        <h4 class="title">React 技术栈学习，redux 知识点</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/python/centOS7PythonNewVersion/" id="post-next" class="post-nav-link">
+      <a href="/react/reactPropTypes/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">在 CentOS7 安装最新版 Python（v3.7.1），并与系统自带 Python2.7.5 共存，不影响 yum 正常使用</h4>
+        <h4 class="title">react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除</h4>
       </a>
     </div>
   
@@ -605,7 +654,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：272.9k</span>
+                <span class="post-count">本站文章累计字数：273.7k</span>
             
             </p>
         <p></p>
@@ -614,7 +663,7 @@
 
     </main>
     <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light" title="回到顶部"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 

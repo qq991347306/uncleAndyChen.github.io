@@ -145,30 +145,79 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
-                <i class="icon icon-github"></i>
-                github 个人主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
-                <i class="icon icon-git"></i>
-                gitee 个人主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
-                <i class="icon fas fa-book-open"></i>
-                CSDN 个人主页
+              <a href="/java/index">
+                <i class="icon fab fa-java"></i>
+                Java
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/react/index">
                 <i class="icon fab fa-react"></i>
-                react 技术栈
+                React
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/database/mySQLAndMyBatisIndex">
+                <i class="icon fas fa-database"></i>
+                MySQL/MyBatis
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/linux/index">
+                <i class="icon fab fa-linux"></i>
+                CentOS/linux
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/lnmp/index">
+                <i class="icon fab fa-php"></i>
+                LNMP
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/git/index" target="_blank">
+                <i class="icon icon-git"></i>
+                git
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/windows/index" target="_blank">
+                <i class="icon fab fa-windows"></i>
+                windows
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/dailyLives/jobAndLivesIndex" target="_blank">
+                <i class="icon fas fa-grin-hearts"></i>
+                工作 &amp; 生活
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-github"></i>
+                github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+                <i class="icon fas fa-code-branch"></i>
+                gitee
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+                <i class="icon fas fa-book-open"></i>
+                CSDN
               </a>
             </li>
         
@@ -188,7 +237,7 @@
         
             <li class="waves-block waves-effect">
               <a href="/aboutMe">
-                <i class="icon fas fa-running"></i>
+                <i class="icon fas fa-address-card"></i>
                 关于博主
               </a>
             </li>
@@ -202,8 +251,8 @@
         <header class="top-header" id="header">
     <div class="flex-row">
 
-        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+        <div class="navbar navbar-custom navbar-fixed-top">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" style="margin-left:10px;" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
             <ul class="nav navbar-nav navbar-right" id="navMenuTop">
                 <li>
                     <a href="/">主页</a>
@@ -277,10 +326,10 @@
 </header>
 
 
-<div class="container body-wrap">
+<div class="container body-wrap" id="index-container">
     
     <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
+        <nav class="post-toc-wrap" id="post-toc" style="z-index: 3;">
             <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git-权限管理工具"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git 权限管理工具</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#创建管理项目用的组-ggit-和用户-ugit"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建管理项目用的组 ggit 和用户 ugit</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装-Gitolite"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装 Gitolite</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#客户端：在管理员电脑-win10-上，生成-SSH-key-备用"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">客户端：在管理员电脑 win10 上，生成 SSH key 备用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#服务器端：用管理员-SSH-public-key-来安装配置-gitolite"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">服务器端：用管理员 SSH public key 来安装配置 gitolite</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#项目权限管理（配置）"><span class="post-toc-number">4.</span> <span class="post-toc-text">项目权限管理（配置）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#clone-gitolite-admin"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">clone gitolite-admin</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加其他开发小伙伴"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">添加其他开发小伙伴</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过文件-gitolite-conf-配置（管理）项目"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">通过文件 gitolite.conf 配置（管理）项目</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#注意事项"><span class="post-toc-number">5.</span> <span class="post-toc-text">注意事项</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#用-TortoiseGit-clone-项目的坑"><span class="post-toc-number">6.</span> <span class="post-toc-text">用 TortoiseGit clone 项目的坑</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#切换管理员"><span class="post-toc-number">7.</span> <span class="post-toc-text">切换管理员</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#切换管理员之后记"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">切换管理员之后记</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#管理员-clone-gitolite-admin-的坑"><span class="post-toc-number">8.</span> <span class="post-toc-text">管理员 clone gitolite-admin 的坑</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git-describe-failed-cannot-deduce-version-number"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">git describe failed; cannot deduce version number</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#要求输入密码"><span class="post-toc-number">8.2.</span> <span class="post-toc-text">要求输入密码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入-ugit-用户密码进行尝试（看过官方文档才知道，这种尝试是多余的）"><span class="post-toc-number">8.2.1.</span> <span class="post-toc-text">输入 ugit 用户密码进行尝试（看过官方文档才知道，这种尝试是多余的）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#不算解决方案的解决方案"><span class="post-toc-number">9.</span> <span class="post-toc-text">不算解决方案的解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#我的方案"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">我的方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原因分析"><span class="post-toc-number">9.1.1.</span> <span class="post-toc-text">原因分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除旧用户，用新用户来配置"><span class="post-toc-number">9.1.2.</span> <span class="post-toc-text">删除旧用户，用新用户来配置</span></a></li></ol></li></ol></li></ol>
         </nav>
@@ -611,9 +660,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/linux/centOS7JenkinsInstall/" id="post-next" class="post-nav-link">
+      <a href="/frontend/centOS7Node/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CentOS 7.5 安装配置 jenkins</h4>
+        <h4 class="title">CentOS 7.5 安装配置 Node</h4>
       </a>
     </div>
   
@@ -681,7 +730,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：272.9k</span>
+                <span class="post-count">本站文章累计字数：273.7k</span>
             
             </p>
         <p></p>
@@ -690,7 +739,7 @@
 
     </main>
     <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light" title="回到顶部"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 

@@ -10,6 +10,8 @@
         mask = $('#mask'),
         menuToggle = $('#menu-toggle'),
         menuOff = $('#menu-off'),
+        postToc = $('#post-toc'),
+        indexContainer = $('#index-container'),
         loading = $('#loading'),
         animate = w.requestAnimationFrame,
         scrollSpeed = 200 / (1000 / 60),
@@ -492,11 +494,22 @@
 
     menuToggle.addEventListener(even, function (e) {
         Blog.toggleMenu(true);
+
+        if (postToc !== null) {
+            postToc.classList.add('post-toc-wrap-when-menu-show');
+            indexContainer.classList.add('container-when-menu-show');
+        }
+
         e.preventDefault();
     }, false);
 
     menuOff.addEventListener(even, function () {
         menu.classList.add('hide');
+
+        if (postToc !== null) {
+            postToc.classList.remove('post-toc-wrap-when-menu-show');
+            indexContainer.classList.remove('container-when-menu-show');
+        }
     }, false);
 
     mask.addEventListener(even, function (e) {

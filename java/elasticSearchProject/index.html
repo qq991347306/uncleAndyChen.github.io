@@ -136,30 +136,79 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
-                <i class="icon icon-github"></i>
-                github 个人主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
-                <i class="icon icon-git"></i>
-                gitee 个人主页
-              </a>
-            </li>
-        
-            <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
-                <i class="icon fas fa-book-open"></i>
-                CSDN 个人主页
+              <a href="/java/index">
+                <i class="icon fab fa-java"></i>
+                Java
               </a>
             </li>
         
             <li class="waves-block waves-effect">
               <a href="/react/index">
                 <i class="icon fab fa-react"></i>
-                react 技术栈
+                React
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/database/mySQLAndMyBatisIndex">
+                <i class="icon fas fa-database"></i>
+                MySQL/MyBatis
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/linux/index">
+                <i class="icon fab fa-linux"></i>
+                CentOS/linux
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/lnmp/index">
+                <i class="icon fab fa-php"></i>
+                LNMP
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/git/index" target="_blank">
+                <i class="icon icon-git"></i>
+                git
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/windows/index" target="_blank">
+                <i class="icon fab fa-windows"></i>
+                windows
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/dailyLives/jobAndLivesIndex" target="_blank">
+                <i class="icon fas fa-grin-hearts"></i>
+                工作 &amp; 生活
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/uncleAndyChen" target="_blank">
+                <i class="icon icon-github"></i>
+                github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+                <i class="icon fas fa-code-branch"></i>
+                gitee
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+                <i class="icon fas fa-book-open"></i>
+                CSDN
               </a>
             </li>
         
@@ -179,7 +228,7 @@
         
             <li class="waves-block waves-effect">
               <a href="/aboutMe">
-                <i class="icon fas fa-running"></i>
+                <i class="icon fas fa-address-card"></i>
                 关于博主
               </a>
             </li>
@@ -193,8 +242,8 @@
         <header class="top-header" id="header">
     <div class="flex-row">
 
-        <div class="navbar navbar-custom navbar-fixed-top" style="z-index: 1;">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
+        <div class="navbar navbar-custom navbar-fixed-top">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" style="margin-left:10px;" id="menu-toggle" title="显示左侧导航"><i class="icon icon-lg icon-navicon"></i>﹥</a>
             <ul class="nav navbar-nav navbar-right" id="navMenuTop">
                 <li>
                     <a href="/">主页</a>
@@ -268,10 +317,10 @@
 </header>
 
 
-<div class="container body-wrap">
+<div class="container body-wrap" id="index-container">
     
     <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
+        <nav class="post-toc-wrap" id="post-toc" style="z-index: 3;">
             <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动-ElasticSearch"><span class="post-toc-number">1.</span> <span class="post-toc-text">启动 ElasticSearch</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#启动-kibana"><span class="post-toc-number">2.</span> <span class="post-toc-text">启动 kibana</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#通过-kibana-向-es-发送-json-请求"><span class="post-toc-number">3.</span> <span class="post-toc-text">通过 kibana 向 es 发送 json 请求</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以上脚本如果在-ElasticSearch-6-X-执行，会报错"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">以上脚本如果在 ElasticSearch 6.X 执行，会报错</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原因"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">原因</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#start-server"><span class="post-toc-number">4.</span> <span class="post-toc-text">start server</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动-zookeeper"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">启动 zookeeper</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#也可以用-kafka-自带的启动脚本启动-zookeeper-启动"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">也可以用 kafka 自带的启动脚本启动 zookeeper 启动</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动-kafka"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">启动 kafka</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动第二个-broker"><span class="post-toc-number">4.2.1.</span> <span class="post-toc-text">启动第二个 broker</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#停止"><span class="post-toc-number">4.2.2.</span> <span class="post-toc-text">停止</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看-kafka-的-topic"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">查看 kafka 的 topic</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建-topic"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">创建 topic</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#kafka-查看-Topic-的分区和副本情况"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">kafka 查看 Topic 的分区和副本情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除-topic"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">删除 topic</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试发消息"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">测试发消息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#测试消费消息"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">测试消费消息</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#redis"><span class="post-toc-number">5.</span> <span class="post-toc-text">redis</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载-amp-编译安装"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">下载 &amp; 编译安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动-redis"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">启动 redis</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开启远程连接"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">开启远程连接</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#停止-1"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">停止</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看进程"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">查看进程</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#更新房源报错"><span class="post-toc-number">6.</span> <span class="post-toc-text">更新房源报错</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#house-build-已经被删除的情况"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">house_build 已经被删除的情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#modelmapper"><span class="post-toc-number">7.</span> <span class="post-toc-text">modelmapper</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#搜索实践"><span class="post-toc-number">8.</span> <span class="post-toc-text">搜索实践</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#分词"><span class="post-toc-number">9.</span> <span class="post-toc-text">分词</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#simple-分词器"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">simple 分词器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#whitespace-分词器"><span class="post-toc-number">9.2.</span> <span class="post-toc-text">whitespace 分词器</span></a></li></ol></li></ol>
         </nav>
@@ -562,7 +611,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：272.9k</span>
+                <span class="post-count">本站文章累计字数：273.7k</span>
             
             </p>
         <p></p>
@@ -571,7 +620,7 @@
 
     </main>
     <div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light" title="回到顶部"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
 
