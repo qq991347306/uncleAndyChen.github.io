@@ -16,7 +16,7 @@
 }
 
 .navbar-custom .nav li a {
-    color: white;
+    //color: white;
     padding: 15px 8px;
 }
 
@@ -30,15 +30,10 @@
 
 .navbar-right {
     float: right !important;
-    margin-right: 110px;
-}
-
-.navbar-right-search {
-    float: right !important;
-    margin-right: 410px;
+    margin-right: 80px;
 }
 
 .search {
-    margin-right: 410px;
+    margin-right: 380px;
 }
 

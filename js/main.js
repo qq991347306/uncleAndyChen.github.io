@@ -150,9 +150,9 @@
             };
 
             return {
-                fixed: function (top) {
-                    top >= bannerH - headerH ? toc.classList.add('fixed') : toc.classList.remove('fixed');
-                },
+                // fixed: function (top) {
+                //     top >= bannerH - headerH ? toc.classList.add('fixed') : toc.classList.remove('fixed');
+                // },
                 actived: function (top) {
                     for (i = 0, len = titles.length; i < len; i++) {
                         if (top > offset(titles[i]).y - headerH - 5) {
@@ -456,7 +456,7 @@
     w.addEventListener('DOMContentLoaded', function () {
         Blog.waterfall();
         var top = rootScollTop();
-        Blog.toc.fixed(top);
+        //Blog.toc.fixed(top);
         Blog.toc.actived(top);
         Blog.page.loaded();
     });
@@ -524,7 +524,7 @@
         var top = rootScollTop();
         Blog.toggleGotop(top);
         Blog.fixedHeader(top);
-        Blog.toc.fixed(top);
+        //Blog.toc.fixed(top);
         Blog.toc.actived(top);
     }, false);
 
