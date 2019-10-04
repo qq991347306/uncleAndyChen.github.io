@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="如题">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-09-06T14:38:23.360Z">
+<meta property="og:updated_time" content="2019-10-01T00:53:29.252Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 7.5 安装配置 git">
 <meta name="twitter:description" content="如题">
@@ -87,8 +87,8 @@
         <link rel="alternative" href="/atom.xml" title="安迪陈技术日志，架构、感悟、系统分析、团队管理" type="application/atom+xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/style.css?v=20190929">
+    <link rel="stylesheet" href="/css/header.css?v=201909280950">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script>window.lazyScripts=[]</script>
 </head>
@@ -150,7 +150,7 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/database/mySQLAndMyBatisIndex">
+              <a href="/database/database">
                 <i class="icon fas fa-database"></i>
                 MySQL/MyBatis
               </a>
@@ -322,7 +322,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc" style="z-index: 3;">
             <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装的正确姿势"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装的正确姿势</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装依赖"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-git"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">安装 git</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#以下是在-CentOS-7-5-上安装，并记录了详细过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">以下是在 CentOS 7.5 上安装，并记录了详细过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载最新版"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">下载最新版</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装过程遇到的问题"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装过程遇到的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#autoconf-command-not-found"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">autoconf: command not found</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#docbook2x-texi-command-not-found"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">docbook2x-texi: command not found</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#依然有错误"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">依然有错误</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#再次依次执行编译安装，没再报错。"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">再次依次执行编译安装，没再报错。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检查-git-版本"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">检查 git 版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装官方教程"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">安装官方教程</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置-git-作为服务端"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置 git 作为服务端</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#后记"><span class="post-toc-number">4.</span> <span class="post-toc-text">后记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fatal-unable-to-find-remote-helper-for-‘https’"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">fatal: unable to find remote helper for ‘https’</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fatal-unable-to-find-remote-helper-for-‘http’"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">fatal: unable to find remote helper for ‘http’</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#再一次后记-2019-09-01"><span class="post-toc-number">5.</span> <span class="post-toc-text">再一次后记 2019-09-01</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结论"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装的正确姿势"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装的正确姿势</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一种安装方案：不安装-git-文档（推荐）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一种安装方案：不安装 git 文档（推荐）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装依赖"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">安装依赖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载最新版的-git-源码："><span class="post-toc-number">1.3.</span> <span class="post-toc-text">下载最新版的 git 源码：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装-git"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">安装 git</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一种安装方案：安装-git-的同时，安装-git-文档"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">第一种安装方案：安装 git 的同时，安装 git 文档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装依赖-1"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">安装依赖</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-git-1"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">安装 git</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#以下是在-CentOS-7-5-上安装，并记录了详细过程"><span class="post-toc-number">2.</span> <span class="post-toc-text">以下是在 CentOS 7.5 上安装，并记录了详细过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#下载最新版"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">下载最新版</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装过程遇到的问题"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装过程遇到的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#autoconf-command-not-found"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">autoconf: command not found</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#docbook2x-texi-command-not-found"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">docbook2x-texi: command not found</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#依然有错误"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">依然有错误</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#再次依次执行编译安装，没再报错。"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">再次依次执行编译安装，没再报错。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检查-git-版本"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">检查 git 版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装官方教程"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">安装官方教程</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置-git-作为服务端"><span class="post-toc-number">3.</span> <span class="post-toc-text">配置 git 作为服务端</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#后记"><span class="post-toc-number">4.</span> <span class="post-toc-text">后记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fatal-unable-to-find-remote-helper-for-‘https’"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">fatal: unable to find remote helper for ‘https’</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#fatal-unable-to-find-remote-helper-for-‘http’"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">fatal: unable to find remote helper for ‘http’</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#再一次后记-2019-09-01"><span class="post-toc-number">5.</span> <span class="post-toc-text">再一次后记 2019-09-01</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结论"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">结论</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -346,7 +346,7 @@
 
 
     <span>|</span>
-    <span class="post-count">字数：1.6k</span>
+    <span class="post-count">字数：1.7k</span>
     <span>|</span>
     <span class="post-count">阅读时长：大约8分钟</span>
 
@@ -354,8 +354,14 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>如题<br><a id="more"></a><br>如果不想看笔者的安装过程（看安装过程，可以知道哪一个问题如何解决），直接按照以下步骤执行即可。</p>
-<h1 id="安装的正确姿势"><a href="#安装的正确姿势" class="headerlink" title="安装的正确姿势"></a>安装的正确姿势</h1><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y perl-XML-SAX.noarch texinfo perl openjade dh-autoreconf autoconf libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto docbook2x</span><br><span class="line">wget http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/d/docbook2X-0.8.8-17.el7.x86_64.rpm</span><br><span class="line">rpm -ivh docbook2X-0.8.8-17.el7.x86_64.rpm </span><br><span class="line">ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi</span><br></pre></td></tr></table></figure>
-<h2 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h2><p>github.com 上下载很慢，可以通过这里下载：<a href="https://mirrors.edge.kernel.org/pub/software/scm/git" target="_blank" rel="noopener">https://mirrors.edge.kernel.org/pub/software/scm/git</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/git/git/archive/v2.17.1.tar.gz</span><br><span class="line">tar -xzvf v2.17.1.tar.gz</span><br><span class="line">cd git-2.17.1/</span><br><span class="line">make configure</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make all doc info</span><br><span class="line">make install install-doc install-html install-info</span><br></pre></td></tr></table></figure></p>
+<h1 id="安装的正确姿势"><a href="#安装的正确姿势" class="headerlink" title="安装的正确姿势"></a>安装的正确姿势</h1><h2 id="第一种安装方案：不安装-git-文档（推荐）"><a href="#第一种安装方案：不安装-git-文档（推荐）" class="headerlink" title="第一种安装方案：不安装 git 文档（推荐）"></a>第一种安装方案：不安装 git 文档（推荐）</h2><h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y curl-devel autoconf</span><br></pre></td></tr></table></figure>
+<h2 id="下载最新版的-git-源码："><a href="#下载最新版的-git-源码：" class="headerlink" title="下载最新版的 git 源码："></a>下载最新版的 git 源码：</h2><ul>
+<li>如果可以科学上网，访问 github 比较快：<a href="https://github.com/git/git/releases" target="_blank" rel="noopener">https://github.com/git/git/releases</a></li>
+<li>否则，可从这里下载：<a href="https://mirrors.edge.kernel.org/pub/software/scm/git" target="_blank" rel="noopener">https://mirrors.edge.kernel.org/pub/software/scm/git</a></li>
+</ul>
+<h2 id="安装-git"><a href="#安装-git" class="headerlink" title="安装 git"></a>安装 git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">make configure</span><br><span class="line">./configure --prefix=/usr # 配置目录</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<h2 id="第一种安装方案：安装-git-的同时，安装-git-文档"><a href="#第一种安装方案：安装-git-的同时，安装-git-文档" class="headerlink" title="第一种安装方案：安装 git 的同时，安装 git 文档"></a>第一种安装方案：安装 git 的同时，安装 git 文档</h2><h3 id="安装依赖-1"><a href="#安装依赖-1" class="headerlink" title="安装依赖"></a>安装依赖</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y curl-devel perl-XML-SAX.noarch texinfo perl openjade dh-autoreconf autoconf libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto docbook2x</span><br><span class="line">wget http://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/d/docbook2X-0.8.8-17.el7.x86_64.rpm</span><br><span class="line">rpm -ivh docbook2X-0.8.8-17.el7.x86_64.rpm </span><br><span class="line">ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi</span><br></pre></td></tr></table></figure>
+<h3 id="安装-git-1"><a href="#安装-git-1" class="headerlink" title="安装 git"></a>安装 git</h3><p>github.com 上下载很慢，可以通过这里下载：<a href="https://mirrors.edge.kernel.org/pub/software/scm/git" target="_blank" rel="noopener">https://mirrors.edge.kernel.org/pub/software/scm/git</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/git/git/archive/v2.17.1.tar.gz</span><br><span class="line">tar -xzvf v2.17.1.tar.gz</span><br><span class="line">cd git-2.17.1/</span><br><span class="line">make configure</span><br><span class="line">./configure --prefix=/usr</span><br><span class="line">make all doc info</span><br><span class="line">make install install-doc install-html install-info</span><br></pre></td></tr></table></figure></p>
 <h1 id="以下是在-CentOS-7-5-上安装，并记录了详细过程"><a href="#以下是在-CentOS-7-5-上安装，并记录了详细过程" class="headerlink" title="以下是在 CentOS 7.5 上安装，并记录了详细过程"></a>以下是在 CentOS 7.5 上安装，并记录了详细过程</h1><h2 id="下载最新版"><a href="#下载最新版" class="headerlink" title="下载最新版"></a>下载最新版</h2><p><a href="https://github.com/git/git/releases" target="_blank" rel="noopener">到官方 github 下载最新的 git release 版本</a><br>本教程下载的是 git-2.17.1 版本，下载之后，按照官方教程，依次执行以下命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/git/git/archive/v2.17.1.tar.gz</span><br><span class="line">yum install -y dh-autoreconf autoconf libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto docbook2x</span><br><span class="line">tar -xzvf v2.17.1.tar.gz</span><br><span class="line">cd git-2.17.1/</span><br><span class="line">make configure</span><br><span class="line">./configure --prefix=/usr # 配置目录</span><br><span class="line">make profix=/usr/git</span><br><span class="line"># 安装遇到问题，需要 docbook2x 依赖，请继续往下阅读。</span><br><span class="line">make all doc info</span><br><span class="line"># 先解决上一步的问题再执行。</span><br><span class="line">make install install-doc install-html install-info</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><a href="http://docbook2x.sourceforge.net/" target="_blank" rel="noopener">docbook2x</a></li>
@@ -425,7 +431,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-09-06T14:38:23.360Z" itemprop="dateUpdated">2019年9月6日 22:38</time>
+    最后更新时间：<time datetime="2019-10-01T00:53:29.252Z" itemprop="dateUpdated">2019年10月1日 8:53</time>
 </span><br>
 
 
@@ -500,18 +506,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/linux/CentOS7Node/" id="post-prev" class="post-nav-link">
+      <a href="/frontend/centOS7Node/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">CentOS 7 安装配置 Node</h4>
+        <h4 class="title">CentOS 7.5 安装配置 Node</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/frontend/centOS7Node/" id="post-next" class="post-nav-link">
+      <a href="/linux/centOS7NetworkScripts/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">CentOS 7.5 安装配置 Node</h4>
+        <h4 class="title">CentOS 7 修改网卡参数</h4>
       </a>
     </div>
   
@@ -579,7 +585,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：274k</span>
+                <span class="post-count">本站文章累计字数：275.1k</span>
             
             </p>
         <p></p>
