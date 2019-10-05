@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="介绍安装以及简单的配置。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-06-21T23:52:41.221Z">
+<meta property="og:updated_time" content="2019-10-05T08:30:44.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis5.0.5 在 CentOS7 上的安装和使用">
 <meta name="twitter:description" content="介绍安装以及简单的配置。">
@@ -359,8 +359,8 @@
 <p>参照官网，安装步骤：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# cd /opt/redis-5.0.5/</span><br><span class="line">[root@AndyCentOS7Basic ~]# make</span><br></pre></td></tr></table></figure></p>
 <h1 id="Redis-运行"><a href="#Redis-运行" class="headerlink" title="Redis 运行"></a>Redis 运行</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# /opt/redis-5.0.5/src/redis-server</span><br><span class="line">6105:C 30 May 2019 08:26:04.160 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo</span><br><span class="line">6105:C 30 May 2019 08:26:04.160 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=6105, just started</span><br><span class="line">6105:C 30 May 2019 08:26:04.160 # Warning: no config file specified, using the default config. In order to specify a config file use /opt/redis-5.0.5/src/redis-server /path/to/redis.conf</span><br><span class="line">6105:M 30 May 2019 08:26:04.161 * Increased maximum number of open files to 10032 (it was originally set to 1024).</span><br><span class="line">                _._                                                  </span><br><span class="line">           _.-``__ &apos;&apos;-._                                             </span><br><span class="line">      _.-``    `.  `_.  &apos;&apos;-._           Redis 5.0.5 (00000000/0) 64 bit</span><br><span class="line">  .-`` .-```.  ```\/    _.,_ &apos;&apos;-._                                   </span><br><span class="line"> (    &apos;      ,       .-`  | `,    )     Running in standalone mode</span><br><span class="line"> |`-._`-...-` __...-.``-._|&apos;` _.-&apos;|     Port: 6379</span><br><span class="line"> |    `-._   `._    /     _.-&apos;    |     PID: 6105</span><br><span class="line">  `-._    `-._  `-./  _.-&apos;    _.-&apos;                                   </span><br><span class="line"> |`-._`-._    `-.__.-&apos;    _.-&apos;_.-&apos;|                                  </span><br><span class="line"> |    `-._`-._        _.-&apos;_.-&apos;    |           http://redis.io        </span><br><span class="line">  `-._    `-._`-.__.-&apos;_.-&apos;    _.-&apos;                                   </span><br><span class="line"> |`-._`-._    `-.__.-&apos;    _.-&apos;_.-&apos;|                                  </span><br><span class="line"> |    `-._`-._        _.-&apos;_.-&apos;    |                                  </span><br><span class="line">  `-._    `-._`-.__.-&apos;_.-&apos;    _.-&apos;                                   </span><br><span class="line">      `-._    `-.__.-&apos;    _.-&apos;                                       </span><br><span class="line">          `-._        _.-&apos;                                           </span><br><span class="line">              `-.__.-&apos;                                               </span><br><span class="line"></span><br><span class="line">6105:M 30 May 2019 08:26:04.161 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.</span><br><span class="line">6105:M 30 May 2019 08:26:04.162 # Server initialized</span><br><span class="line">6105:M 30 May 2019 08:26:04.162 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &apos;vm.overcommit_memory = 1&apos; to /etc/sysctl.conf and then reboot or run the command &apos;sysctl vm.overcommit_memory=1&apos; for this to take effect.</span><br><span class="line">6105:M 30 May 2019 08:26:04.162 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &apos;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&apos; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.</span><br><span class="line">6105:M 30 May 2019 08:26:04.162 * Ready to accept connections</span><br></pre></td></tr></table></figure>
 <p>以后台程序方式运行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# /opt/redis-5.0.5/src/redis-server &amp;</span><br></pre></td></tr></table></figure></p>
-<h1 id="检查后台进程是否正在运行"><a href="#检查后台进程是否正在运行" class="headerlink" title="检查后台进程是否正在运行"></a>检查后台进程是否正在运行</h1><p>没有运行的情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# ps -ef |grep redis</span><br><span class="line">root      1726  1707  0 09:01 pts/1    00:00:00 grep --color=auto redis</span><br></pre></td></tr></table></figure></p>
-<p>运行时执行同样命令的情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# ps -ef |grep redis</span><br><span class="line">root      6105  1998  0 08:26 pts/2    00:00:00 /opt/redis-5.0.5/src/redis-server *:6379</span><br><span class="line">root      6127  6109  0 08:27 pts/3    00:00:00 grep --color=auto redis</span><br></pre></td></tr></table></figure></p>
+<h1 id="检查后台进程是否正在运行"><a href="#检查后台进程是否正在运行" class="headerlink" title="检查后台进程是否正在运行"></a>检查后台进程是否正在运行</h1><p>没有运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# ps -ef |grep redis</span><br><span class="line">root      1726  1707  0 09:01 pts/1    00:00:00 grep --color=auto redis</span><br></pre></td></tr></table></figure></p>
+<p>运行后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# ps -ef |grep redis</span><br><span class="line">root      6105  1998  0 08:26 pts/2    00:00:00 /opt/redis-5.0.5/src/redis-server *:6379</span><br><span class="line">root      6127  6109  0 08:27 pts/3    00:00:00 grep --color=auto redis</span><br></pre></td></tr></table></figure></p>
 <h1 id="检测6379端口是否在监听"><a href="#检测6379端口是否在监听" class="headerlink" title="检测6379端口是否在监听"></a>检测6379端口是否在监听</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# netstat -lntp | grep 6379</span><br><span class="line">tcp        0      0 0.0.0.0:6379            0.0.0.0:*               LISTEN      6130/redis-server * </span><br><span class="line">tcp6       0      0 :::6379                 :::*                    LISTEN      6130/redis-server *</span><br></pre></td></tr></table></figure>
 <h1 id="退出redis服务器"><a href="#退出redis服务器" class="headerlink" title="退出redis服务器"></a>退出redis服务器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# /opt/redis-5.0.5/src/redis-cli shutdown</span><br><span class="line">6130:M 30 May 2019 09:14:18.481 # User requested shutdown...</span><br><span class="line">6130:M 30 May 2019 09:14:18.481 * Saving the final RDB snapshot before exiting.</span><br><span class="line">6130:M 30 May 2019 09:14:18.548 * DB saved on disk</span><br><span class="line">6130:M 30 May 2019 09:14:18.548 # Redis is now ready to exit, bye bye...</span><br><span class="line">[1]+  Done                    /opt/redis-5.0.5/src/redis-server</span><br></pre></td></tr></table></figure>
 <p>因为Redis可以妥善处理SIGTERM信号，所以直接 <code>kill -9 PID</code> 也是可以的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# ps -ef |grep redis</span><br><span class="line">root      6199  1998  0 09:20 pts/2    00:00:00 /opt/redis-5.0.5/src/redis-server *:6379</span><br><span class="line">root      6205  1998  0 09:22 pts/2    00:00:00 grep --color=auto redis</span><br><span class="line">[root@AndyCentOS7Basic ~]# kill -9 6199</span><br><span class="line">[root@AndyCentOS7Basic ~]# ps -ef |grep redis</span><br><span class="line">root      6207  1998  0 09:22 pts/2    00:00:00 grep --color=auto redis</span><br><span class="line">[1]+  Killed                  /opt/redis-5.0.5/src/redis-server</span><br></pre></td></tr></table></figure></p>
@@ -378,9 +378,6 @@
 </ol>
 <h1 id="指定配置文件启动"><a href="#指定配置文件启动" class="headerlink" title="指定配置文件启动"></a>指定配置文件启动</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@AndyCentOS7Basic ~]# /opt/redis-5.0.5/src/redis-server /opt/redis-5.0.5/redis.conf &amp;</span><br><span class="line">[1] 6209</span><br><span class="line">[root@AndyCentOS7Basic ~]# 6209:C 30 May 2019 09:25:05.539 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo</span><br><span class="line">6209:C 30 May 2019 09:25:05.539 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=6209, just started</span><br><span class="line">6209:C 30 May 2019 09:25:05.539 # Configuration loaded</span><br><span class="line">[1]+  Done                    /opt/redis-5.0.5/src/redis-server /opt/redis-5.0.5/redis.conf</span><br><span class="line">[root@AndyCentOS7Basic ~]# ps -ef |grep redis</span><br><span class="line">root      6210     1  0 09:25 ?        00:00:00 /opt/redis-5.0.5/src/redis-server *:6379</span><br><span class="line">root      6215  1998  0 09:25 pts/2    00:00:00 grep --color=auto redis</span><br></pre></td></tr></table></figure>
 <h1 id="官网文档"><a href="#官网文档" class="headerlink" title="官网文档"></a>官网文档</h1><p><a href="https://redis.io/documentation" target="_blank" rel="noopener">官方文档</a></p>
-<blockquote>
-<p>翻墙之后反面不能访问了~~</p>
-</blockquote>
 
         </div>
 
@@ -388,7 +385,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-06-21T23:52:41.221Z" itemprop="dateUpdated">2019年6月22日 7:52</time>
+    最后更新时间：<time datetime="2019-10-05T08:30:44.655Z" itemprop="dateUpdated">2019年10月5日 16:30</time>
 </span><br>
 
 
@@ -463,18 +460,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/redis/index/" id="post-prev" class="post-nav-link">
+      <a href="/general/experience/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">redis 文章目录</h4>
+        <h4 class="title">日常经验--好记性不如烂文档</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/windows/winOffice2016Uninstall/" id="post-next" class="post-nav-link">
+      <a href="/redis/index/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">卸载 Office 2016 遇到的那些坑（完全干净的卸载 Office 2016）</h4>
+        <h4 class="title">redis 文章目录</h4>
       </a>
     </div>
   
@@ -542,7 +539,7 @@
             
             
                 <span>|</span>
-                <span class="post-count">本站文章累计字数：275k</span>
+                <span class="post-count">本站文章累计字数：275.2k</span>
             
             </p>
         <p></p>
