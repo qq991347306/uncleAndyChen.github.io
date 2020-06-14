@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lovesofttech.com/"/>
-  <updated>2020-06-14T09:13:11.772Z</updated>
+  <updated>2020-06-14T14:51:10.996Z</updated>
   <id>https://www.lovesofttech.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.lovesofttech.com/java/springResourcesStaticLocations.html"/>
     <id>https://www.lovesofttech.com/java/springResourcesStaticLocations.html</id>
     <published>2020-06-13T16:00:00.000Z</published>
-    <updated>2020-06-14T09:13:11.772Z</updated>
+    <updated>2020-06-14T14:51:10.996Z</updated>
     
-    <content type="html"><![CDATA[<p>无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。</p><a id="more"></a><h1 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h1><p>只要满足以下前提一和前提二其中任意一条的情况下，就需要把静态资源放在一个公共的地方，即便有多个 web 服务，也可以共享某一个文件。</p><ul><li>前提一<ul><li>需要做负载均衡</li><li>蓝绿部署</li><li>以 spring boot 生成的 jar 包直接运行</li></ul></li><li>前提二<ul><li>有静态的 html 文件是动态生成的</li><li>某些页面的图片是由用户/管理员上传的</li><li>需要下载的文件是动态生成的</li></ul></li></ul><h2 id="需要达到的效果"><a href="#需要达到的效果" class="headerlink" title="需要达到的效果"></a>需要达到的效果</h2><p>访问配置的静态目录，就象是直接访问 spring boot 项目的 <code>resources/static</code> 目录下的文件一样。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果配置了多个静态目录，则需要保证这些目录下的文件不能重名。</p><h1 id="以下是项目中的实际应用场景"><a href="#以下是项目中的实际应用场景" class="headerlink" title="以下是项目中的实际应用场景"></a>以下是项目中的实际应用场景</h1><ul><li>发布的文章需要动态生成静态 html 文件</li><li>用户上传的头像在用户相关页面显示<blockquote><p>用户头像以用户 id 命名，访问路径固定</p></blockquote></li><li>图文并茂的文章编辑器，需要上传图片。可参考：<a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li></ul><h2 id="实施方案"><a href="#实施方案" class="headerlink" title="实施方案"></a>实施方案</h2><h3 id="spring-boot-配置"><a href="#spring-boot-配置" class="headerlink" title="spring boot 配置"></a>spring boot 配置</h3><p>在 application.yml 文件配置以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static.pages: /home/utomcat/apps/resources/staticPages</span><br><span class="line">static.upload.images: /home/utomcat/apps/resources/uploadImages</span><br><span class="line">uEditor.upload.path: /home/utomcat/apps/webLoadBalance/uEditorUploads</span><br><span class="line">uEditor.upload.path.web: /home/utomcat/apps/webLoadBalance</span><br><span class="line">spring.mvc.static-path-pattern: /**</span><br><span class="line">spring.resources.static-locations: classpath:/resources/,classpath:/static/,file:$&#123;uEditor.upload.path&#125;,file:$&#123;uEditor.upload.path.web&#125;,file:$&#123;static.pages&#125;,file:$&#123;static.upload.images&#125;</span><br></pre></td></tr></table></figure></p><h4 id="这样配置的效果"><a href="#这样配置的效果" class="headerlink" title="这样配置的效果"></a>这样配置的效果</h4><ul><li>假设网站为：<code>https://www.lovesofttech.com/</code></li><li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个文件：<code>articleIndex.html</code>，则这样访问：<code>https://www.lovesofttech.com/articleIndex.html</code></li><li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个目录：<code>news</code></li><li>news 下有两个文件：<ul><li>article0.html</li><li>article.html</li></ul></li></ul><p>则上面两个文件这样访问：</p><ul><li><code>https://www.lovesofttech.com/news/article0.html</code></li><li><p><code>https://www.lovesofttech.com/news/article1.html</code></p></li><li><p>假设 <code>/home/utomcat/apps/resources/uploadImages</code> 目录下有一个目录：<code>images</code></p></li><li>images 下有两个文件：<ul><li>image0.jpg</li><li>image1.jpg</li></ul></li></ul><p>则上面两个文件这样访问：</p><ul><li><code>https://www.lovesofttech.com/images/image0.jpg</code></li><li><code>https://www.lovesofttech.com/images/image2.jpg</code> </li></ul>]]></content>
+    <content type="html"><![CDATA[<p>无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。</p><a id="more"></a><h1 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h1><p>满足以下【前提一】中的任意一条，同时又满足【前提二】中任意一条，就需要把静态资源放在一个公共的地方。</p><ul><li>前提一<ul><li>需要做负载均衡</li><li>蓝绿部署</li><li>以 spring boot 生成的 jar 包直接运行</li></ul></li><li>前提二<ul><li>有静态的 html 文件是动态生成的</li><li>某些页面的图片是由用户/管理员上传的</li><li>需要下载的文件是动态生成的</li></ul></li></ul><h2 id="需要达到的效果"><a href="#需要达到的效果" class="headerlink" title="需要达到的效果"></a>需要达到的效果</h2><p>访问配置的静态目录，就象是直接访问 spring boot 项目的 <code>resources/static</code> 目录下的文件一样。</p><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>如果配置了多个静态目录，则需要保证这些目录下的文件不能重名。</p><h1 id="以下是项目中的实际应用场景"><a href="#以下是项目中的实际应用场景" class="headerlink" title="以下是项目中的实际应用场景"></a>以下是项目中的实际应用场景</h1><ul><li>发布的文章需要动态生成静态 html 文件</li><li>用户上传的头像在用户相关页面显示<blockquote><p>用户头像以用户 id 命名，访问路径固定</p></blockquote></li><li>图文并茂的文章编辑器，需要上传图片。可参考：<a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li></ul><h2 id="实施方案"><a href="#实施方案" class="headerlink" title="实施方案"></a>实施方案</h2><h3 id="spring-boot-配置"><a href="#spring-boot-配置" class="headerlink" title="spring boot 配置"></a>spring boot 配置</h3><p>在 application.yml 文件配置以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static.pages: /home/utomcat/apps/resources/staticPages</span><br><span class="line">static.upload.images: /home/utomcat/apps/resources/uploadImages</span><br><span class="line">uEditor.upload.path: /home/utomcat/apps/webLoadBalance/uEditorUploads</span><br><span class="line">uEditor.upload.path.web: /home/utomcat/apps/webLoadBalance</span><br><span class="line">spring.mvc.static-path-pattern: /**</span><br><span class="line">spring.resources.static-locations: classpath:/resources/,classpath:/static/,file:$&#123;uEditor.upload.path&#125;,file:$&#123;uEditor.upload.path.web&#125;,file:$&#123;static.pages&#125;,file:$&#123;static.upload.images&#125;</span><br></pre></td></tr></table></figure></p><h4 id="这样配置的效果"><a href="#这样配置的效果" class="headerlink" title="这样配置的效果"></a>这样配置的效果</h4><ul><li>假设网站为：<code>https://www.lovesofttech.com/</code></li><li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个文件：<code>articleIndex.html</code>，则这样访问：<code>https://www.lovesofttech.com/articleIndex.html</code></li><li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个目录：<code>news</code></li><li>news 下有两个文件：<ul><li>article0.html</li><li>article.html</li></ul></li></ul><p>则上面两个文件这样访问：</p><ul><li><code>https://www.lovesofttech.com/news/article0.html</code></li><li><p><code>https://www.lovesofttech.com/news/article1.html</code></p></li><li><p>假设 <code>/home/utomcat/apps/resources/uploadImages</code> 目录下有一个目录：<code>images</code></p></li><li>images 下有两个文件：<ul><li>image0.jpg</li><li>image1.jpg</li></ul></li></ul><p>则上面两个文件这样访问：</p><ul><li><code>https://www.lovesofttech.com/images/image0.jpg</code></li><li><code>https://www.lovesofttech.com/images/image2.jpg</code> </li></ul>]]></content>
     
     <summary type="html">
     
@@ -364,28 +364,6 @@
   </entry>
   
   <entry>
-    <title>技术之外的话题，文章目录</title>
-    <link href="https://www.lovesofttech.com/dailyLives.html"/>
-    <id>https://www.lovesofttech.com/dailyLives.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.064Z</updated>
-    
-    <content type="html"><![CDATA[<p>本目录下的文章与技术无关，但与生活、个人品质有关。<br><a id="more"></a></p><ul><li><a href="/dailyLives/shawshank.html">分享正能量——《肖申克的救赎》</a></li><li><a href="/dailyLives/foobar2000.html">foobar2000，一款 Windows 平台下的高级音频播放器，免费</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本目录下的文章与技术无关，但与生活、个人品质有关。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="dailyLives" scheme="https://www.lovesofttech.com/categories/dailyLives/"/>
-    
-    
-      <category term="dailyLives" scheme="https://www.lovesofttech.com/tags/dailyLives/"/>
-    
-  </entry>
-  
-  <entry>
     <title>本博客的所有文章列表</title>
     <link href="https://www.lovesofttech.com/articles.html"/>
     <id>https://www.lovesofttech.com/articles.html</id>
@@ -404,6 +382,28 @@
     
     
       <category term="index" scheme="https://www.lovesofttech.com/tags/index/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技术之外的话题，文章目录</title>
+    <link href="https://www.lovesofttech.com/dailyLives.html"/>
+    <id>https://www.lovesofttech.com/dailyLives.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2019-11-09T09:00:56.064Z</updated>
+    
+    <content type="html"><![CDATA[<p>本目录下的文章与技术无关，但与生活、个人品质有关。<br><a id="more"></a></p><ul><li><a href="/dailyLives/shawshank.html">分享正能量——《肖申克的救赎》</a></li><li><a href="/dailyLives/foobar2000.html">foobar2000，一款 Windows 平台下的高级音频播放器，免费</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本目录下的文章与技术无关，但与生活、个人品质有关。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="dailyLives" scheme="https://www.lovesofttech.com/categories/dailyLives/"/>
+    
+    
+      <category term="dailyLives" scheme="https://www.lovesofttech.com/tags/dailyLives/"/>
     
   </entry>
   
@@ -452,28 +452,6 @@
   </entry>
   
   <entry>
-    <title>Linux + Nginx + MySQL + PHP 文章目录</title>
-    <link href="https://www.lovesofttech.com/lnmp.html"/>
-    <id>https://www.lovesofttech.com/lnmp.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.172Z</updated>
-    
-    <content type="html"><![CDATA[<p>Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。<br><a id="more"></a></p><h1 id="CentOS7-环境"><a href="#CentOS7-环境" class="headerlink" title="CentOS7 环境"></a>CentOS7 环境</h1><ul><li><a href="/lnmp/https-www-rewrite.html">Nginx 配置 https 后，http 强制跳转到 https，主域名跳转至带 www 的二级域名</a></li><li><a href="/lnmp/centOS7Nginx.html">CentOS7 安装 Nginx 并设置开机自启动</a></li><li><a href="/lnmp/centOS7Php7.html">CentOS7 以源码方式安装 php7</a></li><li><a href="/lnmp/nginxConfig.html">nginx 配置相关</a></li><li><a href="/lnmp/nginxLoadBalancingAndProxy.html">Nginx 反向代理、负载均衡</a></li><li><a href="/lnmp/phpMemory.html">php 内存分配占用超限，解决办法</a></li><li><a href="/lnmp/centOSPHPFpmRestart.html">php5.4 php-fpm 重启、关闭</a></li><li><a href="/lnmp/discuzX3.4MoveServer.html">discuzX3.4 网站迁移，备忘录</a></li><li><a href="/lnmp/discuzX3.4ToInnoDBTable.html">discuzX3.4 数据库由阿里云自建 MySQL 转移至 RDS，填坑日志</a></li></ul><h1 id="windows-环境，php-开发配置"><a href="#windows-环境，php-开发配置" class="headerlink" title="windows 环境，php 开发配置"></a>windows 环境，php 开发配置</h1><ul><li><a href="/windows/winPHPXdebugMemcache.html">windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache</a></li><li><a href="/windows/win10Php7Discuz.html">在 win10 下配置 PHP7.2.6 + Discuz! X3.4</a></li><li><a href="/windows/win10Php7HttpdPhp7.html">在 win10 下配置 Apache2.4.33 + PHP7.2.6</a></li><li><a href="/windows/win10Php7Nginx.html">在 win10 下配置 nginx1.14.0 + PHP7.2.6</a></li><li><a href="/windows/winInstallMemcachedAsService.html">在 Windows 将 Memcached 安装为服务</a></li><li><a href="/windows/winInstallNginxAsService.html">把 nginx 安装为 Windows 的一个服务</a></li><li><a href="/windows/winNginxSupportPhp.html">在 windows7 下配置 nginx 支持 php</a></li></ul><h1 id="PHP-开发日常经验"><a href="#PHP-开发日常经验" class="headerlink" title="PHP 开发日常经验"></a>PHP 开发日常经验</h1><ul><li><a href="/lnmp/experience.html">php 开发–好记性不如“烂文档”</a></li></ul><h1 id="MySQL-相关文章"><a href="#MySQL-相关文章" class="headerlink" title="MySQL 相关文章"></a>MySQL 相关文章</h1><ul><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="LNMP" scheme="https://www.lovesofttech.com/categories/LNMP/"/>
-    
-    
-      <category term="LNMP" scheme="https://www.lovesofttech.com/tags/LNMP/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Java开发，文章目录</title>
     <link href="https://www.lovesofttech.com/java.html"/>
     <id>https://www.lovesofttech.com/java.html</id>
@@ -514,6 +492,28 @@
     
     
       <category term="CentOS" scheme="https://www.lovesofttech.com/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux + Nginx + MySQL + PHP 文章目录</title>
+    <link href="https://www.lovesofttech.com/lnmp.html"/>
+    <id>https://www.lovesofttech.com/lnmp.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2019-11-09T09:00:56.172Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。<br><a id="more"></a></p><h1 id="CentOS7-环境"><a href="#CentOS7-环境" class="headerlink" title="CentOS7 环境"></a>CentOS7 环境</h1><ul><li><a href="/lnmp/https-www-rewrite.html">Nginx 配置 https 后，http 强制跳转到 https，主域名跳转至带 www 的二级域名</a></li><li><a href="/lnmp/centOS7Nginx.html">CentOS7 安装 Nginx 并设置开机自启动</a></li><li><a href="/lnmp/centOS7Php7.html">CentOS7 以源码方式安装 php7</a></li><li><a href="/lnmp/nginxConfig.html">nginx 配置相关</a></li><li><a href="/lnmp/nginxLoadBalancingAndProxy.html">Nginx 反向代理、负载均衡</a></li><li><a href="/lnmp/phpMemory.html">php 内存分配占用超限，解决办法</a></li><li><a href="/lnmp/centOSPHPFpmRestart.html">php5.4 php-fpm 重启、关闭</a></li><li><a href="/lnmp/discuzX3.4MoveServer.html">discuzX3.4 网站迁移，备忘录</a></li><li><a href="/lnmp/discuzX3.4ToInnoDBTable.html">discuzX3.4 数据库由阿里云自建 MySQL 转移至 RDS，填坑日志</a></li></ul><h1 id="windows-环境，php-开发配置"><a href="#windows-环境，php-开发配置" class="headerlink" title="windows 环境，php 开发配置"></a>windows 环境，php 开发配置</h1><ul><li><a href="/windows/winPHPXdebugMemcache.html">windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache</a></li><li><a href="/windows/win10Php7Discuz.html">在 win10 下配置 PHP7.2.6 + Discuz! X3.4</a></li><li><a href="/windows/win10Php7HttpdPhp7.html">在 win10 下配置 Apache2.4.33 + PHP7.2.6</a></li><li><a href="/windows/win10Php7Nginx.html">在 win10 下配置 nginx1.14.0 + PHP7.2.6</a></li><li><a href="/windows/winInstallMemcachedAsService.html">在 Windows 将 Memcached 安装为服务</a></li><li><a href="/windows/winInstallNginxAsService.html">把 nginx 安装为 Windows 的一个服务</a></li><li><a href="/windows/winNginxSupportPhp.html">在 windows7 下配置 nginx 支持 php</a></li></ul><h1 id="PHP-开发日常经验"><a href="#PHP-开发日常经验" class="headerlink" title="PHP 开发日常经验"></a>PHP 开发日常经验</h1><ul><li><a href="/lnmp/experience.html">php 开发–好记性不如“烂文档”</a></li></ul><h1 id="MySQL-相关文章"><a href="#MySQL-相关文章" class="headerlink" title="MySQL 相关文章"></a>MySQL 相关文章</h1><ul><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="LNMP" scheme="https://www.lovesofttech.com/categories/LNMP/"/>
+    
+    
+      <category term="LNMP" scheme="https://www.lovesofttech.com/tags/LNMP/"/>
     
   </entry>
   
