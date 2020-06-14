@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.lovesofttech.com/"/>
-  <updated>2020-06-14T03:22:55.313Z</updated>
+  <updated>2020-06-14T03:59:23.975Z</updated>
   <id>https://www.lovesofttech.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.lovesofttech.com/java/springResourcesStaticLocations.html"/>
     <id>https://www.lovesofttech.com/java/springResourcesStaticLocations.html</id>
     <published>2020-06-13T16:00:00.000Z</published>
-    <updated>2020-06-14T03:22:55.313Z</updated>
+    <updated>2020-06-14T03:59:23.975Z</updated>
     
-    <content type="html"><![CDATA[<p>无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。</p><a id="more"></a><h1 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h1><ul><li>需要蓝绿部署。</li><li>网站负载均衡。</li><li>发布的文章需要动态生成静态 html 文件。</li><li>用户上传的头像在用户相关页面显示。<blockquote><p>用户头像以用户 id 命名，访问路径固定。</p></blockquote></li><li>图文并茂的文章编辑器，需要上传图片。可参考：<a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li></ul><h1 id="spring-boot-配置"><a href="#spring-boot-配置" class="headerlink" title="spring boot 配置"></a>spring boot 配置</h1><p>在 application.yml 文件配置以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static.pages: /home/utomcat/apps/resources/staticPages</span><br><span class="line">static.upload.images: /home/utomcat/apps/resources/uploadImages</span><br><span class="line">uEditor.upload.path: /home/utomcat/apps/webLoadBalance/uEditorUploads</span><br><span class="line">uEditor.upload.path.web: /home/utomcat/apps/webLoadBalance</span><br><span class="line">spring.mvc.static-path-pattern: /**</span><br><span class="line">spring.resources.static-locations: classpath:/resources/,classpath:/static/,file:$&#123;uEditor.upload.path&#125;,file:$&#123;uEditor.upload.path.web&#125;,file:$&#123;static.pages&#125;,file:$&#123;static.upload.images&#125;</span><br></pre></td></tr></table></figure></p><h2 id="这样配置的效果"><a href="#这样配置的效果" class="headerlink" title="这样配置的效果"></a>这样配置的效果</h2><ul><li>假设网站为：<code>https://www.lovesofttech.com/</code></li><li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个文件：<code>articleIndex.html</code>，则这样访问：<code>https://www.lovesofttech.com/articleIndex.html</code></li><li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个目录：<code>news</code></li><li>news 下有两个文件：<ul><li>article0.html</li><li>article.html</li></ul></li></ul><p>则上面两个文件这样访问：</p><ul><li><code>https://www.lovesofttech.com/news/article0.html</code></li><li><p><code>https://www.lovesofttech.com/news/article1.html</code></p></li><li><p>假设 <code>/home/utomcat/apps/resources/uploadImages</code> 目录下有一个目录：<code>images</code></p></li><li>images 下有两个文件：<ul><li>image0.jpg</li><li>image1.jpg</li></ul></li></ul><p>则上面两个文件这样访问：</p><ul><li><code>https://www.lovesofttech.com/images/image0.jpg</code></li><li><code>https://www.lovesofttech.com/images/image2.jpg</code> </li></ul>]]></content>
+    <content type="html"><![CDATA[<p>无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。</p><a id="more"></a><h1 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h1><ul><li>有静态的 html 文件是动态生成的，某些页面的图片是由用户/管理员上传的，需要下载的文件是动态生成的。</li><li>如果要网站要配置负载均衡，不同的 web 服务需要访问同一个目录下的文件，这些文件与 web 服务（比如 tomcat，直接运行的 spring boot 生成的 jar 包）无关。</li><li>需要蓝绿部署。</li></ul><h2 id="以下是项目中的实际应用场景"><a href="#以下是项目中的实际应用场景" class="headerlink" title="以下是项目中的实际应用场景"></a>以下是项目中的实际应用场景</h2><ul><li>发布的文章需要动态生成静态 html 文件。</li><li>用户上传的头像在用户相关页面显示。<blockquote><p>用户头像以用户 id 命名，访问路径固定。</p></blockquote></li><li>图文并茂的文章编辑器，需要上传图片。可参考：<a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li></ul><h1 id="spring-boot-配置"><a href="#spring-boot-配置" class="headerlink" title="spring boot 配置"></a>spring boot 配置</h1><p>在 application.yml 文件配置以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static.pages: /home/utomcat/apps/resources/staticPages</span><br><span class="line">static.upload.images: /home/utomcat/apps/resources/uploadImages</span><br><span class="line">uEditor.upload.path: /home/utomcat/apps/webLoadBalance/uEditorUploads</span><br><span class="line">uEditor.upload.path.web: /home/utomcat/apps/webLoadBalance</span><br><span class="line">spring.mvc.static-path-pattern: /**</span><br><span class="line">spring.resources.static-locations: classpath:/resources/,classpath:/static/,file:$&#123;uEditor.upload.path&#125;,file:$&#123;uEditor.upload.path.web&#125;,file:$&#123;static.pages&#125;,file:$&#123;static.upload.images&#125;</span><br></pre></td></tr></table></figure></p><h2 id="这样配置的效果"><a href="#这样配置的效果" class="headerlink" title="这样配置的效果"></a>这样配置的效果</h2><ul><li>假设网站为：<code>https://www.lovesofttech.com/</code></li><li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个文件：<code>articleIndex.html</code>，则这样访问：<code>https://www.lovesofttech.com/articleIndex.html</code></li><li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个目录：<code>news</code></li><li>news 下有两个文件：<ul><li>article0.html</li><li>article.html</li></ul></li></ul><p>则上面两个文件这样访问：</p><ul><li><code>https://www.lovesofttech.com/news/article0.html</code></li><li><p><code>https://www.lovesofttech.com/news/article1.html</code></p></li><li><p>假设 <code>/home/utomcat/apps/resources/uploadImages</code> 目录下有一个目录：<code>images</code></p></li><li>images 下有两个文件：<ul><li>image0.jpg</li><li>image1.jpg</li></ul></li></ul><p>则上面两个文件这样访问：</p><ul><li><code>https://www.lovesofttech.com/images/image0.jpg</code></li><li><code>https://www.lovesofttech.com/images/image2.jpg</code> </li></ul>]]></content>
     
     <summary type="html">
     
@@ -386,6 +386,28 @@
   </entry>
   
   <entry>
+    <title>数据库文章汇总目录</title>
+    <link href="https://www.lovesofttech.com/database.html"/>
+    <id>https://www.lovesofttech.com/database.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2019-11-09T09:00:56.071Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>以 MySQL 和 MyBatis 为主。</strong><br><a id="more"></a></p><h1 id="日常开发中有关-MySQL-的一些经验总结"><a href="#日常开发中有关-MySQL-的一些经验总结" class="headerlink" title="日常开发中有关 MySQL 的一些经验总结"></a>日常开发中有关 MySQL 的一些经验总结</h1><ul><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul><h1 id="MyBatis-在实际工作中的使用经验"><a href="#MyBatis-在实际工作中的使用经验" class="headerlink" title="MyBatis 在实际工作中的使用经验"></a>MyBatis 在实际工作中的使用经验</h1><ul><li><a href="/mybatis/MBGExtend.html">MyBatis Generator（MBG），写扩展类，以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</a></li><li><a href="/mybatis/MBGTableKeepOriginal.html">MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</a></li><li><a href="/mybatis/MBGConfig.html">MBG 生成的 mapper 支持写入记录后返回主键值的配置</a></li><li><a href="/mybatis/mybatisExample.html">MyBatis 开发中，善用通过 MBG 生成的 *Example 类</a></li><li><a href="/mybatis/experience.html">MyBatis 普通知识点记录</a></li></ul><h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><ul><li><a href="/java/elasticSearchProject.html">BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录</a></li><li><a href="/java/elasticSearchProjectDemo.html">ElasticSearch demo 以及辅助开发工具</a></li><li><a href="/linux/centOS7ElasticsearchNew.html">CentOS 7 配置 ElasticSearch-6.5.4</a></li><li><a href="/linux/centOS7Elasticsearch.html">CentOS 7 配置 ElasticSearch-6.4.1</a></li></ul><h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><ul><li><a href="/redis/general.html">redis5.0.5 在 CentOS7 上的安装和使用</a></li></ul><h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><ul><li><a href="/database/centOS7MongoDB.html">CentOS7 下 安装配置 MongoDB</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;以 MySQL 和 MyBatis 为主。&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://www.lovesofttech.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.lovesofttech.com/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>技术之外的话题，文章目录</title>
     <link href="https://www.lovesofttech.com/dailyLives.html"/>
     <id>https://www.lovesofttech.com/dailyLives.html</id>
@@ -408,24 +430,24 @@
   </entry>
   
   <entry>
-    <title>数据库文章汇总目录</title>
-    <link href="https://www.lovesofttech.com/database.html"/>
-    <id>https://www.lovesofttech.com/database.html</id>
+    <title>Java开发，文章目录</title>
+    <link href="https://www.lovesofttech.com/java.html"/>
+    <id>https://www.lovesofttech.com/java.html</id>
     <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.071Z</updated>
+    <updated>2020-02-23T09:45:50.804Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>以 MySQL 和 MyBatis 为主。</strong><br><a id="more"></a></p><h1 id="日常开发中有关-MySQL-的一些经验总结"><a href="#日常开发中有关-MySQL-的一些经验总结" class="headerlink" title="日常开发中有关 MySQL 的一些经验总结"></a>日常开发中有关 MySQL 的一些经验总结</h1><ul><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul><h1 id="MyBatis-在实际工作中的使用经验"><a href="#MyBatis-在实际工作中的使用经验" class="headerlink" title="MyBatis 在实际工作中的使用经验"></a>MyBatis 在实际工作中的使用经验</h1><ul><li><a href="/mybatis/MBGExtend.html">MyBatis Generator（MBG），写扩展类，以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</a></li><li><a href="/mybatis/MBGTableKeepOriginal.html">MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</a></li><li><a href="/mybatis/MBGConfig.html">MBG 生成的 mapper 支持写入记录后返回主键值的配置</a></li><li><a href="/mybatis/mybatisExample.html">MyBatis 开发中，善用通过 MBG 生成的 *Example 类</a></li><li><a href="/mybatis/experience.html">MyBatis 普通知识点记录</a></li></ul><h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><ul><li><a href="/java/elasticSearchProject.html">BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录</a></li><li><a href="/java/elasticSearchProjectDemo.html">ElasticSearch demo 以及辅助开发工具</a></li><li><a href="/linux/centOS7ElasticsearchNew.html">CentOS 7 配置 ElasticSearch-6.5.4</a></li><li><a href="/linux/centOS7Elasticsearch.html">CentOS 7 配置 ElasticSearch-6.4.1</a></li></ul><h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><ul><li><a href="/redis/general.html">redis5.0.5 在 CentOS7 上的安装和使用</a></li></ul><h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><ul><li><a href="/database/centOS7MongoDB.html">CentOS7 下 安装配置 MongoDB</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>代码规范，以及基于 spring、tomcat 的开发与运维经验。<br><a id="more"></a></p><h2 id="工作规范"><a href="#工作规范" class="headerlink" title="工作规范"></a>工作规范</h2><ul><li><a href="/java/codeSpecification.html">java/js 代码规约</a></li><li><a href="/java/codeSpecificationAdditional.html">java 开发，适用于团队的代码规范及某些约定</a></li></ul><h2 id="spring-boot"><a href="#spring-boot" class="headerlink" title="spring boot"></a>spring boot</h2><ul><li><a href="/java/aboutSpring.html">关于 Spring Boot，以及学习 Spring Boot 的一个 Demo</a></li><li><a href="/java/javaMailPort465.html">spring boot 阿里云发送邮件，使用 qq 邮箱的 SMTP 服务，端口由 25 换成 465</a></li><li><a href="/java/springBootAjax.html">spring boot 支持通过 ajax 跨域请求的设置</a></li><li><a href="/java/springBootConfigurationProperties.html">spring boot1.5以上版本@ConfigurationProperties取消location注解后的替代方案</a></li><li><a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li><li><a href="/java/springPetclinic.html">spring 官方例子-&gt;宠物医院，数据库改成 MySQL，数据库连接池改成 druid</a></li><li><a href="/java/springTaskCron.html">Spring cron 表达式</a></li><li><a href="/java/sprintBootWhitelabelErrorPage.html">spring boot，404，502 错误转向定制页面</a></li></ul><h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul><li><a href="/java/tomcatDefaultWebSite.html">修改 tomcat 默认网站指向的目录</a></li><li><a href="/java/tomcatEncode.html">跑在 tomcat 容器下的 java 日志乱码，解决办法</a></li><li><a href="/java/tomcatVirtualHost.html">tomcat 虚拟目录实践</a></li><li><a href="/java/javaMemory.html">Tomcat 占用内存以及 jvm 参数设置</a></li></ul><h2 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h2><ul><li><a href="/java/elasticSearchProject.html">BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录</a></li><li><a href="/java/elasticSearchProjectDemo.html">ElasticSearch demo 以及辅助开发工具</a></li><li><a href="/linux/centOS7ElasticsearchNew.html">CentOS 7 配置 ElasticSearch-6.5.4</a></li><li><a href="/linux/centOS7Elasticsearch.html">CentOS 7 配置 ElasticSearch-6.4.1</a></li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li><a href="/java/javaLibreOffice">将 .doc/.docx .ppt/.pptx 转 PDF，进而转图片，实现在线预览功能</a></li><li><a href="/java/apiDevelopRule.html">CRM 项目，api 部分的开发规则，仅供参考</a></li><li><a href="/java/bigDecimal.html">BigDecimal 运算与比较</a></li><li><a href="/java/dataType.html">Java 基本类型与对象类型</a></li><li><a href="/java/javaDevConfig.html">windows java 开发环境配置，以及一些常用网址收藏</a></li><li><a href="/java/javaReplace.html">java 字符串的替换 replace、replaceAll、replaceFirst 的区别</a></li><li><a href="/java/jdkHelperDocument.html">Java 特定版本的帮助文档下载方法</a></li><li><a href="/java/jsonToBeanWarn.html">Json-lib 将 Json 转换成 Java Bean 时报警 … does not exist. SKIPPED，解决办法</a></li><li><a href="/java/experience.html">java 开发中的一些小经验</a></li><li><a href="/java/lombok.html">lombok 以及 IDEA lombok 插件</a></li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt;以 MySQL 和 MyBatis 为主。&lt;/strong&gt;&lt;br&gt;
+      &lt;p&gt;代码规范，以及基于 spring、tomcat 的开发与运维经验。&lt;br&gt;
     
     </summary>
     
-      <category term="MySQL" scheme="https://www.lovesofttech.com/categories/MySQL/"/>
+      <category term="java" scheme="https://www.lovesofttech.com/categories/java/"/>
     
     
-      <category term="MySQL" scheme="https://www.lovesofttech.com/tags/MySQL/"/>
+      <category term="java" scheme="https://www.lovesofttech.com/tags/java/"/>
     
   </entry>
   
@@ -474,50 +496,6 @@
   </entry>
   
   <entry>
-    <title>Java开发，文章目录</title>
-    <link href="https://www.lovesofttech.com/java.html"/>
-    <id>https://www.lovesofttech.com/java.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2020-02-23T09:45:50.804Z</updated>
-    
-    <content type="html"><![CDATA[<p>代码规范，以及基于 spring、tomcat 的开发与运维经验。<br><a id="more"></a></p><h2 id="工作规范"><a href="#工作规范" class="headerlink" title="工作规范"></a>工作规范</h2><ul><li><a href="/java/codeSpecification.html">java/js 代码规约</a></li><li><a href="/java/codeSpecificationAdditional.html">java 开发，适用于团队的代码规范及某些约定</a></li></ul><h2 id="spring-boot"><a href="#spring-boot" class="headerlink" title="spring boot"></a>spring boot</h2><ul><li><a href="/java/aboutSpring.html">关于 Spring Boot，以及学习 Spring Boot 的一个 Demo</a></li><li><a href="/java/javaMailPort465.html">spring boot 阿里云发送邮件，使用 qq 邮箱的 SMTP 服务，端口由 25 换成 465</a></li><li><a href="/java/springBootAjax.html">spring boot 支持通过 ajax 跨域请求的设置</a></li><li><a href="/java/springBootConfigurationProperties.html">spring boot1.5以上版本@ConfigurationProperties取消location注解后的替代方案</a></li><li><a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li><li><a href="/java/springPetclinic.html">spring 官方例子-&gt;宠物医院，数据库改成 MySQL，数据库连接池改成 druid</a></li><li><a href="/java/springTaskCron.html">Spring cron 表达式</a></li><li><a href="/java/sprintBootWhitelabelErrorPage.html">spring boot，404，502 错误转向定制页面</a></li></ul><h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul><li><a href="/java/tomcatDefaultWebSite.html">修改 tomcat 默认网站指向的目录</a></li><li><a href="/java/tomcatEncode.html">跑在 tomcat 容器下的 java 日志乱码，解决办法</a></li><li><a href="/java/tomcatVirtualHost.html">tomcat 虚拟目录实践</a></li><li><a href="/java/javaMemory.html">Tomcat 占用内存以及 jvm 参数设置</a></li></ul><h2 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h2><ul><li><a href="/java/elasticSearchProject.html">BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录</a></li><li><a href="/java/elasticSearchProjectDemo.html">ElasticSearch demo 以及辅助开发工具</a></li><li><a href="/linux/centOS7ElasticsearchNew.html">CentOS 7 配置 ElasticSearch-6.5.4</a></li><li><a href="/linux/centOS7Elasticsearch.html">CentOS 7 配置 ElasticSearch-6.4.1</a></li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li><a href="/java/javaLibreOffice">将 .doc/.docx .ppt/.pptx 转 PDF，进而转图片，实现在线预览功能</a></li><li><a href="/java/apiDevelopRule.html">CRM 项目，api 部分的开发规则，仅供参考</a></li><li><a href="/java/bigDecimal.html">BigDecimal 运算与比较</a></li><li><a href="/java/dataType.html">Java 基本类型与对象类型</a></li><li><a href="/java/javaDevConfig.html">windows java 开发环境配置，以及一些常用网址收藏</a></li><li><a href="/java/javaReplace.html">java 字符串的替换 replace、replaceAll、replaceFirst 的区别</a></li><li><a href="/java/jdkHelperDocument.html">Java 特定版本的帮助文档下载方法</a></li><li><a href="/java/jsonToBeanWarn.html">Json-lib 将 Json 转换成 Java Bean 时报警 … does not exist. SKIPPED，解决办法</a></li><li><a href="/java/experience.html">java 开发中的一些小经验</a></li><li><a href="/java/lombok.html">lombok 以及 IDEA lombok 插件</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;代码规范，以及基于 spring、tomcat 的开发与运维经验。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="java" scheme="https://www.lovesofttech.com/categories/java/"/>
-    
-    
-      <category term="java" scheme="https://www.lovesofttech.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux + Nginx + MySQL + PHP 文章目录</title>
-    <link href="https://www.lovesofttech.com/lnmp.html"/>
-    <id>https://www.lovesofttech.com/lnmp.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.172Z</updated>
-    
-    <content type="html"><![CDATA[<p>Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。<br><a id="more"></a></p><h1 id="CentOS7-环境"><a href="#CentOS7-环境" class="headerlink" title="CentOS7 环境"></a>CentOS7 环境</h1><ul><li><a href="/lnmp/https-www-rewrite.html">Nginx 配置 https 后，http 强制跳转到 https，主域名跳转至带 www 的二级域名</a></li><li><a href="/lnmp/centOS7Nginx.html">CentOS7 安装 Nginx 并设置开机自启动</a></li><li><a href="/lnmp/centOS7Php7.html">CentOS7 以源码方式安装 php7</a></li><li><a href="/lnmp/nginxConfig.html">nginx 配置相关</a></li><li><a href="/lnmp/nginxLoadBalancingAndProxy.html">Nginx 反向代理、负载均衡</a></li><li><a href="/lnmp/phpMemory.html">php 内存分配占用超限，解决办法</a></li><li><a href="/lnmp/centOSPHPFpmRestart.html">php5.4 php-fpm 重启、关闭</a></li><li><a href="/lnmp/discuzX3.4MoveServer.html">discuzX3.4 网站迁移，备忘录</a></li><li><a href="/lnmp/discuzX3.4ToInnoDBTable.html">discuzX3.4 数据库由阿里云自建 MySQL 转移至 RDS，填坑日志</a></li></ul><h1 id="windows-环境，php-开发配置"><a href="#windows-环境，php-开发配置" class="headerlink" title="windows 环境，php 开发配置"></a>windows 环境，php 开发配置</h1><ul><li><a href="/windows/winPHPXdebugMemcache.html">windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache</a></li><li><a href="/windows/win10Php7Discuz.html">在 win10 下配置 PHP7.2.6 + Discuz! X3.4</a></li><li><a href="/windows/win10Php7HttpdPhp7.html">在 win10 下配置 Apache2.4.33 + PHP7.2.6</a></li><li><a href="/windows/win10Php7Nginx.html">在 win10 下配置 nginx1.14.0 + PHP7.2.6</a></li><li><a href="/windows/winInstallMemcachedAsService.html">在 Windows 将 Memcached 安装为服务</a></li><li><a href="/windows/winInstallNginxAsService.html">把 nginx 安装为 Windows 的一个服务</a></li><li><a href="/windows/winNginxSupportPhp.html">在 windows7 下配置 nginx 支持 php</a></li></ul><h1 id="PHP-开发日常经验"><a href="#PHP-开发日常经验" class="headerlink" title="PHP 开发日常经验"></a>PHP 开发日常经验</h1><ul><li><a href="/lnmp/experience.html">php 开发–好记性不如“烂文档”</a></li></ul><h1 id="MySQL-相关文章"><a href="#MySQL-相关文章" class="headerlink" title="MySQL 相关文章"></a>MySQL 相关文章</h1><ul><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="LNMP" scheme="https://www.lovesofttech.com/categories/LNMP/"/>
-    
-    
-      <category term="LNMP" scheme="https://www.lovesofttech.com/tags/LNMP/"/>
-    
-  </entry>
-  
-  <entry>
     <title>React 技术栈（全家桶）学习心得分享，文章目录</title>
     <link href="https://www.lovesofttech.com/react.html"/>
     <id>https://www.lovesofttech.com/react.html</id>
@@ -540,6 +518,28 @@
       <category term="react" scheme="https://www.lovesofttech.com/tags/react/"/>
     
       <category term="redux" scheme="https://www.lovesofttech.com/tags/redux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux + Nginx + MySQL + PHP 文章目录</title>
+    <link href="https://www.lovesofttech.com/lnmp.html"/>
+    <id>https://www.lovesofttech.com/lnmp.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2019-11-09T09:00:56.172Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。<br><a id="more"></a></p><h1 id="CentOS7-环境"><a href="#CentOS7-环境" class="headerlink" title="CentOS7 环境"></a>CentOS7 环境</h1><ul><li><a href="/lnmp/https-www-rewrite.html">Nginx 配置 https 后，http 强制跳转到 https，主域名跳转至带 www 的二级域名</a></li><li><a href="/lnmp/centOS7Nginx.html">CentOS7 安装 Nginx 并设置开机自启动</a></li><li><a href="/lnmp/centOS7Php7.html">CentOS7 以源码方式安装 php7</a></li><li><a href="/lnmp/nginxConfig.html">nginx 配置相关</a></li><li><a href="/lnmp/nginxLoadBalancingAndProxy.html">Nginx 反向代理、负载均衡</a></li><li><a href="/lnmp/phpMemory.html">php 内存分配占用超限，解决办法</a></li><li><a href="/lnmp/centOSPHPFpmRestart.html">php5.4 php-fpm 重启、关闭</a></li><li><a href="/lnmp/discuzX3.4MoveServer.html">discuzX3.4 网站迁移，备忘录</a></li><li><a href="/lnmp/discuzX3.4ToInnoDBTable.html">discuzX3.4 数据库由阿里云自建 MySQL 转移至 RDS，填坑日志</a></li></ul><h1 id="windows-环境，php-开发配置"><a href="#windows-环境，php-开发配置" class="headerlink" title="windows 环境，php 开发配置"></a>windows 环境，php 开发配置</h1><ul><li><a href="/windows/winPHPXdebugMemcache.html">windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache</a></li><li><a href="/windows/win10Php7Discuz.html">在 win10 下配置 PHP7.2.6 + Discuz! X3.4</a></li><li><a href="/windows/win10Php7HttpdPhp7.html">在 win10 下配置 Apache2.4.33 + PHP7.2.6</a></li><li><a href="/windows/win10Php7Nginx.html">在 win10 下配置 nginx1.14.0 + PHP7.2.6</a></li><li><a href="/windows/winInstallMemcachedAsService.html">在 Windows 将 Memcached 安装为服务</a></li><li><a href="/windows/winInstallNginxAsService.html">把 nginx 安装为 Windows 的一个服务</a></li><li><a href="/windows/winNginxSupportPhp.html">在 windows7 下配置 nginx 支持 php</a></li></ul><h1 id="PHP-开发日常经验"><a href="#PHP-开发日常经验" class="headerlink" title="PHP 开发日常经验"></a>PHP 开发日常经验</h1><ul><li><a href="/lnmp/experience.html">php 开发–好记性不如“烂文档”</a></li></ul><h1 id="MySQL-相关文章"><a href="#MySQL-相关文章" class="headerlink" title="MySQL 相关文章"></a>MySQL 相关文章</h1><ul><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="LNMP" scheme="https://www.lovesofttech.com/categories/LNMP/"/>
+    
+    
+      <category term="LNMP" scheme="https://www.lovesofttech.com/tags/LNMP/"/>
     
   </entry>
   
