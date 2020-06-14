@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-06-14T05:44:20.698Z">
+<meta property="og:updated_time" content="2020-06-14T08:27:45.979Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring boot 配置静态资源">
 <meta name="twitter:description" content="无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。">
@@ -334,7 +334,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc" style="z-index: 3;">
             <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#需求场景"><span class="post-toc-number">1.</span> <span class="post-toc-text">需求场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以下是项目中的实际应用场景"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">以下是项目中的实际应用场景</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#spring-boot-配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">spring boot 配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这样配置的效果"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">这样配置的效果</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#需求场景"><span class="post-toc-number">1.</span> <span class="post-toc-text">需求场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#以下是项目中的实际应用场景"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">以下是项目中的实际应用场景</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#实施方案"><span class="post-toc-number">2.</span> <span class="post-toc-text">实施方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#spring-boot-配置"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">spring boot 配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#这样配置的效果"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">这样配置的效果</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -358,7 +358,7 @@
 
 
     <span>|</span>
-    <span class="post-count">字数：486</span>
+    <span class="post-count">字数：507</span>
     <span>|</span>
     <span class="post-count">阅读时长：大约2分钟</span>
 
@@ -367,23 +367,31 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。</p>
 <a id="more"></a>
-<h1 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h1><ul>
-<li>有静态的 html 文件是动态生成的。</li>
-<li>某些页面的图片是由用户/管理员上传的。</li>
-<li>需要下载的文件是动态生成的。</li>
-<li>网站要配置负载均衡，不同的 web 服务需要访问同一个目录下的文件（如上面三点），这些文件与 web 服务（比如 tomcat，直接运行的 spring boot 生成的 jar 包）无关。</li>
-<li>需要蓝绿部署。</li>
+<h1 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h1><p>在以下前提一和前提二都满足的情况下，就需要把静态资源放在一个公共的地方，即便有多个 web 服务，也可以共享某一个文件。</p>
+<ul>
+<li>前提一<ul>
+<li>需要做负载均衡</li>
+<li>蓝绿部署</li>
+<li>以 spring boot 生成的 jar 包直接运行</li>
+</ul>
+</li>
+<li>前提二<ul>
+<li>有静态的 html 文件是动态生成的</li>
+<li>某些页面的图片是由用户/管理员上传的</li>
+<li>需要下载的文件是动态生成的</li>
+</ul>
+</li>
 </ul>
 <h2 id="以下是项目中的实际应用场景"><a href="#以下是项目中的实际应用场景" class="headerlink" title="以下是项目中的实际应用场景"></a>以下是项目中的实际应用场景</h2><ul>
-<li>发布的文章需要动态生成静态 html 文件。</li>
-<li>用户上传的头像在用户相关页面显示。<blockquote>
-<p>用户头像以用户 id 命名，访问路径固定。</p>
+<li>发布的文章需要动态生成静态 html 文件</li>
+<li>用户上传的头像在用户相关页面显示<blockquote>
+<p>用户头像以用户 id 命名，访问路径固定</p>
 </blockquote>
 </li>
 <li>图文并茂的文章编辑器，需要上传图片。可参考：<a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li>
 </ul>
-<h1 id="spring-boot-配置"><a href="#spring-boot-配置" class="headerlink" title="spring boot 配置"></a>spring boot 配置</h1><p>在 application.yml 文件配置以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static.pages: /home/utomcat/apps/resources/staticPages</span><br><span class="line">static.upload.images: /home/utomcat/apps/resources/uploadImages</span><br><span class="line">uEditor.upload.path: /home/utomcat/apps/webLoadBalance/uEditorUploads</span><br><span class="line">uEditor.upload.path.web: /home/utomcat/apps/webLoadBalance</span><br><span class="line">spring.mvc.static-path-pattern: /**</span><br><span class="line">spring.resources.static-locations: classpath:/resources/,classpath:/static/,file:$&#123;uEditor.upload.path&#125;,file:$&#123;uEditor.upload.path.web&#125;,file:$&#123;static.pages&#125;,file:$&#123;static.upload.images&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="这样配置的效果"><a href="#这样配置的效果" class="headerlink" title="这样配置的效果"></a>这样配置的效果</h2><ul>
+<h1 id="实施方案"><a href="#实施方案" class="headerlink" title="实施方案"></a>实施方案</h1><h2 id="spring-boot-配置"><a href="#spring-boot-配置" class="headerlink" title="spring boot 配置"></a>spring boot 配置</h2><p>在 application.yml 文件配置以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">static.pages: /home/utomcat/apps/resources/staticPages</span><br><span class="line">static.upload.images: /home/utomcat/apps/resources/uploadImages</span><br><span class="line">uEditor.upload.path: /home/utomcat/apps/webLoadBalance/uEditorUploads</span><br><span class="line">uEditor.upload.path.web: /home/utomcat/apps/webLoadBalance</span><br><span class="line">spring.mvc.static-path-pattern: /**</span><br><span class="line">spring.resources.static-locations: classpath:/resources/,classpath:/static/,file:$&#123;uEditor.upload.path&#125;,file:$&#123;uEditor.upload.path.web&#125;,file:$&#123;static.pages&#125;,file:$&#123;static.upload.images&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="这样配置的效果"><a href="#这样配置的效果" class="headerlink" title="这样配置的效果"></a>这样配置的效果</h3><ul>
 <li>假设网站为：<code>https://www.lovesofttech.com/</code></li>
 <li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个文件：<code>articleIndex.html</code>，则这样访问：<code>https://www.lovesofttech.com/articleIndex.html</code></li>
 <li>假设 <code>/home/utomcat/apps/resources/staticPages</code> 目录下有一个目录：<code>news</code></li>
@@ -418,7 +426,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-06-14T05:44:20.698Z" itemprop="dateUpdated">2020年6月14日 13:44</time>
+    最后更新时间：<time datetime="2020-06-14T08:27:45.979Z" itemprop="dateUpdated">2020年6月14日 16:27</time>
 </span><br>
 
 
