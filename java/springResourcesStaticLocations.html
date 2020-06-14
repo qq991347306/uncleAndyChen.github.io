@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-06-14T03:59:23.975Z">
+<meta property="og:updated_time" content="2020-06-14T05:44:20.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring boot 配置静态资源">
 <meta name="twitter:description" content="无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。">
@@ -358,7 +358,7 @@
 
 
     <span>|</span>
-    <span class="post-count">字数：484</span>
+    <span class="post-count">字数：486</span>
     <span>|</span>
     <span class="post-count">阅读时长：大约2分钟</span>
 
@@ -368,8 +368,10 @@
             <p>无论项目以 tomcat 的方式部署，还是以 jar 包直接部署，都适用。静态资源的目录可以是服务器上运行 web 服务的用户能访问的任何位置。</p>
 <a id="more"></a>
 <h1 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h1><ul>
-<li>有静态的 html 文件是动态生成的，某些页面的图片是由用户/管理员上传的，需要下载的文件是动态生成的。</li>
-<li>如果要网站要配置负载均衡，不同的 web 服务需要访问同一个目录下的文件，这些文件与 web 服务（比如 tomcat，直接运行的 spring boot 生成的 jar 包）无关。</li>
+<li>有静态的 html 文件是动态生成的。</li>
+<li>某些页面的图片是由用户/管理员上传的。</li>
+<li>需要下载的文件是动态生成的。</li>
+<li>网站要配置负载均衡，不同的 web 服务需要访问同一个目录下的文件（如上面三点），这些文件与 web 服务（比如 tomcat，直接运行的 spring boot 生成的 jar 包）无关。</li>
 <li>需要蓝绿部署。</li>
 </ul>
 <h2 id="以下是项目中的实际应用场景"><a href="#以下是项目中的实际应用场景" class="headerlink" title="以下是项目中的实际应用场景"></a>以下是项目中的实际应用场景</h2><ul>
@@ -416,7 +418,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-06-14T03:59:23.975Z" itemprop="dateUpdated">2020年6月14日 11:59</time>
+    最后更新时间：<time datetime="2020-06-14T05:44:20.698Z" itemprop="dateUpdated">2020年6月14日 13:44</time>
 </span><br>
 
 
