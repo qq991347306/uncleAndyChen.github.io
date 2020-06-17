@@ -70,9 +70,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="github pages,experience,绑定域名">
+    <meta name="keywords" content="experience,github pages,绑定域名">
     <meta name="description" content="如题">
-<meta name="keywords" content="github pages,experience,绑定域名">
+<meta name="keywords" content="experience,github pages,绑定域名">
 <meta property="og:type" content="article">
 <meta property="og:title" content="github pages 绑定自己的域名">
 <meta property="og:url" content="https://www.lovesofttech.com/git/githubPages.html">
@@ -118,7 +118,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -203,21 +203,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -384,9 +384,9 @@
 </li>
 <li><p>以绑定已经备案过的域名 <code>lovesofttech.com</code> 为例，在配置页面配置好之后，会有如下提示：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your site&apos;s DNS settings are using a custom subdomain, lovesofttech.com, that&apos;s not set up with a correct CNAME record. We recommend you set this CNAME record to point at [YOUR USERNAME].github.io. For more information, see https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/.</span><br></pre></td></tr></table></figure>
-<p> <img src="/img/githubPages/githubPagesConfig.png" alt=""></p>
+<p> <img src="/img/githubPages/githubPagesConfig.png" alt></p>
 </li>
-<li>到域名管理页面，添加 CNAME 解析记录，指向自己的 Github Pages 域名，例如 <code>uncleAndyChen.github.io</code>，域名指向生效之后，域名绑定就完成了。<br> <img src="/img/githubPages/githubPagesConfigDns.png" alt=""><br> <img src="/img/githubPages/githubPagesConfigDnsModify.png" alt=""></li>
+<li>到域名管理页面，添加 CNAME 解析记录，指向自己的 Github Pages 域名，例如 <code>uncleAndyChen.github.io</code>，域名指向生效之后，域名绑定就完成了。<br> <img src="/img/githubPages/githubPagesConfigDns.png" alt><br> <img src="/img/githubPages/githubPagesConfigDnsModify.png" alt></li>
 </ol>
 <h1 id="经验"><a href="#经验" class="headerlink" title="经验"></a>经验</h1><ul>
 <li>首先被绑定的域名需要已经备案，为了备案，需要先找一家网站托管商，比如我用的是阿里云的云服务器 ECS。如果云服务器到期，可以考虑将个人博客转至 githu pages，免费还相对稳定，更新也比较简单。</li>
@@ -410,14 +410,14 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/githubPages/githubPagesPush.png" alt="" title="">
+                    <img src="/img/githubPages/githubPagesPush.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <h2 id="域名的【主机记录】要不要配置-www？"><a href="#域名的【主机记录】要不要配置-www？" class="headerlink" title="域名的【主机记录】要不要配置 www？"></a>域名的【主机记录】要不要配置 www？</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/githubPages/domainConfig.png" alt="" title="">
+                    <img src="/img/githubPages/domainConfig.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -426,9 +426,9 @@
 <p>至于在浏览器地址栏输入 <code>baidu.com</code> 回车之后，会自动跳转至 <code>www.baidu.com</code>，这个可以在服务器上配置，一般的 web 服务器（比如 nginx）都支持。  </p>
 </blockquote>
 </li>
-<li>那么，为了照顾不同人群的不同习惯，我的 github pages 也想配置带 www 和不带 www 的自定义域名。但是，结果是不支持。通过 github pages 配置了 <code>lovesofttech.com</code>，我再配置一个 <a href="http://www.lovesofttech.com">www.lovesofttech.com</a> 时，会得到如下错误：<br>  <img src="/img/githubPages/githubPagesError.png" alt=""></li>
+<li>那么，为了照顾不同人群的不同习惯，我的 github pages 也想配置带 www 和不带 www 的自定义域名。但是，结果是不支持。通过 github pages 配置了 <code>lovesofttech.com</code>，我再配置一个 <a href="http://www.lovesofttech.com">www.lovesofttech.com</a> 时，会得到如下错误：<br>  <img src="/img/githubPages/githubPagesError.png" alt></li>
 </ul>
-<p>参考：<a href="https://help.github.com/articles/troubleshooting-custom-domains/#cname-already-taken" target="_blank" rel="noopener">Troubleshooting custom domains -&gt; CNAME already taken</a><br><img src="/img/githubPages/githubPagesCNAMEAlreadyTaken.png" alt=""></p>
+<p>参考：<a href="https://help.github.com/articles/troubleshooting-custom-domains/#cname-already-taken" rel="external nofollow noopener noreferrer" target="_blank">Troubleshooting custom domains -&gt; CNAME already taken</a><br><img src="/img/githubPages/githubPagesCNAMEAlreadyTaken.png" alt></p>
 <ul>
 <li>github pages 只能配置一个顶级域名<ul>
 <li>如果配置了 <code>lovesofttech.com</code>，就不能再配置 <code>www.lovesofttech.com</code></li>
@@ -442,28 +442,28 @@
 <h3 id="阿里云域名管理"><a href="#阿里云域名管理" class="headerlink" title="阿里云域名管理"></a>阿里云域名管理</h3><p>可添加【CNAME】或【302重定向】解析，这里以【302重定向】为例。<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/githubPages/domain302Config.png" alt="" title="">
+                    <img src="/img/githubPages/domain302Config.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure><br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/githubPages/domain302Config02.png" alt="" title="">
+                    <img src="/img/githubPages/domain302Config02.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure></p>
 <h3 id="京东云域名管理"><a href="#京东云域名管理" class="headerlink" title="京东云域名管理"></a>京东云域名管理</h3><p>只能用【CNAME】解析。在域名解析方面，京东云没有阿里云的选项多，解析选项里，是没有 【302重定向】的。<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/githubPages/jdDomain.png" alt="" title="">
+                    <img src="/img/githubPages/jdDomain.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure></p>
 <p>其实，用 【CNAME】跟用【302重定向】的效果是一样的，都是重定向，只是重定向的方式不一样而已，这两种方式对用户而言是没有什么区别的，有区别的，应该是搜索引擎。</p>
 <h1 id="启用-HTTPS"><a href="#启用-HTTPS" class="headerlink" title="启用 HTTPS"></a>启用 HTTPS</h1><ol>
-<li><a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" target="_blank" rel="noopener">参考文章：Custom domains on GitHub Pages gain support for HTTPS</a></li>
-<li><a href="https://letsencrypt.org/" target="_blank" rel="noopener">Github 使用了 Let’s Encrypt 提供的免费 SSL 证书</a></li>
-<li><a href="https://qq52o.me/1398.html" target="_blank" rel="noopener">Linux下使用acme.sh申请和管理Let’s Encrypt证书</a></li>
+<li><a href="https://blog.github.com/2018-05-01-github-pages-custom-domains-https/" rel="external nofollow noopener noreferrer" target="_blank">参考文章：Custom domains on GitHub Pages gain support for HTTPS</a></li>
+<li><a href="https://letsencrypt.org/" rel="external nofollow noopener noreferrer" target="_blank">Github 使用了 Let’s Encrypt 提供的免费 SSL 证书</a></li>
+<li><a href="https://qq52o.me/1398.html" rel="external nofollow noopener noreferrer" target="_blank">Linux下使用acme.sh申请和管理Let’s Encrypt证书</a></li>
 </ol>
 
         </div>
@@ -500,7 +500,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/githubPages.html&title=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/githubPages.html&title=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -510,22 +510,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/githubPages.html&title=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/githubPages.html&title=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/githubPages.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/githubPages.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/githubPages.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/githubPages.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/githubPages.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/githubPages.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -582,11 +582,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -618,7 +618,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/githubPages.html&title=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/githubPages.html&title=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -628,22 +628,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/githubPages.html&title=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/githubPages.html&title=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/githubPages.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/githubPages.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/githubPages.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《github pages 绑定自己的域名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/githubPages.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/githubPages.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/githubPages.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

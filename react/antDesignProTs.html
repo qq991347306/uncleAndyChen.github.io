@@ -110,7 +110,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -195,21 +195,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -368,11 +368,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>v4 相对之前的版本，改动比较大。请参考：<a href="https://zhuanlan.zhihu.com/p/67498559" target="_blank" rel="noopener">Ant Design Pro v4 is Here</a><br><a id="more"></a></p>
+            <p>v4 相对之前的版本，改动比较大。请参考：<a href="https://zhuanlan.zhihu.com/p/67498559" rel="external nofollow noopener noreferrer" target="_blank">Ant Design Pro v4 is Here</a><br><a id="more"></a></p>
 <h1 id="Ant-Design-Pro-相关文档"><a href="#Ant-Design-Pro-相关文档" class="headerlink" title="Ant Design Pro 相关文档"></a>Ant Design Pro 相关文档</h1><ul>
-<li><a href="https://github.com/ant-design/ant-design-pro" target="_blank" rel="noopener">github 地址</a></li>
-<li><a href="https://pro.ant.design/docs/getting-started-cn" target="_blank" rel="noopener">中文文档</a></li>
-<li><a href="https://pro.ant.design/docs/block-cn" target="_blank" rel="noopener">区块中文文档</a></li>
+<li><a href="https://github.com/ant-design/ant-design-pro" rel="external nofollow noopener noreferrer" target="_blank">github 地址</a></li>
+<li><a href="https://pro.ant.design/docs/getting-started-cn" rel="external nofollow noopener noreferrer" target="_blank">中文文档</a></li>
+<li><a href="https://pro.ant.design/docs/block-cn" rel="external nofollow noopener noreferrer" target="_blank">区块中文文档</a></li>
 </ul>
 <h1 id="下载区块"><a href="#下载区块" class="headerlink" title="下载区块"></a>下载区块</h1><p>在 windows 10 下 <code>npm run fetch:blocks</code>，总是非常慢，还经常卡住不动，而且即使显示执行成功，实际上有好多文件没有下载完，导致启动（npm start）时会报错，我遇到的错误提示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> ERROR  Failed to compile with 1 errors                                                                                                                                                                                                                                  21:35:10</span><br><span class="line"></span><br><span class="line">This relative module was not found:</span><br><span class="line"></span><br><span class="line">* ../list/search in ./src/pages/.umi/router.js</span><br><span class="line"></span><br><span class="line"> ERROR CODE  ERR_WEBPACK_MODULE_NOT_FOUND</span><br><span class="line"># ...</span><br></pre></td></tr></table></figure></p>
 <p>原因就是有文件没有下载下来。修复这个错，找到下面三行，并注释掉两行，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//path: &apos;/list/search&apos;,</span><br><span class="line">name: &apos;search-list&apos;,</span><br><span class="line">//component: &apos;./list/search&apos;,</span><br></pre></td></tr></table></figure></p>
@@ -383,7 +383,7 @@
 </ul>
 <h3 id="CentOS-7-下操作步骤"><a href="#CentOS-7-下操作步骤" class="headerlink" title="CentOS 7 下操作步骤"></a>CentOS 7 下操作步骤</h3><p>如果还没安装 yarn，先安装，下面以 root 身份登录安装的：</p>
 <blockquote>
-<p>yarn site: <a href="https://yarnpkg.com/en/docs/install#centos-stable" target="_blank" rel="noopener">https://yarnpkg.com/en/docs/install#centos-stable</a></p>
+<p>yarn site: <a href="https://yarnpkg.com/en/docs/install#centos-stable" rel="external nofollow noopener noreferrer" target="_blank">https://yarnpkg.com/en/docs/install#centos-stable</a></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo</span><br><span class="line">yum install -y yarn</span><br></pre></td></tr></table></figure>
 <p>安装好后，依次执行以下指令。</p>
@@ -394,7 +394,7 @@
 <h1 id="与后端-api-交互"><a href="#与后端-api-交互" class="headerlink" title="与后端 api 交互"></a>与后端 api 交互</h1><h2 id="第一步，设置代理"><a href="#第一步，设置代理" class="headerlink" title="第一步，设置代理"></a>第一步，设置代理</h2><p>找到 config/config.ts 文件的以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">proxy: &#123;</span><br><span class="line">  &apos;/server/api/&apos;: &#123;</span><br><span class="line">    target: &apos;https://preview.pro.ant.design/&apos;,</span><br><span class="line">    changeOrigin: true,</span><br><span class="line">    pathRewrite: &#123; &apos;^/server&apos;: &apos;&apos; &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p>
 <p>改为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">proxy: &#123;</span><br><span class="line">  <span class="string">'/api/'</span>: &#123;</span><br><span class="line">    target: <span class="string">'http://localhost:89'</span>,</span><br><span class="line">    changeOrigin: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// pathRewrite: &#123; '^/server': '' &#125;,</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></p>
 <p>其中 <code>http://localhost:89</code> 为后端 api 地址，<code>/api/</code> 为请求 api 的前缀，可根据自己的项目情况灵活修改。</p>
-<h2 id="第二步，前端修改"><a href="#第二步，前端修改" class="headerlink" title="第二步，前端修改"></a>第二步，前端修改</h2><p>参考官方文档：<a href="https://pro.ant.design/docs/server-cn" target="_blank" rel="noopener">和服务端进行交互</a></p>
+<h2 id="第二步，前端修改"><a href="#第二步，前端修改" class="headerlink" title="第二步，前端修改"></a>第二步，前端修改</h2><p>参考官方文档：<a href="https://pro.ant.design/docs/server-cn" rel="external nofollow noopener noreferrer" target="_blank">和服务端进行交互</a></p>
 <h3 id="前端请求流程"><a href="#前端请求流程" class="headerlink" title="前端请求流程"></a>前端请求流程</h3><p>在 Ant Design Pro 中，一个完整的前端 UI 交互到服务端处理流程是这样的：</p>
 <ol>
 <li>UI 组件交互操作；</li>
@@ -426,7 +426,7 @@
 <h2 id="第三步，前后端参数进行匹配"><a href="#第三步，前后端参数进行匹配" class="headerlink" title="第三步，前后端参数进行匹配"></a>第三步，前后端参数进行匹配</h2><p>后端是 spring boot 项目，提供 restful api，Controller 定义如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 登录授权</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/api/auth/login"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> ApiResponse <span class="title">login</span><span class="params">(@RequestBody AuthorizationUserRequest authorizationUserRequest)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> SysUserService.userLogin(authorizationUserRequest);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>其中，AuthorizationUserRequest 为接收前台传过去的参数的 POJO，定义如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AuthorizationUserRequest</span> </span>&#123;</span><br><span class="line">    <span class="meta">@NotBlank</span></span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="meta">@NotBlank</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="keyword">private</span> String type; <span class="comment">// 前端需要</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>POJO 的成员名与前台提交的参数名和类型一一对应即可。</p>
-<h1 id="前端对请求参数做统一加工（封装）"><a href="#前端对请求参数做统一加工（封装）" class="headerlink" title="前端对请求参数做统一加工（封装）"></a>前端对请求参数做统一加工（封装）</h1><p>参考：<a href="https://github.com/umijs/umi-request/blob/master/README_zh-CN.md" target="_blank" rel="noopener">https://github.com/umijs/umi-request/blob/master/README_zh-CN.md</a></p>
+<h1 id="前端对请求参数做统一加工（封装）"><a href="#前端对请求参数做统一加工（封装）" class="headerlink" title="前端对请求参数做统一加工（封装）"></a>前端对请求参数做统一加工（封装）</h1><p>参考：<a href="https://github.com/umijs/umi-request/blob/master/README_zh-CN.md" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/umijs/umi-request/blob/master/README_zh-CN.md</a></p>
 <h2 id="对请求参数做处理，适配后端-api-对参数的需要"><a href="#对请求参数做处理，适配后端-api-对参数的需要" class="headerlink" title="对请求参数做处理，适配后端 api 对参数的需要"></a>对请求参数做处理，适配后端 api 对参数的需要</h2><ul>
 <li>重要：<code>src\services\login.ts</code> 文件中，将 <code>import request from &#39;umi-request&#39;;</code> 改为 <code>import request from &#39;@/utils/request&#39;;</code>。</li>
 <li>以下代码，添加到 <code>src\utils\request.ts</code>文件中，<code>export default request;</code> 之前。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// request拦截器, 改变 options.</span></span><br><span class="line">request.interceptors.request.use(<span class="function">(<span class="params">url, options</span>) =&gt;</span> &#123;</span><br><span class="line">  options.data = <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">    method: url,</span><br><span class="line">    jsonStringParameter: <span class="built_in">JSON</span>.stringify(options.data),</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &#123;</span><br><span class="line">      options: &#123; ...options &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -440,7 +440,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/react/antDesignProResponse01.png" alt="" title="">
+                    <img src="/img/react/antDesignProResponse01.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -448,7 +448,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/react/antDesignProResponse02.png" alt="" title="">
+                    <img src="/img/react/antDesignProResponse02.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -515,7 +515,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/antDesignProTs.html&title=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/antDesignProTs.html&title=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -525,22 +525,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/antDesignProTs.html&title=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=v4 相对之前的版本，改动比较大。请参考：Ant Design Pro v4 is Here" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/antDesignProTs.html&title=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=v4 相对之前的版本，改动比较大。请参考：Ant Design Pro v4 is Here" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/antDesignProTs.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/antDesignProTs.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/antDesignProTs.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/antDesignProTs.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/antDesignProTs.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/antDesignProTs.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -597,11 +597,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -633,7 +633,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/antDesignProTs.html&title=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/antDesignProTs.html&title=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -643,22 +643,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/antDesignProTs.html&title=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=v4 相对之前的版本，改动比较大。请参考：Ant Design Pro v4 is Here" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/antDesignProTs.html&title=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=v4 相对之前的版本，改动比较大。请参考：Ant Design Pro v4 is Here" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/antDesignProTs.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/antDesignProTs.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/antDesignProTs.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ant Design Pro v4 开发备忘，TypeScript 版本》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/antDesignProTs.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/antDesignProTs.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/antDesignProTs.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

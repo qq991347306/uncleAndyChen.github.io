@@ -113,7 +113,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -198,21 +198,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -384,38 +384,38 @@
 </ol>
 <h2 id="Redux-DevTools"><a href="#Redux-DevTools" class="headerlink" title="Redux DevTools"></a>Redux DevTools</h2><ol>
 <li>安装插件<ul>
-<li>以 qq 浏览器为例，搜索：Redux DevTools<br><img src="/img/react/ReduxDevToolsInstall.png" alt=""></li>
+<li>以 qq 浏览器为例，搜索：Redux DevTools<br><img src="/img/react/ReduxDevToolsInstall.png" alt></li>
 </ul>
 </li>
 <li><p>添加相应代码以支持在浏览器上使用 Redux DevTools 插件。</p>
 <ul>
-<li><a href="https://github.com/zalmoxisus/redux-devtools-extension#usage" target="_blank" rel="noopener">参考</a></li>
+<li><a href="https://github.com/zalmoxisus/redux-devtools-extension#usage" rel="external nofollow noopener noreferrer" target="_blank">参考</a></li>
 <li>如果要用 redux，需要加扩展：redux-devtools-extension，只需要作如下调整:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 将 window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__() 作为 createStore 方法的第三个参数，如下：</span><br><span class="line">const store = createStore(reducer, initValues, window.__REDUX_DEVTOOLS_EXTENSION__ &amp;&amp; window.__REDUX_DEVTOOLS_EXTENSION__());</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>使用插件</p>
 <ul>
-<li>npm start 之后，在 chrome 或者 qq 浏览器，按 F12，点击【Redux】，可跟踪 Action 以及 state 的变化。<br><img src="/img/react/ReduxDevToolsUse.png" alt=""></li>
+<li>npm start 之后，在 chrome 或者 qq 浏览器，按 F12，点击【Redux】，可跟踪 Action 以及 state 的变化。<br><img src="/img/react/ReduxDevToolsUse.png" alt></li>
 </ul>
 </li>
 </ol>
 <h2 id="React-Developer-Tools"><a href="#React-Developer-Tools" class="headerlink" title="React Developer Tools"></a>React Developer Tools</h2><ol>
 <li>安装插件<ul>
-<li>以 qq 浏览器为例，搜索：React Developer Tools<br><img src="/img/react/ReactDeveloperToolsInstall.png" alt=""></li>
+<li>以 qq 浏览器为例，搜索：React Developer Tools<br><img src="/img/react/ReactDeveloperToolsInstall.png" alt></li>
 </ul>
 </li>
-<li>使用插件<br> <img src="/img/react/ReactDeveloperToolsUse.png" alt=""></li>
+<li>使用插件<br> <img src="/img/react/ReactDeveloperToolsUse.png" alt></li>
 </ol>
 <h2 id="React-Perf"><a href="#React-Perf" class="headerlink" title="React Perf"></a>React Perf</h2><p>性能插件，具体使用可参考《深入浅出React和Redux》，P101-102，【4.6.3 工具应用】章节。  </p>
 <h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><ul>
-<li><a href="http://react.css88.com/blog/2018/09/10/introducing-the-react-profiler.html" target="_blank" rel="noopener">介绍 React 性能分析器</a></li>
-<li><a href="https://www.jianshu.com/p/04583fca939b" target="_blank" rel="noopener">React 的慢与快：优化 React 应用实战</a></li>
+<li><a href="http://react.css88.com/blog/2018/09/10/introducing-the-react-profiler.html" rel="external nofollow noopener noreferrer" target="_blank">介绍 React 性能分析器</a></li>
+<li><a href="https://www.jianshu.com/p/04583fca939b" rel="external nofollow noopener noreferrer" target="_blank">React 的慢与快：优化 React 应用实战</a></li>
 </ul>
 <h2 id="F12-之后，在源代码处打断点"><a href="#F12-之后，在源代码处打断点" class="headerlink" title="F12 之后，在源代码处打断点"></a>F12 之后，在源代码处打断点</h2><p>可 F12 之后，点击【Sources】，在想要监控变量的地方打断点，这种方式还是非常方便的。<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/react/f12Debug.png" alt="" title="">
+                    <img src="/img/react/f12Debug.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure></p>
@@ -454,7 +454,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/debug.html&title=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/debug.html&title=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -464,22 +464,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/debug.html&title=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/debug.html&title=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/debug.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/debug.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/debug.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/debug.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/debug.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/debug.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -501,18 +501,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/react/eslintConfig.html" id="post-prev" class="post-nav-link">
+      <a href="/react/eslintConfigExample.html" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">WebStorm + React 项目，配置 ESLint</h4>
+        <h4 class="title">ESLint 配置文件 .eslintrc 示例及说明</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/react/examplesTodomvcGetVisibleTodos.html" id="post-next" class="post-nav-link">
+      <a href="/react/examplesTodomvcWarningsFixed.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">redux 官方示例 todomvc 中的 todoList 过滤事件解析</h4>
+        <h4 class="title">redux 官方示例 todomvc 两个警告修复</h4>
       </a>
     </div>
   
@@ -536,11 +536,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -572,7 +572,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/debug.html&title=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/react/debug.html&title=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -582,22 +582,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/debug.html&title=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/react/debug.html&title=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/debug.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/react/debug.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/debug.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React 项目调试技巧》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/react/debug.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/debug.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/react/debug.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

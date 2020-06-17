@@ -107,7 +107,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -192,21 +192,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -369,14 +369,14 @@
 <ol>
 <li>安装 mysql 并将 xunwu.sql 数据导入</li>
 <li>安装 ElasticSearch（version=5.6.1），设置集群名称为 xunwu-es，并安装 <code>elasticsearch-analysis-ik</code> 插件，启动es（如果需要使用 head，需要在配置文件中设置跨域）</li>
-<li>安装 kafka（<a href="http://kafka.apache.org）" target="_blank" rel="noopener">http://kafka.apache.org）</a> 启动并创建 xunwu_topic 主题</li>
+<li>安装 kafka（<a href="http://kafka.apache.org）" rel="external nofollow noopener noreferrer" target="_blank">http://kafka.apache.org）</a> 启动并创建 xunwu_topic 主题</li>
 <li>安装 zookeeper (<code>http://zookeeper.apache.org</code>) 启动</li>
-<li>向 <a href="http://localhost:9200/xunwu" target="_blank" rel="noopener">http://localhost:9200/xunwu</a> 发送 json 请求，请求内容为 <code>xunwu-web/src/main/resources/db/house_index_with_suggest_mapping.json</code></li>
+<li>向 <a href="http://localhost:9200/xunwu" rel="external nofollow noopener noreferrer" target="_blank">http://localhost:9200/xunwu</a> 发送 json 请求，请求内容为 <code>xunwu-web/src/main/resources/db/house_index_with_suggest_mapping.json</code></li>
 <li>安装 redis 并启动</li>
 </ol>
 <h1 id="启动-ElasticSearch"><a href="#启动-ElasticSearch" class="headerlink" title="启动 ElasticSearch"></a>启动 ElasticSearch</h1><p>后台启动:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/opt/elasticsearch-5.6.1/bin/elasticsearch -d</span><br></pre></td></tr></table></figure></p>
 <h1 id="启动-kibana"><a href="#启动-kibana" class="headerlink" title="启动 kibana"></a>启动 kibana</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup /opt/kibana-5.6.1-linux-x86_64/bin/kibana &amp;</span><br></pre></td></tr></table></figure>
-<p><a href="http://192.168.1.88:5601/" target="_blank" rel="noopener">访问 kibana</a></p>
+<p><a href="http://192.168.1.88:5601/" rel="external nofollow noopener noreferrer" target="_blank">访问 kibana</a></p>
 <h1 id="通过-kibana-向-es-发送-json-请求"><a href="#通过-kibana-向-es-发送-json-请求" class="headerlink" title="通过 kibana 向 es 发送 json 请求"></a>通过 kibana 向 es 发送 json 请求</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">PUT xunwu</span><br><span class="line">&#123;</span><br><span class="line">  &quot;settings&quot;: &#123;</span><br><span class="line">    &quot;number_of_replicas&quot;: 0,</span><br><span class="line">    &quot;number_of_shards&quot;: 5,</span><br><span class="line">    &quot;index.store.type&quot;: &quot;niofs&quot;,</span><br><span class="line">    &quot;index.query.default_field&quot;: &quot;title&quot;,</span><br><span class="line">    &quot;index.unassigned.node_left.delayed_timeout&quot;: &quot;5m&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;mappings&quot;: &#123;</span><br><span class="line">    &quot;house&quot;: &#123;</span><br><span class="line">      &quot;dynamic&quot;: &quot;strict&quot;,</span><br><span class="line">      &quot;_all&quot;:&#123;</span><br><span class="line">        &quot;enabled&quot;: false</span><br><span class="line">      &#125;,</span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;houseId&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;long&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;title&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;index&quot;: &quot;analyzed&quot;,</span><br><span class="line">          &quot;analyzer&quot;: &quot;ik_smart&quot;,</span><br><span class="line">          &quot;search_analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;price&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;integer&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;area&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;integer&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;createTime&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;date&quot;,</span><br><span class="line">          &quot;format&quot;: &quot;strict_date_optional_time||epoch_millis&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;lastUpdateTime&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;date&quot;,</span><br><span class="line">          &quot;format&quot;: &quot;strict_date_optional_time||epoch_millis&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;cityEnName&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;regionEnName&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;direction&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;integer&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;distanceToSubway&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;integer&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;subwayLineName&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;subwayStationName&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;tags&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;street&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;district&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;keyword&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;description&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;index&quot;: &quot;analyzed&quot;,</span><br><span class="line">          &quot;analyzer&quot;: &quot;ik_smart&quot;,</span><br><span class="line">          &quot;search_analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;layoutDesc&quot; : &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;index&quot;: &quot;analyzed&quot;,</span><br><span class="line">          &quot;analyzer&quot;: &quot;ik_smart&quot;,</span><br><span class="line">          &quot;search_analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;traffic&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;index&quot;: &quot;analyzed&quot;,</span><br><span class="line">          &quot;analyzer&quot;: &quot;ik_smart&quot;,</span><br><span class="line">          &quot;search_analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;roundService&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">          &quot;index&quot;: &quot;analyzed&quot;,</span><br><span class="line">          &quot;analyzer&quot;: &quot;ik_smart&quot;,</span><br><span class="line">          &quot;search_analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;rentWay&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;integer&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;suggest&quot;:&#123;</span><br><span class="line">          &quot;type&quot;: &quot;completion&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;location&quot;:&#123;</span><br><span class="line">          &quot;type&quot;: &quot;geo_point&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="以上脚本如果在-ElasticSearch-6-X-执行，会报错"><a href="#以上脚本如果在-ElasticSearch-6-X-执行，会报错" class="headerlink" title="以上脚本如果在 ElasticSearch 6.X 执行，会报错"></a>以上脚本如果在 ElasticSearch 6.X 执行，会报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;error&quot;: &#123;</span><br><span class="line">    &quot;root_cause&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;type&quot;: &quot;mapper_parsing_exception&quot;,</span><br><span class="line">        &quot;reason&quot;: &quot;Failed to parse mapping [house]: Could not convert [roundService.index] to boolean&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;type&quot;: &quot;mapper_parsing_exception&quot;,</span><br><span class="line">    &quot;reason&quot;: &quot;Failed to parse mapping [house]: Could not convert [roundService.index] to boolean&quot;,</span><br><span class="line">    &quot;caused_by&quot;: &#123;</span><br><span class="line">      &quot;type&quot;: &quot;illegal_argument_exception&quot;,</span><br><span class="line">      &quot;reason&quot;: &quot;Could not convert [roundService.index] to boolean&quot;,</span><br><span class="line">      &quot;caused_by&quot;: &#123;</span><br><span class="line">        &quot;type&quot;: &quot;illegal_argument_exception&quot;,</span><br><span class="line">        &quot;reason&quot;: &quot;Failed to parse value [analyzed] as only [true] or [false] are allowed.&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;status&quot;: 400</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>把上面的请求数据中的<code>analyzed</code>改为<code>true</code>即可。</p>
@@ -421,7 +421,7 @@
 </ul>
 <h2 id="测试消费消息"><a href="#测试消费消息" class="headerlink" title="测试消费消息"></a>测试消费消息</h2><p><code>/home/utomcat/soft/kafka_2.11-2.0.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic xunwu_topic --from-beginning --consumer.config /home/utomcat/soft/kafka_2.11-2.0.0/config/consumer.properties</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[utomcat@AndyCentOS7Basic ~]$ /home/utomcat/soft/kafka_2.11-2.0.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic xunwu_topic --from-beginning --consumer.config /home/utomcat/soft/kafka_2.11-2.0.0/config/consumer.properties</span><br><span class="line">[2018-09-27 16:59:28,169] WARN [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)</span><br><span class="line">[2018-09-27 16:59:28,227] WARN [Consumer clientId=consumer-1, groupId=test-consumer-group] Connection to node -1 could not be established. Broker may not be available. (org.apache.kafka.clients.NetworkClient)</span><br></pre></td></tr></table></figure></p>
 <p><code>/home/utomcat/soft/kafka_2.11-2.0.0/bin/kafka-console-consumer.sh --bootstrap-server 192.168.1.88:9092 --topic xunwu_topic --from-beginning --consumer.config /home/utomcat/soft/kafka_2.11-2.0.0/config/consumer.properties</code></p>
-<h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><p><a href="http://www.cnblogs.com/hahahehexixihoho/p/9477959.html" target="_blank" rel="noopener">参考</a><br><a href="https://redis.io/download" target="_blank" rel="noopener">redis Download</a><br><a href="http://download.redis.io/releases/redis-4.0.11.tar.gz" target="_blank" rel="noopener">4.0.11</a></p>
+<h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><p><a href="http://www.cnblogs.com/hahahehexixihoho/p/9477959.html" rel="external nofollow noopener noreferrer" target="_blank">参考</a><br><a href="https://redis.io/download" rel="external nofollow noopener noreferrer" target="_blank">redis Download</a><br><a href="http://download.redis.io/releases/redis-4.0.11.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">4.0.11</a></p>
 <h2 id="下载-amp-编译安装"><a href="#下载-amp-编译安装" class="headerlink" title="下载 &amp; 编译安装"></a>下载 &amp; 编译安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://download.redis.io/releases/redis-4.0.11.tar.gz</span><br><span class="line">tar -xzvf redis-4.0.11.tar.gz</span><br><span class="line">cd redis-4.0.11</span><br><span class="line">make MALLOC=libc</span><br></pre></td></tr></table></figure>
 <p><code>make MALLOC=libc</code> 命令执行完成编译后，会在src目录下生成6个可执行文件，分别是redis-server、redis-cli、redis-benchmark、redis-check-aof、redis-check-rdb、redis-sentinel</p>
 <ul>
@@ -447,17 +447,17 @@
 <p>这样，就可以在项目里配置成 IP 来访问 kafka 了。</p>
 <p>但是，在修改监听 IP 地址之前，该配置是注释状态的情况下，提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[2018-09-26 08:43:37,312] ERROR [KafkaApi-0] Number of alive brokers &apos;0&apos; does not meet the required replication factor &apos;1&apos; for the offsets topic (configured via &apos;offsets.topic.replication.factor&apos;). This error can be ignored if the cluster is starting up and not all brokers are up yet. (kafka.server.KafkaApis)</span><br></pre></td></tr></table></figure></p>
 <p>会让人误解，是可以连接 kafka 服务的。</p>
-<h1 id="modelmapper"><a href="#modelmapper" class="headerlink" title="modelmapper"></a>modelmapper</h1><p><a href="http://modelmapper.org/" target="_blank" rel="noopener">official website</a></p>
+<h1 id="modelmapper"><a href="#modelmapper" class="headerlink" title="modelmapper"></a>modelmapper</h1><p><a href="http://modelmapper.org/" rel="external nofollow noopener noreferrer" target="_blank">official website</a></p>
 <h1 id="搜索实践"><a href="#搜索实践" class="headerlink" title="搜索实践"></a>搜索实践</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">轻工作娱松轻娱松满b轻松bb足娱娱娱轻娱松乐aaa消工作娱工作娱娱轻工作松娱工作费abc</span><br><span class="line">轻工作娱松轻娱松满足娱娱娱轻娱松乐aaa消工作娱工作娱娱轻工作松娱工作费abc</span><br><span class="line"></span><br><span class="line">含【轻松】、【满足】即可查询到</span><br></pre></td></tr></table></figure>
 <p>搜索结果：houseID=21</p>
 <h1 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h1><h2 id="simple-分词器"><a href="#simple-分词器" class="headerlink" title="simple 分词器"></a>simple 分词器</h2><ul>
-<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-simple-analyzer.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-simple-analyzer.html</a></li>
-<li>如何使用: <a href="http://www.yiibai.com/lucene/lucene_simpleanalyzer.html" target="_blank" rel="noopener">http://www.yiibai.com/lucene/lucene_simpleanalyzer.html</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-simple-analyzer.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-simple-analyzer.html</a></li>
+<li>如何使用: <a href="http://www.yiibai.com/lucene/lucene_simpleanalyzer.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.yiibai.com/lucene/lucene_simpleanalyzer.html</a></li>
 <li>功能强于WhitespaceAnalyzer, 首先会通过非字母字符来分割文本信息，然后将词汇单元统一为小写形式。该分析器会去掉数字类型的字符</li>
 </ul>
 <h2 id="whitespace-分词器"><a href="#whitespace-分词器" class="headerlink" title="whitespace 分词器"></a>whitespace 分词器</h2><ul>
-<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-whitespace-analyzer.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-whitespace-analyzer.html</a></li>
-<li>如何使用：<a href="http://www.yiibai.com/lucene/lucene_whitespaceanalyzer.html" target="_blank" rel="noopener">http://www.yiibai.com/lucene/lucene_whitespaceanalyzer.html</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-whitespace-analyzer.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-whitespace-analyzer.html</a></li>
+<li>如何使用：<a href="http://www.yiibai.com/lucene/lucene_whitespaceanalyzer.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.yiibai.com/lucene/lucene_whitespaceanalyzer.html</a></li>
 <li>仅仅是去除空格，对字符没有lowcase化,不支持中文；</li>
 <li>并且不对生成的词汇单元进行其他的规范化处理。</li>
 </ul>
@@ -497,7 +497,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/elasticSearchProject.html&title=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/elasticSearchProject.html&title=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -507,22 +507,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/elasticSearchProject.html&title=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=偏重搭建开发环境，github 上有项目源代码，用关键词xunwu很容易搜索到。ElasticSearch 版本 5.6.1。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/elasticSearchProject.html&title=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=偏重搭建开发环境，github 上有项目源代码，用关键词xunwu很容易搜索到。ElasticSearch 版本 5.6.1。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/elasticSearchProject.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/elasticSearchProject.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/elasticSearchProject.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/elasticSearchProject.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/elasticSearchProject.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/elasticSearchProject.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -579,11 +579,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -615,7 +615,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/elasticSearchProject.html&title=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/elasticSearchProject.html&title=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -625,22 +625,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/elasticSearchProject.html&title=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=偏重搭建开发环境，github 上有项目源代码，用关键词xunwu很容易搜索到。ElasticSearch 版本 5.6.1。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/elasticSearchProject.html&title=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=偏重搭建开发环境，github 上有项目源代码，用关键词xunwu很容易搜索到。ElasticSearch 版本 5.6.1。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/elasticSearchProject.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/elasticSearchProject.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/elasticSearchProject.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/elasticSearchProject.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/elasticSearchProject.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/elasticSearchProject.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

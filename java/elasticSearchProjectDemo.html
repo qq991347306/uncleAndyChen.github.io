@@ -112,7 +112,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -197,21 +197,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -374,9 +374,9 @@
 <h1 id="启动-ElasticSearch"><a href="#启动-ElasticSearch" class="headerlink" title="启动 ElasticSearch"></a>启动 ElasticSearch</h1><p>后台启动<br><code>/opt/elasticsearch-6.4.1/bin/elasticsearch -d</code></p>
 <h1 id="启动-kibana"><a href="#启动-kibana" class="headerlink" title="启动 kibana"></a>启动 kibana</h1><p><code>nohup /opt/kibana-6.4.1-linux-x86_64/bin/kibana &amp;</code></p>
 <p>访问 kibana<br><code>http://192.168.1.91:5601/</code></p>
-<h1 id="启动-Head-插件"><a href="#启动-Head-插件" class="headerlink" title="启动 Head 插件"></a>启动 Head 插件</h1><p><a href="https://github.com/mobz/elasticsearch-head/" target="_blank" rel="noopener">official github page</a><br>大致步骤：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Running with built in server</span><br><span class="line">git clone git://github.com/mobz/elasticsearch-head.git</span><br><span class="line">cd elasticsearch-head</span><br><span class="line">cnpm install</span><br><span class="line">npm start</span><br><span class="line">open http://localhost:9100/</span><br></pre></td></tr></table></figure></p>
+<h1 id="启动-Head-插件"><a href="#启动-Head-插件" class="headerlink" title="启动 Head 插件"></a>启动 Head 插件</h1><p><a href="https://github.com/mobz/elasticsearch-head/" rel="external nofollow noopener noreferrer" target="_blank">official github page</a><br>大致步骤：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Running with built in server</span><br><span class="line">git clone git://github.com/mobz/elasticsearch-head.git</span><br><span class="line">cd elasticsearch-head</span><br><span class="line">cnpm install</span><br><span class="line">npm start</span><br><span class="line">open http://localhost:9100/</span><br></pre></td></tr></table></figure></p>
 <p>在服务器上真实的操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[utomcat@centOS7BasicForTest ~]$ cd ~/soft/elasticsearch-head/</span><br><span class="line">[utomcat@centOS7BasicForTest elasticsearch-head]$ npm start</span><br><span class="line"></span><br><span class="line">&gt; elasticsearch-head@0.0.0 start /home/utomcat/soft/elasticsearch-head</span><br><span class="line">&gt; grunt server</span><br><span class="line"></span><br><span class="line">(node:3302) ExperimentalWarning: The http2 module is an experimental API.</span><br><span class="line">Running &quot;connect:server&quot; (connect) task</span><br><span class="line">Waiting forever...</span><br><span class="line">Started connect web server on http://localhost:9100</span><br></pre></td></tr></table></figure></p>
-<p>将 localhost 换成服务器的 IP 之后的[访问地址][<a href="http://192.168.1.91:9100]" target="_blank" rel="noopener">http://192.168.1.91:9100]</a></p>
+<p>将 localhost 换成服务器的 IP 之后的[访问地址][<a href="http://192.168.1.91:9100]" rel="external nofollow noopener noreferrer" target="_blank">http://192.168.1.91:9100]</a></p>
 <h1 id="创建和查询测试数据"><a href="#创建和查询测试数据" class="headerlink" title="创建和查询测试数据"></a>创建和查询测试数据</h1><p>以下，用 postman 工具操作。</p>
 <ul>
 <li><p>操作 PUT 或 POST，报错</p>
@@ -418,7 +418,7 @@
 <p>响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;acknowledged&quot;: true,</span><br><span class="line">  &quot;shards_acknowledged&quot;: true,</span><br><span class="line">  &quot;index&quot;: &quot;hjz-es-index-general&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="查看索引-mapping-内容"><a href="#查看索引-mapping-内容" class="headerlink" title="查看索引 mapping 内容"></a>查看索引 mapping 内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.1.91:9200/hjz-es-index-general/_mapping?pretty</span><br></pre></td></tr></table></figure>
 <p>结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;hjz-es-index-general&quot;: &#123;</span><br><span class="line">        &quot;mappings&quot;: &#123;</span><br><span class="line">            &quot;general&quot;: &#123;</span><br><span class="line">                &quot;dynamic&quot;: &quot;strict&quot;,</span><br><span class="line">                &quot;properties&quot;: &#123;</span><br><span class="line">                    &quot;author&quot;: &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;text&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;content&quot;: &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">                        &quot;analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;id&quot;: &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;integer&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;title&quot;: &#123;</span><br><span class="line">                        &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">                        &quot;analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="文档管理"><a href="#文档管理" class="headerlink" title="文档管理"></a>文档管理</h1><p><a href="https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.4/java-docs-index.html" target="_blank" rel="noopener">official reference</a></p>
+<h1 id="文档管理"><a href="#文档管理" class="headerlink" title="文档管理"></a>文档管理</h1><p><a href="https://www.elastic.co/guide/en/elasticsearch/client/java-api/6.4/java-docs-index.html" rel="external nofollow noopener noreferrer" target="_blank">official reference</a></p>
 <h1 id="采坑记"><a href="#采坑记" class="headerlink" title="采坑记"></a>采坑记</h1><h2 id="cluster-name-配置问题"><a href="#cluster-name-配置问题" class="headerlink" title="cluster.name 配置问题"></a>cluster.name 配置问题</h2><p>如果 cluster.name 参数写错了，会报如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2018-09-30 15:16:58.721  WARN 7832 --- [][generic][T#2]] o.e.c.t.TransportClientNodesService      : node &#123;#transport#-1&#125;&#123;YGbM08bGTPO_wpv-bPWOoQ&#125;&#123;192.168.1.91&#125;&#123;192.168.1.91:9300&#125; not part of the cluster Cluster [hjz-es], ignoring...</span><br><span class="line">NoNodeAvailableException[None of the configured nodes are available: [&#123;#transport#-1&#125;&#123;YGbM08bGTPO_wpv-bPWOoQ&#125;&#123;192.168.1.91&#125;&#123;192.168.1.91:9300&#125;]</span><br><span class="line">]</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
 <p>查询 cluster_name<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 输入http://192.168.1.91:9200/</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot; : &quot;hjz-es&quot;,</span><br><span class="line">  &quot;cluster_name&quot; : &quot;hjz-es-cluster&quot;,</span><br><span class="line">  &quot;cluster_uuid&quot; : &quot;AQI-AmR2QmW5-6HhzxCjYQ&quot;,</span><br><span class="line">  &quot;version&quot; : &#123;</span><br><span class="line">    &quot;number&quot; : &quot;6.4.1&quot;,</span><br><span class="line">    &quot;build_flavor&quot; : &quot;default&quot;,</span><br><span class="line">    &quot;build_type&quot; : &quot;tar&quot;,</span><br><span class="line">    &quot;build_hash&quot; : &quot;e36acdb&quot;,</span><br><span class="line">    &quot;build_date&quot; : &quot;2018-09-13T22:18:07.696808Z&quot;,</span><br><span class="line">    &quot;build_snapshot&quot; : false,</span><br><span class="line">    &quot;lucene_version&quot; : &quot;7.4.0&quot;,</span><br><span class="line">    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,</span><br><span class="line">    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;tagline&quot; : &quot;You Know, for Search&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>配置参数要写成上面 cluster_name 对应的值。</p>
@@ -445,7 +445,7 @@
 <h3 id="解决-1"><a href="#解决-1" class="headerlink" title="解决"></a>解决</h3><p>看一下引用 es module 的依赖树，能看出来，org.elasticsearch 用到的是版本 2.4.6。<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/es/es01.png" alt="" title="">
+                    <img src="/img/es/es01.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure></p>
@@ -453,7 +453,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/es/es03.png" alt="" title="">
+                    <img src="/img/es/es03.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -461,20 +461,20 @@
 <p>既然怀疑是版本引用导致的问题，那就好办了，为了印证这个判断，将同样的代码 copy 至引用的 web 项目，不用调试就已经显示错误了<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/es/es04.png" alt="" title="">
+                    <img src="/img/es/es04.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure><br>提示 <code>&#39;TransportAddress&#39; is abstract; cannot be instantiat</code>，TransportAddress 在旧版本确实只是一个接口而已，在新版本里，变成了一个普通类。<br>然后，在 pom.xml 里添加新版本的引用，该提示即消失<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.elasticsearch&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;elasticsearch&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;6.4.2&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
 <p>在 web 项目添加与 apg.comm.es 相同的依赖之后，再去看一下依赖树，如下所示<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/es/es02.png" alt="" title="">
+                    <img src="/img/es/es02.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure><br>外层引用版本会覆盖某一个包（module）下面的引用版本，再一次运行，就正常了。</p>
 <p>解决该问题，花了好几个小时，所以，特此记录下来，希望能帮到遇到同样问题的朋友。</p>
 <p>网上没找到相关的解决方案，这种问题属于运行时的依赖版本不一样导致的，编译的时候是不会报错的，所以，隐藏得比较深。</p>
-<h1 id="建议搜索词"><a href="#建议搜索词" class="headerlink" title="建议搜索词"></a>建议搜索词</h1><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters.html" target="_blank" rel="noopener">official reference</a></p>
+<h1 id="建议搜索词"><a href="#建议搜索词" class="headerlink" title="建议搜索词"></a>建议搜索词</h1><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters.html" rel="external nofollow noopener noreferrer" target="_blank">official reference</a></p>
 
         </div>
 
@@ -510,7 +510,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&title=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&title=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -520,22 +520,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&title=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=ElasticSearch 相关辅助工具使用实践。ElasticSearch 版本 6.4.1。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&title=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=ElasticSearch 相关辅助工具使用实践。ElasticSearch 版本 6.4.1。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -566,9 +566,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/git/gitLFAndCRLF.html" id="post-next" class="post-nav-link">
+      <a href="/general/version.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">git 回车换行在 windows 与 unix 下不一致的解决方案</h4>
+        <h4 class="title">软件产品版本号制定规则</h4>
       </a>
     </div>
   
@@ -592,11 +592,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -628,7 +628,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&title=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&title=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -638,22 +638,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&title=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=ElasticSearch 相关辅助工具使用实践。ElasticSearch 版本 6.4.1。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&title=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=ElasticSearch 相关辅助工具使用实践。ElasticSearch 版本 6.4.1。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ElasticSearch demo 以及辅助开发工具》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/elasticSearchProjectDemo.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

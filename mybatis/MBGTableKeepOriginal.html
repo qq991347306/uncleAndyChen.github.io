@@ -114,7 +114,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -199,21 +199,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -374,8 +374,8 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>如题<br><a id="more"></a></p>
 <h1 id="本文对应的项目"><a href="#本文对应的项目" class="headerlink" title="本文对应的项目"></a>本文对应的项目</h1><ul>
-<li>github: <a href="https://github.com/uncleAndyChen/mybatis-generator" target="_blank" rel="noopener">https://github.com/uncleAndyChen/mybatis-generator</a></li>
-<li>gitee:  <a href="https://gitee.com/uncleAndyChen/mybatis-generator" target="_blank" rel="noopener">https://gitee.com/uncleAndyChen/mybatis-generator</a></li>
+<li>github: <a href="https://github.com/uncleAndyChen/mybatis-generator" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/uncleAndyChen/mybatis-generator</a></li>
+<li>gitee:  <a href="https://gitee.com/uncleAndyChen/mybatis-generator" rel="external nofollow noopener noreferrer" target="_blank">https://gitee.com/uncleAndyChen/mybatis-generator</a></li>
 </ul>
 <p>备注：最新版，已经改为通过扩展的方式达到目的。</p>
 <p>如果觉得不错，欢迎star以表支持。</p>
@@ -393,7 +393,7 @@
 </ul>
 </li>
 </ol>
-<h1 id="先了解一下-lower-case-table-names-参数"><a href="#先了解一下-lower-case-table-names-参数" class="headerlink" title="先了解一下 lower_case_table_names 参数"></a>先了解一下 lower_case_table_names 参数</h1><p>官方文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html" target="_blank" rel="noopener">Identifier Case Sensitivity</a></p>
+<h1 id="先了解一下-lower-case-table-names-参数"><a href="#先了解一下-lower-case-table-names-参数" class="headerlink" title="先了解一下 lower_case_table_names 参数"></a>先了解一下 lower_case_table_names 参数</h1><p>官方文档：<a href="https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html" rel="external nofollow noopener noreferrer" target="_blank">Identifier Case Sensitivity</a></p>
 <ol>
 <li>lower_case_table_names是mysql一个大小写敏感设置的属性，此参数不可以动态修改，必须重启数据库。</li>
 <li>unix,linux 下 lower_case_table_names默认值为 0。</li>
@@ -425,7 +425,7 @@
 <h1 id="不适用场景"><a href="#不适用场景" class="headerlink" title="不适用场景"></a>不适用场景</h1><p>如果开发环境、生产环境均配置成1或者2，则本文中有关大小写敏感的修改都是无意义的。</p>
 <p>但是如果分库时依赖表名替换，则又是适用的，见以下【适用场景】中的场景二。</p>
 <h1 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h1><p>最终目标：MBG 生成的xml文件中的sql脚本的表名，保持与对应表名在建表时的大小写一致，保持大小写敏感（表名可在MBG需要的配置文件中配置，以该配置为准）。这样可以适应以上<code>lower_case_table_names</code>的三种配置值。</p>
-<p><strong>为了达到以上目标，<a href="https://github.com/uncleAndyChen/mybatis-generator/tree/master/create-table-property" target="_blank" rel="noopener">运行生成表配置内容的项目</a>，一定要连接参数<code>lower_case_table_names</code>配置为0或者2的数据库服务器</strong>，并且是配置为0或者2之后才创建的数据表，否则，生成的表配置内容的表名，是以全部小写为基准的，并非驼峰式命名法。表配置内容生成好之后，重新生成 mapper 时连接的数据库服务器的<code>lower_case_table_names</code>配置值，对生成结果没有影响。</p>
+<p><strong>为了达到以上目标，<a href="https://github.com/uncleAndyChen/mybatis-generator/tree/master/create-table-property" rel="external nofollow noopener noreferrer" target="_blank">运行生成表配置内容的项目</a>，一定要连接参数<code>lower_case_table_names</code>配置为0或者2的数据库服务器</strong>，并且是配置为0或者2之后才创建的数据表，否则，生成的表配置内容的表名，是以全部小写为基准的，并非驼峰式命名法。表配置内容生成好之后，重新生成 mapper 时连接的数据库服务器的<code>lower_case_table_names</code>配置值，对生成结果没有影响。</p>
 <h2 id="场景一"><a href="#场景一" class="headerlink" title="场景一"></a>场景一</h2><ol>
 <li>其中有数据库服务器被设置成大小写不敏感（比如阿里云的云数据库，截至目前2018年12月9号，还不支持配置成大小写敏感），即 <code>lower_case_table_names=1</code>，且该参数不能修改。</li>
 <li>为了统一命名规范使用驼峰式命名法，包括：数据库名、数据库表名、数据库字段名、编程语言。这样的话，可以控制<code>lower_case_table_names</code>的linux服务器，就可以将该参数设置为0，即大小写敏感。</li>
@@ -461,15 +461,15 @@
 <p>废话少说，下面切入正题。</p>
 <h1 id="关于-MBG-MyBatis-Generator"><a href="#关于-MBG-MyBatis-Generator" class="headerlink" title="关于 MBG (MyBatis Generator)"></a>关于 MBG (MyBatis Generator)</h1><p>笔者写这篇文章的时候，Release 最新版本是1.3.5（2016年九月7号发布），该版本已经足够满足本文提到的需求了，作者主导的项目均采用该版本。</p>
 <ol>
-<li>下载地址：<a href="https://github.com/mybatis/generator/releases/tag/mybatis-generator-1.3.5" target="_blank" rel="noopener">MyBatis Generator Release 1.3.5</a></li>
-<li><a href="http://www.mybatis.org/generator/" target="_blank" rel="noopener">官方文档</a></li>
+<li>下载地址：<a href="https://github.com/mybatis/generator/releases/tag/mybatis-generator-1.3.5" rel="external nofollow noopener noreferrer" target="_blank">MyBatis Generator Release 1.3.5</a></li>
+<li><a href="http://www.mybatis.org/generator/" rel="external nofollow noopener noreferrer" target="_blank">官方文档</a></li>
 </ol>
 <p>关于 MBG 的介绍，看官网文档足够了，本文的重点是修改源代码，让 MBG 在生成的代码里，对应的类和 mapper 文件保持与对应的表名大小写不变。</p>
 <blockquote>
 <p>备注，实现方式已经改为通过扩展来解决问题了，不过，如果需要研究一下源码，还是有必要往下读的。</p>
 </blockquote>
-<p>作为研究，作者去<a href="https://github.com/mybatis/generator" target="_blank" rel="noopener">mybatis/generator 官方 github</a> 下载了最新版 V1.3.7（2018年7月5号发布），用最新版重新操作了一遍。</p>
-<p>下载的源码文件是<a href="https://github.com/mybatis/generator/archive/mybatis-generator-1.3.7.zip" target="_blank" rel="noopener">generator-mybatis-generator-1.3.7.zip</a>，解压之后，找到目录 <code>generator-mybatis-generator-1.3.7\core\mybatis-generator-core</code>，这个目录就是我们需要的源码目录。该目录下，只保留 src 目录和 pom.xml，其余删除。</p>
+<p>作为研究，作者去<a href="https://github.com/mybatis/generator" rel="external nofollow noopener noreferrer" target="_blank">mybatis/generator 官方 github</a> 下载了最新版 V1.3.7（2018年7月5号发布），用最新版重新操作了一遍。</p>
+<p>下载的源码文件是<a href="https://github.com/mybatis/generator/archive/mybatis-generator-1.3.7.zip" rel="external nofollow noopener noreferrer" target="_blank">generator-mybatis-generator-1.3.7.zip</a>，解压之后，找到目录 <code>generator-mybatis-generator-1.3.7\core\mybatis-generator-core</code>，这个目录就是我们需要的源码目录。该目录下，只保留 src 目录和 pom.xml，其余删除。</p>
 <p>用 IDEA 导入项目，如果依赖下载很慢，建议添加阿里云仓库，在 pom.xml，倒数第二行<code>&lt;/scm&gt;</code>后面、最后一行<code>&lt;/project&gt;</code>前面，插入以下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;repositories&gt;</span><br><span class="line">  &lt;repository&gt;</span><br><span class="line">    &lt;id&gt;maven-ali&lt;/id&gt;</span><br><span class="line">    &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span><br><span class="line">    &lt;releases&gt;</span><br><span class="line">      &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">    &lt;/releases&gt;</span><br><span class="line">    &lt;snapshots&gt;</span><br><span class="line">      &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">      &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;</span><br><span class="line">      &lt;checksumPolicy&gt;fail&lt;/checksumPolicy&gt;</span><br><span class="line">    &lt;/snapshots&gt;</span><br><span class="line">  &lt;/repository&gt;</span><br><span class="line">&lt;/repositories&gt;</span><br></pre></td></tr></table></figure></p>
 <h1 id="修改源码"><a href="#修改源码" class="headerlink" title="修改源码"></a>修改源码</h1><p>才下操作，均针对最新版 v1.3.7。</p>
 <p>一共需要修改 org.mybatis.generator.api.IntrospectedTable 这个类的两个方法。</p>
@@ -477,20 +477,20 @@
 <p>这两个方法里面的前两行注释了的代码是官方的，最后那行代码是修改之后的。</p>
 <h1 id="生成对应的类和-mapper-文件"><a href="#生成对应的类和-mapper-文件" class="headerlink" title="生成对应的类和 mapper 文件"></a>生成对应的类和 mapper 文件</h1><h1 id="对应的测试数据库脚本"><a href="#对应的测试数据库脚本" class="headerlink" title="对应的测试数据库脚本"></a>对应的测试数据库脚本</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">schema</span> <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">exists</span> mbg <span class="keyword">default</span> <span class="built_in">character</span> <span class="keyword">set</span> utf8;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> mbg;</span><br><span class="line"><span class="keyword">set</span> <span class="keyword">names</span> utf8;</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">exists</span> erpTrade;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> erpTrade</span><br><span class="line">(</span><br><span class="line">   tradeID              <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</span><br><span class="line">   tid                  <span class="built_in">bigint</span> <span class="keyword">comment</span> <span class="string">'订单号'</span>,</span><br><span class="line">   shopID               <span class="built_in">int</span>,</span><br><span class="line">   memberID             <span class="built_in">bigint</span> <span class="keyword">comment</span> <span class="string">'针对的会员ID，同步会员时反写'</span>,</span><br><span class="line">   buyerNick            <span class="keyword">national</span> <span class="built_in">varchar</span>(<span class="number">50</span>),</span><br><span class="line">   sellerID             <span class="built_in">bigint</span> <span class="keyword">comment</span> <span class="string">'店铺用户，主旺旺 ID'</span>,</span><br><span class="line">   primary <span class="keyword">key</span> (tradeID)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">exists</span> erpEnterpriseMember;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> erpEnterpriseMember</span><br><span class="line">(</span><br><span class="line">   memberID             <span class="built_in">bigint</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</span><br><span class="line">   shopID               <span class="built_in">int</span>,</span><br><span class="line">   nickname             <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">comment</span> <span class="string">'会员昵称'</span>,</span><br><span class="line">   realName             <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">comment</span> <span class="string">'真实姓名'</span>,</span><br><span class="line">   sex                  <span class="built_in">int</span> <span class="keyword">comment</span> <span class="string">'性别 1.男 2.女 3.未知'</span>,</span><br><span class="line">   created              <span class="built_in">int</span>,</span><br><span class="line">   modified             <span class="built_in">int</span>,</span><br><span class="line">   primary <span class="keyword">key</span> (memberID)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> <span class="keyword">if</span> <span class="keyword">exists</span> erpShopConfig;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> erpShopConfig</span><br><span class="line">(</span><br><span class="line">   <span class="keyword">ID</span>                   <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span> auto_increment,</span><br><span class="line">   shopID               <span class="built_in">int</span>,</span><br><span class="line">   mobile               <span class="built_in">varchar</span>(<span class="number">200</span>) <span class="keyword">comment</span> <span class="string">'接收短信手机号，多个以逗号隔开'</span>,</span><br><span class="line">   email                <span class="built_in">varchar</span>(<span class="number">200</span>) <span class="keyword">comment</span> <span class="string">'邮箱地址，多个以逗号隔开'</span>,</span><br><span class="line">   isNotifyBalanceLess  <span class="built_in">int</span> <span class="keyword">comment</span> <span class="string">'当短信账户余额为X条时，系统免费发送短信提醒您及时充值。'</span>,</span><br><span class="line">   balanceLessValue     <span class="built_in">int</span> <span class="keyword">comment</span> <span class="string">'余额不足提醒值'</span>,</span><br><span class="line">   isNotifyBeforeExpire <span class="built_in">int</span> <span class="keyword">comment</span> <span class="string">'是否发送软件快到期提醒'</span>,</span><br><span class="line">   beforeDaysExpire     <span class="built_in">int</span> <span class="keyword">comment</span> <span class="string">'软件快到期提醒时间，提前天数'</span>,</span><br><span class="line">   created              <span class="built_in">int</span>,</span><br><span class="line">   modified             <span class="built_in">int</span>,</span><br><span class="line">   primary <span class="keyword">key</span> (<span class="keyword">ID</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <h1 id="生成表配置信息的-Java-工具类"><a href="#生成表配置信息的-Java-工具类" class="headerlink" title="生成表配置信息的 Java 工具类"></a>生成表配置信息的 Java 工具类</h1><p>MBG 基于一个 xml 配置文件，在这个配置文件里，有跟表相关的配置，为了达到我的需求，需要一张表对应一行配置信息，所以，我写了一个类来自动生成，这样，在增减表，或者别的项目里面，可以简单的运行这个类来生成，减少手工劳动。</p>
-<p>更详细的，请看：<a href="https://github.com/uncleAndyChen/mybatis-generator/tree/master/create-table-property" target="_blank" rel="noopener">https://github.com/uncleAndyChen/mybatis-generator/tree/master/create-table-property</a></p>
+<p>更详细的，请看：<a href="https://github.com/uncleAndyChen/mybatis-generator/tree/master/create-table-property" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/uncleAndyChen/mybatis-generator/tree/master/create-table-property</a></p>
 <p>MBG需要的配置文件比较全面的，在工作中实际用到的文件内容如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE generatorConfiguration</span></span><br><span class="line"><span class="meta">        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--数据库驱动--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">classPathEntry</span> <span class="attr">location</span>=<span class="string">"mysql-connector-java-5.1.31.jar"</span>/&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;context id="DB2Tables" targetRuntime="MyBatis3"&gt;--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--如果你希望不生成和Example查询有关的内容，那么可以按照如下进行配置:--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;context id="DB2Tables" targetRuntime="MyBatis3Impl"&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"Mysql"</span> <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span> <span class="attr">defaultModelType</span>=<span class="string">"flat"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat"&gt;--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressDate"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressAllComments"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--数据库链接地址账号密码--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"com.mysql.jdbc.Driver"</span> <span class="attr">connectionURL</span>=<span class="string">"jdbc:mysql://192.168.0.130:3306/mbg?useUnivalue=true&amp;amp;characterEncoding=utf8&amp;amp;autoReconnect=true&amp;amp;failOverReadOnly=false"</span></span></span><br><span class="line"><span class="tag">                        <span class="attr">userId</span>=<span class="string">"root"</span> <span class="attr">password</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成Model类存放位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"mybatis.generator.model.entity"</span> <span class="attr">targetProject</span>=<span class="string">"mybatis.generator.model/src/main/java/"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成映射文件存放位置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"mappers\original"</span> <span class="attr">targetProject</span>=<span class="string">"mybatis.generator.dal\src\main\resources"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成Dao类存放位置</span></span><br><span class="line"><span class="comment">        当type=XMLMAPPER时，会生成一个XXX.xml文件内有各种sql语句，是mapper的实现。</span></span><br><span class="line"><span class="comment">        当type=ANNOTATEDMAPPER时，会直接在mapper接口上添加注释。</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">        http://blog.csdn.net/qq_27376871/article/details/51360638</span></span><br><span class="line"><span class="comment">        MyBatis3:</span></span><br><span class="line"><span class="comment">        ANNOTATEDMAPPER:基于注解的Mapper接口，不会有对应的XML映射文件</span></span><br><span class="line"><span class="comment">        MIXEDMAPPER:XML和注解的混合形式，(上面这种情况中的)SqlProvider注解方法会被XML替代。</span></span><br><span class="line"><span class="comment">        XMLMAPPER:所有的方法都在XML中，接口调用依赖XML文件。</span></span><br><span class="line"><span class="comment">        MyBatis3Simple:</span></span><br><span class="line"><span class="comment">        ANNOTATEDMAPPER:基于注解的Mapper接口，不会有对应的XML映射文件</span></span><br><span class="line"><span class="comment">        XMLMAPPER:所有的方法都在XML中，接口调用依赖XML文件。</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"mybatis.generator.dal.mapper"</span></span></span><br><span class="line"><span class="tag">                             <span class="attr">targetProject</span>=<span class="string">"mybatis.generator.dal/src/main/java/"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"enableSubPackages"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--生成对应表及类名--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"erpEnterpriseMember"</span> <span class="attr">domainObjectName</span>=<span class="string">"EnterpriseMember"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"useActualColumnNames"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span><span class="tag">&lt;<span class="name">generatedKey</span> <span class="attr">identity</span>=<span class="string">"true"</span> <span class="attr">type</span>=<span class="string">"post"</span> <span class="attr">column</span>=<span class="string">"memberID"</span> <span class="attr">sqlStatement</span>=<span class="string">"Mysql"</span>/&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"erpShopConfig"</span> <span class="attr">domainObjectName</span>=<span class="string">"ShopConfig"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"useActualColumnNames"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span><span class="tag">&lt;<span class="name">generatedKey</span> <span class="attr">identity</span>=<span class="string">"true"</span> <span class="attr">type</span>=<span class="string">"post"</span> <span class="attr">column</span>=<span class="string">"ID"</span> <span class="attr">sqlStatement</span>=<span class="string">"Mysql"</span>/&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"erpTrade"</span> <span class="attr">domainObjectName</span>=<span class="string">"erpTrade"</span>&gt;</span><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"useActualColumnNames"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span><span class="tag">&lt;<span class="name">generatedKey</span> <span class="attr">identity</span>=<span class="string">"true"</span> <span class="attr">type</span>=<span class="string">"post"</span> <span class="attr">column</span>=<span class="string">"tradeID"</span> <span class="attr">sqlStatement</span>=<span class="string">"Mysql"</span>/&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h1 id="运行-MBG"><a href="#运行-MBG" class="headerlink" title="运行 MBG"></a>运行 MBG</h1><ol>
-<li>以 <a href="http://www.jetbrains.com/idea/" target="_blank" rel="noopener">IntelliJ IDEA</a> 为例<br>为了测试，除了从官网下载的 MBG 源码外，另外添加了两个模块。<br>先创建一个空项目，然后导入 MBG，添加两个测试模块，或者直接从码云下载我的代码。注意模块的包路径要与配置文件里的一致，否则会提示路径找不到。<br>创建一个空项目<figure class="image-bubble">
+<li>以 <a href="http://www.jetbrains.com/idea/" rel="external nofollow noopener noreferrer" target="_blank">IntelliJ IDEA</a> 为例<br>为了测试，除了从官网下载的 MBG 源码外，另外添加了两个模块。<br>先创建一个空项目，然后导入 MBG，添加两个测试模块，或者直接从码云下载我的代码。注意模块的包路径要与配置文件里的一致，否则会提示路径找不到。<br>创建一个空项目<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://uncleAndyChen.oschina.io/img/MBGDemoStepOne.jpg" alt="" title="">
+                    <img src="http://uncleAndyChen.oschina.io/img/MBGDemoStepOne.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
 导入模块<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://uncleAndyChen.oschina.io/img/MBGDemoStepTwo.jpg" alt="" title="">
+                    <img src="http://uncleAndyChen.oschina.io/img/MBGDemoStepTwo.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -499,13 +499,13 @@
 <h2 id="直接运行源码"><a href="#直接运行源码" class="headerlink" title="直接运行源码"></a>直接运行源码</h2><p>新建一个启动应用，选 MBG 下的 ShellRunner 作为启动入口<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://uncleandychen.gitee.io/img/MBGRunFromSourceCode.jpg" alt="" title="">
+                    <img src="http://uncleandychen.gitee.io/img/MBGRunFromSourceCode.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure><br>按下图所示，在参数一栏写：-configfile generatorConfig.xml -overwrite，选 mybatis-generator-1.3.5 模块<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://uncleandychen.gitee.io/img/MBGRunFromSourceCodeConfig.jpg" alt="" title="">
+                    <img src="http://uncleandychen.gitee.io/img/MBGRunFromSourceCodeConfig.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure><br>接下来，应该知道如何运行或者调试了吧。</p>
@@ -520,13 +520,13 @@
 <p>生成 MBG jar 包第一步，配置<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://uncleandychen.gitee.io/img/MBGToJar.jpg" alt="" title="">
+                    <img src="http://uncleandychen.gitee.io/img/MBGToJar.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure><br>生成 MBG jar 包第二步，Build Artifacts…<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://uncleandychen.gitee.io/img/MBGToJarStepTwo.jpg" alt="" title="">
+                    <img src="http://uncleandychen.gitee.io/img/MBGToJarStepTwo.jpg" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure></p>
@@ -572,7 +572,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&title=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&title=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -582,22 +582,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&title=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&title=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -654,11 +654,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -690,7 +690,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&title=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&title=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -700,22 +700,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&title=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&title=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/mybatis/MBGTableKeepOriginal.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

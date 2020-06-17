@@ -116,7 +116,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -201,21 +201,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -387,8 +387,8 @@
 <p>下面将详细讲解怎么搭建 Gitolite 服务器。</p>
 <h1 id="创建管理项目用的组-ggit-和用户-ugit"><a href="#创建管理项目用的组-ggit-和用户-ugit" class="headerlink" title="创建管理项目用的组 ggit 和用户 ugit"></a>创建管理项目用的组 ggit 和用户 ugit</h1><p>建一个git用户组和用户，用来运行git服务<br>ggit 前面的 g 代表 group, ugit 前面的 u 代表 user，组名和用户名都加前缀，以示区别。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">groupadd ggit</span><br><span class="line">mkdir -p /work</span><br><span class="line">useradd ugit -g ggit -d /work/ugit # /work 为单独的分区，代码放到这个目录下更加安全，可避免由于操作系统出错导致的数据丢失</span><br><span class="line">passwd ugit</span><br></pre></td></tr></table></figure></p>
 <h1 id="安装-Gitolite"><a href="#安装-Gitolite" class="headerlink" title="安装 Gitolite"></a>安装 Gitolite</h1><ul>
-<li><a href="http://gitolite.com/gitolite/" target="_blank" rel="noopener">official web site</a></li>
-<li><a href="https://gitolite.com/gitolite/#installsetup" target="_blank" rel="noopener">reference</a></li>
+<li><a href="http://gitolite.com/gitolite/" rel="external nofollow noopener noreferrer" target="_blank">official web site</a></li>
+<li><a href="https://gitolite.com/gitolite/#installsetup" rel="external nofollow noopener noreferrer" target="_blank">reference</a></li>
 </ul>
 <h2 id="客户端：在管理员电脑-win10-上，生成-SSH-key-备用"><a href="#客户端：在管理员电脑-win10-上，生成-SSH-key-备用" class="headerlink" title="客户端：在管理员电脑 win10 上，生成 SSH key 备用"></a>客户端：在管理员电脑 win10 上，生成 SSH key 备用</h2><ul>
 <li><p>在管理员电脑上操作，以下为 win10 操作系统下的 Git Bash</p>
@@ -398,7 +398,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/gitServer/gitServer05.png" alt="" title="">
+                    <img src="/img/gitServer/gitServer05.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -426,13 +426,13 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/gitServer/gitServer07.png" alt="" title="">
+                    <img src="/img/gitServer/gitServer07.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <ol>
 <li>接下来，管理员把远程管理仓库 gitolite-admin clone 到本地，用管理这个仓库的方式来管理 Git 项目（仓库），包括用户权限。<ul>
-<li><a href="mailto:ugit@code.apg.com" target="_blank" rel="noopener">ugit@code.apg.com</a>:gitolite-admin.git，仓库目录后面的 .git 可以省略，可写成：<a href="mailto:ugit@code.apg.com" target="_blank" rel="noopener">ugit@code.apg.com</a>:gitolite-admin<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 下载远程管理仓库, 请把 code.apg.com 换成你自己服务器的域名或者 ip</span><br><span class="line">$ git clone ugit@code.apg.com:gitolite-admin.git</span><br><span class="line">Cloning into &apos;gitolite-admin&apos;...</span><br><span class="line">The authenticity of host &apos;code.apg.com (192.168.1.91)&apos; can&apos;t be established.</span><br><span class="line">ECDSA key fingerprint is SHA256:njf9IMbOojDSgS2lA2EEYxD2J5pPfPqaCDKIsO7iamA.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added &apos;code.apg.com,192.168.1.91&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Enter passphrase for key &apos;/c/Users/AndyChen/.ssh/id_rsa&apos;: # ssh key 生成时，设置了密码，所以，在 clone 时需要输入密码，否则不会。</span><br><span class="line">remote: Counting objects: 10, done.</span><br><span class="line">remote: Compressing objects: 100% (7/7), done.</span><br><span class="line">remote: Total 10 (delta 1), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (10/10), done.</span><br><span class="line">Resolving deltas: 100% (1/1), done.</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+<li><a href="mailto:ugit@code.apg.com" rel="external nofollow noopener noreferrer" target="_blank">ugit@code.apg.com</a>:gitolite-admin.git，仓库目录后面的 .git 可以省略，可写成：<a href="mailto:ugit@code.apg.com" rel="external nofollow noopener noreferrer" target="_blank">ugit@code.apg.com</a>:gitolite-admin<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># 下载远程管理仓库, 请把 code.apg.com 换成你自己服务器的域名或者 ip</span><br><span class="line">$ git clone ugit@code.apg.com:gitolite-admin.git</span><br><span class="line">Cloning into &apos;gitolite-admin&apos;...</span><br><span class="line">The authenticity of host &apos;code.apg.com (192.168.1.91)&apos; can&apos;t be established.</span><br><span class="line">ECDSA key fingerprint is SHA256:njf9IMbOojDSgS2lA2EEYxD2J5pPfPqaCDKIsO7iamA.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)? yes</span><br><span class="line">Warning: Permanently added &apos;code.apg.com,192.168.1.91&apos; (ECDSA) to the list of known hosts.</span><br><span class="line">Enter passphrase for key &apos;/c/Users/AndyChen/.ssh/id_rsa&apos;: # ssh key 生成时，设置了密码，所以，在 clone 时需要输入密码，否则不会。</span><br><span class="line">remote: Counting objects: 10, done.</span><br><span class="line">remote: Compressing objects: 100% (7/7), done.</span><br><span class="line">remote: Total 10 (delta 1), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (10/10), done.</span><br><span class="line">Resolving deltas: 100% (1/1), done.</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -443,7 +443,7 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/gitServer/gitServer06.png" alt="" title="">
+                    <img src="/img/gitServer/gitServer06.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -456,7 +456,7 @@
 <li>项目配置信息，通过文件 gitolite.conf 来配置（管理）。<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/gitServer/gitServer04.png" alt="" title="">
+                    <img src="/img/gitServer/gitServer04.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure></li>
@@ -470,7 +470,7 @@
 <li>master 和 dev 为相应的分支。</li>
 </ol>
 <p>参考<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">@admin = andy</span><br><span class="line">@dev = tom jeery rose  </span><br><span class="line">  </span><br><span class="line">repo gitolite-admin             # 定义了版本库 gitolite-admin。</span><br><span class="line">    RW+     =   andy            # 指定只有用户 andy 才能够访问，并拥有读(R)写(W)和强制更新(+)的权限。</span><br><span class="line">  </span><br><span class="line">repo temp/.+                    # 通过正则表达式定义了一组版本库，即在 temp/ 目录下的所有版本库。</span><br><span class="line">    C   = @admin                # 用户组 @admin 中的用户，可以在 temp/ 目录下创建版本库。创建版本库的用户，具有对版本库操作的所有权限。</span><br><span class="line">    RW  = @all                  # 所有用户都可以读写 temp 目录下的版本库，但不能强制更新。</span><br><span class="line"></span><br><span class="line">repo projectName                # 定义的 projectName 版本库授权使用了引用授权语法。</span><br><span class="line">    RW+     =   @admin          # 用户组 @admin 对所有的分支和里程碑拥有读写、重置、添加和删除的授权。  </span><br><span class="line">    RW master = tom             # 用户 tom 可以读写 master 分支。（还包括名字以 master 开头的其他分支，如果有的话）。</span><br><span class="line">    RW+ dev  =   @dev           # 用户组 @dev 可以读写、强制更新、创建以及删除 dev 开头的分支。</span><br><span class="line">    RW test$ = jeery            # 用户 jeery 可以读写 test 分支。 (仅此分支，精确匹配）。</span><br><span class="line">    RW  refs/tags/v[0-9] = rose # 用户 rose 可以创建以 v+数字0到9的分支</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://gitolite.com/gitolite/cookbook/" target="_blank" rel="noopener">更详细的请参考官方文档</a></p>
+<p><a href="http://gitolite.com/gitolite/cookbook/" rel="external nofollow noopener noreferrer" target="_blank">更详细的请参考官方文档</a></p>
 <h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
 <li>在 CentOS 上创建公钥，将 id_rsa.pub 改名，如改为 utomcat.pub，git clone，提示：fatal: Could not read from remote repository.<ul>
 <li>解决办法，重新生成名为 id_rsa.pub 的公钥，或者将 utomcat.pub 再改回成 id_rsa.pub。</li>
@@ -486,7 +486,7 @@
 <h1 id="用-TortoiseGit-clone-项目的坑"><a href="#用-TortoiseGit-clone-项目的坑" class="headerlink" title="用 TortoiseGit clone 项目的坑"></a>用 TortoiseGit clone 项目的坑</h1><p>因为 gitolite 配置的是 ssh 公钥认证的方式，而 TortoiseGit 走用户名密码的方式，所以会要求输入密码，而 gitolite 的机制天生就不是针对用户名密码认证方式，所以行不通。<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/gitServer/gitServer08.png" alt="" title="">
+                    <img src="/img/gitServer/gitServer08.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure></p>
@@ -496,16 +496,16 @@
 <ol>
 <li><p>以下提示框，点【yes】</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#---------------------------</span><br><span class="line">TortoiseGitPlink Security Alert</span><br><span class="line">#---------------------------</span><br><span class="line">The server&apos;s host key is not cached in the registry. You</span><br><span class="line">have no guarantee that the server is the computer you</span><br><span class="line">think it is.</span><br><span class="line">The server&apos;s ssh-ed25519 key fingerprint is:</span><br><span class="line">ssh-ed25519 256 f7:4e:73:7b:fb:eb:4d:48:19:14:86:b0:16:3a:47:1e</span><br><span class="line">If you trust this host, hit Yes to add the key to</span><br><span class="line">PuTTY&apos;s cache and carry on connecting.</span><br><span class="line">If you want to carry on connecting just once, without</span><br><span class="line">adding the key to the cache, hit No.</span><br><span class="line">If you do not trust this host, hit Cancel to abandon the</span><br><span class="line">connection.</span><br><span class="line"></span><br><span class="line">#---------------------------</span><br><span class="line">Yes   No   Cancel   </span><br><span class="line">#---------------------------</span><br></pre></td></tr></table></figure>
-<p> <img src="/img/gitServer/gitServer01.png" alt=""><br> <img src="/img/gitServer/gitServer02.png" alt=""></p>
+<p> <img src="/img/gitServer/gitServer01.png" alt><br> <img src="/img/gitServer/gitServer02.png" alt></p>
 </li>
 <li><p>接下来，输入密码，输入用户 ugit 的密码，但提示：</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git.exe clone --progress -v &quot;ugit@code.apg.com:gitolite-admin.git&quot; &quot;C:\workspace\gitolite-admin&quot;</span><br><span class="line"></span><br><span class="line">Cloning into &apos;C:\workspace\gitolite-admin&apos;...</span><br><span class="line">fatal: &apos;gitolite-admin.git&apos; does not appear to be a git repository</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line"></span><br><span class="line">git did not exit cleanly (exit code 128) (109219 ms @ 2018-06-03 9:07:57 AM)</span><br></pre></td></tr></table></figure>
-<p> <img src="/img/gitServer/gitServer03.png" alt=""></p>
+<p> <img src="/img/gitServer/gitServer03.png" alt></p>
 </li>
 <li>密码说明<ul>
 <li>此处确定是输入 ugit 的密码，而非 ssh 公匙的密码。</li>
 <li>如果随便输入，会提示认证失败，需要再次输入，输入 ugit 的密码，则直接输入操作结果，不过，这个结果是 clone 失败。</li>
-<li>同样的执行命令，即：git clone –progress -v “<a href="mailto:ugit@code.apg.com" target="_blank" rel="noopener">ugit@code.apg.com</a>:testing” “C:\workspace\testing”，在 Git Bash 执行，能正常 clone，可能是 TortoiseGit 的某种机制导致了这种操作的失败，没有深入研究。</li>
+<li>同样的执行命令，即：git clone –progress -v “<a href="mailto:ugit@code.apg.com" rel="external nofollow noopener noreferrer" target="_blank">ugit@code.apg.com</a>:testing” “C:\workspace\testing”，在 Git Bash 执行，能正常 clone，可能是 TortoiseGit 的某种机制导致了这种操作的失败，没有深入研究。</li>
 </ul>
 </li>
 </ol>
@@ -527,21 +527,21 @@
 <p>换成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/sitaramc/gitolite</span><br></pre></td></tr></table></figure></p>
 <h2 id="要求输入密码"><a href="#要求输入密码" class="headerlink" title="要求输入密码"></a>要求输入密码</h2><p>此错误发生在 2019-08-30，新创建 git server 的过程中。之前按上面说明操作，非常顺利，这次操作花费了一个周末的时间也没能找到原因，汗~~。我只是换了一种思路满足了我的需求。</p>
 <p>在管理员的电脑上（workstation），clone gitolite-admin 项目时，要求输入密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git clone ugit@192.168.1.168:gitolite-admin</span><br><span class="line">Cloning into &apos;gitolite-admin&apos;...</span><br><span class="line">ugit@192.168.1.168&apos;s password:</span><br></pre></td></tr></table></figure></p>
-<p>相关官方文档：<a href="https://gitolite.com/gitolite/sts#appendix-1-ssh-daemon-asks-for-a-password" target="_blank" rel="noopener">appendix 1: ssh daemon asks for a password</a></p>
+<p>相关官方文档：<a href="https://gitolite.com/gitolite/sts#appendix-1-ssh-daemon-asks-for-a-password" rel="external nofollow noopener noreferrer" target="_blank">appendix 1: ssh daemon asks for a password</a></p>
 <h3 id="输入-ugit-用户密码进行尝试（看过官方文档才知道，这种尝试是多余的）"><a href="#输入-ugit-用户密码进行尝试（看过官方文档才知道，这种尝试是多余的）" class="headerlink" title="输入 ugit 用户密码进行尝试（看过官方文档才知道，这种尝试是多余的）"></a>输入 ugit 用户密码进行尝试（看过官方文档才知道，这种尝试是多余的）</h3><p>在输入 ugit 用户密码后，提示：’gitolite-admin.git’ does not appear to be a git repository<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git clone ugit@192.168.1.168:gitolite-admin.git</span><br><span class="line">Cloning into &apos;gitolite-admin&apos;...</span><br><span class="line">ugit@192.168.1.168&apos;s password:</span><br><span class="line">fatal: &apos;gitolite-admin.git&apos; does not appear to be a git repository</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br></pre></td></tr></table></figure></p>
 <p>继续搜索解决方案，将项目名带上路径：repositories/gitolite-admin.git<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git clone ugit@192.168.1.168:repositories/gitolite-admin.git</span><br><span class="line">Cloning into &apos;gitolite-admin&apos;...</span><br><span class="line">ugit@192.168.1.168&apos;s password:</span><br><span class="line">remote: Enumerating objects: 10, done.</span><br><span class="line">remote: Counting objects: 100% (10/10), done.</span><br><span class="line">remote: Compressing objects: 100% (7/7), done.</span><br><span class="line">remote: Total 10 (delta 1), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (10/10), done.</span><br><span class="line">Resolving deltas: 100% (1/1), done.</span><br></pre></td></tr></table></figure></p>
 <p>可以 clone 了，但是，push 时会报错，看了官方文档，如果在管理员电脑上（上传 ssh key 的电脑） clone gitolite-admin 项目时，提示需要密码，那一定是不正常的，即使通过添加项目路径成功 clone，在 push 时一样会报错，所以，这并不是解决方案。</p>
 <p>push 报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br><span class="line">ugit@192.168.1.168&apos;s password:</span><br><span class="line">Counting objects: 6, done.</span><br><span class="line">Delta compression using up to 8 threads.</span><br><span class="line">Compressing objects: 100% (5/5), done.</span><br><span class="line">Writing objects: 100% (6/6), 811 bytes | 270.00 KiB/s, done.</span><br><span class="line">Total 6 (delta 0), reused 0 (delta 0)</span><br><span class="line">remote: Empty compile time value given to use lib at hooks/update line 6.</span><br><span class="line">remote: Use of uninitialized value in require at hooks/update line 7.</span><br><span class="line">remote: Can&apos;t locate Gitolite/Hooks/Update.pm in @INC (@INC contains:  /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_per                                                        l /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at hooks/update line 7.</span><br><span class="line">remote: BEGIN failed--compilation aborted at hooks/update line 7.</span><br><span class="line">remote: error: hook declined to update refs/heads/master</span><br><span class="line">To 192.168.1.168:repositories/gitolite-admin</span><br><span class="line"> ! [remote rejected] master -&gt; master (hook declined)</span><br><span class="line">error: failed to push some refs to &apos;ugit@192.168.1.168:repositories/gitolite-admin&apos;</span><br></pre></td></tr></table></figure></p>
-<p><a href="https://gitolite.com/gitolite/emergencies.html#ce" target="_blank" rel="noopener">官网相关错误的帮助说明</a>：<a href="https://gitolite.com/gitolite/emergencies.html#ce" target="_blank" rel="noopener">https://gitolite.com/gitolite/emergencies.html#ce</a><br>摘抄如下：</p>
+<p><a href="https://gitolite.com/gitolite/emergencies.html#ce" rel="external nofollow noopener noreferrer" target="_blank">官网相关错误的帮助说明</a>：<a href="https://gitolite.com/gitolite/emergencies.html#ce" rel="external nofollow noopener noreferrer" target="_blank">https://gitolite.com/gitolite/emergencies.html#ce</a><br>摘抄如下：</p>
 <ul>
 <li>common errors<ul>
 <li>WARNING: keydir/<yourname>.pub duplicates a non-gitolite key, sshd will ignore it<br>  You used a key that is already set to give you shell access. You cannot use the same key to get shell access as well as access gitolite repos.<br>  Solution: use a different keypair for gitolite. There’s a wee bit more on this in the setup section of the install page. Also see why bypassing causes a problem and both the pages linked from ssh for background.</yourname></li>
 <li>Empty compile time value given to use lib at hooks/update line 6<br>  (followed by Can’t locate Gitolite/Hooks/Update.pm in @INC a couple of lines later).<br>  You’re bypassing gitolite. You cloned the repo using the full path (i.e., including the repositories/ prefix), either directly on the server, or via ssh with a key that gives you shell access.<br>  Solution: same as for the previous bullet.<br>  NOTE: If you really must do it, and this is on the server and is a one-time thing, you can try gitolite push instead of git push. BUT… this defeats all gitolite access control, so if you’re going to do this often, maybe you don’t need gitolite!</li>
 </ul>
 </li>
-<li><a href="https://gitolite.com/gitolite/sts#appendix-5-why-bypassing-gitolite-causes-a-problem" target="_blank" rel="noopener"> why bypassing causes a problem</a></li>
+<li><a href="https://gitolite.com/gitolite/sts#appendix-5-why-bypassing-gitolite-causes-a-problem" rel="external nofollow noopener noreferrer" target="_blank"> why bypassing causes a problem</a></li>
 </ul>
-<h1 id="不算解决方案的解决方案"><a href="#不算解决方案的解决方案" class="headerlink" title="不算解决方案的解决方案"></a>不算解决方案的解决方案</h1><p><a href="https://gitolite.com/gitolite/sts#appendix-1-ssh-daemon-asks-for-a-password" target="_blank" rel="noopener">有关要求输入密码的官方文档</a>：<a href="https://gitolite.com/gitolite/sts#appendix-1-ssh-daemon-asks-for-a-password" target="_blank" rel="noopener">https://gitolite.com/gitolite/sts#appendix-1-ssh-daemon-asks-for-a-password</a></p>
+<h1 id="不算解决方案的解决方案"><a href="#不算解决方案的解决方案" class="headerlink" title="不算解决方案的解决方案"></a>不算解决方案的解决方案</h1><p><a href="https://gitolite.com/gitolite/sts#appendix-1-ssh-daemon-asks-for-a-password" rel="external nofollow noopener noreferrer" target="_blank">有关要求输入密码的官方文档</a>：<a href="https://gitolite.com/gitolite/sts#appendix-1-ssh-daemon-asks-for-a-password" rel="external nofollow noopener noreferrer" target="_blank">https://gitolite.com/gitolite/sts#appendix-1-ssh-daemon-asks-for-a-password</a></p>
 <p>看了很蒙，照着可能的方案操作，均以失败告终。比如：</p>
 <ul>
 <li>在 windows10 上新创建一个不同的管理员来生成密钥，用于管理 gitolite，失败。</li>
@@ -616,7 +616,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&title=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&title=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -626,22 +626,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&title=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&title=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/centOS7GitAsServer.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/centOS7GitAsServer.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -698,11 +698,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -734,7 +734,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&title=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&title=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -744,22 +744,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&title=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&title=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/centOS7GitAsServer.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/centOS7GitAsServer.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS 7.5 借助 Gitolite 管理 Git 项目》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/centOS7GitAsServer.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/centOS7GitAsServer.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

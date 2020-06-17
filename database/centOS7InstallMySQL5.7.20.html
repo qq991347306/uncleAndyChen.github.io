@@ -107,7 +107,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -192,21 +192,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -365,15 +365,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>包含安装和简单的配置。<br><a id="more"></a><br><a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">下载</a><br>本文下载的是：mysql-5.7.20-1.el7.x86_64.rpm-bundle.tar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf mysql-5.7.20-1.el7.x86_64.rpm-bundle.tar</span><br><span class="line">``` </span><br><span class="line">释放如下 rpm 包：</span><br></pre></td></tr></table></figure></p>
+            <p>包含安装和简单的配置。<br><a id="more"></a><br><a href="https://dev.mysql.com/downloads/mysql/" rel="external nofollow noopener noreferrer" target="_blank">下载</a><br>本文下载的是：mysql-5.7.20-1.el7.x86_64.rpm-bundle.tar<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf mysql-5.7.20-1.el7.x86_64.rpm-bundle.tar</span><br><span class="line">``` </span><br><span class="line">释放如下 rpm 包：</span><br></pre></td></tr></table></figure></p>
 <p>[root@AndyCentOS7Basic forCentOS]# ll<br>total 1158730<br>-rwxrwx—. 1 root vboxsf 593274880 Nov  8 06:00 mysql-5.7.20-1.el7.x86_64.rpm-bundle.tar<br>-rwxrwx—. 1 root vboxsf  25090196 Nov  8 07:12 mysql-community-client-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf    278300 Nov  8 07:12 mysql-community-common-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf   3778120 Nov  8 07:11 mysql-community-devel-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf  46238924 Nov  8 07:11 mysql-community-embedded-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf  24077232 Nov  8 07:11 mysql-community-embedded-compat-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf 128440800 Nov  8 07:12 mysql-community-embedded-devel-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf   2238604 Nov  8 07:11 mysql-community-libs-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf   2115892 Nov  8 07:11 mysql-community-libs-compat-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf  55538708 Nov  8 07:11 mysql-community-minimal-debuginfo-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf 171597916 Nov  8 07:12 mysql-community-server-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf  15256460 Nov  8 07:12 mysql-community-server-minimal-5.7.20-1.el7.x86_64.rpm<br>-rwxrwx—. 1 root vboxsf 118609776 Nov  8 07:12 mysql-community-test-5.7.20-1.el7.x86_64.rpm<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装的时候，有顺序要求，同时，会与 mariadb 冲突，如下：</span><br></pre></td></tr></table></figure></p>
 <p>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-server-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-server-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>error: Failed dependencies:<br>        mysql-community-client(x86-64) &gt;= 5.7.9 is needed by mysql-community-server-5.7.20-1.el7.x86_64<br>        mysql-community-common(x86-64) = 5.7.20-1.el7 is needed by mysql-community-server-5.7.20-1.el7.x86_64<br>        net-tools is needed by mysql-community-server-5.7.20-1.el7.x86_64<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-client-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-client-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>error: Failed dependencies:<br>        mysql-community-libs(x86-64) &gt;= 5.7.9 is needed by mysql-community-client-5.7.20-1.el7.x86_64<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-libs-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-libs-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>error: Failed dependencies:<br>        mysql-community-common(x86-64) &gt;= 5.7.9 is needed by mysql-community-libs-5.7.20-1.el7.x86_64<br>        mariadb-libs is obsoleted by mysql-community-libs-5.7.20-1.el7.x86_64<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-common-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-common-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>Preparing…                          ################################# [100%]</p>
 <h1 id="各种冲突-…"><a href="#各种冲突-…" class="headerlink" title="各种冲突 …"></a>各种冲突 …</h1><pre><code>file /usr/share/mysql/charsets/swe7.xml from install of mysql-community-common-5.7.20-1.el7.x86_64 conflicts with file from package mariadb-libs-1:5.5.56-2.el7.x86_64
 </code></pre><p>[root@AndyCentOS7Basic forCentOS]#<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决冲突，先卸载 mariadb 再操作</span><br></pre></td></tr></table></figure></p>
 <p>[root@AndyCentOS7Basic forCentOS]# rpm -qa | grep mariadb<br>mariadb-libs-5.5.56-2.el7.x86_64<br>[root@AndyCentOS7Basic forCentOS]# rpm -e mariadb-libs-5.5.56-2.el7.x86_64<br>error: Failed dependencies:<br>        libmysqlclient.so.18()(64bit) is needed by (installed) postfix-2:2.10.1-6.el7.x86_64<br>        libmysqlclient.so.18(libmysqlclient_18)(64bit) is needed by (installed) postfix-2:2.10.1-6.el7.x86_64<br>[root@AndyCentOS7Basic forCentOS]# rpm -e postfix-2:2.10.1-6.el7.x86_64 postfix-2:2.10.1-6.el7.x86_64<br>[root@AndyCentOS7Basic forCentOS]# rpm -e mariadb-libs-5.5.56-2.el7.x86_64<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-common-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-common-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>Preparing…                          ################################# [100%]<br>Updating / installing…<br>   1:mysql-community-common-5.7.20-1.e################################# [100%]<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-libs-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-libs-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>Preparing…                          ################################# [100%]<br>Updating / installing…<br>   1:mysql-community-libs-5.7.20-1.el7################################# [100%]<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-client-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-client-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>Preparing…                          ################################# [100%]<br>Updating / installing…<br>   1:mysql-community-client-5.7.20-1.e################################# [100%]<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-devel-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-devel-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>Preparing…                          ################################# [100%]<br>Updating / installing…<br>   1:mysql-community-devel-5.7.20-1.el################################# [100%]<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-server-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-server-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>error: Failed dependencies:<br>        net-tools is needed by mysql-community-server-5.7.20-1.el7.x86_64<br>[root@AndyCentOS7Basic forCentOS]# yum install -y net-tools<br>…<br>Installed:<br>  net-tools.x86_64 0:2.0-0.22.20131004git.el7                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </p>
 <p>Complete!<br>[root@AndyCentOS7Basic forCentOS]# rpm -ivh mysql-community-server-5.7.20-1.el7.x86_64.rpm<br>warning: mysql-community-server-5.7.20-1.el7.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 5072e1f5: NOKEY<br>Preparing…                          ################################# [100%]<br>Updating / installing…<br>   1:mysql-community-server-5.7.20-1.e################################# [100%]<br>[root@AndyCentOS7Basic forCentOS]# rpm -qa | grep mysql<br>mysql-community-client-5.7.20-1.el7.x86_64<br>mysql-community-libs-5.7.20-1.el7.x86_64<br>mysql-community-devel-5.7.20-1.el7.x86_64<br>mysql-community-server-5.7.20-1.el7.x86_64<br>mysql-community-common-5.7.20-1.el7.x86_64<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 各项命令，与 CentOS 6 系列的 service mysqld start|restart|stop|status 不太一样。</span><br><span class="line">启动 mysql 服务 : systemctl start mysqld</span><br><span class="line">重启：systemctl restart mysqld</span><br><span class="line">停止：systemctl stop mysqld</span><br><span class="line">开机自启：systemctl enable mysqld</span><br><span class="line">查看MySQL的启动状态：systemctl status mysqld</span><br></pre></td></tr></table></figure></p>
-<p>[root@AndyCentOS7Basic forCentOS]# systemctl start mysqld.service<br>[root@AndyCentOS7Basic forCentOS]# systemctl status mysqld.service<br>● mysqld.service - MySQL Server<br>   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)<br>   Active: active (running) since Wed 2017-11-08 09:28:22 CST; 6min ago<br>     Docs: man:mysqld(8)<br>           <a href="http://dev.mysql.com/doc/refman/en/using-systemd.html" target="_blank" rel="noopener">http://dev.mysql.com/doc/refman/en/using-systemd.html</a><br> Main PID: 14818 (mysqld)<br>   CGroup: /system.slice/mysqld.service<br>           └─14818 /usr/sbin/mysqld –daemonize –pid-file=/var/run/mysqld/mysqld.pid</p>
-<p>[root@AndyCentOS7Basic forCentOS]# systemctl stop mysqld<br>[root@AndyCentOS7Basic forCentOS]# systemctl status mysqld<br>● mysqld.service - MySQL Server<br>   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)<br>   Active: inactive (dead) since Wed 2017-11-08 09:38:47 CST; 8s ago<br>     Docs: man:mysqld(8)<br>           <a href="http://dev.mysql.com/doc/refman/en/using-systemd.html" target="_blank" rel="noopener">http://dev.mysql.com/doc/refman/en/using-systemd.html</a><br>  Process: 14895 ExecStart=/usr/sbin/mysqld –daemonize –pid-file=/var/run/mysqld/mysqld.pid $MYSQLD_OPTS (code=exited, status=0/SUCCESS)<br>  Process: 14876 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)<br> Main PID: 14897 (code=exited, status=0/SUCCESS)</p>
+<p>[root@AndyCentOS7Basic forCentOS]# systemctl start mysqld.service<br>[root@AndyCentOS7Basic forCentOS]# systemctl status mysqld.service<br>● mysqld.service - MySQL Server<br>   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)<br>   Active: active (running) since Wed 2017-11-08 09:28:22 CST; 6min ago<br>     Docs: man:mysqld(8)<br>           <a href="http://dev.mysql.com/doc/refman/en/using-systemd.html" rel="external nofollow noopener noreferrer" target="_blank">http://dev.mysql.com/doc/refman/en/using-systemd.html</a><br> Main PID: 14818 (mysqld)<br>   CGroup: /system.slice/mysqld.service<br>           └─14818 /usr/sbin/mysqld –daemonize –pid-file=/var/run/mysqld/mysqld.pid</p>
+<p>[root@AndyCentOS7Basic forCentOS]# systemctl stop mysqld<br>[root@AndyCentOS7Basic forCentOS]# systemctl status mysqld<br>● mysqld.service - MySQL Server<br>   Loaded: loaded (/usr/lib/systemd/system/mysqld.service; enabled; vendor preset: disabled)<br>   Active: inactive (dead) since Wed 2017-11-08 09:38:47 CST; 8s ago<br>     Docs: man:mysqld(8)<br>           <a href="http://dev.mysql.com/doc/refman/en/using-systemd.html" rel="external nofollow noopener noreferrer" target="_blank">http://dev.mysql.com/doc/refman/en/using-systemd.html</a><br>  Process: 14895 ExecStart=/usr/sbin/mysqld –daemonize –pid-file=/var/run/mysqld/mysqld.pid $MYSQLD_OPTS (code=exited, status=0/SUCCESS)<br>  Process: 14876 ExecStartPre=/usr/bin/mysqld_pre_systemd (code=exited, status=0/SUCCESS)<br> Main PID: 14897 (code=exited, status=0/SUCCESS)</p>
 <p>Nov 08 09:38:21 AndyCentOS7Basic systemd[1]: Starting MySQL Server…<br>Nov 08 09:38:22 AndyCentOS7Basic systemd[1]: Started MySQL Server.<br>Nov 08 09:38:45 AndyCentOS7Basic systemd[1]: Stopping MySQL Server…<br>Nov 08 09:38:47 AndyCentOS7Basic systemd[1]: Stopped MySQL Server.<br>[root@AndyCentOS7Basic forCentOS]#<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改root本地登录密码</span><br><span class="line">mysql 首次启动，在/var/log/mysqld.log 文件中给 root 生成了一个临时密码。</span><br><span class="line">通过下面的方式找到 root 临时密码，然后登录 mysql 进行修改：</span><br></pre></td></tr></table></figure></p>
 <p>[root@AndyCentOS7Basic forCentOS]# grep ‘temporary password’ /var/log/mysqld.log<br>2017-11-08T01:28:17.646798Z 1 [Note] A temporary password is generated for root@localhost: #L+rRHgQs2Oz<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">登录并修改 root 密码：</span><br></pre></td></tr></table></figure></p>
 <p>[root@AndyCentOS7Basic forCentOS]# mysql -uroot -p#L+rRHgQs2Oz<br>mysql&gt; ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘mypassword’;<br>ERROR 1819 (HY000): Your password does not satisfy the current policy requirements<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql5.7 默认安装了密码安全检查插件（validate_password），默认密码检查策略要求密码必须包含：大小写字母、数字和特殊符号，并且长度不能少于8位。否则会提示 ERROR 1819 (HY000): Your password does not satisfy the current policy requirements 错误</span><br><span class="line">必须先改默认密码，才能做别的操作。</span><br></pre></td></tr></table></figure></p>
@@ -422,7 +422,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&title=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&title=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -432,22 +432,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&title=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=包含安装和简单的配置。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&title=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=包含安装和简单的配置。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -504,11 +504,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -540,7 +540,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&title=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&title=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -550,22 +550,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&title=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=包含安装和简单的配置。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&title=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=包含安装和简单的配置。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7 安装 MySQL-5.7.20》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/centOS7InstallMySQL5.7.20.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

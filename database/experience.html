@@ -109,7 +109,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -194,21 +194,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -386,7 +386,7 @@
 <h2 id="永久解决"><a href="#永久解决" class="headerlink" title="永久解决"></a>永久解决</h2><p>修改配置，其配置项如下（edit -&gt; preference -&gt; SQL Editor -&gt; Safe Updates(rejects UPDATEs and DELETEs with no restrictions)）：<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/MySQLWorkbench/MySQLWorkbenchSafeUpdates.png" alt="" title="">
+                    <img src="/img/MySQLWorkbench/MySQLWorkbenchSafeUpdates.png" alt title>
                 </div>
                 <div class="image-caption"></div>
             </figure></p>
@@ -437,7 +437,7 @@
 </ol>
 <h1 id="查看-mysql-现在已提供什么存储引擎"><a href="#查看-mysql-现在已提供什么存储引擎" class="headerlink" title="查看 mysql 现在已提供什么存储引擎"></a>查看 mysql 现在已提供什么存储引擎</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show engines;</span><br></pre></td></tr></table></figure>
 <h1 id="查看-mysql-当前默认的存储引擎"><a href="#查看-mysql-当前默认的存储引擎" class="headerlink" title="查看 mysql 当前默认的存储引擎"></a>查看 mysql 当前默认的存储引擎</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &apos;%storage_engine%&apos;;</span><br></pre></td></tr></table></figure>
-<h1 id="提升插入速度"><a href="#提升插入速度" class="headerlink" title="提升插入速度"></a>提升插入速度</h1><p><a href="http://www.cnblogs.com/suifengbingzhu/p/4182985.html" target="_blank" rel="noopener">参考：MYSQLinsert速度过慢</a></p>
+<h1 id="提升插入速度"><a href="#提升插入速度" class="headerlink" title="提升插入速度"></a>提升插入速度</h1><p><a href="http://www.cnblogs.com/suifengbingzhu/p/4182985.html" rel="external nofollow noopener noreferrer" target="_blank">参考：MYSQLinsert速度过慢</a></p>
 <h2 id="MY-SQL-insert-速度过慢的解决方法"><a href="#MY-SQL-insert-速度过慢的解决方法" class="headerlink" title="MY SQL insert 速度过慢的解决方法"></a>MY SQL insert 速度过慢的解决方法</h2><p>最近在用MySQL做存储，测试中发现插入数据太慢了，插入速度只有20-30 条/秒，后来查资料后，将MySQL的1个参数：innodb_flush_log_at_trx_commit，从 1 改为了 0（修改方法，可以直接修改 my.ini(windows)/my.cnf(linux) 中的对应参数，似乎用命令直接设置没有效果），插入速度就提升到了3000+每S。</p>
 <p>MySQL的文档，对这个参数的描述如下：<br>If the value of innodb_flush_log_at_trx_commit is 0, the log buffer is written out to the log file once per second and the flush to disk operation is performed on the log file, but nothing is done at a transaction commit. When the value is 1 (the default), the log buffer is written out to the log file at each transaction commit and the flush to disk operation is performed on the log file. When the value is 2, the log buffer is written out to the file at each commit, but the flush to disk operation is not performed on it. However, the flushing on the log file takes place once per second also when the value is 2. Note that the once-per-second flushing is not 100% guaranteed to happen every second, due to process scheduling issues.</p>
 <p>如果transaction commit的频率非常高，1秒钟内会进行很多次的话，可以考虑将其设置为0，但这样就要承担数据库Crash后，1秒内未存储到数据库数据丢失可能的风险。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> innodb_flush_log_at_trx_commit=<span class="number">0</span>;</span><br></pre></td></tr></table></figure></p>
@@ -539,7 +539,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/experience.html&title=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/experience.html&title=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -549,22 +549,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/experience.html&title=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=MySQL 高频脚本备忘录，以及日常经验备忘。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/experience.html&title=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=MySQL 高频脚本备忘录，以及日常经验备忘。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/experience.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/experience.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/experience.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/experience.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/experience.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/experience.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -621,11 +621,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -657,7 +657,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/experience.html&title=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/database/experience.html&title=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -667,22 +667,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/experience.html&title=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=MySQL 高频脚本备忘录，以及日常经验备忘。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/database/experience.html&title=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=MySQL 高频脚本备忘录，以及日常经验备忘。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/experience.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/database/experience.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/experience.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《MySQL 常用脚本，日常经验》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/database/experience.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/experience.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/database/experience.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

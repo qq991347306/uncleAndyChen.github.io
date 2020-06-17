@@ -107,7 +107,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -192,21 +192,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -388,7 +388,7 @@
 </blockquote>
 <p>  若返回<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Welcome to Gitee.com, yourname!</span><br></pre></td></tr></table></figure></p>
 <p>  则证明添加成功。</p>
-<p>关于如何操作，<a href="http://git.mydoc.io/?t=154712" target="_blank" rel="noopener">请看官方教程</a></p>
+<p>关于如何操作，<a href="http://git.mydoc.io/?t=154712" rel="external nofollow noopener noreferrer" target="_blank">请看官方教程</a></p>
 <ol>
 <li>这里引用官方文档：项目的 ssh key 和用户的 ssh key 两处地方有什么不同？<blockquote>
 <p>项目的 sshkey 只针对项目，且我们仅对项目提供了部署公钥，即项目下的公钥仅能拉取项目，这通常用于生产服务器拉取仓库的代码。<br>而用户的 key 则是针对用户的，用户添加了 key 就对用户名下的项目和用户参加了的项目具有权限，一般而言，用户的key具有推送和拉取的权限，而项目的 key 则只具有拉取权限。</p>
@@ -409,8 +409,8 @@
 </li>
 </ol>
 <h2 id="操作日志"><a href="#操作日志" class="headerlink" title="操作日志"></a>操作日志</h2><p>以 utomcat 的身份执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[utomcat@centOS7BasicForTest ~]$ ssh-keygen -t rsa -C &quot;1614923608@qq.com&quot;</span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/home/utomcat/.ssh/id_rsa): </span><br><span class="line">Enter passphrase (empty for no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved in /home/utomcat/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved in /home/utomcat/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">SHA256:92cdC1dfr5XkUm5K3NDiWieJHpCaz2aKsuEw8vfm/pQ 1614923608@qq.com</span><br><span class="line">The key&apos;s randomart image is:</span><br><span class="line">+---[RSA 2048]----+</span><br><span class="line">|                 |</span><br><span class="line">|          .   .  |</span><br><span class="line">|         o   o +o|</span><br><span class="line">|        o . + X *|</span><br><span class="line">|       oS .o X X+|</span><br><span class="line">|        oo..= O+o|</span><br><span class="line">|.o .    E= o..+..|</span><br><span class="line">|..+.o o.+    o   |</span><br><span class="line">|  .+o*+o.        |</span><br><span class="line">+----[SHA256]-----+</span><br><span class="line">[utomcat@centOS7BasicForTest ~]$ cat ~/.ssh/id_rsa.pub</span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDb4K+3HTCT9Kowo/2D3Nq69gSBC+/H7fMGZtNyqbkmnXIOBxQhQx1o9HM8sJvFWgiJ99ev2a49X5fuZm3Mm6osFNRYAtmajnl9VU/zaFX0sXzh6f60Z847gjh5bWwBKzV1TPejCVMVNmq3TDwf8nbEX9/o2JIihWHAowyqgCUTLQySQkK1pAcjPuYtNTKAQ8wpaFC0ssquGTggGegC2J/HMjQGgHz6XxFUhEHNBLGhleSSIP9dNqe5LypPyeYdHXI63+0K6kBEoUbwt7eh1uy/Vw7oOcJLpPJISr+qZXbbLNyIW8GV3Js73FDWXNN8tRj0yF9q5VlCthfGPrMxwxmD 1614923608@qq.com</span><br></pre></td></tr></table></figure></p>
-<p>将上面 cat 得到的内容复制到 <a href="https://gitee.com/profile/sshkeys" target="_blank" rel="noopener">giree 添加 ssh 公钥的页面</a>公钥栏。</p>
-<h1 id="所用到的-git-指令"><a href="#所用到的-git-指令" class="headerlink" title="所用到的 git 指令"></a>所用到的 git 指令</h1><p>参考文章：<a href="https://segmentfault.com/a/1190000004326399?_ea=570456" target="_blank" rel="noopener">从一个 git仓库提交代码到另一个git仓库</a></p>
+<p>将上面 cat 得到的内容复制到 <a href="https://gitee.com/profile/sshkeys" rel="external nofollow noopener noreferrer" target="_blank">giree 添加 ssh 公钥的页面</a>公钥栏。</p>
+<h1 id="所用到的-git-指令"><a href="#所用到的-git-指令" class="headerlink" title="所用到的 git 指令"></a>所用到的 git 指令</h1><p>参考文章：<a href="https://segmentfault.com/a/1190000004326399?_ea=570456" rel="external nofollow noopener noreferrer" target="_blank">从一个 git仓库提交代码到另一个git仓库</a></p>
 <ol>
 <li>将仓库 repo_b 的 URL 添加到工作仓库的 remote。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin_repo_b git@server_ip:/path/repo_b.git</span><br></pre></td></tr></table></figure>
 </li>
@@ -432,7 +432,7 @@
 </li>
 </ol>
 <blockquote>
-<p>　这句话的意思是，将远程仓库　<a href="mailto:git@192.168.1.101" target="_blank" rel="noopener">git@192.168.1.101</a>:~/project/repo_c.git　也加入到　origin_repo_b　这个名字下面管理</p>
+<p>　这句话的意思是，将远程仓库　<a href="mailto:git@192.168.1.101" rel="external nofollow noopener noreferrer" target="_blank">git@192.168.1.101</a>:~/project/repo_c.git　也加入到　origin_repo_b　这个名字下面管理</p>
 <ol>
 <li>将代码同时提交到远程仓库 repo_b 和远程仓库 repo_c<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin_repo_b branch_a</span><br></pre></td></tr></table></figure>
 </li>
@@ -447,12 +447,12 @@
 <p>同样的，在本地用 Gitolite 搭建的 git Server，在 CentOS 上创建公钥，将 id_rsa 改名，git clone，也会提示：fatal: Could not read from remote repository.</p>
 <h1 id="authorized-keys"><a href="#authorized-keys" class="headerlink" title="authorized_keys"></a>authorized_keys</h1><p>拷贝ssh公钥到 authorized_keys 后仍然无法免密登录。</p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>修改修改.ssh目录的权限以及authorized_keys 的权限(这个必须修改，要不然还是需要密码)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 644 ~/.ssh/authorized_keys</span><br><span class="line">sudo chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure></p>
-<h1 id="git-官方文档"><a href="#git-官方文档" class="headerlink" title="git 官方文档"></a>git 官方文档</h1><p><a href="https://git-scm.com/doc" target="_blank" rel="noopener">官方文档</a></p>
+<h1 id="git-官方文档"><a href="#git-官方文档" class="headerlink" title="git 官方文档"></a>git 官方文档</h1><p><a href="https://git-scm.com/doc" rel="external nofollow noopener noreferrer" target="_blank">官方文档</a></p>
 <h1 id="git-语法"><a href="#git-语法" class="headerlink" title="git 语法"></a>git 语法</h1><ul>
-<li><p><a href="https://git-scm.com/docs/git" target="_blank" rel="noopener">git 基本语法</a></p>
+<li><p><a href="https://git-scm.com/docs/git" rel="external nofollow noopener noreferrer" target="_blank">git 基本语法</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git [--version] [--help] [-C &lt;path&gt;] [-c &lt;name&gt;=&lt;value&gt;]</span><br><span class="line">    [--exec-path[=&lt;path&gt;]] [--html-path] [--man-path] [--info-path]</span><br><span class="line">    [-p|--paginate|-P|--no-pager] [--no-replace-objects] [--bare]</span><br><span class="line">    [--git-dir=&lt;path&gt;] [--work-tree=&lt;path&gt;] [--namespace=&lt;name&gt;]</span><br><span class="line">    [--super-prefix=&lt;path&gt;]</span><br><span class="line">    &lt;command&gt; [&lt;args&gt;]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://git-scm.com/docs/git-clone" target="_blank" rel="noopener">git clone 基本语法</a></p>
+<li><p><a href="https://git-scm.com/docs/git-clone" rel="external nofollow noopener noreferrer" target="_blank">git clone 基本语法</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git clone [--template=&lt;template_directory&gt;]</span><br><span class="line">	  [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]</span><br><span class="line">	  [-o &lt;name&gt;] [-b &lt;name&gt;] [-u &lt;upload-pack&gt;] [--reference &lt;repository&gt;]</span><br><span class="line">	  [--dissociate] [--separate-git-dir &lt;git dir&gt;]</span><br><span class="line">	  [--depth &lt;depth&gt;] [--[no-]single-branch] [--no-tags]</span><br><span class="line">	  [--recurse-submodules[=&lt;pathspec&gt;]] [--[no-]shallow-submodules]</span><br><span class="line">	  [--jobs &lt;n&gt;] [--] &lt;repository&gt; [&lt;directory&gt;]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -507,7 +507,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/gitMergeToRemote.html&title=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/gitMergeToRemote.html&title=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -517,22 +517,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/gitMergeToRemote.html&title=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=利用 gitee 平台，线上一键部署项目。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/gitMergeToRemote.html&title=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=利用 gitee 平台，线上一键部署项目。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/gitMergeToRemote.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/gitMergeToRemote.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/gitMergeToRemote.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/gitMergeToRemote.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/gitMergeToRemote.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/gitMergeToRemote.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -563,9 +563,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/lnmp/discuzX3.4ToInnoDBTable.html" id="post-next" class="post-nav-link">
+      <a href="/lnmp/discuzX3.4MoveServer.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">discuzX3.4 数据库由阿里云自建 MySQL 转移至 RDS，填坑日志</h4>
+        <h4 class="title">discuzX3.4 网站迁移，备忘录</h4>
       </a>
     </div>
   
@@ -589,11 +589,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -625,7 +625,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/gitMergeToRemote.html&title=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/git/gitMergeToRemote.html&title=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -635,22 +635,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/gitMergeToRemote.html&title=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=利用 gitee 平台，线上一键部署项目。" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/git/gitMergeToRemote.html&title=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=利用 gitee 平台，线上一键部署项目。" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/gitMergeToRemote.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/git/gitMergeToRemote.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/gitMergeToRemote.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《本地仓库代码，定时同步更新至远程仓库》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/git/gitMergeToRemote.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/gitMergeToRemote.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/git/gitMergeToRemote.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

@@ -107,7 +107,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -192,21 +192,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -371,7 +371,7 @@
 <h1 id="创建-tomcat-用户组"><a href="#创建-tomcat-用户组" class="headerlink" title="创建 tomcat 用户组"></a>创建 tomcat 用户组</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groupadd gtomcat</span><br></pre></td></tr></table></figure>
 <h1 id="创建-utomcat-用户"><a href="#创建-utomcat-用户" class="headerlink" title="创建 utomcat 用户"></a>创建 utomcat 用户</h1><p>这个用户名中的“u”代表 user，在前面加一个“u”是为了跟组名 tomcat 区分开。<br>下面的命令将创建用户 utomcat 并将其加入到 tomcat 组，创建的同时，会默认会创建 utomcat 的主目录到 /home/utomcat，如果你想让主目录放在其他位置，可以使用 -d 参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -s /bin/bash -g gtomcat utomcat</span><br></pre></td></tr></table></figure></p>
 <p>修改 utomcat 密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># passwd utomcat</span><br><span class="line">Changing password for user utomcat.</span><br><span class="line"></span><br><span class="line">You can now choose the new password or passphrase.</span><br><span class="line"></span><br><span class="line">A valid password should be a mix of upper and lower case letters,</span><br><span class="line">digits, and other characters.  You can use an 8 character long</span><br><span class="line">password with characters from at least 3 of these 4 classes.</span><br><span class="line">An upper case letter that begins the password and a digit that</span><br><span class="line">ends it do not count towards the number of character classes used,</span><br><span class="line">unless disable_firstupper_lastdigit_check option is enabled.</span><br><span class="line"></span><br><span class="line">A passphrase should be of at least 3 words, 12 to 30 characters</span><br><span class="line">long, and contain enough different characters.</span><br><span class="line"></span><br><span class="line">Alternatively, if noone else can see your terminal now, you can</span><br><span class="line">pick this as your password: &quot;wreck+Paul+night&quot;.</span><br><span class="line"></span><br><span class="line">Enter new password: your password</span><br></pre></td></tr></table></figure></p>
-<p>以新用户 utomcat 登陆服务器。<br>下载最新的 apache-tomcat<br>wget <a href="http://apache.fayea.com/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz" target="_blank" rel="noopener">http://apache.fayea.com/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz</a></p>
+<p>以新用户 utomcat 登陆服务器。<br>下载最新的 apache-tomcat<br>wget <a href="http://apache.fayea.com/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz" rel="external nofollow noopener noreferrer" target="_blank">http://apache.fayea.com/tomcat/tomcat-8/v8.5.16/bin/apache-tomcat-8.5.16.tar.gz</a></p>
 <p>也可以以 root 身份登陆，从已经有 apache-tomcat 的目录 copy 至 /hopme/utomcat，然后修改所有者。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R utomcat:gtomcat /home/utomcat/</span><br></pre></td></tr></table></figure></p>
 <h1 id="创建启动、关闭-apache-tomcat-的脚本"><a href="#创建启动、关闭-apache-tomcat-的脚本" class="headerlink" title="创建启动、关闭 apache-tomcat 的脚本"></a>创建启动、关闭 apache-tomcat 的脚本</h1><p>在用户 utomcat 所在目录添加 shell-script 目录，然后在 shell-script 目录添加如下两个 shell 脚本文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># ~/ 代表用户所在目录</span><br><span class="line">mkdir -p ~/shell-script</span><br><span class="line">cd ~/shell-script/</span><br><span class="line">vi start.sh</span><br></pre></td></tr></table></figure></p>
 <ol>
@@ -460,7 +460,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&title=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&title=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -470,22 +470,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&title=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&title=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -542,11 +542,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -578,7 +578,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&title=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&title=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -588,22 +588,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&title=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&title=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《在 CentOS 上以非 root 用户运行 tomcat，并配置成开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

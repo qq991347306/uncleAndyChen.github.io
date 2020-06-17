@@ -107,7 +107,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -192,21 +192,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -441,7 +441,7 @@
 <p>示例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@hjweb01 script]# ps -e -o &apos;pid,comm,rsz,rss,user&apos; | grep java | sort -nrk5</span><br><span class="line"> 8454 java            72252 root</span><br><span class="line">32454 java            535596 utomcat</span><br><span class="line">22929 java            524296 utomcat</span><br><span class="line">15263 java            259860 utomcat</span><br><span class="line">13981 java            519680 utomcat</span><br><span class="line">13777 java            544028 utomcat</span><br><span class="line">13545 java            562440 utomcat</span><br></pre></td></tr></table></figure></p>
 <h1 id="内存的整体使用情况"><a href="#内存的整体使用情况" class="headerlink" title="内存的整体使用情况"></a>内存的整体使用情况</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@hjweb01 script]# free -m</span><br><span class="line">              total        used        free      shared  buff/cache   available</span><br><span class="line">Mem:           3790        2618         446           0         726         931</span><br><span class="line">Swap:             0           0           0</span><br></pre></td></tr></table></figure>
 <h1 id="top-命令查看内存使用情况"><a href="#top-命令查看内存使用情况" class="headerlink" title="top 命令查看内存使用情况"></a>top 命令查看内存使用情况</h1><p>输入 top 之后，再按 m 键<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">top - 16:39:15 up 7 days, 22:33, 12 users,  load average: 0.02, 0.05, 0.05</span><br><span class="line">Tasks: 119 total,   1 running, 118 sleeping,   0 stopped,   0 zombie</span><br><span class="line">%Cpu(s):  1.5 us,  0.3 sy,  0.0 ni, 98.2 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st</span><br><span class="line">KiB Mem : 75.6/3881692  [|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||                         ]</span><br><span class="line">KiB Swap:  0.0/0        [                                                                                                    ]</span><br><span class="line"></span><br><span class="line">  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                                                                                                                                                                                                                                                                                                                                                                                                     </span><br><span class="line"> 8454 root      20   0 2522436  72500   2724 S   1.3  1.9  49:36.58 java                                                                                                                                                                                                                                                                                                                                                                                                                                                        </span><br><span class="line">14569 unginx    20   0  341748  17380   3332 S   0.7  0.4   0:13.04 php-fpm                                                                                                                                                                                                                                                                                                                                                                                                                                                     </span><br><span class="line">  574 unginx    20   0  342432  15616   3400 S   0.3  0.4   0:16.23 php-fpm                                                                                                                                                                                                                                                                                                                                                                                                                                                     </span><br><span class="line">12413 root      20   0  150832   3112   1724 S   0.3  0.1   0:00.28 sshd                                                                                                                                                                                                                                                                                                                                                                                                                                                        </span><br><span class="line">28174 root      20   0  157748   2196   1540 R   0.3  0.1   0:00.01 top                   </span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<h1 id="基于-tomcat-的调优"><a href="#基于-tomcat-的调优" class="headerlink" title="基于 tomcat 的调优"></a>基于 tomcat 的调优</h1><p>参考<a href="https://blog.csdn.net/weixin_37377511/article/details/80606964" target="_blank" rel="noopener">tomcat 8 9 性能 优化 调优 centos 7 linux</a><br>不要单纯为了调优而去调优，应该有针对性的去发现不足，解决问题，以提高性能。<br>所以，调优的前提是做好各种监控分析，包括服务器基础资源使用、各个应用运行状况、代码质量、数据库状况、等等，根据业务的并发，服务器资源，以及存在的问题，有针对性的去优化。</p>
+<h1 id="基于-tomcat-的调优"><a href="#基于-tomcat-的调优" class="headerlink" title="基于 tomcat 的调优"></a>基于 tomcat 的调优</h1><p>参考<a href="https://blog.csdn.net/weixin_37377511/article/details/80606964" rel="external nofollow noopener noreferrer" target="_blank">tomcat 8 9 性能 优化 调优 centos 7 linux</a><br>不要单纯为了调优而去调优，应该有针对性的去发现不足，解决问题，以提高性能。<br>所以，调优的前提是做好各种监控分析，包括服务器基础资源使用、各个应用运行状况、代码质量、数据库状况、等等，根据业务的并发，服务器资源，以及存在的问题，有针对性的去优化。</p>
 <h2 id="性能的提升，主要从以下几个方面入手"><a href="#性能的提升，主要从以下几个方面入手" class="headerlink" title="性能的提升，主要从以下几个方面入手"></a>性能的提升，主要从以下几个方面入手</h2><ol>
 <li>架构调优<ul>
 <li>负载均衡，高可用，nginx + tomcat  动静分离，容器化 等， 不具体阐述</li>
@@ -473,7 +473,7 @@
 <h1 id="OS-specific-support-var-must-be-set-to-either-true-or-false"><a href="#OS-specific-support-var-must-be-set-to-either-true-or-false" class="headerlink" title="OS specific support.  $var must be set to either true or false."></a>OS specific support.  $var <em>must</em> be set to either true or false.</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在该注释后添加如下代码：</span><br></pre></td></tr></table></figure>
 <p>export JAVA_OPTS=’<br>-server<br>-Xms350M<br>-Xmx350M<br>-Xss512k<br>-XX:+AggressiveOpts<br>-XX:+UseBiasedLocking<br>-XX:+DisableExplicitGC<br>-XX:MaxTenuringThreshold=15<br>-XX:+UseConcMarkSweepGC<br>-XX:+UseParNewGC<br>-XX:+CMSParallelRemarkEnabled<br>-XX:LargePageSizeInBytes=128m<br>-XX:+UseFastAccessorMethods<br>-XX:+UseCMSInitiatingOccupancyOnly<br>-Djava.awt.headless=true’;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">参数解释</span><br></pre></td></tr></table></figure></p>
 <p>-Xmx：java heap最大值，使用的最大内存<br>上面两个值是分配JVM的最小和最大内存，取决于硬件物理内存的大小，建议均设为物理内存的一半。<br>-XX:PermSize:设定内存的永久保存区域<br>-XX:MaxPermSize:设定最大内存的永久保存区域<br>-XX:MaxNewSize:<br>-Xss 15120 这使得JBoss每增加一个线程（thread)就会立即消耗15M内存，而最佳值应该是128K,默认值好像是512k.<br>+XX:AggressiveHeap 会使得 Xms没有意义。这个参数让jvm忽略Xmx参数,疯狂地吃完一个G物理内存,再吃尽一个G的swap。<br>-Xss：每个线程的Stack大小<br>-verbose:gc 现实垃圾收集信息<br>-Xloggc:gc.log 指定垃圾收集日志文件<br>-Xmn：young generation的heap大小，一般设置为Xmx的3、4分之一<br>-XX:+UseParNewGC ：缩短minor收集的时间<br>-XX:+UseConcMarkSweepGC ：缩短major收集的时间<br><code>`</code></p>
-<h1 id="相关内容参考"><a href="#相关内容参考" class="headerlink" title="相关内容参考"></a>相关内容参考</h1><p><a href="https://www.cnblogs.com/wulaijun/p/5490699.html" target="_blank" rel="noopener">Tomcat 内存与优化篇</a></p>
+<h1 id="相关内容参考"><a href="#相关内容参考" class="headerlink" title="相关内容参考"></a>相关内容参考</h1><p><a href="https://www.cnblogs.com/wulaijun/p/5490699.html" rel="external nofollow noopener noreferrer" target="_blank">Tomcat 内存与优化篇</a></p>
 
         </div>
 
@@ -509,7 +509,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/javaMemory.html&title=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/javaMemory.html&title=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -519,22 +519,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/javaMemory.html&title=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/javaMemory.html&title=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/javaMemory.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/javaMemory.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/javaMemory.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/javaMemory.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/javaMemory.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/javaMemory.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -591,11 +591,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -627,7 +627,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/javaMemory.html&title=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/java/javaMemory.html&title=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -637,22 +637,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/javaMemory.html&title=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/java/javaMemory.html&title=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/javaMemory.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/java/javaMemory.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/javaMemory.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Tomcat 占用内存以及 jvm 参数设置》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/java/javaMemory.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/javaMemory.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/java/javaMemory.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

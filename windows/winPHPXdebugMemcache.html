@@ -116,7 +116,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -201,21 +201,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -388,14 +388,14 @@
 <li>言归正传，php 在调试过程中经常中断或者说崩溃（表现就是调试断点还在，但变量值没有了），不过，有总比没有强，在排查问题的时候还是能帮上大忙，而且能比传统使用 print_r($obj) 或者 var_dump($obj) 的方式来”调试“来排查问题，效率高出 N 多倍。</li>
 </ol>
 <h2 id="不废话了，下面是干货。"><a href="#不废话了，下面是干货。" class="headerlink" title="不废话了，下面是干货。"></a>不废话了，下面是干货。</h2><ol>
-<li><a href="https://xdebug.org/files/" target="_blank" rel="noopener">hph xdebug 下载地址</a>，注意，需要下载跟 php 对应的 xdebug 版本，比如 nts 版本 和 ts 版本，还有 php 的版本号，比如我电脑上用的是 php-5.4.45-nts-Win32-VC9-x86，我下载的是 php_xdebug-2.4.1-5.4-vc9-nts.dll。</li>
+<li><a href="https://xdebug.org/files/" rel="external nofollow noopener noreferrer" target="_blank">hph xdebug 下载地址</a>，注意，需要下载跟 php 对应的 xdebug 版本，比如 nts 版本 和 ts 版本，还有 php 的版本号，比如我电脑上用的是 php-5.4.45-nts-Win32-VC9-x86，我下载的是 php_xdebug-2.4.1-5.4-vc9-nts.dll。</li>
 <li>把下载到的 php_xdebug-2.4.1-5.4-vc9-nts.dll 移到 php 下的 ext 目录，如我的是： <code>C:/dev/dev.services/php-5.4.45-nts-Win32-VC9-x86/ext/</code></li>
 <li>修改 php.ini，添加 [xdebug] 配置节点<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[xdebug]</span><br><span class="line">;竟然要用32位版本才能正常加载</span><br><span class="line">;原来php就用的是32位版本，汗~~~</span><br><span class="line">;5.4.45只有32位可供下载</span><br><span class="line">zend_extension=&quot;C:/dev/dev.services/php-5.4.45-nts-Win32-VC9-x86/ext/php_xdebug-2.4.1-5.4-vc9-nts.dll&quot;</span><br><span class="line">;开启远程调试 </span><br><span class="line">xdebug.remote_enable=1</span><br><span class="line">xdebug.profiler_enable=1</span><br><span class="line">;xdebug.profiler_enable=off</span><br><span class="line">xdebug.profiler_enable_trigger=off</span><br><span class="line">xdebug.profiler_output_name=cachegrind.out.%t.%p</span><br><span class="line">xdebug.profiler_output_dir=&quot;tmp&quot;</span><br><span class="line">xdebug.show_local_vars=0</span><br><span class="line">xdebug.remote_connect_back=1</span><br><span class="line"></span><br><span class="line">;开启自动跟踪</span><br><span class="line">xdebug.auto_trace=1</span><br><span class="line">;开启异常跟踪</span><br><span class="line">xdebug.show_exception_trace=1</span><br><span class="line">;开启异常跟踪</span><br><span class="line">xdebug.remote_autostart=1</span><br><span class="line">;收集变量</span><br><span class="line">xdebug.collect_vars=1</span><br><span class="line">;收集参数</span><br><span class="line">xdebug.collect_params=1</span><br><span class="line">;trace输出路径</span><br><span class="line">xdebug.trace_output_dir=&quot;tmp/xdebug&quot;</span><br><span class="line">;以下三个分别是主机、端口、句柄</span><br><span class="line">xdebug.remote_host=&quot;localhost&quot;</span><br><span class="line">;注意，这里的端口不能跟 php-cgi 冲突，php-cgi 默认为 9000</span><br><span class="line">xdebug.remote_port=9001</span><br><span class="line">xdebug.remote_handler=&quot;dbgp&quot;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h1 id="memcache"><a href="#memcache" class="headerlink" title="memcache"></a>memcache</h1><h2 id="php-memcache-扩展下载地址"><a href="#php-memcache-扩展下载地址" class="headerlink" title="php_memcache 扩展下载地址"></a>php_memcache 扩展下载地址</h2><ul>
-<li><a href="http://pecl.php.net/package/memcache/3.0.8/windows" target="_blank" rel="noopener">windows 版本，5.3-5.6</a></li>
-<li><a href="http://pecl.php.net/package/memcache" target="_blank" rel="noopener">linux 版本</a></li>
+<li><a href="http://pecl.php.net/package/memcache/3.0.8/windows" rel="external nofollow noopener noreferrer" target="_blank">windows 版本，5.3-5.6</a></li>
+<li><a href="http://pecl.php.net/package/memcache" rel="external nofollow noopener noreferrer" target="_blank">linux 版本</a></li>
 </ul>
 <ol>
 <li>在 windows 下将 memcache 配置成服务并设置为开机启动。</li>
@@ -425,56 +425,56 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/phpInfoXdebug.jpg" alt="php-配置信息-xdebug" title="">
+                    <img src="/img/phpInfoXdebug.jpg" alt="php-配置信息-xdebug" title>
                 </div>
                 <div class="image-caption">php-配置信息-xdebug</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/phpInfoXdebugZendEngine.jpg" alt="php-配置信息-xdebug-zend" title="">
+                    <img src="/img/phpInfoXdebugZendEngine.jpg" alt="php-配置信息-xdebug-zend" title>
                 </div>
                 <div class="image-caption">php-配置信息-xdebug-zend</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/phpInfoMemcache.jpg" alt="php-配置信息-Memcache" title="">
+                    <img src="/img/phpInfoMemcache.jpg" alt="php-配置信息-Memcache" title>
                 </div>
                 <div class="image-caption">php-配置信息-Memcache</div>
             </figure>
 <h1 id="PhpStorm-配置-xdebug-端口"><a href="#PhpStorm-配置-xdebug-端口" class="headerlink" title="PhpStorm 配置 xdebug 端口"></a>PhpStorm 配置 xdebug 端口</h1><p>PhpStorm 的默认值是 9000，要改为 9001，跟 php.ini 配置文件里配置的要一致。<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/phpStormXdebugConfig.jpg" alt="PhpStorm 配置 xdebug 端口" title="">
+                    <img src="/img/phpStormXdebugConfig.jpg" alt="PhpStorm 配置 xdebug 端口" title>
                 </div>
                 <div class="image-caption">PhpStorm 配置 xdebug 端口</div>
             </figure></p>
 <h1 id="xdebug-调试信息配置"><a href="#xdebug-调试信息配置" class="headerlink" title="xdebug 调试信息配置"></a>xdebug 调试信息配置</h1><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/phpDebugStepAddSite.jpg" alt="debug-配置-编辑" title="">
+                    <img src="/img/phpDebugStepAddSite.jpg" alt="debug-配置-编辑" title>
                 </div>
                 <div class="image-caption">debug-配置-编辑</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/phpDebugStepOne.jpg" alt="debug-配置-添加站点" title="">
+                    <img src="/img/phpDebugStepOne.jpg" alt="debug-配置-添加站点" title>
                 </div>
                 <div class="image-caption">debug-配置-添加站点</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/phpDebugStepTwo.jpg" alt="debug-配置-进入调试服务窗口-添加xdebug服务。注意：host 一定要跟实际在 Apache 中配置的一样" title="">
+                    <img src="/img/phpDebugStepTwo.jpg" alt="debug-配置-进入调试服务窗口-添加xdebug服务。注意：host 一定要跟实际在 Apache 中配置的一样" title>
                 </div>
                 <div class="image-caption">debug-配置-进入调试服务窗口-添加xdebug服务。注意：host 一定要跟实际在 Apache 中配置的一样</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/img/phpDebugStepThree.jpg" alt="debug-配置-如果要停止调试，点这里" title="">
+                    <img src="/img/phpDebugStepThree.jpg" alt="debug-配置-如果要停止调试，点这里" title>
                 </div>
                 <div class="image-caption">debug-配置-如果要停止调试，点这里</div>
             </figure>
@@ -513,7 +513,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&title=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&title=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -523,22 +523,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&title=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&title=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -595,11 +595,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -631,7 +631,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&title=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&title=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -641,22 +641,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&title=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&title=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>

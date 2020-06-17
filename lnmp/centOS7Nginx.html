@@ -107,7 +107,7 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">安迪陈</h5>
-          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail">andy@lovesofttech.com</a>
+          <a href="mailto:andy@lovesofttech.com" title="andy@lovesofttech.com" class="mail" rel="external nofollow noopener noreferrer" target="_blank">andy@lovesofttech.com</a>
         </hgroup>
       </div>
     </div>
@@ -192,21 +192,21 @@
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://github.com/uncleAndyChen" target="_blank">
+              <a href="https://github.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon icon-github"></i>
                 github
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://gitee.com/uncleAndyChen" target="_blank">
+              <a href="https://gitee.com/uncleAndyChen" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-code-branch"></i>
                 gitee
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://blog.csdn.net/runAndRun" target="_blank">
+              <a href="https://blog.csdn.net/runAndRun" target="_blank" rel="external nofollow noopener noreferrer">
                 <i class="icon fas fa-book-open"></i>
                 CSDN
               </a>
@@ -367,7 +367,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>如题<br><a id="more"></a></p>
 <h1 id="down-nginx-Stable-version"><a href="#down-nginx-Stable-version" class="headerlink" title="down nginx Stable version"></a>down nginx Stable version</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@jdu4e00u53f7 soft]# wget https://nginx.org/download/nginx-1.12.2.tar.gz</span><br><span class="line">[root@jdu4e00u53f7 soft]# tar -xzvf nginx-1.12.2.tar.gz</span><br></pre></td></tr></table></figure>
-<p>下载最新版本，请查看官网：<a href="https://nginx.org/" target="_blank" rel="noopener">https://nginx.org/</a><br>记得需要下载源码版本，即 .tar.gz 版本，而不是针对 windows 的 .zip 版本。</p>
+<p>下载最新版本，请查看官网：<a href="https://nginx.org/" rel="external nofollow noopener noreferrer" target="_blank">https://nginx.org/</a><br>记得需要下载源码版本，即 .tar.gz 版本，而不是针对 windows 的 .zip 版本。</p>
 <h1 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel</span><br></pre></td></tr></table></figure>
 <ul>
 <li>编译依赖 gcc 环境</li>
@@ -409,7 +409,7 @@
 <h1 id="301-302-重定向"><a href="#301-302-重定向" class="headerlink" title="301 302 重定向"></a>301 302 重定向</h1><h2 id="301"><a href="#301" class="headerlink" title="301"></a>301</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name aipeigo.com www.aipeigo.com;</span><br><span class="line">    rewrite ^(.*)$ http://www.hellojiazhang.com$1 permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="302"><a href="#302" class="headerlink" title="302"></a>302</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name www.hellojiazhang.net hellojiazhang.net;</span><br><span class="line">    rewrite ^/(.*) http://www.hellojiazhang.com$1 redirect;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>测试 301 重定向是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@izwz97mqm1h3u2vxe4kesjz siteConfigs]# curl -I aipeigo.com</span><br><span class="line">HTTP/1.1 301 Moved Permanently</span><br><span class="line">Server: nginx/1.12.2</span><br><span class="line">Date: Thu, 28 Jun 2018 06:33:55 GMT</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Content-Length: 185</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Location: http://www.hellojiazhang.com/</span><br><span class="line"></span><br><span class="line">[root@izwz97mqm1h3u2vxe4kesjz siteConfigs]# curl -I www.aipeigo.com</span><br><span class="line">HTTP/1.1 301 Moved Permanently</span><br><span class="line">Server: nginx/1.12.2</span><br><span class="line">Date: Thu, 28 Jun 2018 06:34:07 GMT</span><br><span class="line">Content-Type: text/html</span><br><span class="line">Content-Length: 185</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Location: http://www.hellojiazhang.com/</span><br></pre></td></tr></table></figure></p>
-<p>也可以直接访问需要重定向的域名，成功之后会跳转至新域名。<br>还可以在站长工具上做测试：<a href="http://tool.chinaz.com/pagestatus/" target="_blank" rel="noopener">站长工具 &gt; HTTP状态查询</a></p>
+<p>也可以直接访问需要重定向的域名，成功之后会跳转至新域名。<br>还可以在站长工具上做测试：<a href="http://tool.chinaz.com/pagestatus/" rel="external nofollow noopener noreferrer" target="_blank">站长工具 &gt; HTTP状态查询</a></p>
 <h1 id="查看-nginx-版本"><a href="#查看-nginx-版本" class="headerlink" title="查看 nginx 版本"></a>查看 nginx 版本</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[utomcat@centOS7BasicForTest ~]$ /usr/local/nginx/sbin/nginx -v</span><br><span class="line">nginx version: nginx/1.14.0</span><br></pre></td></tr></table></figure>
 <h1 id="设置超时时间"><a href="#设置超时时间" class="headerlink" title="设置超时时间"></a>设置超时时间</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  domain.com;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    access_log  logs/domain.com.access.log;</span><br><span class="line">    error_log   logs/domain.com.error.log;</span><br><span class="line">    root /appHome/;</span><br><span class="line">    index index.php;</span><br><span class="line"></span><br><span class="line">    location ~ [^/].php(/|$) &#123;</span><br><span class="line">        fastcgi_pass unix:/tmp/php-cgi.sock;</span><br><span class="line">        fastcgi_index index.php;</span><br><span class="line">        include fastcgi.conf;</span><br><span class="line">        fastcgi_connect_timeout 300;</span><br><span class="line">        fastcgi_send_timeout 300;</span><br><span class="line">        fastcgi_read_timeout 300;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="配置使用-IP-地址访问时的默认站点"><a href="#配置使用-IP-地址访问时的默认站点" class="headerlink" title="配置使用 IP 地址访问时的默认站点"></a>配置使用 IP 地址访问时的默认站点</h1><p>只需要在 <code>listen 80</code> 后添加 <code>default</code>，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80 default;</span><br><span class="line">    # gzip config</span><br><span class="line">    gzip on;</span><br><span class="line">    gzip_min_length 1k;</span><br><span class="line">    gzip_comp_level 9;</span><br><span class="line">    gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;</span><br><span class="line">    gzip_vary on;</span><br><span class="line">    gzip_disable &quot;MSIE [1-6]\.&quot;;</span><br><span class="line"></span><br><span class="line">    server_name dev.mis.com;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    access_log  logs/dev.mis.com.access.log;</span><br><span class="line">    error_log   logs/dev.mis.com.error.log;</span><br><span class="line">    root /home/utomcat/apps/dev/frontend;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        index  index.html;</span><br><span class="line">        # 用于配合 browserHistory使用</span><br><span class="line">        try_files $uri $uri/ /index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /api &#123;</span><br><span class="line">        proxy_pass http://localhost:8080/api;</span><br><span class="line">        proxy_set_header   X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header   Host              $http_host;</span><br><span class="line">        proxy_set_header   X-Real-IP         $remote_addr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -451,7 +451,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&title=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&title=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -461,22 +461,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&title=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&title=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/lnmp/centOS7Nginx.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/lnmp/centOS7Nginx.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -533,11 +533,11 @@
         <p>
             <span>安迪陈技术日志，架构、感悟、系统分析、团队管理 &copy; 2017 - 2020</span>
             <span>
-                Power by <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
-                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+                Power by <a href="https://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>&nbsp;
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank" rel="external nofollow noopener noreferrer">indigo</a>
             </span>
             <span>
-                <a href="http://www.beian.miit.gov.cn" target="_blank">蜀ICP备17041860号</a>
+                <a href="http://www.beian.miit.gov.cn" target="_blank" rel="external nofollow noopener noreferrer">蜀ICP备17041860号</a>
             </span>
             
             </p><p>
@@ -569,7 +569,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&title=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&title=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&pic=https://www.lovesofttech.com/img/myLogo.jpg" data-title="微博" rel="external nofollow noopener noreferrer">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -579,22 +579,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&title=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&title=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&source=如题" data-title=" QQ" rel="external nofollow noopener noreferrer">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/lnmp/centOS7Nginx.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.lovesofttech.com/lnmp/centOS7Nginx.html" data-title=" Facebook" rel="external nofollow noopener noreferrer">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&via=https://www.lovesofttech.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《CentOS7 安装 Nginx 并设置开机自启动》 — 安迪陈技术日志，架构、感悟、系统分析、团队管理&url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html&via=https://www.lovesofttech.com" data-title=" Twitter" rel="external nofollow noopener noreferrer">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.lovesofttech.com/lnmp/centOS7Nginx.html" data-title=" Google+" rel="external nofollow noopener noreferrer">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
