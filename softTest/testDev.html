@@ -96,7 +96,7 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu">
   <div class="inner flex-row-vertical">
     <!--<i class="icon icon-lg icon-close"></i>-->
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off" title="隐藏左侧导航">﹤<i class="icon icon-lg icon-navicon"></i></a>
@@ -492,6 +492,42 @@
 
     
     
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="/js/gitalk.min.js"></script>
+    <script src="/js/md5.min.js"></script>
+    <script>
+        var pathname = location.pathname.replace("index.html", "").replace(".html", "");
+
+        if (pathname === "/articles") {
+            pathname = "/home";
+        }
+
+        //console.log(pathname);
+        if (pathname !== "/react/antDesignProTs") {
+            pathname += "/";
+        }
+
+        //console.log(pathname);
+
+        const gitalk = new Gitalk({
+          clientID: '834d6e5933da34dc78f3',
+          clientSecret: '5108932d0e8753537dd75ce038bd64f4780ad6dc',
+          repo: 'blog-comments',
+          owner: 'uncleAndyChen',
+          admin: ['uncleAndyChen'],
+          // Ensure id uniqueness and length less than 50
+          id: md5(pathname),
+          title: document.title.split('|')[0],
+          labels: ['安迪陈技术日志','https://www.lovesofttech.com/'],
+          distractionFreeMode: true  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
 
 
 

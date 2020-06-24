@@ -96,7 +96,7 @@
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu">
   <div class="inner flex-row-vertical">
     <!--<i class="icon icon-lg icon-close"></i>-->
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off" title="隐藏左侧导航">﹤<i class="icon icon-lg icon-navicon"></i></a>
@@ -477,18 +477,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/general/experience.html" id="post-prev" class="post-nav-link">
+      <a href="/redis/index.html" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">日常经验--好记性不如烂文档</h4>
+        <h4 class="title">redis 文章目录</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/redis/index.html" id="post-next" class="post-nav-link">
+      <a href="/windows/winOffice2016Uninstall.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">redis 文章目录</h4>
+        <h4 class="title">卸载 Office 2016 遇到的那些坑（完全干净的卸载 Office 2016）</h4>
       </a>
     </div>
   
@@ -497,6 +497,42 @@
 
     
     
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="/css/gitalk.css">
+    <script src="/js/gitalk.min.js"></script>
+    <script src="/js/md5.min.js"></script>
+    <script>
+        var pathname = location.pathname.replace("index.html", "").replace(".html", "");
+
+        if (pathname === "/articles") {
+            pathname = "/home";
+        }
+
+        //console.log(pathname);
+        if (pathname !== "/react/antDesignProTs") {
+            pathname += "/";
+        }
+
+        //console.log(pathname);
+
+        const gitalk = new Gitalk({
+          clientID: '834d6e5933da34dc78f3',
+          clientSecret: '5108932d0e8753537dd75ce038bd64f4780ad6dc',
+          repo: 'blog-comments',
+          owner: 'uncleAndyChen',
+          admin: ['uncleAndyChen'],
+          // Ensure id uniqueness and length less than 50
+          id: md5(pathname),
+          title: document.title.split('|')[0],
+          labels: ['安迪陈技术日志','https://www.lovesofttech.com/'],
+          distractionFreeMode: true  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
 
 
 
