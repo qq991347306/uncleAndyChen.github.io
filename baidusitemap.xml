@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.lovesofttech.com/linux.html</loc>
+    <lastmod>2020-06-24</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/java.html</loc>
+    <lastmod>2020-06-24</lastmod>
+  </url>  <url>
     <loc>https://www.lovesofttech.com/java/springResourcesStaticLocations.html</loc>
     <lastmod>2020-06-14</lastmod>
   </url>  <url>
@@ -105,12 +111,6 @@
   </url>  <url>
     <loc>https://www.lovesofttech.com/java/timeZone.html</loc>
     <lastmod>2020-02-24</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/linux.html</loc>
-    <lastmod>2020-02-23</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/java.html</loc>
-    <lastmod>2020-02-23</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/linux/experience.html</loc>
     <lastmod>2020-02-23</lastmod>
