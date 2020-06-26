@@ -66,9 +66,9 @@
     
       <category term="java" scheme="https://www.lovesofttech.com/tags/java/"/>
     
-      <category term="PDF" scheme="https://www.lovesofttech.com/tags/PDF/"/>
-    
       <category term="pdfbox" scheme="https://www.lovesofttech.com/tags/pdfbox/"/>
+    
+      <category term="PDF" scheme="https://www.lovesofttech.com/tags/PDF/"/>
     
   </entry>
   
@@ -128,11 +128,11 @@
     
       <category term="java" scheme="https://www.lovesofttech.com/tags/java/"/>
     
+      <category term="PDF" scheme="https://www.lovesofttech.com/tags/PDF/"/>
+    
       <category term="LibreOffice" scheme="https://www.lovesofttech.com/tags/LibreOffice/"/>
     
       <category term="OpenOffice" scheme="https://www.lovesofttech.com/tags/OpenOffice/"/>
-    
-      <category term="PDF" scheme="https://www.lovesofttech.com/tags/PDF/"/>
     
   </entry>
   
@@ -364,28 +364,6 @@
   </entry>
   
   <entry>
-    <title>技术之外的话题，文章目录</title>
-    <link href="https://www.lovesofttech.com/dailyLives.html"/>
-    <id>https://www.lovesofttech.com/dailyLives.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.064Z</updated>
-    
-    <content type="html"><![CDATA[<p>本目录下的文章与技术无关，但与生活、个人品质有关。<br><a id="more"></a></p><ul><li><a href="/dailyLives/shawshank.html">分享正能量——《肖申克的救赎》</a></li><li><a href="/dailyLives/foobar2000.html">foobar2000，一款 Windows 平台下的高级音频播放器，免费</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本目录下的文章与技术无关，但与生活、个人品质有关。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="dailyLives" scheme="https://www.lovesofttech.com/categories/dailyLives/"/>
-    
-    
-      <category term="dailyLives" scheme="https://www.lovesofttech.com/tags/dailyLives/"/>
-    
-  </entry>
-  
-  <entry>
     <title>本博客的所有文章列表</title>
     <link href="https://www.lovesofttech.com/articles.html"/>
     <id>https://www.lovesofttech.com/articles.html</id>
@@ -404,6 +382,28 @@
     
     
       <category term="index" scheme="https://www.lovesofttech.com/tags/index/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>技术之外的话题，文章目录</title>
+    <link href="https://www.lovesofttech.com/dailyLives.html"/>
+    <id>https://www.lovesofttech.com/dailyLives.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2019-11-09T09:00:56.064Z</updated>
+    
+    <content type="html"><![CDATA[<p>本目录下的文章与技术无关，但与生活、个人品质有关。<br><a id="more"></a></p><ul><li><a href="/dailyLives/shawshank.html">分享正能量——《肖申克的救赎》</a></li><li><a href="/dailyLives/foobar2000.html">foobar2000，一款 Windows 平台下的高级音频播放器，免费</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本目录下的文章与技术无关，但与生活、个人品质有关。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="dailyLives" scheme="https://www.lovesofttech.com/categories/dailyLives/"/>
+    
+    
+      <category term="dailyLives" scheme="https://www.lovesofttech.com/tags/dailyLives/"/>
     
   </entry>
   
