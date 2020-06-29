@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.lovesofttech.com/windows/winInstallNginxAsService.html</loc>
+    <lastmod>2020-06-29</lastmod>
+  </url>  <url>
     <loc>https://www.lovesofttech.com/linux.html</loc>
     <lastmod>2020-06-24</lastmod>
   </url>  <url>
@@ -333,9 +336,6 @@
   </url>  <url>
     <loc>https://www.lovesofttech.com/general/hexoBlogSEO.html</loc>
     <lastmod>2019-08-30</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/windows/winInstallNginxAsService.html</loc>
-    <lastmod>2019-08-23</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/react/redux.html</loc>
     <lastmod>2019-08-23</lastmod>

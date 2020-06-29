@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.lovesofttech.com/windows/winInstallNginxAsService.html</loc>
+    
+    <lastmod>2020-06-29T13:00:59.332Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.lovesofttech.com/linux.html</loc>
     
     <lastmod>2020-06-24T07:41:13.407Z</lastmod>
@@ -775,13 +782,6 @@
     <loc>https://www.lovesofttech.com/general/hexoBlogSEO.html</loc>
     
     <lastmod>2019-08-30T14:06:59.547Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lovesofttech.com/windows/winInstallNginxAsService.html</loc>
-    
-    <lastmod>2019-08-23T14:00:13.961Z</lastmod>
     
   </url>
   

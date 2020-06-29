@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="更详细的说明，请参考文章末尾的参考链接，我这里只讲直接的操作步骤。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-23T14:00:13.961Z">
+<meta property="og:updated_time" content="2020-06-29T13:00:59.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="把 nginx 安装为 Windows 的一个服务">
 <meta name="twitter:description" content="更详细的说明，请参考文章末尾的参考链接，我这里只讲直接的操作步骤。">
@@ -340,7 +340,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc" style="z-index: 3;">
             <h4><i class="fa fa-list-alt"></i>&nbsp;&nbsp;本文目录</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">步骤</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在win-8-1-win10-上安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">在win 8.1 / win10 上安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除-nginx-服务"><span class="post-toc-number">4.</span> <span class="post-toc-text">删除 nginx 服务</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#备注"><span class="post-toc-number">5.</span> <span class="post-toc-text">备注</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#端口被占用报错信息"><span class="post-toc-number">6.</span> <span class="post-toc-text">端口被占用报错信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装成服务后，nginx-s-reload-不可用"><span class="post-toc-number">7.</span> <span class="post-toc-text">安装成服务后，nginx -s reload 不可用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">8.</span> <span class="post-toc-text">参考链接</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">步骤</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在win-8-1-win10-上安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">在win 8.1 / win10 上安装</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除-nginx-服务"><span class="post-toc-number">4.</span> <span class="post-toc-text">删除 nginx 服务</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#备注"><span class="post-toc-number">5.</span> <span class="post-toc-text">备注</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#端口被占用报错信息"><span class="post-toc-number">6.</span> <span class="post-toc-text">端口被占用报错信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#安装成服务后，nginx-s-reload-不可用"><span class="post-toc-number">7.</span> <span class="post-toc-text">安装成服务后，nginx -s reload 不可用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#could-not-build-server-names-hash"><span class="post-toc-number">8.</span> <span class="post-toc-text">could not build server_names_hash</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决"><span class="post-toc-number">8.1.</span> <span class="post-toc-text">解决</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">9.</span> <span class="post-toc-text">参考链接</span></a></li></ol>
         </nav>
     </aside>
     
@@ -364,7 +364,7 @@
 
 
     <span>|</span>
-    <span class="post-count">字数：1.2k</span>
+    <span class="post-count">字数：1.4k</span>
     <span>|</span>
     <span class="post-count">阅读时长：大约6分钟</span>
 
@@ -406,6 +406,9 @@
 <h1 id="端口被占用报错信息"><a href="#端口被占用报错信息" class="headerlink" title="端口被占用报错信息"></a>端口被占用报错信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\nginx-1.12.0&gt;nginx -t</span><br><span class="line">nginx: the configuration file C:\nginx-1.12.0/conf/nginx.conf syntax is ok</span><br><span class="line">nginx: [emerg] bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)</span><br><span class="line">nginx: configuration file C:\nginx-1.12.0/conf/nginx.conf test failed</span><br></pre></td></tr></table></figure>
 <h1 id="安装成服务后，nginx-s-reload-不可用"><a href="#安装成服务后，nginx-s-reload-不可用" class="headerlink" title="安装成服务后，nginx -s reload 不可用"></a>安装成服务后，nginx -s reload 不可用</h1><p>暂时还没有解决。替代方案是，net stop nginx，然后 net start nginx<br>如果将服务停掉 net stop nginx，然后 nginx start<br>则可以正常使用 nginx -s reload</p>
 <p>另外，发现一个现象，就是 nginx 作为服务启动之后，有时候修改了配置，net stop nginx 再 net start nginx 并没有使配置生效，到任务管理器查看，发现后台有很多个 nginx 进程，逐一结束掉，然后再 net start nginx，或者进入 nginx 目录， start nginx 之后，配置才会生效。<br>解决办法，呵呵，还未尝试，等空了再试，然后更新到这里。 todo ***<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\nginx-1.12.0&gt;nginx -s reload</span><br><span class="line">nginx: [error] OpenEvent(&quot;Global\ngx_reload_2076&quot;) failed (5: Access is denied)</span><br></pre></td></tr></table></figure></p>
+<h1 id="could-not-build-server-names-hash"><a href="#could-not-build-server-names-hash" class="headerlink" title="could not build server_names_hash"></a>could not build server_names_hash</h1><p>当我在本地配置了第 13 个网站的时候，以管理员身份先停止 nginx，再启动 nginx，启动时报了如下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">C:\nginx&gt;net stop nginx</span><br><span class="line">nginx 服务正在停止.</span><br><span class="line">nginx 服务已成功停止。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">C:\nginx&gt;net start nginx</span><br><span class="line">nginx 服务正在启动 .</span><br><span class="line">nginx 服务无法启动。</span><br><span class="line"></span><br><span class="line">系统出错。</span><br><span class="line"></span><br><span class="line">发生系统错误 1067。</span><br><span class="line"></span><br><span class="line">进程意外终止。</span><br></pre></td></tr></table></figure></p>
+<p>于是检查配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\nginx&gt;nginx -t</span><br><span class="line">nginx: [emerg] could not build server_names_hash, you should increase server_names_hash_bucket_size: 32</span><br><span class="line">nginx: configuration file C:\nginx/conf/nginx.conf test failed</span><br></pre></td></tr></table></figure></p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>nginx 根目录下，conf/nginx.conf，在 <code>server {</code> 与 <code>}</code> 中间添加一行：<code>server_names_hash_bucket_size 32;</code>，如果再报这个错，则将 32 再增加到 32 的 N 倍，N 大于等于 2。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\nginx&gt;nginx -t</span><br><span class="line">nginx: the configuration file C:\nginx/conf/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file C:\nginx/conf/nginx.conf test is successful</span><br></pre></td></tr></table></figure></p>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
 <li><a href="http://blog.csdn.net/defonds/article/details/7906005" rel="external nofollow noopener noreferrer" target="_blank">把 Nginx 创建为 Windows 的一个服务</a></li>
 </ul>
@@ -416,7 +419,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-08-23T14:00:13.961Z" itemprop="dateUpdated">2019年8月23日 22:00</time>
+    最后更新时间：<time datetime="2020-06-29T13:00:59.332Z" itemprop="dateUpdated">2020年6月29日 21:00</time>
 </span><br>
 
 
@@ -500,9 +503,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/windows/winInstallMemcachedAsService.html" id="post-next" class="post-nav-link">
+      <a href="/windows/winNginxSupportPhp.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">在 Windows 将 Memcached 安装为服务</h4>
+        <h4 class="title">在 windows7 下配置 nginx 支持 php</h4>
       </a>
     </div>
   
@@ -581,7 +584,7 @@
                 </span>
             
             
-                <span class="post-count">累计字数：301.6k</span>
+                <span class="post-count">累计字数：301.8k</span>
             
                 <span><a href="/general/blogLog.html"><i class="fas fa-pen-alt"></i>&nbsp;博客日志</a></span>
             </p>

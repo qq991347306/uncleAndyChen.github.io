@@ -386,6 +386,28 @@
   </entry>
   
   <entry>
+    <title>技术之外的话题，文章目录</title>
+    <link href="https://www.lovesofttech.com/dailyLives.html"/>
+    <id>https://www.lovesofttech.com/dailyLives.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2019-11-09T09:00:56.064Z</updated>
+    
+    <content type="html"><![CDATA[<p>本目录下的文章与技术无关，但与生活、个人品质有关。<br><a id="more"></a></p><ul><li><a href="/dailyLives/shawshank.html">分享正能量——《肖申克的救赎》</a></li><li><a href="/dailyLives/foobar2000.html">foobar2000，一款 Windows 平台下的高级音频播放器，免费</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本目录下的文章与技术无关，但与生活、个人品质有关。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="dailyLives" scheme="https://www.lovesofttech.com/categories/dailyLives/"/>
+    
+    
+      <category term="dailyLives" scheme="https://www.lovesofttech.com/tags/dailyLives/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数据库文章汇总目录</title>
     <link href="https://www.lovesofttech.com/database.html"/>
     <id>https://www.lovesofttech.com/database.html</id>
@@ -430,28 +452,6 @@
   </entry>
   
   <entry>
-    <title>Java开发，文章目录</title>
-    <link href="https://www.lovesofttech.com/java.html"/>
-    <id>https://www.lovesofttech.com/java.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2020-06-24T07:37:42.075Z</updated>
-    
-    <content type="html"><![CDATA[<p>代码规范，以及基于 spring、tomcat 的开发与运维经验。<br><a id="more"></a></p><h2 id="工作规范"><a href="#工作规范" class="headerlink" title="工作规范"></a>工作规范</h2><ul><li><a href="/java/codeSpecification.html">java/js 代码规约</a></li><li><a href="/java/codeSpecificationAdditional.html">java 开发，适用于团队的代码规范及某些约定</a></li></ul><h2 id="spring-boot"><a href="#spring-boot" class="headerlink" title="spring boot"></a>spring boot</h2><ul><li><a href="/java/springResourcesStaticLocations.html">spring boot 配置静态资源</a></li><li><a href="/java/aboutSpring.html">关于 Spring Boot，以及学习 Spring Boot 的一个 Demo</a></li><li><a href="/java/javaMailPort465.html">spring boot 阿里云发送邮件，使用 qq 邮箱的 SMTP 服务，端口由 25 换成 465</a></li><li><a href="/java/springBootAjax.html">spring boot 支持通过 ajax 跨域请求的设置</a></li><li><a href="/java/springBootConfigurationProperties.html">spring boot1.5以上版本@ConfigurationProperties取消location注解后的替代方案</a></li><li><a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li><li><a href="/java/springPetclinic.html">spring 官方例子-&gt;宠物医院，数据库改成 MySQL，数据库连接池改成 druid</a></li><li><a href="/java/springTaskCron.html">Spring cron 表达式</a></li><li><a href="/java/sprintBootWhitelabelErrorPage.html">spring boot，404，502 错误转向定制页面</a></li></ul><h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul><li><a href="/java/tomcatDefaultWebSite.html">修改 tomcat 默认网站指向的目录</a></li><li><a href="/java/tomcatEncode.html">跑在 tomcat 容器下的 java 日志乱码，解决办法</a></li><li><a href="/java/tomcatVirtualHost.html">tomcat 虚拟目录实践</a></li><li><a href="/java/javaMemory.html">Tomcat 占用内存以及 jvm 参数设置</a></li></ul><h2 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h2><ul><li><a href="/java/elasticSearchProject.html">BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录</a></li><li><a href="/java/elasticSearchProjectDemo.html">ElasticSearch demo 以及辅助开发工具</a></li><li><a href="/linux/centOS7ElasticsearchNew.html">CentOS 7 配置 ElasticSearch-6.5.4</a></li><li><a href="/linux/centOS7Elasticsearch.html">CentOS 7 配置 ElasticSearch-6.4.1</a></li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li><a href="/java/javaLibreOffice.html">Java 利用 LibreOffice/OpenOffice 将 Office 文档（.doc/.docx .ppt/.pptx ）转换成 PDF，进而转图片，实现在线预览功能</a></li><li><a href="/java/javaPdfToImage.html">Java 利用 pdfbox 将 PDF 转换为图片</a></li><li><a href="/java/runtimeOmittedForConflict.html">Maven 项目 jar 包依赖冲突导致运行期错误的排查方法</a></li><li><a href="/java/apiDevelopRule.html">CRM 项目，api 部分的开发规则，仅供参考</a></li><li><a href="/java/bigDecimal.html">BigDecimal 运算与比较</a></li><li><a href="/java/dataType.html">Java 基本类型与对象类型</a></li><li><a href="/java/javaDevConfig.html">windows java 开发环境配置，以及一些常用网址收藏</a></li><li><a href="/java/javaReplace.html">java 字符串的替换 replace、replaceAll、replaceFirst 的区别</a></li><li><a href="/java/jdkHelperDocument.html">Java 特定版本的帮助文档下载方法</a></li><li><a href="/java/jsonToBeanWarn.html">Json-lib 将 Json 转换成 Java Bean 时报警 … does not exist. SKIPPED，解决办法</a></li><li><a href="/java/experience.html">java 开发中的一些小经验</a></li><li><a href="/java/lombok.html">lombok 以及 IDEA lombok 插件</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;代码规范，以及基于 spring、tomcat 的开发与运维经验。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="java" scheme="https://www.lovesofttech.com/categories/java/"/>
-    
-    
-      <category term="java" scheme="https://www.lovesofttech.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CentOS/linux，文章目录</title>
     <link href="https://www.lovesofttech.com/linux.html"/>
     <id>https://www.lovesofttech.com/linux.html</id>
@@ -470,6 +470,28 @@
     
     
       <category term="CentOS" scheme="https://www.lovesofttech.com/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java开发，文章目录</title>
+    <link href="https://www.lovesofttech.com/java.html"/>
+    <id>https://www.lovesofttech.com/java.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2020-06-24T07:37:42.075Z</updated>
+    
+    <content type="html"><![CDATA[<p>代码规范，以及基于 spring、tomcat 的开发与运维经验。<br><a id="more"></a></p><h2 id="工作规范"><a href="#工作规范" class="headerlink" title="工作规范"></a>工作规范</h2><ul><li><a href="/java/codeSpecification.html">java/js 代码规约</a></li><li><a href="/java/codeSpecificationAdditional.html">java 开发，适用于团队的代码规范及某些约定</a></li></ul><h2 id="spring-boot"><a href="#spring-boot" class="headerlink" title="spring boot"></a>spring boot</h2><ul><li><a href="/java/springResourcesStaticLocations.html">spring boot 配置静态资源</a></li><li><a href="/java/aboutSpring.html">关于 Spring Boot，以及学习 Spring Boot 的一个 Demo</a></li><li><a href="/java/javaMailPort465.html">spring boot 阿里云发送邮件，使用 qq 邮箱的 SMTP 服务，端口由 25 换成 465</a></li><li><a href="/java/springBootAjax.html">spring boot 支持通过 ajax 跨域请求的设置</a></li><li><a href="/java/springBootConfigurationProperties.html">spring boot1.5以上版本@ConfigurationProperties取消location注解后的替代方案</a></li><li><a href="/java/springBootIntegrationUEditor.html">springBoot 集成百度富文本框 UEditor，多模块方式</a></li><li><a href="/java/springPetclinic.html">spring 官方例子-&gt;宠物医院，数据库改成 MySQL，数据库连接池改成 druid</a></li><li><a href="/java/springTaskCron.html">Spring cron 表达式</a></li><li><a href="/java/sprintBootWhitelabelErrorPage.html">spring boot，404，502 错误转向定制页面</a></li></ul><h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><ul><li><a href="/java/tomcatDefaultWebSite.html">修改 tomcat 默认网站指向的目录</a></li><li><a href="/java/tomcatEncode.html">跑在 tomcat 容器下的 java 日志乱码，解决办法</a></li><li><a href="/java/tomcatVirtualHost.html">tomcat 虚拟目录实践</a></li><li><a href="/java/javaMemory.html">Tomcat 占用内存以及 jvm 参数设置</a></li></ul><h2 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h2><ul><li><a href="/java/elasticSearchProject.html">BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录</a></li><li><a href="/java/elasticSearchProjectDemo.html">ElasticSearch demo 以及辅助开发工具</a></li><li><a href="/linux/centOS7ElasticsearchNew.html">CentOS 7 配置 ElasticSearch-6.5.4</a></li><li><a href="/linux/centOS7Elasticsearch.html">CentOS 7 配置 ElasticSearch-6.4.1</a></li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li><a href="/java/javaLibreOffice.html">Java 利用 LibreOffice/OpenOffice 将 Office 文档（.doc/.docx .ppt/.pptx ）转换成 PDF，进而转图片，实现在线预览功能</a></li><li><a href="/java/javaPdfToImage.html">Java 利用 pdfbox 将 PDF 转换为图片</a></li><li><a href="/java/runtimeOmittedForConflict.html">Maven 项目 jar 包依赖冲突导致运行期错误的排查方法</a></li><li><a href="/java/apiDevelopRule.html">CRM 项目，api 部分的开发规则，仅供参考</a></li><li><a href="/java/bigDecimal.html">BigDecimal 运算与比较</a></li><li><a href="/java/dataType.html">Java 基本类型与对象类型</a></li><li><a href="/java/javaDevConfig.html">windows java 开发环境配置，以及一些常用网址收藏</a></li><li><a href="/java/javaReplace.html">java 字符串的替换 replace、replaceAll、replaceFirst 的区别</a></li><li><a href="/java/jdkHelperDocument.html">Java 特定版本的帮助文档下载方法</a></li><li><a href="/java/jsonToBeanWarn.html">Json-lib 将 Json 转换成 Java Bean 时报警 … does not exist. SKIPPED，解决办法</a></li><li><a href="/java/experience.html">java 开发中的一些小经验</a></li><li><a href="/java/lombok.html">lombok 以及 IDEA lombok 插件</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;代码规范，以及基于 spring、tomcat 的开发与运维经验。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="https://www.lovesofttech.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="https://www.lovesofttech.com/tags/java/"/>
     
   </entry>
   
@@ -518,28 +540,6 @@
       <category term="react" scheme="https://www.lovesofttech.com/tags/react/"/>
     
       <category term="redux" scheme="https://www.lovesofttech.com/tags/redux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>技术之外的话题，文章目录</title>
-    <link href="https://www.lovesofttech.com/dailyLives.html"/>
-    <id>https://www.lovesofttech.com/dailyLives.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.064Z</updated>
-    
-    <content type="html"><![CDATA[<p>本目录下的文章与技术无关，但与生活、个人品质有关。<br><a id="more"></a></p><ul><li><a href="/dailyLives/shawshank.html">分享正能量——《肖申克的救赎》</a></li><li><a href="/dailyLives/foobar2000.html">foobar2000，一款 Windows 平台下的高级音频播放器，免费</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本目录下的文章与技术无关，但与生活、个人品质有关。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="dailyLives" scheme="https://www.lovesofttech.com/categories/dailyLives/"/>
-    
-    
-      <category term="dailyLives" scheme="https://www.lovesofttech.com/tags/dailyLives/"/>
     
   </entry>
   
