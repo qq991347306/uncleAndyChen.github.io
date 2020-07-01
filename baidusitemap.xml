@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.lovesofttech.com/home.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/articles.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/database/index.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/database.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/java.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/java/index.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/java/timeZone.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
     <loc>https://www.lovesofttech.com/windows/winInstallNginxAsService.html</loc>
     <lastmod>2020-06-29</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/linux.html</loc>
-    <lastmod>2020-06-24</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/java.html</loc>
     <lastmod>2020-06-24</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/java/springResourcesStaticLocations.html</loc>
@@ -19,16 +37,7 @@
     <loc>https://www.lovesofttech.com/windows/winPHPXdebugMemcache.html</loc>
     <lastmod>2020-06-14</lastmod>
   </url>  <url>
-    <loc>https://www.lovesofttech.com/home.html</loc>
-    <lastmod>2020-06-14</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/articles.html</loc>
-    <lastmod>2020-06-14</lastmod>
-  </url>  <url>
     <loc>https://www.lovesofttech.com/java/springBootIntegrationUEditor.html</loc>
-    <lastmod>2020-06-14</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/java/index.html</loc>
     <lastmod>2020-06-14</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/linux/centOS7NetworkScripts.html</loc>
@@ -111,9 +120,6 @@
   </url>  <url>
     <loc>https://www.lovesofttech.com/linux/index.html</loc>
     <lastmod>2020-02-25</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/java/timeZone.html</loc>
-    <lastmod>2020-02-24</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/linux/experience.html</loc>
     <lastmod>2020-02-23</lastmod>
@@ -251,12 +257,6 @@
     <lastmod>2019-11-09</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/git.html</loc>
-    <lastmod>2019-11-09</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/database/index.html</loc>
-    <lastmod>2019-11-09</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/database.html</loc>
     <lastmod>2019-11-09</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/dailyLives/index.html</loc>

@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.lovesofttech.com/home.html</loc>
+    
+    <lastmod>2020-07-01T07:57:37.817Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lovesofttech.com/articles.html</loc>
+    
+    <lastmod>2020-07-01T07:57:37.812Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lovesofttech.com/database/index.html</loc>
+    
+    <lastmod>2020-07-01T07:56:36.895Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lovesofttech.com/database.html</loc>
+    
+    <lastmod>2020-07-01T07:51:47.959Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lovesofttech.com/java.html</loc>
+    
+    <lastmod>2020-07-01T07:51:27.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lovesofttech.com/java/index.html</loc>
+    
+    <lastmod>2020-07-01T07:50:28.905Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.lovesofttech.com/java/timeZone.html</loc>
+    
+    <lastmod>2020-07-01T07:48:58.598Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.lovesofttech.com/windows/winInstallNginxAsService.html</loc>
     
     <lastmod>2020-06-29T13:00:59.332Z</lastmod>
@@ -12,13 +61,6 @@
     <loc>https://www.lovesofttech.com/linux.html</loc>
     
     <lastmod>2020-06-24T07:41:13.407Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lovesofttech.com/java.html</loc>
-    
-    <lastmod>2020-06-24T07:37:42.075Z</lastmod>
     
   </url>
   
@@ -44,30 +86,9 @@
   </url>
   
   <url>
-    <loc>https://www.lovesofttech.com/home.html</loc>
-    
-    <lastmod>2020-06-14T03:18:52.896Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lovesofttech.com/articles.html</loc>
-    
-    <lastmod>2020-06-14T03:18:25.606Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.lovesofttech.com/java/springBootIntegrationUEditor.html</loc>
     
     <lastmod>2020-06-14T03:18:12.536Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lovesofttech.com/java/index.html</loc>
-    
-    <lastmod>2020-06-14T03:18:06.075Z</lastmod>
     
   </url>
   
@@ -257,13 +278,6 @@
     <loc>https://www.lovesofttech.com/linux/index.html</loc>
     
     <lastmod>2020-02-25T02:22:17.247Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lovesofttech.com/java/timeZone.html</loc>
-    
-    <lastmod>2020-02-24T03:08:13.531Z</lastmod>
     
   </url>
   
@@ -586,20 +600,6 @@
     <loc>https://www.lovesofttech.com/git.html</loc>
     
     <lastmod>2019-11-09T09:00:56.097Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lovesofttech.com/database/index.html</loc>
-    
-    <lastmod>2019-11-09T09:00:56.081Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.lovesofttech.com/database.html</loc>
-    
-    <lastmod>2019-11-09T09:00:56.071Z</lastmod>
     
   </url>
   
