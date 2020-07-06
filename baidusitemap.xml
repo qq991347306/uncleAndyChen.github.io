@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.lovesofttech.com/classifyIndex.html</loc>
+    <lastmod>2020-07-05</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/articleClassify.html</loc>
+    <lastmod>2020-07-05</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/react/eslintConfigExample.html</loc>
+    <lastmod>2020-07-05</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
+    <loc>https://www.lovesofttech.com/database/centOS7InstallMySQL8.0.11.html</loc>
+    <lastmod>2020-07-01</lastmod>
+  </url>  <url>
     <loc>https://www.lovesofttech.com/home.html</loc>
     <lastmod>2020-07-01</lastmod>
   </url>  <url>
@@ -133,9 +148,6 @@
     <loc>https://www.lovesofttech.com/database/win10MySQLConfig.html</loc>
     <lastmod>2020-02-16</lastmod>
   </url>  <url>
-    <loc>https://www.lovesofttech.com/database/centOS7InstallMySQL8.0.11.html</loc>
-    <lastmod>2020-02-05</lastmod>
-  </url>  <url>
     <loc>https://www.lovesofttech.com/general/blogLog.html</loc>
     <lastmod>2020-02-04</lastmod>
   </url>  <url>
@@ -235,9 +247,6 @@
     <loc>https://www.lovesofttech.com/linux/centOSTomcatConfig.html</loc>
     <lastmod>2019-11-09</lastmod>
   </url>  <url>
-    <loc>https://www.lovesofttech.com/linux/centOS7TomcatUserConfig.html</loc>
-    <lastmod>2019-11-09</lastmod>
-  </url>  <url>
     <loc>https://www.lovesofttech.com/linux/centOS7TomcatMonitor.html</loc>
     <lastmod>2019-11-09</lastmod>
   </url>  <url>
@@ -266,12 +275,6 @@
     <lastmod>2019-11-09</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/cpp/index.html</loc>
-    <lastmod>2019-11-09</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/classifyIndex.html</loc>
-    <lastmod>2019-11-09</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/articleClassify.html</loc>
     <lastmod>2019-11-09</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/about.html</loc>
@@ -632,9 +635,6 @@
     <lastmod>2019-03-09</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/linux/vsftpd.html</loc>
-    <lastmod>2019-03-09</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/react/eslintConfigExample.html</loc>
     <lastmod>2019-03-09</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/react/examplesTodomvcGetVisibleTodos.html</loc>

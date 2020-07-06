@@ -79,7 +79,7 @@
 <meta property="og:site_name" content="安迪陈技术日志，架构、感悟、系统分析、团队管理">
 <meta property="og:description" content="与 5.7.x 的安装类似，这里记录一些安装和配置过程中遇到的坑。">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-02-05T03:00:22.312Z">
+<meta property="og:updated_time" content="2020-07-01T11:38:36.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22">
 <meta name="twitter:description" content="与 5.7.x 的安装类似，这里记录一些安装和配置过程中遇到的坑。">
@@ -373,9 +373,9 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>与 5.7.x 的安装类似，这里记录一些安装和配置过程中遇到的坑。<br><a id="more"></a></p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><ul>
-<li>更新日期：2019-07-09<h2 id="在-CentOS-7-x86-64-Minimal-1810-上安装-8-0-16-的正确顺序"><a href="#在-CentOS-7-x86-64-Minimal-1810-上安装-8-0-16-的正确顺序" class="headerlink" title="在 CentOS-7-x86_64-Minimal-1810 上安装 8.0.16 的正确顺序"></a>在 CentOS-7-x86_64-Minimal-1810 上安装 8.0.16 的正确顺序</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum install -y openssl-devel net-tools perl net-tools libaio</span><br><span class="line">rpm -ivh mysql-community-common-8.0.16-2.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-8.0.16-2.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-devel-8.0.16-2.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-client-8.0.16-2.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-server-8.0.16-2.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
-</li>
+<li>更新日期：2019-07-09</li>
 </ul>
+<h2 id="在-CentOS-7-x86-64-Minimal-1810-上安装-8-0-16-的正确顺序"><a href="#在-CentOS-7-x86-64-Minimal-1810-上安装-8-0-16-的正确顺序" class="headerlink" title="在 CentOS-7-x86_64-Minimal-1810 上安装 8.0.16 的正确顺序"></a>在 CentOS-7-x86_64-Minimal-1810 上安装 8.0.16 的正确顺序</h2><p>以 root 身份操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum install -y openssl-devel net-tools perl net-tools libaio</span><br><span class="line">rpm -ivh mysql-community-common-8.0.16-2.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-libs-8.0.16-2.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-devel-8.0.16-2.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-client-8.0.16-2.el7.x86_64.rpm</span><br><span class="line">rpm -ivh mysql-community-server-8.0.16-2.el7.x86_64.rpm</span><br></pre></td></tr></table></figure></p>
 <h2 id="遇到的依赖问题"><a href="#遇到的依赖问题" class="headerlink" title="遇到的依赖问题"></a>遇到的依赖问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pkgconfig(openssl) is needed by mysql-community-devel-8.0.16-2.el7.x86_64</span><br><span class="line"># 安装相关依赖：yum install -y openssl-devel</span><br><span class="line">net-tools is needed by mysql-community-server-8.0.16-2.el7.x86_64</span><br><span class="line"># 安装相关依赖：yum install -y net-tools</span><br></pre></td></tr></table></figure>
 <h1 id="安装前，先卸载-mariadb"><a href="#安装前，先卸载-mariadb" class="headerlink" title="安装前，先卸载 mariadb"></a>安装前，先卸载 mariadb</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# rpm -qa | grep mariadb</span><br><span class="line">mariadb-libs-5.5.41-2.el7_0.x86_64</span><br><span class="line">[root@localhost ~]# rpm -e mariadb-libs-5.5.41-2.el7_0.x86_64</span><br><span class="line">error: Failed dependencies:</span><br><span class="line">        libmysqlclient.so.18()(64bit) is needed by (installed) postfix-2:2.10.1-6.el7.x86_64</span><br><span class="line">        libmysqlclient.so.18(libmysqlclient_18)(64bit) is needed by (installed) postfix-2:2.10.1-6.el7.x86_64</span><br><span class="line">[root@localhost ~]# rpm -e  postfix-2:2.10.1-6.el7.x86_64 postfix-2:2.10.1-6.el7.x86_64</span><br><span class="line">[root@localhost ~]# rpm -e mariadb-libs-5.5.41-2.el7_0.x86_64</span><br></pre></td></tr></table></figure>
 <h1 id="安装最新版-MySQL-8-0-11"><a href="#安装最新版-MySQL-8-0-11" class="headerlink" title="安装最新版 MySQL-8.0.11"></a>安装最新版 MySQL-8.0.11</h1><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>CentOS 1804 版本最小安装，下载的 CentOS 安装文件：CentOS-7-x86_64-Minimal-1804.iso</p>
@@ -415,7 +415,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-02-05T03:00:22.312Z" itemprop="dateUpdated">2020年2月5日 11:00</time>
+    最后更新时间：<time datetime="2020-07-01T11:38:36.696Z" itemprop="dateUpdated">2020年7月1日 19:38</time>
 </span><br>
 
 
