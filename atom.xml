@@ -474,28 +474,6 @@
   </entry>
   
   <entry>
-    <title>Linux + Nginx + MySQL + PHP 文章目录</title>
-    <link href="https://www.lovesofttech.com/lnmp.html"/>
-    <id>https://www.lovesofttech.com/lnmp.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.172Z</updated>
-    
-    <content type="html"><![CDATA[<p>Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。<br><a id="more"></a></p><h1 id="CentOS7-环境"><a href="#CentOS7-环境" class="headerlink" title="CentOS7 环境"></a>CentOS7 环境</h1><ul><li><a href="/lnmp/https-www-rewrite.html">Nginx 配置 https 后，http 强制跳转到 https，主域名跳转至带 www 的二级域名</a></li><li><a href="/lnmp/centOS7Nginx.html">CentOS7 安装 Nginx 并设置开机自启动</a></li><li><a href="/lnmp/centOS7Php7.html">CentOS7 以源码方式安装 php7</a></li><li><a href="/lnmp/nginxConfig.html">nginx 配置相关</a></li><li><a href="/lnmp/nginxLoadBalancingAndProxy.html">Nginx 反向代理、负载均衡</a></li><li><a href="/lnmp/phpMemory.html">php 内存分配占用超限，解决办法</a></li><li><a href="/lnmp/centOSPHPFpmRestart.html">php5.4 php-fpm 重启、关闭</a></li><li><a href="/lnmp/discuzX3.4MoveServer.html">discuzX3.4 网站迁移，备忘录</a></li><li><a href="/lnmp/discuzX3.4ToInnoDBTable.html">discuzX3.4 数据库由阿里云自建 MySQL 转移至 RDS，填坑日志</a></li></ul><h1 id="windows-环境，php-开发配置"><a href="#windows-环境，php-开发配置" class="headerlink" title="windows 环境，php 开发配置"></a>windows 环境，php 开发配置</h1><ul><li><a href="/windows/winPHPXdebugMemcache.html">windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache</a></li><li><a href="/windows/win10Php7Discuz.html">在 win10 下配置 PHP7.2.6 + Discuz! X3.4</a></li><li><a href="/windows/win10Php7HttpdPhp7.html">在 win10 下配置 Apache2.4.33 + PHP7.2.6</a></li><li><a href="/windows/win10Php7Nginx.html">在 win10 下配置 nginx1.14.0 + PHP7.2.6</a></li><li><a href="/windows/winInstallMemcachedAsService.html">在 Windows 将 Memcached 安装为服务</a></li><li><a href="/windows/winInstallNginxAsService.html">把 nginx 安装为 Windows 的一个服务</a></li><li><a href="/windows/winNginxSupportPhp.html">在 windows7 下配置 nginx 支持 php</a></li></ul><h1 id="PHP-开发日常经验"><a href="#PHP-开发日常经验" class="headerlink" title="PHP 开发日常经验"></a>PHP 开发日常经验</h1><ul><li><a href="/lnmp/experience.html">php 开发–好记性不如“烂文档”</a></li></ul><h1 id="MySQL-相关文章"><a href="#MySQL-相关文章" class="headerlink" title="MySQL 相关文章"></a>MySQL 相关文章</h1><ul><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="LNMP" scheme="https://www.lovesofttech.com/categories/LNMP/"/>
-    
-    
-      <category term="LNMP" scheme="https://www.lovesofttech.com/tags/LNMP/"/>
-    
-  </entry>
-  
-  <entry>
     <title>CentOS/linux，文章目录</title>
     <link href="https://www.lovesofttech.com/linux.html"/>
     <id>https://www.lovesofttech.com/linux.html</id>
@@ -514,6 +492,28 @@
     
     
       <category term="CentOS" scheme="https://www.lovesofttech.com/tags/CentOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux + Nginx + MySQL + PHP 文章目录</title>
+    <link href="https://www.lovesofttech.com/lnmp.html"/>
+    <id>https://www.lovesofttech.com/lnmp.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2019-11-09T09:00:56.172Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。<br><a id="more"></a></p><h1 id="CentOS7-环境"><a href="#CentOS7-环境" class="headerlink" title="CentOS7 环境"></a>CentOS7 环境</h1><ul><li><a href="/lnmp/https-www-rewrite.html">Nginx 配置 https 后，http 强制跳转到 https，主域名跳转至带 www 的二级域名</a></li><li><a href="/lnmp/centOS7Nginx.html">CentOS7 安装 Nginx 并设置开机自启动</a></li><li><a href="/lnmp/centOS7Php7.html">CentOS7 以源码方式安装 php7</a></li><li><a href="/lnmp/nginxConfig.html">nginx 配置相关</a></li><li><a href="/lnmp/nginxLoadBalancingAndProxy.html">Nginx 反向代理、负载均衡</a></li><li><a href="/lnmp/phpMemory.html">php 内存分配占用超限，解决办法</a></li><li><a href="/lnmp/centOSPHPFpmRestart.html">php5.4 php-fpm 重启、关闭</a></li><li><a href="/lnmp/discuzX3.4MoveServer.html">discuzX3.4 网站迁移，备忘录</a></li><li><a href="/lnmp/discuzX3.4ToInnoDBTable.html">discuzX3.4 数据库由阿里云自建 MySQL 转移至 RDS，填坑日志</a></li></ul><h1 id="windows-环境，php-开发配置"><a href="#windows-环境，php-开发配置" class="headerlink" title="windows 环境，php 开发配置"></a>windows 环境，php 开发配置</h1><ul><li><a href="/windows/winPHPXdebugMemcache.html">windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache</a></li><li><a href="/windows/win10Php7Discuz.html">在 win10 下配置 PHP7.2.6 + Discuz! X3.4</a></li><li><a href="/windows/win10Php7HttpdPhp7.html">在 win10 下配置 Apache2.4.33 + PHP7.2.6</a></li><li><a href="/windows/win10Php7Nginx.html">在 win10 下配置 nginx1.14.0 + PHP7.2.6</a></li><li><a href="/windows/winInstallMemcachedAsService.html">在 Windows 将 Memcached 安装为服务</a></li><li><a href="/windows/winInstallNginxAsService.html">把 nginx 安装为 Windows 的一个服务</a></li><li><a href="/windows/winNginxSupportPhp.html">在 windows7 下配置 nginx 支持 php</a></li></ul><h1 id="PHP-开发日常经验"><a href="#PHP-开发日常经验" class="headerlink" title="PHP 开发日常经验"></a>PHP 开发日常经验</h1><ul><li><a href="/lnmp/experience.html">php 开发–好记性不如“烂文档”</a></li></ul><h1 id="MySQL-相关文章"><a href="#MySQL-相关文章" class="headerlink" title="MySQL 相关文章"></a>MySQL 相关文章</h1><ul><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux + Nginx + MySQL + PHP，还有两篇discuzX3.4迁移经验。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="LNMP" scheme="https://www.lovesofttech.com/categories/LNMP/"/>
+    
+    
+      <category term="LNMP" scheme="https://www.lovesofttech.com/tags/LNMP/"/>
     
   </entry>
   
