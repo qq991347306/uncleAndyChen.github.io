@@ -408,28 +408,6 @@
   </entry>
   
   <entry>
-    <title>数据库文章汇总目录</title>
-    <link href="https://www.lovesofttech.com/database.html"/>
-    <id>https://www.lovesofttech.com/database.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2020-07-01T07:51:47.959Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>以 MySQL 和 MyBatis 为主。</strong><br><a id="more"></a></p><h1 id="日常开发中有关-MySQL-的一些经验总结"><a href="#日常开发中有关-MySQL-的一些经验总结" class="headerlink" title="日常开发中有关 MySQL 的一些经验总结"></a>日常开发中有关 MySQL 的一些经验总结</h1><ul><li><a href="/java/timeZone.html">CentOS7 时区与 MySQL 连接参数 serverTimezone 的关系，以及与保存到数据库的 timestamp 字段值（比实际少13小时）的关系</a></li><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul><h1 id="MyBatis-在实际工作中的使用经验"><a href="#MyBatis-在实际工作中的使用经验" class="headerlink" title="MyBatis 在实际工作中的使用经验"></a>MyBatis 在实际工作中的使用经验</h1><ul><li><a href="/mybatis/MBGExtend.html">MyBatis Generator（MBG），写扩展类，以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</a></li><li><a href="/mybatis/MBGTableKeepOriginal.html">MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</a></li><li><a href="/mybatis/MBGConfig.html">MBG 生成的 mapper 支持写入记录后返回主键值的配置</a></li><li><a href="/mybatis/mybatisExample.html">MyBatis 开发中，善用通过 MBG 生成的 *Example 类</a></li><li><a href="/mybatis/experience.html">MyBatis 普通知识点记录</a></li></ul><h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><ul><li><a href="/java/elasticSearchProject.html">BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录</a></li><li><a href="/java/elasticSearchProjectDemo.html">ElasticSearch demo 以及辅助开发工具</a></li><li><a href="/linux/centOS7ElasticsearchNew.html">CentOS 7 配置 ElasticSearch-6.5.4</a></li><li><a href="/linux/centOS7Elasticsearch.html">CentOS 7 配置 ElasticSearch-6.4.1</a></li></ul><h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><ul><li><a href="/redis/general.html">redis5.0.5 在 CentOS7 上的安装和使用</a></li></ul><h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><ul><li><a href="/database/centOS7MongoDB.html">CentOS7 下 安装配置 MongoDB</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;以 MySQL 和 MyBatis 为主。&lt;/strong&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://www.lovesofttech.com/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="https://www.lovesofttech.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
     <title>git 文章目录</title>
     <link href="https://www.lovesofttech.com/git.html"/>
     <id>https://www.lovesofttech.com/git.html</id>
@@ -448,6 +426,28 @@
     
     
       <category term="git" scheme="https://www.lovesofttech.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库文章汇总目录</title>
+    <link href="https://www.lovesofttech.com/database.html"/>
+    <id>https://www.lovesofttech.com/database.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2020-07-01T07:51:47.959Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>以 MySQL 和 MyBatis 为主。</strong><br><a id="more"></a></p><h1 id="日常开发中有关-MySQL-的一些经验总结"><a href="#日常开发中有关-MySQL-的一些经验总结" class="headerlink" title="日常开发中有关 MySQL 的一些经验总结"></a>日常开发中有关 MySQL 的一些经验总结</h1><ul><li><a href="/java/timeZone.html">CentOS7 时区与 MySQL 连接参数 serverTimezone 的关系，以及与保存到数据库的 timestamp 字段值（比实际少13小时）的关系</a></li><li><a href="/database/mySQLWorkbench.html">借助 MySQL Workbench 工具生成 MySQL 修改脚本</a></li><li><a href="/database/centOS7InstallMySQL8.0.11.html">CentOS7 安装 MySQL-8.0.11，以及由 8.0.11 降级至 5.7.22</a></li><li><a href="/database/centOS7InstallMySQL5.7.20.html">CentOS7 安装 MySQL-5.7.20</a></li><li><a href="/database/mysql5.7ToUtf8mb4.html">mysql-5.7.20 编码由 utf8 改为 utf8mb4</a></li><li><a href="/database/mysqldump.html">mysqldump 用法及示例</a></li><li><a href="/database/mysqlPrcedureAnalyse.html">用 PROCEDURE ANALYSE() 为 mysql 提高性能提供建议</a></li><li><a href="/database/mysqlServiceName.html">CentOS 服务器上的 MySql 服务名既不是 mysql，也不是 mysqld</a></li><li><a href="/database/win10MySQLConfig.html">win10 MySQL 8.0.11 绿色免安装配置 </a></li><li><a href="/database/logSlowQueries.html">MySQL 慢查询</a></li><li><a href="/database/centOSMySQLClient.html">在 centOS 6.5 上安装 mysql 客户端</a></li><li><a href="/database/experience.html">MySQL 常用脚本，日常经验</a></li></ul><h1 id="MyBatis-在实际工作中的使用经验"><a href="#MyBatis-在实际工作中的使用经验" class="headerlink" title="MyBatis 在实际工作中的使用经验"></a>MyBatis 在实际工作中的使用经验</h1><ul><li><a href="/mybatis/MBGExtend.html">MyBatis Generator（MBG），写扩展类，以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</a></li><li><a href="/mybatis/MBGTableKeepOriginal.html">MyBatis Generator (MBG)，修改源码以适应 MySQL 大小写敏感配置的各种情况、适应分表时动态替换表名</a></li><li><a href="/mybatis/MBGConfig.html">MBG 生成的 mapper 支持写入记录后返回主键值的配置</a></li><li><a href="/mybatis/mybatisExample.html">MyBatis 开发中，善用通过 MBG 生成的 *Example 类</a></li><li><a href="/mybatis/experience.html">MyBatis 普通知识点记录</a></li></ul><h1 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h1><ul><li><a href="/java/elasticSearchProject.html">BAT大牛亲授基于ElasticSearch的搜房网实战，项目配置记录</a></li><li><a href="/java/elasticSearchProjectDemo.html">ElasticSearch demo 以及辅助开发工具</a></li><li><a href="/linux/centOS7ElasticsearchNew.html">CentOS 7 配置 ElasticSearch-6.5.4</a></li><li><a href="/linux/centOS7Elasticsearch.html">CentOS 7 配置 ElasticSearch-6.4.1</a></li></ul><h1 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h1><ul><li><a href="/redis/general.html">redis5.0.5 在 CentOS7 上的安装和使用</a></li></ul><h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><ul><li><a href="/database/centOS7MongoDB.html">CentOS7 下 安装配置 MongoDB</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;以 MySQL 和 MyBatis 为主。&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://www.lovesofttech.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://www.lovesofttech.com/tags/MySQL/"/>
     
   </entry>
   
@@ -518,28 +518,24 @@
   </entry>
   
   <entry>
-    <title>React 技术栈（全家桶）学习心得分享，文章目录</title>
-    <link href="https://www.lovesofttech.com/react.html"/>
-    <id>https://www.lovesofttech.com/react.html</id>
+    <title>windows 环境下的日常工作，文章目录</title>
+    <link href="https://www.lovesofttech.com/windows.html"/>
+    <id>https://www.lovesofttech.com/windows.html</id>
     <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.192Z</updated>
+    <updated>2019-11-16T10:12:05.426Z</updated>
     
-    <content type="html"><![CDATA[<p>react 技术栈学习，有文章有代码（github），花了很多时间整理，如果觉得不错，请在 github 或 gitee 的开源项目上给个小星星儿（star）。<br><a id="more"></a></p><h1 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h1><blockquote><p>友情提示：如果要<strong>在新窗口中打开</strong>以下链接，请按住 Ctrl 键再点相关链接。</p></blockquote><ul><li><a href="/react/antDesignProDownloadExcel.html">Ant Design Pro v4 从后端下载 excel，后端返回的是文件流</a></li><li><a href="/react/antDesignProTs.html">Ant Design Pro v4 开发备忘，TypeScript 版本</a></li><li><a href="/react/prepare.html">react 技术栈学习，相关知识储备</a></li><li><a href="/react/js.html">React 技术栈学习，js 知识点</a></li><li><a href="/react/redux.html">React 技术栈学习，redux 知识点</a></li><li><a href="/react/debug.html">React 项目调试技巧</a></li><li><a href="/react/JetBrainsIDESupport.html">像用 IDEA 调试 Java 代码一样，用 WebStorm 调试 react 代码</a></li><li><a href="/react/examplesTodomvcGetVisibleTodos.html">redux 官方示例 todomvc 中的 todoList 过滤事件解析</a></li><li><a href="/react/examplesTodomvcWarningsFixed.html">redux 官方示例 todomvc 两个警告修复</a></li><li><a href="/react/reactReduxDirectoryStructure.html">React+Redux工程目录结构，最佳实践</a></li><li><a href="/react/reactPropTypes.html">react 项目，在生产环境去掉 propTypes 检查代码，打包时自动去除</a></li><li><a href="/react/eslintConfig.html">WebStorm + React 项目，配置 ESLint</a></li><li><a href="/react/eslintConfigExample.html">ESLint 配置文件 .eslintrc 示例及说明</a></li><li><a href="/react/reactExperience.html">react开发，日常经验汇总</a></li></ul><h1 id="结合例子代码学习"><a href="#结合例子代码学习" class="headerlink" title="结合例子代码学习"></a>结合例子代码学习</h1><ul><li><a href="/react/reactAdvancedStageBBSUnscramble.html">《React进阶之路》第九章示例 bbs-redux-reselect 解读</a></li><li><a href="/react/reactAndReduxBook.html">《深入浅出React和Redux》一书的部分章节例子代码演练及相关知识点</a></li></ul><h1 id="个人学习心得项目地址"><a href="#个人学习心得项目地址" class="headerlink" title="个人学习心得项目地址"></a>个人学习心得项目地址</h1><ul><li>托管在 github 上的项目链接：<a href="https://github.com/uncleAndyChen/react-full-stack-learning" rel="external nofollow noopener noreferrer" target="_blank">https://github.com/uncleAndyChen/react-full-stack-learning</a></li><li>托管在 gitee 上的项目链接 ：<a href="https://gitee.com/uncleAndyChen/react-full-stack-learning" rel="external nofollow noopener noreferrer" target="_blank">https://gitee.com/uncleAndyChen/react-full-stack-learning</a></li></ul><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul><li>本项目分享个人学习 react 全家桶技术栈的一些经验心得。</li><li>学习过程会结合相关示例代码，在实践中学习更有成效。</li><li>欢迎补充，可通过 fork + pull request 的方式，参与到该项目。</li></ul><h2 id="项目依赖及版本"><a href="#项目依赖及版本" class="headerlink" title="项目依赖及版本"></a>项目依赖及版本</h2><ul><li><p>用 Create React App 初始化项目</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app react-and-redux-demo</span><br></pre></td></tr></table></figure></li><li><p>相关依赖均使用当前最新版（截止 2018-11-06 的最新版）。</p><ul><li>react v16.6.0</li><li>redux v4.0.1</li><li>react-redux v5.1.0</li></ul></li></ul><h1 id="分支说明"><a href="#分支说明" class="headerlink" title="分支说明"></a>分支说明</h1><p>用 Create React App 初始化项目，所有练习代码都会体现到 master 分支。<br>针对某一个知识点，完成练习之后，记录相关知识点，提交 master，然后从 master 创建一个分支。  </p><h1 id="获取（切换至）某分支"><a href="#获取（切换至）某分支" class="headerlink" title="获取（切换至）某分支"></a>获取（切换至）某分支</h1><p>以分支 branchName 为例，切换到该分支并拉取最新代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout branchName</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure></p><h1 id="如何参与项目，如何提交-PR？"><a href="#如何参与项目，如何提交-PR？" class="headerlink" title="如何参与项目，如何提交 PR？"></a>如何参与项目，如何提交 PR？</h1><p>以下是两大平台的帮助文档。</p><ul><li>github.com -&gt; <a href="https://help.github.com/articles/creating-a-pull-request-from-a-fork" rel="external nofollow noopener noreferrer" target="_blank">Creating a pull request from a fork</a></li><li>gitee.com  -&gt; <a href="https://gitee.com/help/articles/4128" rel="external nofollow noopener noreferrer" target="_blank">Fork + Pull 模式 </a></li></ul><h1 id="加群一起学习"><a href="#加群一起学习" class="headerlink" title="加群一起学习"></a>加群一起学习</h1><p><a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=2960c66b59efccc81149126d4f740719d58bdef14589960584dc2838ceb9093b"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="react stack(react全家桶)" title="react stack(react全家桶)"></a><br>（QQ 群号：683414457，进群密码：<code>react stack</code>）</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/img/react/reactStackLearning.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure>]]></content>
+    <content type="html"><![CDATA[<p>在 windows 下的部分工作经验。<br>说明：还有一些文章分布在其他分类下。<br><a id="more"></a></p><h1 id="windows-下，php-开发环境配置"><a href="#windows-下，php-开发环境配置" class="headerlink" title="windows 下，php 开发环境配置"></a>windows 下，php 开发环境配置</h1><ul><li><a href="/windows/winPHPXdebugMemcache.html">windows7 + nginx + php + xdebug（搭配 PhpStorm 调试） + memcache</a></li><li><a href="/windows/win10Php7Discuz.html">在 win10 下配置 PHP7.2.6 + Discuz! X3.4</a></li><li><a href="/windows/win10Php7HttpdPhp7.html">在 win10 下配置 Apache2.4.33 + PHP7.2.6</a></li><li><a href="/windows/win10Php7Nginx.html">在 win10 下配置 nginx1.14.0 + PHP7.2.6</a></li><li><a href="/windows/winInstallMemcachedAsService.html">在 Windows 将 Memcached 安装为服务</a></li><li><a href="/windows/winInstallNginxAsService.html">把 nginx 安装为 Windows 的一个服务</a></li><li><a href="/windows/winNginxSupportPhp.html">在 windows7 下配置 nginx 支持 php</a></li></ul><h1 id="windows-共享"><a href="#windows-共享" class="headerlink" title="windows 共享"></a>windows 共享</h1><ul><li><a href="/windows/win10Share.html">win10 共享遇到的两个问题</a></li><li><a href="/windows/win10SMBClient.html">windows 10 访问 CentOS 7 的 SMB 共享文件</a></li><li><a href="/windows/winCredentials.html">windows 用户凭据管理</a></li><li><a href="/windows/win10Word2016.html">windows 10，Word 2016 打开共享文件时，提示：在试图打开文件时遇到错误</a></li></ul><h1 id="C-Entity-Framework-开发"><a href="#C-Entity-Framework-开发" class="headerlink" title="C# + Entity Framework 开发"></a>C# + Entity Framework 开发</h1><ul><li><a href="/windows/winEF.html">EF6 写入数据，调用 SaveChanges() 时异常：Validation failed for one or more entities</a></li></ul><h1 id="office-安装与卸载"><a href="#office-安装与卸载" class="headerlink" title="office 安装与卸载"></a>office 安装与卸载</h1><ul><li><a href="/windows/winOffice2016Active.html">office 2016 系列： office(Word,Excel,PowerPoint)/visio/project 安装并激活</a></li><li><a href="/windows/winOffice2016Uninstall.html">卸载 Office 2016 遇到的那些坑（完全干净的卸载 Office 2016）</a></li></ul><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><ul><li><a href="/windows/win10CmdCharacter.html">windows 控制台 cmd/PowerShell 中文显示乱码，解决方法</a></li><li><a href="/windows/batchRenameFile.html">批处理文件遍历所有子目录批量移除文件名和目录名中特殊字符</a></li><li><a href="/windows/win10Hosts.html">在 win10 下修改 hosts 文件</a></li><li><a href="/windows/winDeleteService.html">删除 Windows 服务</a></li><li><a href="/windows/windowsPort.html">windwos 查看端口占用、查找进程、杀死进程的命令</a></li><li><a href="/windows/windowsTree.html">使用 tree 命令导出 windows 的【文件夹/文件】目录树</a></li><li><a href="/windows/winRemoteDesktop.html">windows 远程桌面的坑</a></li><li><a href="/windows/winUDiskRestore.html">U盘刻录后如何恢复原来容量大小，以及 FAT32 转化为 NTFS</a></li><li><a href="/windows/experience.html">在 windows 下，工作中的一些小经验</a></li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;react 技术栈学习，有文章有代码（github），花了很多时间整理，如果觉得不错，请在 github 或 gitee 的开源项目上给个小星星儿（star）。&lt;br&gt;
+      &lt;p&gt;在 windows 下的部分工作经验。&lt;br&gt;说明：还有一些文章分布在其他分类下。&lt;br&gt;
     
     </summary>
     
-      <category term="react" scheme="https://www.lovesofttech.com/categories/react/"/>
-    
-      <category term="redux" scheme="https://www.lovesofttech.com/categories/react/redux/"/>
+      <category term="windows" scheme="https://www.lovesofttech.com/categories/windows/"/>
     
     
-      <category term="react" scheme="https://www.lovesofttech.com/tags/react/"/>
-    
-      <category term="redux" scheme="https://www.lovesofttech.com/tags/redux/"/>
+      <category term="windows" scheme="https://www.lovesofttech.com/tags/windows/"/>
     
   </entry>
   
