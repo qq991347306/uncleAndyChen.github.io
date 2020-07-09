@@ -386,28 +386,6 @@
   </entry>
   
   <entry>
-    <title>技术之外的话题，文章目录</title>
-    <link href="https://www.lovesofttech.com/dailyLives.html"/>
-    <id>https://www.lovesofttech.com/dailyLives.html</id>
-    <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.064Z</updated>
-    
-    <content type="html"><![CDATA[<p>本目录下的文章与技术无关，但与生活、个人品质有关。<br><a id="more"></a></p><ul><li><a href="/dailyLives/shawshank.html">分享正能量——《肖申克的救赎》</a></li><li><a href="/dailyLives/foobar2000.html">foobar2000，一款 Windows 平台下的高级音频播放器，免费</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本目录下的文章与技术无关，但与生活、个人品质有关。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="dailyLives" scheme="https://www.lovesofttech.com/categories/dailyLives/"/>
-    
-    
-      <category term="dailyLives" scheme="https://www.lovesofttech.com/tags/dailyLives/"/>
-    
-  </entry>
-  
-  <entry>
     <title>数据库文章汇总目录</title>
     <link href="https://www.lovesofttech.com/database.html"/>
     <id>https://www.lovesofttech.com/database.html</id>
@@ -430,24 +408,24 @@
   </entry>
   
   <entry>
-    <title>git 文章目录</title>
-    <link href="https://www.lovesofttech.com/git.html"/>
-    <id>https://www.lovesofttech.com/git.html</id>
+    <title>技术之外的话题，文章目录</title>
+    <link href="https://www.lovesofttech.com/dailyLives.html"/>
+    <id>https://www.lovesofttech.com/dailyLives.html</id>
     <published>2019-11-02T16:00:00.000Z</published>
-    <updated>2019-11-09T09:00:56.097Z</updated>
+    <updated>2019-11-09T09:00:56.064Z</updated>
     
-    <content type="html"><![CDATA[<p>git 使用经验、基于 git 的项目管理经验<br><a id="more"></a></p><ul><li><a href="/git/syncBetweenTwoGitServer.html">在两个 git server 之间同步项目的代码</a></li><li><a href="/git/centOS7Git.html">CentOS 7.5 安装配置 git</a></li><li><a href="/git/centOS7GitAsServer.html">CentOS 7.5 借助 Gitolite 管理 Git 项目</a></li><li><a href="/git/centOS7GitSSHKey.html">CentOS 7.5 配置 git SSH key 免密获取 gitee.com 个人项目最新代码</a></li><li><a href="/git/gitBasicUsage.html">git 在工作中的基本用法</a></li><li><a href="/git/gitContributors.html">Git 用户名邮箱的全局配置和单仓库配置</a></li><li><a href="/git/githubPages.html">github pages 绑定自己的域名</a></li><li><a href="/git/githubUpdateProjectLanguage.html">修改 github 项目的程序语言</a></li><li><a href="/git/gitLFAndCRLF.html">git 回车换行在 windows 与 unix 下不一致的解决方案</a></li><li><a href="/git/gitTeamWork.html">使用 git 在码云上进行项目协作开发</a></li><li><a href="/git/gitMergeToRemote.html">本地仓库代码，定时同步更新至远程仓库</a></li><li><a href="/git/repoChangeUser.html">git 仓库从一个用户下迁移到另外一个用户下，包含提交历史</a></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>本目录下的文章与技术无关，但与生活、个人品质有关。<br><a id="more"></a></p><ul><li><a href="/dailyLives/shawshank.html">分享正能量——《肖申克的救赎》</a></li><li><a href="/dailyLives/foobar2000.html">foobar2000，一款 Windows 平台下的高级音频播放器，免费</a></li></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;git 使用经验、基于 git 的项目管理经验&lt;br&gt;
+      &lt;p&gt;本目录下的文章与技术无关，但与生活、个人品质有关。&lt;br&gt;
     
     </summary>
     
-      <category term="git" scheme="https://www.lovesofttech.com/categories/git/"/>
+      <category term="dailyLives" scheme="https://www.lovesofttech.com/categories/dailyLives/"/>
     
     
-      <category term="git" scheme="https://www.lovesofttech.com/tags/git/"/>
+      <category term="dailyLives" scheme="https://www.lovesofttech.com/tags/dailyLives/"/>
     
   </entry>
   
@@ -470,6 +448,28 @@
     
     
       <category term="java" scheme="https://www.lovesofttech.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 文章目录</title>
+    <link href="https://www.lovesofttech.com/git.html"/>
+    <id>https://www.lovesofttech.com/git.html</id>
+    <published>2019-11-02T16:00:00.000Z</published>
+    <updated>2019-11-09T09:00:56.097Z</updated>
+    
+    <content type="html"><![CDATA[<p>git 使用经验、基于 git 的项目管理经验<br><a id="more"></a></p><ul><li><a href="/git/syncBetweenTwoGitServer.html">在两个 git server 之间同步项目的代码</a></li><li><a href="/git/centOS7Git.html">CentOS 7.5 安装配置 git</a></li><li><a href="/git/centOS7GitAsServer.html">CentOS 7.5 借助 Gitolite 管理 Git 项目</a></li><li><a href="/git/centOS7GitSSHKey.html">CentOS 7.5 配置 git SSH key 免密获取 gitee.com 个人项目最新代码</a></li><li><a href="/git/gitBasicUsage.html">git 在工作中的基本用法</a></li><li><a href="/git/gitContributors.html">Git 用户名邮箱的全局配置和单仓库配置</a></li><li><a href="/git/githubPages.html">github pages 绑定自己的域名</a></li><li><a href="/git/githubUpdateProjectLanguage.html">修改 github 项目的程序语言</a></li><li><a href="/git/gitLFAndCRLF.html">git 回车换行在 windows 与 unix 下不一致的解决方案</a></li><li><a href="/git/gitTeamWork.html">使用 git 在码云上进行项目协作开发</a></li><li><a href="/git/gitMergeToRemote.html">本地仓库代码，定时同步更新至远程仓库</a></li><li><a href="/git/repoChangeUser.html">git 仓库从一个用户下迁移到另外一个用户下，包含提交历史</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;git 使用经验、基于 git 的项目管理经验&lt;br&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="https://www.lovesofttech.com/categories/git/"/>
+    
+    
+      <category term="git" scheme="https://www.lovesofttech.com/tags/git/"/>
     
   </entry>
   
