@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.lovesofttech.com/general/blogLog.html</loc>
+    <lastmod>2020-07-09</lastmod>
+  </url>  <url>
     <loc>https://www.lovesofttech.com/classifyIndex.html</loc>
     <lastmod>2020-07-05</lastmod>
   </url>  <url>
@@ -147,9 +150,6 @@
   </url>  <url>
     <loc>https://www.lovesofttech.com/database/win10MySQLConfig.html</loc>
     <lastmod>2020-02-16</lastmod>
-  </url>  <url>
-    <loc>https://www.lovesofttech.com/general/blogLog.html</loc>
-    <lastmod>2020-02-04</lastmod>
   </url>  <url>
     <loc>https://www.lovesofttech.com/react/JetBrainsIDESupport.html</loc>
     <lastmod>2020-01-30</lastmod>
